@@ -1,0 +1,18 @@
+git add -A
+git add .
+git status
+git commit -m "Message"
+git push
+git push -u origin master
+
+
+
+master
+
+
+
+
+
+
+
+git checkout
