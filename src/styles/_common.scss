@@ -1,0 +1,43 @@
+body {
+  font-family: $font-stack;
+  font-size: 16px;
+  font-weight: $regular;
+  line-height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $paragraph-color;
+}
+footer,
+header,
+section {
+  min-width: 320px;
+  > div {
+    min-width: 320px;
+    max-width: 1080px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+}
+p {
+  max-width: 700px;
+}
+a {
+  color: $link-color;
+  &:hover {
+    text-decoration: none;
+  }
+}
+img {
+  display: block;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0;
+  }
+}
