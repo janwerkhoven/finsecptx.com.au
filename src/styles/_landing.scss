@@ -1,4 +1,19 @@
 #landing {
-  #hero {}
+  #hero {
+    background: $finsec-ptx-navy;
+    color: white;
+    height: 100vh;
+    > div {
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      text-align: center;
+      h1 {
+        line-height: 200%;
+        margin-bottom: 20px;
+      }
+    }
+  }
   #intro {}
 }
