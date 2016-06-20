@@ -1,5 +1,13 @@
 header {
   height: 0;
+  > div {
+    padding-top: 30px;
+  }
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
   ul {
     display: flex;
     flex-flow: row nowrap;
@@ -7,6 +15,14 @@ header {
     a {
       text-decoration: none;
       color: white;
+      font-size: 20px;
+      font-weight: $bold;
+      line-height: 30px;
+      padding: 0 5px;
+      &:hover,
+      .active {
+        opacity: 0.6;
+      }
     }
   }
 }
