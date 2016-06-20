@@ -1,0 +1,27 @@
+#coming-soon {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: $finsec-ptx-navy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+  h1 {
+    line-height: 100%;
+    margin: 34px 0 10px;
+    font-size: 32px;
+  }
+  h2 {
+    color: $finsec-ptx-blue;
+    margin: 0;
+    line-height: 100%;
+  }
+}
