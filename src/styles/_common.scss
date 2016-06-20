@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $paragraph-color;
+  background: $finsec-ptx-navy;
 }
 footer,
 header,
@@ -23,6 +24,27 @@ section {
     padding: 0 20px;
     overflow: hidden;
   }
+}
+main {
+  > section:first-child {
+    height: 90vh;
+    > div {
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 150%;
+  margin: 0;
 }
 p {
   max-width: 700px;

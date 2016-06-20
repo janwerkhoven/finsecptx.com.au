@@ -1,6 +1,6 @@
 #landing {
   #hero {
-    background: $finsec-ptx-navy;
+    background: #191925;
     color: white;
     height: 100vh;
     > div {
@@ -15,5 +15,19 @@
       }
     }
   }
-  #intro {}
+  #features {
+    background: $finsec-ptx-navy;
+  }
+  #keep-informed {
+    background: #FFF;
+    h2 {
+      color: $finsec-ptx-red;
+    }
+  }
+  #discover {
+    background: $finsec-ptx-navy;
+  }
+  #get-in-touch {
+    background: $finsec-ptx-baby;
+  }
 }
