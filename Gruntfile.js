@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     watch: {
       handlebars: {
         files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
-        tasks: ['handlebarslayouts', 'sitemap']
+        tasks: ['handlebarslayouts']
       },
       sass: {
         files: ['src/styles/**/*.scss'],
@@ -116,7 +116,12 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/assets/js/main.min.js': ['src/js/vendor/jquery.min.js', 'src/js/vendor/velocity.min.js', 'temp/main.min.js']
+          'dist/assets/js/main.min.js': [
+            'src/js/vendor/jquery.min.js',
+            'src/js/vendor/velocity.min.js',
+            'src/js/vendor/browser-update.js',
+            'temp/main.min.js'
+          ]
         },
       },
     },
@@ -195,7 +200,7 @@ module.exports = function(grunt) {
 
   // Available commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
