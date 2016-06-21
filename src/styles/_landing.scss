@@ -1,7 +1,8 @@
 #landing {
   #hero {
     height: 100vh;
-    background: #191925 url('/assets/img/landing/hero-banner-london-2000.jpg') 50% 50% cover;
+    min-height: 700px;
+    background: #191925 url('/assets/img/landing/hero-banner-london-2000.jpg') 50% 50% / cover;
     > div {
       height: 100%;
       display: flex;
@@ -9,12 +10,17 @@
       justify-content: center;
       text-align: center;
       h1 {
-        margin-bottom: 20px;
         font-weight: $bold;
         font-size: 46px;
         font-weight: 800;
-        line-height: 140%;
+        line-height: 120%;
         text-transform: uppercase;
+        max-width: 660px;
+        margin: 0 auto 20px;
+        text-shadow: 0 0 10px RGBA(0,0,0,0.5);
+        span {
+          display: block;
+        }
       }
       a {
         font-size: 20px;
@@ -23,6 +29,8 @@
         margin-top: 30px;
         padding-top: 1px;
         letter-spacing: 1px;
+        text-shadow: 0 0 10px RGBA(0,0,0,0.5);
+
       }
     }
   }
