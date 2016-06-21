@@ -1,8 +1,7 @@
 #landing {
   #hero {
-    background: #191925;
-    color: white;
     height: 100vh;
+    background: #191925 url('/assets/img/landing/hero-banner-london-2000.jpg') 50% 50% cover;
     > div {
       height: 100%;
       display: flex;
@@ -27,8 +26,24 @@
       }
     }
   }
-  #features {
+  #intro {
     background: $finsec-ptx-navy;
+    text-align: center;
+    > div {
+      padding: 40px 0;
+    }
+    h2 {
+      font-size: 26px;
+      margin: 0 auto;
+      span {
+        color: $finsec-ptx-blue;
+        display: block;
+      }
+    }
+    p {
+      margin: 0 auto;
+      font-size: 20px;
+    }
   }
   #keep-informed {
     background: #FFF;
