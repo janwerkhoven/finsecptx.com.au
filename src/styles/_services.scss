@@ -2,7 +2,79 @@
   #hero {
     height: 100vh;
     min-height: 700px;
-    background-image: url("/assets/img/services/finsecptx-service-banner-2000.jpg");
+    background-image: url("/assets/img/services/hero-phone-boot-bg-2000.jpg");
+    background-position: center;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 120%;
+        text-transform: uppercase;
+        max-width: 590px;
+      }
+    }
+  }
+  #services-1 {
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      div {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        align-items: flex-start;
+        h2 {
+          font-size: 26px;
+          span {
+            color: $finsec-ptx-blue;
+            display: block;
+          }
+        }
+        p,
+        ul {
+          list-style-type: disc;
+          font-size: 20px;
+        }
+        a,
+        img {}
+      }
+    }
+  }
+  #services-2 {
+    background-color: $finsec-ptx-blue;
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      div {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        align-items: flex-start;
+        h2 {
+          font-size: 26px;
+          span {
+            color: $finsec-ptx-blue;
+            display: block;
+          }
+        }
+        p,
+        ul {
+          list-style-type: disc;
+          font-size: 20px;
+        }
+        a,
+        img {}
+      }
+    }
   }
   #overview {}
 }
