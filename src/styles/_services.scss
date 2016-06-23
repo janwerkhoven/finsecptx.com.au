@@ -18,7 +18,7 @@
       }
     }
   }
-  #services-1 {
+  .services-layout {
     div {
       display: flex;
       flex-direction: row;
@@ -67,110 +67,23 @@
           padding-bottom: 90px;
         }
       }
+    }
+  }
+  #services-1 {
+    span {
+      color: $finsec-ptx-blue;
     }
   }
   #services-2 {
     background-color: $finsec-ptx-mid;
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      div {
-        display: flex;
-        flex-direction: column;
-        max-width: 420px;
-        align-items: flex-start;
-        padding: 0 40px;
-        h2 {
-          font-size: 26px;
-          line-height: 120%;
-          span {
-            color: $finsec-ptx-blue;
-            display: block;
-          }
-        }
-        ul {
-          list-style-type: disc;
-          font-size: 20px;
-          line-height: 140%;
-          padding-left: 20px;
-          li {
-            padding-top: 15px;
-          }
-        }
-        p {
-          font-size: 20px;
-          line-height: 140%;
-        }
-        a {
-          min-width: 250px;
-          text-align: center;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-weight: 600;
-          margin-bottom: 30px;
-          padding-top: 1px;
-          letter-spacing: 1px;
-          text-shadow: 0 0 10px RGBA(0,0,0,.5);
-        }
-        img {
-          padding-bottom: 90px;
-        }
-      }
+    span {
+      color: $finsec-ptx-blue;
     }
   }
   #services-3 {
     background-color: $finsec-ptx-blue;
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      div {
-        display: flex;
-        flex-direction: column;
-        max-width: 420px;
-        align-items: flex-start;
-        padding: 0 40px;
-        h2 {
-          font-size: 26px;
-          line-height: 120%;
-          span {
-            color: $finsec-ptx-baby;
-            display: block;
-          }
-        }
-        ul {
-          list-style-type: disc;
-          font-size: 20px;
-          line-height: 140%;
-          padding-left: 20px;
-          li {
-            padding-top: 15px;
-          }
-        }
-        p {
-          font-size: 20px;
-          line-height: 140%;
-        }
-        a {
-          min-width: 250px;
-          text-align: center;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-weight: 600;
-          margin-bottom: 30px;
-          padding-top: 1px;
-          letter-spacing: 1px;
-          text-shadow: 0 0 10px RGBA(0,0,0,.5);
-        }
-        img {
-          padding-bottom: 90px;
-        }
-      }
+    span {
+      color: $finsec-ptx-baby;
     }
   }
   #ask-us {
@@ -185,11 +98,11 @@
       justify-content: center;
       align-items: center;
       h2 {
-        font-size: 55px;
+        font-size: 50px;
         font-weight: 800;
         line-height: 120%;
         max-width: 590px;
-        padding: 50px;
+        padding-bottom: 40px;
       }
       a {
         min-width: 250px;
@@ -204,5 +117,4 @@
       }
     }
   }
-  #overview {}
 }
