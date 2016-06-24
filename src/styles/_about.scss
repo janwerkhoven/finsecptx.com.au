@@ -1,1 +1,99 @@
-#about {}
+#about {
+  #hero {
+    height: 100vh;
+    background-image: url("/assets/img/about/finsecptx-about-banner-2000.jpg");
+    background-size: cover;
+    background-position: 10%;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-size: 40px;
+        font-weight: $black;
+        line-height: 120%;
+        text-transform: uppercase;
+        max-width: 590px;
+        padding: 0 5px;
+      }
+      @media (max-width:600px) {
+        h1 {
+          font-size: 32px;
+        }
+      }
+      @media (max-width:500px) {
+        h1 {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  #overview {
+    background: white;
+    color: black;
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      min-width: 380px;
+      max-width: 600px;
+      align-items: center;
+      padding: 60px 30px;
+      h2 {
+        color: $finsec-ptx-navy;
+        font-size: 20px;
+        font-weight: $black;
+        line-height: 120%;
+        margin-right: auto;
+        max-width: 460px;
+        span {
+          color: $finsec-ptx-blue;
+          display: block;
+        }
+      }
+      ul {
+        list-style-type: disc;
+        font-size: 20px;
+        line-height: 140%;
+        padding-left: 20px;
+        li {
+          padding-top: 15px;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 140%;
+        margin: 20px 0 0 auto;
+      }
+    }
+  }
+  #profile {
+    background-color: $finsec-ptx-ocean-blue;
+    div {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      padding: 0;
+      div {
+        flex-direction: column;
+        padding: 60px;
+      }
+      img {
+        width: 50vw;
+      }
+    }
+  }
+  #what-to-expect {
+    background: $finsec-ptx-navy;
+    div {
+      h2 {
+        color: white;
+        font-size: 26px;
+        line-height: 120%;
+        span {
+          color: $finsec-ptx-baby-blue;
+        }
+      }
+    }
+  }
+}
