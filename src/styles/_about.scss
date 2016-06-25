@@ -72,14 +72,13 @@
     div {
       display: flex;
       flex-direction: row;
-      width: 100vw;
       padding: 0;
       div {
         flex-direction: column;
         padding: 60px;
       }
       img {
-        width: 50vw;
+        width: 50%;
       }
     }
   }
