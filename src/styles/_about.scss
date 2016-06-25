@@ -107,41 +107,45 @@
         div:hover .overlay {
           display: block;
         }
+        div:hover > div {
+          display: block;
+        }
         div {
+          position: static;
           height: 83px;
           width: 83px;
           margin: 30px 0 0;
           padding: 0;
           h3 {
             position: relative;
-            right: 285px;
+            right: 235px;
             bottom: 50px;
             text-transform: uppercase;
             text-align: right;
             width: 300px;
           }
-          .empty {}
           .overlay {
             position: relative;
             bottom: 111px;
             display: none;
             z-index: 2;
           }
-        }
-        .process {
-          position: absolute;
-          width: 250px;
-          text-align: left;
-          left: 180px;
-          top: 32px;
-          h4 {
-            margin-right: auto;
-            color: $finsec-ptx-red;
-          }
-          ul {
-            list-style: disc;
-            line-height: 140%;
-            padding-left: 20px;
+          div {
+            position: absolute;
+            width: 250px;
+            text-align: left;
+            left: 130px;
+            top: 32px;
+            display: none;
+            h4 {
+              margin-right: auto;
+              color: $finsec-ptx-red;
+            }
+            ul {
+              list-style: disc;
+              line-height: 140%;
+              padding-left: 20px;
+            }
           }
         }
       }
