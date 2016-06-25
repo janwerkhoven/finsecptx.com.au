@@ -86,12 +86,104 @@
   #what-to-expect {
     background: $finsec-ptx-navy;
     div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       h2 {
         color: white;
         font-size: 26px;
         line-height: 120%;
+        margin: 0 auto;
+        padding-top: 40px;
         span {
           color: $finsec-ptx-baby-blue;
+          display: block;
+        }
+      }
+      div {
+        position: relative;
+        padding-bottom: 70px;
+        div:hover .overlay {
+          display: block;
+        }
+        div {
+          height: 83px;
+          width: 83px;
+          margin: 30px 0 0;
+          padding: 0;
+          h3 {
+            position: relative;
+            right: 285px;
+            bottom: 50px;
+            text-transform: uppercase;
+            text-align: right;
+            width: 300px;
+          }
+          .empty {}
+          .overlay {
+            position: relative;
+            bottom: 111px;
+            display: none;
+            z-index: 2;
+          }
+        }
+        .process {
+          position: absolute;
+          width: 250px;
+          text-align: left;
+          left: 180px;
+          top: 32px;
+          h4 {
+            margin-right: auto;
+            color: $finsec-ptx-red;
+          }
+          ul {
+            list-style: disc;
+            line-height: 140%;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  #ask-us {
+    background-image: url('/assets/img/services/call-to-action-bg-2000.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    div {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-size: 50px;
+        font-weight: $black;
+        line-height: 120%;
+        max-width: 590px;
+        padding-bottom: 40px;
+      }
+      a {
+        min-width: 250px;
+        text-align: center;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: $semi-bold;
+        margin-bottom: 30px;
+        padding-top: 1px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px RGBA(0,0,0,.5);
+      }
+      @media (max-width:500px) {
+        a {
+          font-size: 15px;
+          margin-bottom: 15px;
+        }
+        h2 {
+          font-size: 30px;
+          padding-bottom: 20px;
         }
       }
     }
