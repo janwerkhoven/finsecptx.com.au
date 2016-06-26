@@ -10,9 +10,8 @@
       justify-content: center;
       text-align: center;
       h1 {
-        font-weight: $bold;
+        font-family: 'Rick-Black', sans-serif;
         font-size: 46px;
-        font-weight: 800;
         line-height: 120%;
         text-transform: uppercase;
         max-width: 660px;
@@ -40,6 +39,7 @@
       padding: 40px 0;
     }
     h2 {
+      font-family: 'Rick-Medium', sans-serif;
       font-size: 26px;
       margin: 0 auto;
       span {
