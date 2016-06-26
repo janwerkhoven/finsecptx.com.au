@@ -1,18 +1,20 @@
 /* Normalisation cross-browser */
 @import 'normalize';
 
-/* SASS re-usables */
+/* Embed fonts */
 @import 'fonts';
-@import 'variables';
-// @import 'mixins';
-// @import 'animations';
 
-/* For all pages */
+/* SASS re-usables */
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
+/* CSS for all pages */
 @import 'common';
 @import 'header';
 @import 'footer';
 
-/* Page specifics */
+/* Page specific CSS */
 @import 'landing';
 @import 'services';
 @import 'about';
