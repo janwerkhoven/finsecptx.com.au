@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['src/styles/**/*.scss'],
-        tasks: ['sass', 'postcss']
+        tasks: ['sass']
       },
       js: {
         files: ['src/js/**/*.js'],
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-handlebars-layouts");
   grunt.loadNpmTasks('grunt-html-prettyprinter');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-postcss');
+  // grunt.loadNpmTasks('grunt-postcss'); // TODO: Post CSS messes with our fonts, to be fixed later on and reincluded before soft launch
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -200,7 +200,7 @@ module.exports = function(grunt) {
 
   // Available commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
