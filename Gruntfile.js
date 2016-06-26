@@ -56,7 +56,11 @@ module.exports = function(grunt) {
         options: {
           partials: ['src/templates/partials/*.hbs', 'src/templates/layout.html'],
           basePath: 'src/templates/',
-          modules: ['src/templates/helpers/helpers-*.js']
+          modules: ['src/templates/helpers/helpers-*.js'],
+          context: {
+            formLink: '/eligibility-test-UK-pension-Australian-super-transfer',
+            formTitle: 'Test whether you are eligibile for transfering your UK Pension to an Australian super'
+          }
         }
       }
     },

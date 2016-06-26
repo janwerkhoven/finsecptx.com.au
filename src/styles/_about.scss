@@ -1,7 +1,7 @@
 #about {
   #hero {
     height: 100vh;
-    background-image: url("/assets/img/about/finsecptx-about-banner-2000.jpg");
+    background-image: url('/assets/img/about/finsecptx-about-banner-2000.jpg');
     background-size: cover;
     background-position: 10%;
     div {
@@ -10,7 +10,7 @@
       align-items: center;
       h1 {
         font-size: 40px;
-        font-weight: $black;
+        font-family: $black;
         line-height: 120%;
         text-transform: uppercase;
         max-width: 590px;
@@ -40,14 +40,14 @@
       align-items: center;
       padding: 60px 30px;
       h2 {
-        color: $finsec-ptx-navy;
+        color: $finsec-ptx-royal-blue;
         font-size: 20px;
-        font-weight: $black;
+        font-family: $black;
         line-height: 120%;
         margin-right: auto;
         max-width: 460px;
         span {
-          color: $finsec-ptx-blue;
+          color: $finsec-ptx-kashmir-blue;
           display: block;
         }
       }
@@ -83,7 +83,7 @@
     }
   }
   #what-to-expect {
-    background: $finsec-ptx-navy;
+    background: $finsec-ptx-royal-blue;
     div {
       display: flex;
       flex-direction: column;
@@ -163,7 +163,7 @@
       align-items: center;
       h2 {
         font-size: 50px;
-        font-weight: $black;
+        font-family: $black;
         line-height: 120%;
         max-width: 590px;
         padding-bottom: 40px;
@@ -173,7 +173,7 @@
         text-align: center;
         font-size: 20px;
         text-transform: uppercase;
-        font-weight: $semi-bold;
+        font-family: $medium;
         margin-bottom: 30px;
         padding-top: 1px;
         letter-spacing: 1px;
