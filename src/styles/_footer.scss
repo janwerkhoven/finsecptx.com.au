@@ -2,6 +2,9 @@ footer {
   background: $finsec-ptx-black-pearl;
   text-align: center;
   #legal {
+    a.logo {
+      display: inline-block;
+    }
     img {
       margin: 50px auto 20px;
       transform-origin: bottom;
