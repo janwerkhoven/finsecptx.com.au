@@ -9,6 +9,7 @@
       min-height: 500px;
     }
     > div {
+      position: relative;
       height: 100%;
       display: flex;
       flex-flow: column nowrap;
@@ -39,19 +40,27 @@
           }
         }
       }
-      a {
-        font-size: 24px;
-        margin-top: 30px;
-        padding-top: 1px;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px RGBA(0,0,0,0.5);
-        border-width: 4px;
-        @media (max-width: 500px) {
-          line-height: 120%;
-          padding: 8px 8px 9px;
-          font-size: 7vw;
-          margin: 0;
+      div {
+        a {
+          font-size: 24px;
+          margin-top: 30px;
+          padding-top: 1px;
+          letter-spacing: 1px;
+          text-shadow: 0 0 10px RGBA(0,0,0,0.5);
+          border-width: 4px;
+          @media (max-width: 500px) {
+            line-height: 120%;
+            padding: 8px 8px 9px;
+            font-size: 7vw;
+            margin: 0;
+          }
         }
+      }
+      > a {
+        position: absolute;
+        transform: rotate(90deg) translateY(40px);
+        bottom: 30px;
+        left: 50%;
       }
     }
   }
@@ -126,17 +135,31 @@
       font-family: $black;
       text-align: center;
       margin: 80px 0 40px;
+      @media (max-width: 500px) {
+        font-size: 9vw;
+      }
     }
     ul {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       margin-bottom: 80px;
+      @media (max-width: 1040px) {
+        flex-flow: row wrap;
+      }
       li {
+        position: relative;
         width: 30%;
         background: #d3d3d3;
         max-width: 400px;
         margin: 2%;
+        @media (max-width: 1040px) {
+          width: 50%;
+        }
+        @media (max-width: 500px) {
+          width: 100%;
+          margin: 0 auto 20px;
+        }
         img {
           width: 100%;
           height: auto;
@@ -151,6 +174,23 @@
           font-size: 20px;
           font-family: $medium;
         }
+        &:not(:last-child) {
+          a {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+        &:nth-child(3) {
+          display: none;
+          @media (max-width: 1040px) {
+            display: block;
+          }
+        }
         &:last-child {
           background: $finsec-ptx-kashmir-blue;
           padding: 30px;
@@ -158,17 +198,26 @@
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-between;
+          @media (max-width: 500px) {
+            padding: 20px;
+          }
           p {
             font-size: 26px;
             margin: 10px 0;
             line-height: 150%;
             font-family: $medium;
           }
-          a {
+          a.button {
+            position: relative;
             font-size: 24px;
             font-family: $medium;
             text-align: center;
-            padding: 1px 0 0;
+            margin-top: 60px;
+            line-height: 150%;
+            padding: 9px 20px 8px;
+            @media (max-width: 380px) {
+              font-size: 6vw;
+            }
           }
         }
       }
