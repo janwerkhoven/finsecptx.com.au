@@ -1,7 +1,7 @@
-// MAIN JS
-
 $(document).ready(function() {
 
+  // Make any hashtag link scroll with animation to element with matching ID
+  // Example: <a href="#features"> will scroll to element with ID #features
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);

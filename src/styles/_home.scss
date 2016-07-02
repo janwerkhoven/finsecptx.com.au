@@ -66,7 +66,7 @@
   }
   #intro {
     background: $finsec-ptx-royal-blue;
-    @media (min-width: 501px) {
+    @media (min-width: 621px) {
       text-align: center;
     }
     > div {
@@ -90,9 +90,9 @@
     }
     p {
       margin: 0 auto 40px;
-      font-size: 26px;
+      font-size: 22px;
       line-height: 150%;
-      font-family: 'Rick-Medium';
+      font-family: 'Rick-Book';
       max-width: 800px;
       margin-bottom: 100px;
 
@@ -116,7 +116,7 @@
         p {
           color: $finsec-ptx-kashmir-blue;
           margin: 0;
-          font-size: 20px;
+          font-size: 19px;
           max-width: 80%;
           margin: 0 auto;
         }
@@ -154,9 +154,9 @@
         max-width: 400px;
         margin: 2%;
         @media (max-width: 1040px) {
-          width: 50%;
+          width: 46%;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
           width: 100%;
           margin: 0 auto 20px;
         }
@@ -187,6 +187,9 @@
         }
         &:nth-child(3) {
           display: none;
+          @media (min-width: 2000px) {
+            display: block;
+          }
           @media (max-width: 1040px) {
             display: block;
           }
@@ -228,20 +231,40 @@
     text-align: center;
     > div {
       padding: 150px 20px;
+      @media (max-width: 500px) {
+        padding: 20vw 20px;
+      }
     }
     h2 {
       font-size: 58px;
       font-family: $black;
       line-height: 120%;
       margin: 0 auto 60px;
+      padding: 0 20px;
+      @media (max-width: 600px) {
+        font-size: 10vw;
+        margin-bottom: 10vw;
+      }
     }
     ul {
       li {
-        margin-bottom: 20px;
-
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
         a {
           font-size: 24px;
           padding-top: 1px;
+          line-height: 150%;
+          padding: 12px 30px 9px;
+          box-sizing: border-box;
+          transition: all 300ms ease-out;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+          @media (max-width: 380px) {
+            font-size: 6vw;
+            padding: 12px 20px 9px;
+          }
         }
       }
     }
@@ -252,55 +275,125 @@
     > div {
       position: relative;
       z-index: 1;
-      height: 800px;
       max-width: none;
+      padding: 150px 20px 0;
+      @media (max-width: 500px) {
+        padding-top: 20vw;
+      }
     }
     h2 {
       font-family: $black;
       font-size: 58px;
       line-height: 120%;
       max-width: 820px;
-      margin: 90px auto 130px;
+      margin: 0 auto;
       text-align: center;
-
+      @media (max-width: 600px) {
+        font-size: 10vw;
+        margin-bottom: 10vw;
+      }
+    }
+    .address {
+      text-align: center;
+      margin: 60px auto;
+      nobr {
+        @media (max-width: 660px) {
+          display: block;
+        }
+      }
+      p {
+        margin: 0 auto;
+        line-height: 150%;
+      }
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     .duo {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      img {
-        position: absolute;
-        left: -230px;
-        bottom: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      @media (min-width: 941px) {
+        height: 480px;
       }
       .call {
-        position: absolute;
-        width: 200px;
-        left: 0;
-        bottom: 0;
+        width: 50%;
+        align-self: stretch;
+        box-sizing: border-box;
+        @media (min-width: 941px) {
+          position: absolute;
+          width: 200px;
+          left: 50%;
+        }
+        @media (max-width: 940px) {
+          max-width: 200px;
+          position: relative;
+        }
         &:after {
           content: ' ';
           position: absolute;
-          width: 50px;
           height: 0;
           border-top: 2px dotted white;
-          transform: rotate(30deg);
-          top: 96px;
-          left: 210px;
         }
         &.david {
-          left: 290px;
-          bottom: 110px;
+          @media (min-width: 941px) {
+            bottom: 154px;
+            transform: translateX(-450px);
+          }
+          @media (max-width: 940px) {
+            padding-right: 30px;
+          }
+          @media (max-width: 660px) {
+            padding-right: 10px;
+          }
           &:after {
-            width: 70px;
-            transform: rotate(150deg);
-            top: 34px;
-            left: -90px;
+            width: 50px;
+            transform: rotate(-99deg);
+            left: 42px;
+            bottom: -33px;
+            @media (min-width: 941px) {
+              width: 60px;
+              transform: rotate(210deg);
+              top: 135px;
+              left: 203px;
+            }
           }
         }
         &.scott {
-          left: -460px;
-          bottom: 190px;
+          @media (min-width: 941px) {
+            bottom: 228px;
+            transform: translateX(260px);
+          }
+          @media (max-width: 940px) {
+            padding-left: 30px;
+          }
+          @media (max-width: 660px) {
+            padding-left: 10px;
+          }
+          &:after {
+            width: 40px;
+            transform: rotate(100deg);
+            bottom: -30px;
+            left: 84px;
+            @media (max-width: 600px) {
+              right: 15vw;
+              left: auto;
+            }
+            @media (min-width: 941px) {
+              width: 70px;
+              transform: rotate(150deg);
+              top: 100px;
+              left: -86px;
+            }
+          }
+          .button {
+            @media (max-width: 940px) {
+              position: absolute;
+              bottom: 0;
+            }
+          }
         }
         h3 {
           text-transform: uppercase;
@@ -314,20 +407,24 @@
         }
         a {
           text-transform: uppercase;
-          line-height: 40px;
-          padding: 1px 20px 0;
+          line-height: 150%;
+          padding: 11px 20px 10px;
         }
       }
-    }
-    .address {
-      position: absolute;
-      bottom: 460px;
-      width: 620px;
-      text-align: center;
-      left: -310px;
-      a {
-        &:hover {
-          text-decoration: underline;
+      .img {
+        width: 100%;
+        @media (min-width: 941px) {
+          position: absolute;
+          bottom: 0;
+        }
+        @media (max-width: 940px) {
+          margin-top: 50px;
+        }
+        img {
+          width: 90vw;
+          height: auto;
+          max-width: 463px;
+          margin: 0 auto;
         }
       }
     }
