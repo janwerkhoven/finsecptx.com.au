@@ -24,7 +24,7 @@
         font-size: 56px;
         line-height: 120%;
         text-transform: uppercase;
-        margin: 0 auto 20px;
+        margin: 0 auto 4vw;
         text-shadow: 0 0 10px RGBA(0,0,0,0.5);
         @media (max-width: 1100px) {
           font-size: 5vw;
@@ -42,16 +42,18 @@
       }
       div {
         a {
-          font-size: 24px;
-          margin-top: 30px;
+          font-size: 2.5vw;
+          padding: 1.5vw 3vw 1.2vw;
           letter-spacing: 1px;
           text-shadow: 0 0 10px RGBA(0,0,0,0.5);
           border-width: 4px;
-          @media (max-width: 500px) {
-            line-height: 120%;
-            padding: 8px 8px 9px;
-            font-size: 7vw;
-            margin: 0;
+          @media (max-width: 530px) {
+            border-width: 3px;
+            font-size: 20px;
+            // line-height: 120%;
+            // padding: 8px 8px 9px;
+            // font-size: 7vw;
+            // margin: 0;
           }
         }
       }
@@ -330,6 +332,7 @@
         }
       }
       p {
+        font-size: 17px;
         margin: 0 auto;
         line-height: 150%;
       }
@@ -429,7 +432,7 @@
           white-space: nowrap;
         }
         p {
-          font-size: 16px;
+          font-size: 17px;
           line-height: 150%;
           margin: 10px 0 30px;
         }

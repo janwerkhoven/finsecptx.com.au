@@ -2,6 +2,7 @@ header {
   position: absolute;
   width: 100%;
   left: 0;
+  z-index: 1;
   > div {
     max-width: none;
     @media (min-width: 501px) {
