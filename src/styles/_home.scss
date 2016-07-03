@@ -44,7 +44,6 @@
         a {
           font-size: 24px;
           margin-top: 30px;
-          padding-top: 1px;
           letter-spacing: 1px;
           text-shadow: 0 0 10px RGBA(0,0,0,0.5);
           border-width: 4px;
@@ -58,9 +57,9 @@
       }
       > a {
         position: absolute;
-        transform: rotate(90deg) translateY(40px);
-        bottom: 30px;
+        bottom: 20px;
         left: 50%;
+        margin-left: -35px;
       }
     }
   }
@@ -94,14 +93,26 @@
       line-height: 150%;
       font-family: 'Rick-Book';
       max-width: 800px;
-      margin-bottom: 100px;
-
+      @media (max-width: 600px) {
+        font-size: 19px;
+      }
     }
     ul {
       display: flex;
       flex-flow: row nowrap;
+      @media (min-width: 701px) {
+        margin-top: 100px;
+      }
+      @media (max-width: 700px) {
+        flex-flow: column wrap;
+      }
       li {
         width: 33.3%;
+        @media (max-width: 700px) {
+          width: 100%;
+          text-align: center;
+          margin-top: 60px;
+        }
         img {
           width: 130px;
           height: 130px;
@@ -111,14 +122,32 @@
           font-size: 28px;
           font-family: $bold;
           text-transform: uppercase;
-          margin: 26px 0;
+          margin: 26px 0 0;
+          @media (max-width: 700px) {
+            margin-bottom: 0;
+          }
+        }
+        i {
+          display: block;
+          height: 40px;
+          @media (min-width: 701px) {
+            margin-bottom: 20px;
+          }
+          &:after,
+          &:before {
+            height: 20px;
+            bottom: 40%;
+            width: 2px;
+          }
         }
         p {
           color: $finsec-ptx-kashmir-blue;
           margin: 0;
           font-size: 19px;
-          max-width: 80%;
           margin: 0 auto;
+          @media (min-width: 501px) {
+            max-width: 80%;
+          }
         }
       }
     }
@@ -253,7 +282,6 @@
         }
         a {
           font-size: 24px;
-          padding-top: 1px;
           line-height: 150%;
           padding: 12px 30px 9px;
           box-sizing: border-box;
