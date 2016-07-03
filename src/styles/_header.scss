@@ -19,35 +19,35 @@ header {
         width: 240px;
         height: auto;
         padding: 30px;
-        @media (max-width: 560px) {
-          width: 42vw;
+        @media (max-width: 500px) {
+          width: 48vw;
           padding: 6vw;
         }
       }
     }
     button {
       display: block;
-      text-decoration: none;
       color: white;
       font-size: 20px;
       font-family: $bold;
-      line-height: 40px;
-      padding: 0 10px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      white-space: nowrap;
+      padding: 0 30px;
       background: none;
       border: 0;
-      &:hover,
-      .active {
-        opacity: 0.7;
+      outline: 0;
+      &:hover {
+        background: RGBA(255,255,255,0.5);
       }
-      @media (min-width: 901px) {
+      @media (max-width: 560px) {
+        padding: 0 6vw;
+      }
+      @media (min-width: 881px) {
         display: none;
       }
     }
     .menu {
-      @media (max-width: 900px) {
+      @media (max-width: 880px) {
         display: none;
       }
       ul {
@@ -55,7 +55,7 @@ header {
         flex-flow: row nowrap;
         justify-content: flex-end;
         margin-top: 27px;
-        padding: 30px;
+        padding: 30px 30px 0 0;
         margin-top: -10px;
         margin-right: -12px;
         a {

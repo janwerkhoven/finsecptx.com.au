@@ -126,6 +126,31 @@ i {
         transform: rotate(-50deg) translateY(1px);
       }
     }
+    &.burger {
+      display: inline-block;
+      width: 16px;
+      height: 14px;
+      &:after,
+      &:before,
+      span {
+        position: absolute;
+        left: 0;
+        content: ' ';
+        width: 100%;
+        height: 2px;
+        background: white;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+      span {
+        top: 50%;
+        margin-top: -1px;
+      }
+    }
   }
 }
 img {

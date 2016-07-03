@@ -40,14 +40,14 @@
       align-items: center;
       padding: 60px 30px;
       h2 {
-        color: $finsec-ptx-royal-blue;
+        color: $finsecroyal-blue;
         font-size: 20px;
         font-family: $black;
         line-height: 120%;
         margin-right: auto;
         max-width: 460px;
         span {
-          color: $finsec-ptx-kashmir-blue;
+          color: $finsec-kashmir-blue;
           display: block;
         }
       }
@@ -68,7 +68,7 @@
     }
   }
   #profile {
-    background-color: $finsec-ptx-ocean-blue;
+    background-color: $finsecocean-blue;
     div {
       display: flex;
       flex-direction: row;
@@ -83,7 +83,7 @@
     }
   }
   #what-to-expect {
-    background: $finsec-ptx-royal-blue;
+    background: $finsecroyal-blue;
     div {
       display: flex;
       flex-direction: column;
@@ -96,7 +96,7 @@
         margin: 0 auto;
         padding-top: 40px;
         span {
-          color: $finsec-ptx-baby-blue;
+          color: $finsec-baby-blue;
           display: block;
         }
       }
@@ -138,7 +138,7 @@
             display: none;
             h4 {
               margin-right: auto;
-              color: $finsec-ptx-red;
+              color: $finsec-red;
             }
             ul {
               list-style: disc;

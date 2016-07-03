@@ -20,7 +20,7 @@
       text-align: center;
       padding-top: 82px;
       @media (max-width: 500px) {
-        padding-top: 42px;
+        padding-top: 30px;
       }
       h1 {
         font-family: $black;
@@ -86,7 +86,7 @@
     }
   }
   #intro {
-    background: $finsec-ptx-royal-blue;
+    background: $finsecroyal-blue;
     @media (min-width: 621px) {
       text-align: center;
     }
@@ -105,7 +105,7 @@
         margin-bottom: 40px;
       }
       span {
-        color: $finsec-ptx-kashmir-blue;
+        color: $finsec-kashmir-blue;
         display: block;
       }
     }
@@ -163,7 +163,7 @@
           }
         }
         p {
-          color: $finsec-ptx-kashmir-blue;
+          color: $finsec-kashmir-blue;
           margin: 0;
           font-size: 19px;
           margin: 0 auto;
@@ -180,7 +180,7 @@
       max-width: none;
     }
     h2 {
-      color: $finsec-ptx-red;
+      color: $finsec-red;
       font-size: 50px;
       text-transform: uppercase;
       font-family: $black;
@@ -246,7 +246,7 @@
           }
         }
         &:last-child {
-          background: $finsec-ptx-kashmir-blue;
+          background: $finsec-kashmir-blue;
           padding: 30px;
           box-sizing: border-box;
           display: flex;
@@ -278,7 +278,7 @@
     }
   }
   #discover {
-    background: $finsec-ptx-royal-blue;
+    background: $finsecroyal-blue;
     text-align: center;
     > div {
       padding: 150px 20px;
@@ -321,7 +321,7 @@
   }
   #get-in-touch {
     position: relative;
-    background: $finsec-ptx-kashmir-blue radial-gradient(circle 1200px at 50% 80%, #53779b 0%, #29506f 100%);
+    background: $finsec-kashmir-blue radial-gradient(circle 1200px at 50% 80%, #53779b 0%, #29506f 100%);
     > div {
       position: relative;
       z-index: 1;
