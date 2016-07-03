@@ -1,12 +1,15 @@
 #home {
   #hero {
     height: 100vh;
-    min-height: 700px;
+    min-height: 72vw;
     max-height: 1200px;
     background: #191925 url('/assets/img/landing/hero-bg-london-2000.jpg') 63% 50% / cover;
     background-attachment: fixed;
+    @media (min-width: 1101px) {
+      min-height: 800px;
+    }
     @media (max-width: 500px) {
-      min-height: 500px;
+      min-height: 550px;
     }
     > div {
       position: relative;
@@ -29,39 +32,56 @@
         @media (max-width: 1100px) {
           font-size: 5vw;
         }
-        @media (max-width: 530px) {
+        @media (max-width: 600px) {
           font-size: 30px;
         }
         span {
           display: block;
-          @media (max-width: 500px) {
+          font-size: 3vw;
+          margin-bottom: 8px;
+          line-height: 120%;
+          @media (max-width: 600px) {
             font-size: 18px;
-            margin-bottom: 8px;
           }
         }
       }
       div {
         a {
-          font-size: 2.5vw;
-          padding: 1.5vw 3vw 1.2vw;
           letter-spacing: 1px;
           text-shadow: 0 0 10px RGBA(0,0,0,0.5);
           border-width: 4px;
-          @media (max-width: 530px) {
+          font-size: 27.5px;
+          padding: 16.5px 33px 13.2px;
+          @media (max-width: 1100px) {
+            font-size: 2.5vw;
+            padding: 1.5vw 3vw 1.2vw;
+          }
+          @media (max-width: 650px) {
+            font-size: 16.5px;
+            padding: 9.75px 19.5px 7.8px;
             border-width: 3px;
-            font-size: 20px;
-            // line-height: 120%;
-            // padding: 8px 8px 9px;
-            // font-size: 7vw;
-            // margin: 0;
           }
         }
       }
       > a {
         position: absolute;
-        bottom: 20px;
+        bottom: 4vh;
         left: 50%;
         margin-left: -35px;
+        min-width: 50px;
+        min-height: 50px;
+        border-width: 3px;
+        @media (max-height: 770px) {
+          width: 9vh;
+          height: 9vh;
+          margin-left: -4.5vh;
+          bottom: 3vh;
+          &:after,
+          &:before {
+            height: 3.5vh;
+            min-height: 20px;
+          }
+        }
       }
     }
   }

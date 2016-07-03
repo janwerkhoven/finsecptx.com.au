@@ -29,7 +29,7 @@ footer {
     }
     p {
       margin: 0 auto;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 140%;
       color: #6f6c67;
       a {
@@ -43,21 +43,25 @@ footer {
   }
   #links {
     > div {
-      max-width: 900px;
+      @media (max-width: 1000px) {
+        max-width: 600px;
+
+      }
     }
     ul {
       display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      margin: 30px 0 65px;
+      flex-flow: row wrap;
+      justify-content: center;
+      margin: 30px 0 50px;
       li {
         a {
+          font-size: 19px;
           display: block;
           font-family: 'Rick-Medium', sans-serif;
           color: #c4c4c4;
           text-transform: uppercase;
           line-height: 150%;
-          padding: 0 10px;
+          padding: 5px 10px;
           white-space: nowrap;
           &:hover {
             text-decoration: underline;

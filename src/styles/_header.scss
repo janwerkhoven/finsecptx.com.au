@@ -5,50 +5,75 @@ header {
   z-index: 1;
   > div {
     max-width: none;
-    @media (min-width: 501px) {
-      padding: 20px;
-    }
+    padding: 0;
   }
   nav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    > a {
-      padding: 20px;
-      transition: all 200ms cubic-bezier(0.35, 0.9, 0.57, 1);
+    a.logo {
       &:hover {
-        transform: scale(1.05);
+        opacity: 0.6;
       }
-      @media (max-width: 500px) {
-        padding: 7px 0 0;
-        img {
-          width: 170px;
+      img {
+        width: 240px;
+        height: auto;
+        padding: 30px;
+        @media (max-width: 560px) {
+          width: 42vw;
+          padding: 6vw;
         }
       }
     }
-  }
-  ul {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    margin-top: 27px;
-    padding: 20px;
-    margin-top: -10px;
-    margin-right: -12px;
-    a {
+    button {
       display: block;
       text-decoration: none;
       color: white;
       font-size: 20px;
       font-family: $bold;
       line-height: 40px;
-      padding: 0 12px;
+      padding: 0 10px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       white-space: nowrap;
+      background: none;
+      border: 0;
       &:hover,
       .active {
         opacity: 0.7;
+      }
+      @media (min-width: 901px) {
+        display: none;
+      }
+    }
+    .menu {
+      @media (max-width: 900px) {
+        display: none;
+      }
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        margin-top: 27px;
+        padding: 30px;
+        margin-top: -10px;
+        margin-right: -12px;
+        a {
+          display: block;
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          font-family: $bold;
+          line-height: 40px;
+          padding: 0 10px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          &:hover,
+          .active {
+            opacity: 0.7;
+          }
+        }
       }
     }
   }
