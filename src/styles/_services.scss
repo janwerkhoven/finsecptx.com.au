@@ -1,59 +1,75 @@
 #services {
-  overflow: hidden;
   #coming-soon {
-    // display: none;
-  }
-  main {
-    background: #11203A;
+    display: none;
   }
   #hero {
     height: 100vh;
     background-image: url('/assets/img/services/hero-phone-boot-bg-2000.jpg');
     background-size: cover;
     background-position: 10%;
-    div {
+    > div {
       display: flex;
       justify-content: center;
       align-items: center;
       h1 {
-        font-size: 40px;
-        font-weight: $black;
+        font-size: 46px;
+        font-family: $black;
         line-height: 120%;
         text-transform: uppercase;
-        max-width: 590px;
-        padding: 0 5px;
+        max-width: 800px;
       }
       @media (max-width:600px) {
-        h1 {
-          font-size: 32px;
-        }
+        font-size: 32px;
       }
       @media (max-width:500px) {
-        h1 {
-          font-size: 25px;
+        font-size: 25px;
+      }
+      > a {
+        position: absolute;
+        bottom: 4vh;
+        left: 50%;
+        margin-left: -35px;
+        min-width: 50px;
+        min-height: 50px;
+        border-width: 3px;
+        @media (max-height: 770px) {
+          width: 9vh;
+          height: 9vh;
+          margin-left: -4.5vh;
+          bottom: 3vh;
+          &:after,
+          &:before {
+            height: 3.5vh;
+            min-height: 20px;
+          }
         }
       }
     }
   }
-  .layout {
-    div {
+  #below-45,
+  #below-55,
+  #over-55 {
+    > div {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-      height: 100vh;
-      div {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        min-width: 380px;
-        align-items: center;
-        padding: 0 30px;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 12vw 20px;
+      > div {
+        &:first-child {
+          width: 50%;
+        }
+        &:last-child {
+          width: 40%;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+        }
         h2 {
-          font-size: 26px;
-          line-height: 120%;
+          font-size: 32px;
+          line-height: 130%;
           margin-right: auto;
           max-width: 460px;
+          margin-bottom: 60px;
           span {
             color: $finsec-kashmir-blue;
             display: block;
@@ -61,28 +77,17 @@
         }
         ul {
           list-style-type: disc;
-          font-size: 20px;
+          font-size: 19px;
           line-height: 140%;
           padding-left: 20px;
           li {
-            padding-top: 15px;
+            margin: 19px 0;
           }
         }
         p {
-          font-size: 20px;
+          font-size: 19px;
           line-height: 140%;
-          margin-right: auto;
-        }
-        a {
-          width: 100%;
-          text-align: center;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-weight: 600;
-          margin-bottom: 30px;
-          padding-top: 1px;
-          letter-spacing: 1px;
-          text-shadow: 0 0 10px RGBA(0,0,0,.5);
+          margin: 19px 0;
         }
         img {
           padding-bottom: 60px;
@@ -126,22 +131,40 @@
         }
       }
     }
-  }
-  #services-1 {
-    span {
-      color: $finsec-kashmir-blue;
+    a.button {
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px RGBA(0,0,0,.5);
     }
   }
-  #services-2 {
-    background-color: $finsecocean-blue;
-    span {
-      color: $finsec-kashmir-blue;
+  #over-55 {
+    background-color: $finsec-royal-blue;
+    h2 {
+      span {
+        color: $finsec-kashmir-blue;
+      }
     }
   }
-  #services-3 {
+  #below-55 {
+    background-color: $finsec-ocean-blue;
+    h2 {
+      span {
+        color: $finsec-kashmir-blue;
+      }
+    }
+
+  }
+  #below-45 {
     background-color: $finsec-kashmir-blue;
-    span {
-      color: $finsec-baby-blue;
+    h2 {
+      span {
+        color: $finsec-baby-blue;
+      }
     }
   }
   #ask-us {
@@ -157,31 +180,13 @@
       align-items: center;
       h2 {
         font-size: 50px;
-        font-weight: $black;
+        font-family: $black;
         line-height: 120%;
-        max-width: 590px;
-        padding-bottom: 40px;
+        margin-bottom: 40px;
       }
-      a {
-        min-width: 250px;
-        text-align: center;
-        font-size: 20px;
-        text-transform: uppercase;
-        font-family: $medium;
-        margin-bottom: 30px;
-        padding-top: 1px;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px RGBA(0,0,0,.5);
-      }
-      @media (max-width:500px) {
-        a {
-          font-size: 15px;
-          margin-bottom: 15px;
-        }
-        h2 {
-          font-size: 30px;
-          padding-bottom: 20px;
-        }
+      a.button {
+        max-width: 320px;
+        margin-bottom: 0;
       }
     }
   }
