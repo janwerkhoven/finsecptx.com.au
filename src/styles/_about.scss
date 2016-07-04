@@ -1,4 +1,11 @@
 #about {
+  overflow: hidden;
+  #coming-soon {
+    // display: none;
+  }
+  main {
+    background: #11203A;
+  }
   #hero {
     height: 100vh;
     background-image: url('/assets/img/about/finsecptx-about-banner-2000.jpg');

@@ -43,6 +43,7 @@ footer {
   }
   #links {
     > div {
+      padding: 30px 20px 50px;
       @media (max-width: 1000px) {
         max-width: 600px;
       }
@@ -51,7 +52,6 @@ footer {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      margin: 30px 0 50px;
       li {
         a {
           font-size: 19px;

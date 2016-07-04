@@ -1,4 +1,11 @@
 #services {
+  overflow: hidden;
+  #coming-soon {
+    // display: none;
+  }
+  main {
+    background: #11203A;
+  }
   #hero {
     height: 100vh;
     background-image: url('/assets/img/services/hero-phone-boot-bg-2000.jpg');
