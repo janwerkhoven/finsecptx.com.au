@@ -165,6 +165,18 @@ ul {
   }
 }
 #hero {
-  height: 100vh;
-  min-height: 700px;
+  @media (min-width: 881px) {
+    min-height: 700px;
+    max-height: 1100px;
+    height: 100vh;
+  }
+  @media (max-width: 880px) {
+    min-height: 500px;
+    max-height: 800px;
+    height: 160vw;
+  }
+  > div {
+    position: relative;
+    padding-top: 40px;
+  }
 }
