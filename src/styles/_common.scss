@@ -55,49 +55,53 @@ a {
   &:hover {
     text-decoration: none;
   }
-  &.button {
-    font-family: $medium;
-    border: 3px solid white;
-    line-height: 150%;
-    padding: 12px 30px 9px;
+}
+a.button,
+button {
+  font-family: $medium;
+  border: 3px solid white;
+  line-height: 150%;
+  padding: 12px 30px 9px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 300ms ease-out;
+  background: none;
+  outline: 0;
+  box-shadow: 0;
+  &:hover {
+    background: RGBA(255,255,255,0.5);
+  }
+  &.arrow {
+    width: 70px;
+    height: 70px;
     box-sizing: border-box;
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 300ms ease-out;
-    &:hover {
-      background: RGBA(255,255,255,0.5);
+    border-radius: 100%;
+    padding: 0;
+    transition: all 200ms ease-out;
+    &:after,
+    &:before {
+      position: absolute;
+      left: 50%;
+      bottom: 31%;
+      content: ' ';
+      width: 3px;
+      height: 25px;
+      margin-left: -1.5px;
+      background: white;
+      transform-origin: bottom;
+      border-radius: 6px 6px 0 0;
     }
-    &.arrow {
-      width: 70px;
-      height: 70px;
-      box-sizing: border-box;
-      border-radius: 100%;
-      padding: 0;
-      transition: all 200ms ease-out;
-      &:after,
-      &:before {
-        position: absolute;
-        left: 50%;
-        bottom: 31%;
-        content: ' ';
-        width: 3px;
-        height: 25px;
-        margin-left: -1.5px;
-        background: white;
-        transform-origin: bottom;
-        border-radius: 6px 6px 0 0;
-      }
-      &:before {
-        transform: rotate(50deg) translateY(1px);
-      }
-      &:after {
-        transform: rotate(-50deg) translateY(1px);
-      }
-      &:hover {
-        transform: translateY(10px);
-      }
+    &:before {
+      transform: rotate(50deg) translateY(1px);
+    }
+    &:after {
+      transform: rotate(-50deg) translateY(1px);
+    }
+    &:hover {
+      transform: translateY(10px);
     }
   }
 }
@@ -153,6 +157,7 @@ i {
     }
   }
 }
+iframe,
 img {
   display: block;
 }
@@ -165,6 +170,22 @@ ul {
   }
 }
 #hero {
+  height: 100vh;
+  min-height: 72vw;
+  max-height: 1200px;
+
+  // @media (min-width: 1101px) {
+  //   min-height: 800px;
+  // }
+  // @media (max-width: 500px) {
+  //   min-height: 550px;
+  // }
+  h1 {
+    font-family: $bold;
+    font-size: 50px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
   @media (min-width: 881px) {
     min-height: 700px;
     max-height: 1100px;

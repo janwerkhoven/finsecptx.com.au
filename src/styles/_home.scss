@@ -3,18 +3,9 @@
   #coming-soon {
     display: none;
   }
+
   #hero {
-    height: 100vh;
-    min-height: 72vw;
-    max-height: 1200px;
     background: #191925 url('/assets/img/landing/hero-bg-london-2000.jpg') 63% 50% / cover;
-    background-attachment: fixed;
-    @media (min-width: 1101px) {
-      min-height: 800px;
-    }
-    @media (max-width: 500px) {
-      min-height: 550px;
-    }
     > div {
       height: 100%;
       display: flex;
@@ -467,6 +458,7 @@
       }
       .img {
         width: 100%;
+        left: 0;
         @media (min-width: 941px) {
           position: absolute;
           bottom: 0;
