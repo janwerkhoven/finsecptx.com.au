@@ -22,18 +22,6 @@ section {
     overflow: hidden;
   }
 }
-main {
-  > section:first-child {
-    height: 90vh;
-    > div {
-      height: 100%;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-}
 h1,
 h2,
 h3,
@@ -48,6 +36,7 @@ h6 {
 }
 p {
   max-width: 700px;
+  line-height: 150%;
 }
 a {
   color: $link-color;
@@ -73,6 +62,13 @@ button {
   box-shadow: 0;
   &:hover {
     background: RGBA(255,255,255,0.5);
+  }
+  &.blue {
+    color: $finsec-royal-blue;
+    border-color: $finsec-royal-blue;
+    &:hover {
+      background: rgba($finsec-royal-blue, 0.1);
+    }
   }
   &.arrow {
     width: 70px;
@@ -170,9 +166,17 @@ ul {
   }
 }
 #hero {
+  height: 90vh;
   height: 100vh;
   min-height: 72vw;
   max-height: 1200px;
+  > div {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+  }
 
   // @media (min-width: 1101px) {
   //   min-height: 800px;

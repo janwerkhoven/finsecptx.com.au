@@ -1,8 +1,8 @@
 #contact {
-  // overflow: hidden;
   #coming-soon {
     display: none;
   }
+
   main {
     #hero {
       background: #191925 url('/assets/img/contact/hero.jpg') 87% 50% / cover fixed;
@@ -107,13 +107,6 @@
         font-size: 22px;
         line-height: 150%;
         margin: 0;
-      }
-      .button {
-        color: $finsec-royal-blue;
-        border-color: $finsec-royal-blue;
-        &:hover {
-          background: rgba($finsec-royal-blue, 0.1);
-        }
       }
     }
     #map {

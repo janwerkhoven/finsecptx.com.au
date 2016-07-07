@@ -1,18 +1,42 @@
-#disclaimer #privacy-policy {
-  overflow: hidden;
+#disclaimer,
+#privacy-policy {
   #coming-soon {
-    // display: none;
+    display: none;
+  }
+  header {
+    position: relative;
+    background: $finsec-royal-blue;
   }
   main {
-    background: #11203A;
-  }
-
-  h1,
-  h2 {
-    color: $finsec-royal-blue;
-  }
-  h1 {
-    font-family: $bold;
-    text-transform: uppercase;
+    #body {
+      > div {
+        padding: 120px 20px;
+        max-width: 700px;
+      }
+      h1 {
+        font-family: $bold;
+        text-transform: uppercase;
+        color: $finsec-royal-blue;
+        margin: 0 0 60px;
+      }
+      h2 {
+        font-family: $medium;
+        color: $finsec-royal-blue;
+        margin: 60px 0 17px;
+      }
+      li,
+      p {
+        color: #303030;
+        margin: 17px 0;
+        line-height: 150%;
+      }
+      ul {
+        list-style: square;
+        padding-left: 20px;
+      }
+      .button {
+        margin-top: 60px;
+      }
+    }
   }
 }
