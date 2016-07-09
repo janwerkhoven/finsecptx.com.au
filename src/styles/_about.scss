@@ -1,199 +1,114 @@
 #about {
-  overflow: hidden;
+  // overflow: hidden;
   #coming-soon {
-    // display: none;
+    display: none;
   }
   main {
-    background: #11203A;
-  }
-  #hero {
-    height: 100vh;
-    background-image: url('/assets/img/about/finsecptx-about-banner-2000.jpg');
-    background-size: cover;
-    background-position: 10%;
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      h1 {
-        font-size: 40px;
-        font-family: $black;
-        line-height: 120%;
-        text-transform: uppercase;
-        max-width: 590px;
-        padding: 0 5px;
-      }
-      @media (max-width:600px) {
-        h1 {
+    #hero {
+      background: #191925 url('/assets/img/about/hero@2000x1350.jpg') 87% 50% / cover fixed;
+    }
+    #intro,
+    #outro {
+      background: white;
+      > div {
+        max-width: 700px;
+        padding: 150px 20px;
+        h2 {
+          font-family: $black;
           font-size: 32px;
+          line-height: 150%;
+          color: $finsec-royal-blue;
+          margin: 0 0 32px;
         }
-      }
-      @media (max-width:500px) {
-        h1 {
-          font-size: 25px;
+        p {
+          font-family: $book;
+          font-size: 20px;
+          line-height: 150%;
+          color: #303030;
+          margin-top: 20px;
         }
       }
     }
-  }
-  #overview {
-    background: white;
-    color: black;
-    div {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      min-width: 380px;
-      max-width: 600px;
-      align-items: center;
-      padding: 60px 30px;
-      h2 {
-        color: $finsec-royal-blue;
-        font-size: 20px;
-        font-family: $black;
-        line-height: 120%;
-        margin-right: auto;
-        max-width: 460px;
-        span {
-          color: $finsec-kashmir-blue;
-          display: block;
-        }
-      }
-      ul {
-        list-style-type: disc;
-        font-size: 20px;
-        line-height: 140%;
-        padding-left: 20px;
-        li {
-          padding-top: 15px;
-        }
-      }
-      p {
-        font-size: 20px;
-        line-height: 140%;
-        margin: 20px 0 0 auto;
-      }
-    }
-  }
-  #profile {
-    background-color: $finsec-ocean-blue;
-    div {
-      display: flex;
-      flex-direction: row;
-      padding: 0;
+    #profiles {
+      background-color: $finsec-ocean-blue;
       div {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        div {
+          flex-direction: column;
+          padding: 60px;
+        }
+        img {
+          width: 50%;
+        }
+      }
+    }
+    #what-to-expect {
+      background: $finsec-royal-blue;
+      div {
+        display: flex;
         flex-direction: column;
-        padding: 60px;
-      }
-      img {
-        width: 50%;
-      }
-    }
-  }
-  #what-to-expect {
-    background: $finsec-royal-blue;
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      h2 {
-        color: white;
-        font-size: 26px;
-        line-height: 120%;
-        margin: 0 auto;
-        padding-top: 40px;
-        span {
-          color: $finsec-baby-blue;
-          display: block;
-        }
-      }
-      div {
-        position: relative;
-        padding-bottom: 70px;
-        div:hover .overlay {
-          display: block;
-        }
-        div:hover > div {
-          display: block;
+        align-items: center;
+        text-align: center;
+        h2 {
+          color: white;
+          font-size: 26px;
+          line-height: 120%;
+          margin: 0 auto;
+          padding-top: 40px;
+          span {
+            color: $finsec-baby-blue;
+            display: block;
+          }
         }
         div {
-          position: static;
-          height: 83px;
-          width: 83px;
-          margin: 30px 0 0;
-          padding: 0;
-          h3 {
-            position: relative;
-            right: 235px;
-            bottom: 50px;
-            text-transform: uppercase;
-            text-align: right;
-            width: 300px;
+          position: relative;
+          padding-bottom: 70px;
+          div:hover .overlay {
+            display: block;
           }
-          .overlay {
-            position: relative;
-            bottom: 111px;
-            display: none;
-            z-index: 2;
+          div:hover > div {
+            display: block;
           }
           div {
-            position: absolute;
-            width: 250px;
-            text-align: left;
-            left: 130px;
-            top: 32px;
-            display: none;
-            h4 {
-              margin-right: auto;
-              color: $finsec-red;
+            position: static;
+            height: 83px;
+            width: 83px;
+            margin: 30px 0 0;
+            padding: 0;
+            h3 {
+              position: relative;
+              right: 235px;
+              bottom: 50px;
+              text-transform: uppercase;
+              text-align: right;
+              width: 300px;
             }
-            ul {
-              list-style: disc;
-              line-height: 140%;
-              padding-left: 20px;
+            .overlay {
+              position: relative;
+              bottom: 111px;
+              display: none;
+              z-index: 2;
+            }
+            div {
+              position: absolute;
+              width: 250px;
+              text-align: left;
+              left: 130px;
+              top: 32px;
+              display: none;
+              h4 {
+                margin-right: auto;
+                color: $finsec-red;
+              }
+              ul {
+                list-style: disc;
+                line-height: 140%;
+                padding-left: 20px;
+              }
             }
           }
-        }
-      }
-    }
-  }
-  #ask-us {
-    background-image: url('/assets/img/services/call-to-action-bg-2000.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 50vh;
-    div {
-      height: 50vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h2 {
-        font-size: 50px;
-        font-family: $black;
-        line-height: 120%;
-        max-width: 590px;
-        padding-bottom: 40px;
-      }
-      a {
-        min-width: 250px;
-        text-align: center;
-        font-size: 20px;
-        text-transform: uppercase;
-        font-family: $medium;
-        margin-bottom: 30px;
-        padding-top: 1px;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px RGBA(0,0,0,.5);
-      }
-      @media (max-width:500px) {
-        a {
-          font-size: 15px;
-          margin-bottom: 15px;
-        }
-        h2 {
-          font-size: 30px;
-          padding-bottom: 20px;
         }
       }
     }
