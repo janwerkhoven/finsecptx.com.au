@@ -1,22 +1,19 @@
 #contact {
-  #coming-soon {
-    display: none;
-  }
-
   main {
     #hero {
       background: #191925 url('/assets/img/contact/hero.jpg') 87% 50% / cover fixed;
       > div {
         max-width: 800px;
-        h1 {
-          margin-bottom: 70px;
-        }
         > div {
+          margin-top: 50px;
           display: flex;
           flex-flow: row nowrap;
           justify-content: center;
           align-items: stretch;
           justify-content: space-between;
+          @media (max-width: 900px) {
+            display: none;
+          }
           > div {
             width: 320px;
             &:last-child {
@@ -34,7 +31,10 @@
             }
             p {
               font-size: 19px;
-              line-height: 150%;
+              margin: 0;
+            }
+            .button {
+              border-width: 4px;
             }
           }
         }
@@ -43,10 +43,16 @@
     #call-back {
       background: $finsec-royal-blue;
       > div {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding: 70px 20px;
+        @media (min-width: 901px) {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          padding: 70px 20px;
+        }
+        @media (max-width: 900px) {
+          max-width: 360px;
+          padding: 90px 20px;
+        }
       }
       h2 {
         text-transform: uppercase;
@@ -57,7 +63,7 @@
         width: 100%;
       }
       input {
-        width: 24%;
+        display: block;
         background: white;
         border: 0;
         line-height: 150%;
@@ -66,31 +72,56 @@
         box-sizing: border-box;
         outline: 0;
         color: $finsec-royal-blue;
+        width: 24%;
+        @media (max-width: 900px) {
+          width: 100%;
+          margin-bottom: 10px;
+          line-height: 230%;
+        }
       }
       button {
         width: 24%;
         font-size: 20px;
         padding: 2px 48px 0;
         line-height: 58px;
+        @media (max-width: 900px) {
+          width: 100%;
+        }
       }
     }
     #head-office {
       background: white;
       > div {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        padding: 70px 20px;
+        @media (min-width: 751px) {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          padding: 70px 20px;
+        }
+        @media (max-width: 750px) {
+          text-align: center;
+          padding: 90px 20px;
+        }
         > div {
           &:last-child {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
+            justify-content: center;
+            @media (max-width: 750px) {
+              margin-top: 30px;
+            }
+            @media (max-width: 420px) {
+              flex-flow: column nowrap;
+            }
             a {
               font-size: 20px;
               margin-left: 10px;
-              padding: 2px 48px 0;
+              padding: 2px 0 0;
               line-height: 58px;
+              width: 175px;
+              text-align: center;
+              margin: 5px;
             }
           }
         }
@@ -106,11 +137,15 @@
         color: $finsec-royal-blue;
         font-size: 22px;
         line-height: 150%;
-        margin: 0;
+        margin: 10px 40px 0 0;
+        @media (max-width: 750px) {
+          margin-right: 0;
+        }
       }
     }
     #map {
       position: relative;
+      background: #e9e5dc;
       a {
         display: block;
         position: absolute;
@@ -118,7 +153,6 @@
         height: 100%;
         left: 0;
         top: 0;
-        // background: rgba($finsec-royal-blue, 0.2);
       }
       iframe {
         width: 100%;
