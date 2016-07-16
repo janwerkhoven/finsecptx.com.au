@@ -123,7 +123,6 @@ module.exports = function(grunt) {
           'dist/assets/js/main.min.js': [
             'src/js/vendor/jquery.min.js',
             'src/js/vendor/velocity.min.js',
-            'src/js/vendor/browser-update.js',
             'temp/main.min.js'
           ]
         },

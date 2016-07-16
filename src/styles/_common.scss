@@ -256,9 +256,6 @@ ul {
 }
 #articles {
   background: #FFF;
-  > div {
-    max-width: none;
-  }
   h2 {
     color: $finsec-red;
     font-size: 50px;
@@ -283,9 +280,9 @@ ul {
       width: 30%;
       background: #d3d3d3;
       max-width: 400px;
-      margin: 2%;
+      margin: 1%;
       @media (max-width: 1040px) {
-        width: 46%;
+        width: 48%;
       }
       @media (max-width: 700px) {
         width: 100%;
@@ -305,6 +302,12 @@ ul {
         font-size: 20px;
         font-family: $medium;
       }
+      &:nth-last-child(2) {
+        display: none;
+        @media (max-width: 1040px) and (min-width: 701px) {
+          display: block;
+        }
+      }
       &:not(:last-child) {
         a {
           position: absolute;
@@ -316,16 +319,7 @@ ul {
           }
         }
       }
-      &:nth-child(3) {
-        display: none;
-        @media (min-width: 2000px) {
-          display: block;
-        }
-        @media (max-width: 1040px) {
-          display: block;
-        }
-      }
-      &:last-child {
+      &.ayem-special {
         background: $finsec-kashmir-blue;
         padding: 30px;
         box-sizing: border-box;

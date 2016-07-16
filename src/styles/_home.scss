@@ -95,6 +95,19 @@
         }
       }
     }
+
+// #articles {
+//   ul {
+//     li:nth-last-child(2) {
+//       display: none;
+//       @media (max-width: 1040px) and (min-width: 701px) {
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+
     #get-in-touch {
       position: relative;
       background: $finsec-kashmir-blue radial-gradient(circle 1200px at 50% 80%, #53779b 0%, #29506f 100%);
