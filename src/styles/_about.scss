@@ -77,8 +77,10 @@
         padding: 150px 20px;
         h2 {
           color: white;
-          @media (min-width: 781px) {
-            text-align: center;
+          text-align: center;
+          @media (max-width: 780px) {
+            max-width: 420px;
+            text-align: left;
           }
           span {
             display: block;
@@ -95,11 +97,6 @@
               align-items: flex-start;
               height: 140px;
             }
-            // @media (max-width: 780px) {
-            //   flex-flow: row wrap;
-            //   justify-content: flex-start;
-            //   height: auto;
-            // }
             &:last-child {
               height: auto;
             }
@@ -117,9 +114,6 @@
               .desc {
                 opacity: 1;
                 height: auto;
-                @media (max-width: 780px) {
-                  padding: 20px 0 80px 15px;
-                }
               }
             }
             h3 {
@@ -134,7 +128,6 @@
               padding: 34px 40px 33px 0;
               cursor: pointer;
               @media (max-width: 780px) {
-                width: auto;
                 order: 2;
                 text-align: left;
                 padding: 10px 0 10px 115px;
@@ -175,8 +168,10 @@
               padding-top: 20px;
               transition: opacity 500ms ease-out;
               @media (max-width: 780px) {
-                order: 3;
-                height: 0;
+                opacity: 1;
+                padding: 0 0 60px 115px;
+                margin-top: -104px;
+                width: auto;
               }
               h4,
               li,
@@ -191,6 +186,9 @@
                 color: $finsec-red;
                 font-family: $black;
                 font-size: 24px;
+                @media (max-width: 780px) {
+                  margin-bottom: 42px;
+                }
               }
               p {
                 margin: 0;
