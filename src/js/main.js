@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+  var $process = $('#about #process');
+  $process.find('h3, .img').on('click mouseenter', function() {
+    $(this).parent('li').addClass('active').siblings('li').removeClass('active');
+  });
+
   // Make any hashtag link scroll with animation to element with matching ID
   // Example: <a href="#features"> will scroll to element with ID #features
   $('a[href*="#"]:not([href="#"])').click(function() {
