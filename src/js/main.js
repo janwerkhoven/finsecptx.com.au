@@ -1,41 +1,24 @@
 $(document).ready(function() {
 
-  // Open mobile navigation
+  // Mobile navigation
   var showingMobileNav = false;
   $('header button').on('click', function() {
-    if (!$('header .menu').hasClass('velocity-animating')) {
-      if (showingMobileNav) {
-        $('body').removeClass('no-scroll');
-        $('main').removeClass('blur');
-        $('header .menu ul').velocity({
-          opacity: 0
-        }, 800, 'easeOutExpo');
-        $('header .menu').velocity({
-          backgroundColor: "#0f1d3c",
-          backgroundColorAlpha: 0
-        }, 800, 'easeOutExpo', function() {
-          $(this).hide();
-        });
-        showingMobileNav = false;
-      } else {
-        $('body').addClass('no-scroll');
-        $('main').addClass('blur');
-        $('header .menu ul').velocity({
-          opacity: [1, 0]
-        }, 800, 'easeOutExpo');
-        $('header .menu').show().velocity({
-          backgroundColor: "#0f1d3c",
-          backgroundColorAlpha: [0.8, 0]
-        }, 800, 'easeOutExpo');
-        $('html, body').animate({
-          scrollTop: 0
-        }, 200);
-        showingMobileNav = true;
-      }
+    if (showingMobileNav) {
+      $('header .menu').removeClass('fixed');
+      $('body').removeClass('no-scroll');
+      $('main').removeClass('blur');
+      showingMobileNav = false;
+    } else {
+      $('header .menu').addClass('fixed');
+      $('body').addClass('no-scroll');
+      $('main').addClass('blur');
+      showingMobileNav = true;
+      $('html, body').animate({
+        scrollTop: 0
+      }, 200);
     }
   });
 
-  // Close mobile nav on click of mobile nav background
   $('header .menu').on('click', function() {
     $('header .menu').removeClass('fixed');
     $('body').removeClass('no-scroll');
@@ -43,12 +26,11 @@ $(document).ready(function() {
     showingMobileNav = false;
   });
 
-  // Prevent mobile nav from closing when links are clicked
   $('header').find('a, button').on('click', function(e) {
     e.stopPropagation();
   });
 
-  // Animations of About page diagram
+  // Animation logic for diagram on About page
   $('#about #process').find('h3, .img, .desc').on('click mouseenter', function() {
     $(this).parent('li').addClass('active').siblings('li').removeClass('active');
   });
