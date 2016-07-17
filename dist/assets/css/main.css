@@ -279,11 +279,6 @@ section > div {
   overflow: hidden;
 }
 
-main {
-  transition: -webkit-filter 500ms ease-out;
-  transition: filter 500ms ease-out;
-  transition: filter 500ms ease-out, -webkit-filter 500ms ease-out;
-}
 @media (max-width: 900px) {
   main.blur {
     -webkit-filter: blur(10px);
@@ -747,7 +742,6 @@ header nav {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  transition: background 500ms ease-out;
 }
 header nav a.logo {
   position: relative;
@@ -843,6 +837,11 @@ header nav .menu ul a {
   padding: 0 10px;
   white-space: nowrap;
   text-shadow: 0 0 5px RGBA(0, 0, 0, 0.5);
+}
+@media (max-width: 900px) {
+  header nav .menu ul a {
+    line-height: 50px;
+  }
 }
 header nav .menu ul a:hover,
 header nav .menu ul a .active {

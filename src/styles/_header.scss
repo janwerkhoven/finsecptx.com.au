@@ -11,7 +11,6 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    transition: background 500ms ease-out;
     a.logo {
       position: relative;
       z-index: 2;
@@ -92,6 +91,9 @@ header {
           padding: 0 10px;
           white-space: nowrap;
           text-shadow: 0 0 5px RGBA(0,0,0,0.5);
+          @media (max-width: 900px) {
+            line-height: 50px;
+          }
           &:hover,
           .active {
             opacity: 0.7;

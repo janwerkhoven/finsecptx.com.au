@@ -29,7 +29,7 @@ section {
   }
 }
 main {
-  transition: filter 500ms ease-out;
+  // transition: filter 500ms ease-out;
   &.blur {
     @media (max-width: 900px) {
       filter: blur(10px);
