@@ -103,7 +103,7 @@
               height: 140px;
             }
             @media (max-width: 780px) {
-              -webkit-filter: blur(5px);
+              -webkit-filter: blur(3px);
               max-width: 500px;
               cursor: pointer;
             }
@@ -147,7 +147,7 @@
               padding: 34px 40px 33px 0;
               cursor: pointer;
               @media (min-width: 781px) {
-                -webkit-filter: blur(5px);
+                -webkit-filter: blur(3px);
               }
               @media (max-width: 780px) {
                 order: 2;

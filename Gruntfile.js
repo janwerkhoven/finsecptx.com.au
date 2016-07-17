@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['src/styles/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass', 'postcss']
       },
       js: {
         files: ['src/js/**/*.js'],
@@ -66,11 +66,21 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      dist: {
+      options: {
+        sourcemap: 'none',
+        noCache: true
+      },
+      raw: {
+        options: {
+          style: 'expanded',
+        },
+        files: {
+          'dist/assets/css/main.css': ['src/styles/main.scss']
+        }
+      },
+      minified: {
         options: {
           style: 'compressed',
-          sourcemap: 'none',
-          noCache: true
         },
         files: {
           'dist/assets/css/main.min.css': ['src/styles/main.scss']
@@ -82,14 +92,15 @@ module.exports = function(grunt) {
       options: {
         map: false,
         processors: [
-          require('pixrem')(),
           require('autoprefixer')({
-            browsers: ['> 1% in AU']
-          }),
-          require('cssnano')()
+            browsers: ['> 1% in AU', 'IE > 9']
+          })
         ]
       },
-      dist: {
+      raw: {
+        src: 'dist/assets/css/main.css'
+      },
+      minified: {
         src: 'dist/assets/css/main.min.css'
       }
     },
@@ -192,7 +203,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-handlebars-layouts");
   grunt.loadNpmTasks('grunt-html-prettyprinter');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  // grunt.loadNpmTasks('grunt-postcss'); // TODO: Post CSS messes with our fonts, to be fixed later on and reincluded before soft launch
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -203,7 +214,7 @@ module.exports = function(grunt) {
 
   // Available commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
