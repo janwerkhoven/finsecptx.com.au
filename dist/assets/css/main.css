@@ -795,27 +795,14 @@ header nav button:hover {
   }
 }
 @media (max-width: 900px) {
-  header nav .menu.fixed {
+  header nav .menu {
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     background: rgba(15, 29, 60, 0.8);
-    display: block;
-  }
-  header nav .menu.fixed ul {
-    position: fixed;
-    right: 0;
-    top: 110px;
-    display: block;
-    text-align: right;
-    padding: 0 30px;
-  }
-}
-@media (max-width: 900px) {
-  header nav .menu {
-    display: none;
   }
 }
 header nav .menu ul {
@@ -833,6 +820,16 @@ header nav .menu ul {
   margin-top: -10px;
   margin-right: -12px;
 }
+@media (max-width: 900px) {
+  header nav .menu ul {
+    position: fixed;
+    right: 0;
+    top: 110px;
+    display: block;
+    text-align: right;
+    padding: 0 30px;
+  }
+}
 header nav .menu ul a {
   display: block;
   text-decoration: none;
@@ -843,6 +840,11 @@ header nav .menu ul a {
   padding: 0 10px;
   white-space: nowrap;
   text-shadow: 0 0 5px RGBA(0, 0, 0, 0.5);
+}
+@media (max-width: 900px) {
+  header nav .menu ul a {
+    line-height: 50px;
+  }
 }
 header nav .menu ul a:hover,
 header nav .menu ul a .active {
