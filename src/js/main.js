@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var $process = $('#about #process');
-  $process.find('h3, .img').on('click mouseenter', function() {
+  $process.find('h3, .img, .desc').on('click mouseenter', function() {
     $(this).parent('li').addClass('active').siblings('li').removeClass('active');
   });
 
