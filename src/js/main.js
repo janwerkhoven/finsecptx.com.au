@@ -19,6 +19,7 @@ $(document).ready(function() {
     }
   });
 
+  // Close mobile nav on click of background
   $('header .menu').on('click', function() {
     $('header .menu').removeClass('fixed');
     $('body').removeClass('no-scroll');
@@ -26,11 +27,12 @@ $(document).ready(function() {
     showingMobileNav = false;
   });
 
+  // Prevent mobile nav from closing on clicking links
   $('header').find('a, button').on('click', function(e) {
     e.stopPropagation();
   });
 
-  // Animation logic for diagram on About page
+  // About page diagram interaction
   $('#about #process').find('h3, .img, .desc').on('click mouseenter', function() {
     $(this).parent('li').addClass('active').siblings('li').removeClass('active');
   });
