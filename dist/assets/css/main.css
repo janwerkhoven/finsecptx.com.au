@@ -253,8 +253,14 @@ body {
   line-height: 100%;
   margin: 0;
   color: #FFF;
+  background: #0f1d3c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 900px) {
+  body.no-scroll {
+    overflow: hidden;
+  }
 }
 
 footer,
@@ -271,6 +277,32 @@ section > div {
   box-sizing: border-box;
   padding: 0 20px;
   overflow: hidden;
+}
+
+main {
+  transition: -webkit-filter 500ms ease-out;
+  transition: filter 500ms ease-out;
+  transition: filter 500ms ease-out, -webkit-filter 500ms ease-out;
+}
+@media (max-width: 900px) {
+  main.blur {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+}
+
+iframe,
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  padding: 0;
 }
 
 h1,
@@ -422,20 +454,6 @@ i.icon.burger:after {
 i.icon.burger span {
   top: 50%;
   margin-top: -1px;
-}
-
-iframe,
-img {
-  display: block;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-ul li {
-  padding: 0;
 }
 
 #hero {
@@ -729,6 +747,11 @@ header nav {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  transition: background 500ms ease-out;
+}
+header nav a.logo {
+  position: relative;
+  z-index: 2;
 }
 header nav a.logo:hover {
   opacity: 0.6;
@@ -745,6 +768,8 @@ header nav a.logo img {
   }
 }
 header nav button {
+  position: relative;
+  z-index: 2;
   display: block;
   color: white;
   font-size: 20px;
@@ -767,6 +792,25 @@ header nav button:hover {
 @media (min-width: 901px) {
   header nav button {
     display: none;
+  }
+}
+@media (max-width: 900px) {
+  header nav .menu.fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(15, 29, 60, 0.8);
+    display: block;
+  }
+  header nav .menu.fixed ul {
+    position: fixed;
+    right: 0;
+    top: 110px;
+    display: block;
+    text-align: right;
+    padding: 0 30px;
   }
 }
 @media (max-width: 900px) {

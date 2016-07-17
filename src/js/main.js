@@ -1,8 +1,34 @@
 $(document).ready(function() {
 
+  // Mobile navigation
+  var showingMobileNav = false;
+  $('header button').on('click', function() {
+    if (showingMobileNav) {
+      $('header .menu').removeClass('fixed');
+      $('body').removeClass('no-scroll');
+      $('main').removeClass('blur');
+      showingMobileNav = false;
+    } else {
+      $('header .menu').addClass('fixed');
+      $('body').addClass('no-scroll');
+      $('main').addClass('blur');
+      showingMobileNav = true;
+    }
+  });
+
+  $('header .menu').on('click', function() {
+    $('header .menu').removeClass('fixed');
+    $('body').removeClass('no-scroll');
+    $('main').removeClass('blur');
+    showingMobileNav = false;
+  });
+
+  $('header').find('a, button').on('click', function(e) {
+    e.stopPropagation();
+  });
+
   // Animation logic for diagram on About page
-  var $process = $('#about #process');
-  $process.find('h3, .img, .desc').on('click mouseenter', function() {
+  $('#about #process').find('h3, .img, .desc').on('click mouseenter', function() {
     $(this).parent('li').addClass('active').siblings('li').removeClass('active');
   });
 
