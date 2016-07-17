@@ -1,13 +1,13 @@
+/* SASS */
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
 /* Cross-browser normalisation */
 @import 'normalize';
 
 /* Fonts */
 @import 'fonts';
-
-/* SASS */
-@import 'variables';
-@import 'mixins';
-@import 'animations';
 
 /* Common to many pages */
 @import 'common';
