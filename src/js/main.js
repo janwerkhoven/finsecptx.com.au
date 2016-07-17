@@ -13,6 +13,9 @@ $(document).ready(function() {
       $('body').addClass('no-scroll');
       $('main').addClass('blur');
       showingMobileNav = true;
+      $('html, body').animate({
+        scrollTop: 0
+      }, 200);
     }
   });
 
