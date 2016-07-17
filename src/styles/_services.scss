@@ -2,6 +2,9 @@
   main {
     #hero {
       background: #130c36 url('/assets/img/services/hero@2000x1200.jpg') 14% 10% / cover fixed;
+      @media (max-width: 900px) {
+        background-attachment: scroll;
+      }
     }
     #below-45,
     #below-55,

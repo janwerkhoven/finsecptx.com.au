@@ -1,84 +1,70 @@
-// MIXINS
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
-@mixin box-shadow($values) {
-  -webkit-box-shadow: $values;
-  box-shadow: $values;
-}
-@mixin border-box {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-@mixin clearfix {
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-@mixin prevent-user-select {
-  -moz-user-select: -moz-none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-@mixin transform($values) {
-  -webkit-transform: $values;
-  -moz-transform: $values;
-  -ms-transform: $values;
-  -o-transform: $values;
-  transform: $values;
-}
-@mixin transform-origin($values) {
-  -moz-transform-origin: $values;
-  -webkit-transform-origin: $values;
-  -ms-transform-origin: $values;
-  transform-origin: $values;
-}
-@mixin transform-style($values) {
-  -webkit-transform-style: $values;
-  -moz-transform-style: $values;
-  -ms-transform-style: $values;
-  transform-style: $values;
-}
-@mixin perspective($values) {
-  -webkit-perspective: $values;
-  -moz-perspective: $values;
-  perspective: $values;
-}
-@mixin backface-visibility($values) {
-  -webkit-backface-visibility: $values;
-  -moz-backface-visibility: $values;
-  -ms-backface-visibility: $values;
-  backface-visibility: $values;
-}
-@mixin transition($values) {
-  -webkit-transition: $values;
-  -moz-transition: $values;
-  -o-transition: $values;
-  transition: $values;
-}
-@mixin linear-gradient($fromColor, $toColor) {
-  background-color: $fromColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
-  background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
-  background-image: -moz-linear-gradient(top, $fromColor, $toColor);
-  background-image: -ms-linear-gradient(top, $fromColor, $toColor);
-  background-image: -o-linear-gradient(top, $fromColor, $toColor);
-  background-image: linear-gradient(to bottom, $fromColor, $toColor);
-  background-repeat: repeat-x;
-  filter:progid:dximagetransform.microsoft.gradient(enabled=false);
-}
+// Media query for retina screens
 @mixin retina {
-  @media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 1.33dppx) {
+   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.33dppx){
     @content;
+  }
+}
+
+// https://gist.github.com/BenMorel/e9e34c08360ebbbd0634
+/**
+ * Fix for vw, vh, vmin, vmax on iOS 7.
+ * http://caniuse.com/#feat=viewport-units
+ *
+ * This fix works by replacing viewport units with px values on known screen sizes.
+ *
+ * iPhone 6 and 6 Plus cannot run iOS 7, so are not targeted by this fix.
+ * Target devices running iOS 8+ will incidentally execute the media query,
+ * but this will still produce the expected result; so this is not a problem.
+ *
+ * As an example, replace:
+ *
+ *   height: 50vh;
+ *   font-size: 5vmin;
+ *
+ * with:
+ *
+ *   @include viewport-unit(height, 50vh);
+ *   @include viewport-unit(font-size, 5vmin);
+ */
+@mixin viewport-unit($property, $value) {
+  #{$property}: $value;
+
+  $unit: unit($value);
+
+  @if (index((vw, vh, vmin, vmax), $unit) != null) {
+    $devices: (
+      (768px, 1024px), // iPad (all versions)
+      (320px, 480px),  // iPhone 4
+      (320px, 568px)   // iPhone 5, 5C, 5S
+    );
+
+    @each $device in $devices {
+      $device-width: nth($device, 1);
+      $device-height: nth($device, 2);
+
+      $device-query: "only screen and (-webkit-min-device-pixel-ratio: 1)";
+      $device-query: "#{$device-query} and (device-width: #{$device-width})";
+      $device-query: "#{$device-query} and (device-height: #{$device-height})";
+
+      $percent: $value / ($value * 0 + 1); // see https://github.com/sass/sass/issues/533
+
+      $percent-width: $device-width * $percent / 100;
+      $percent-height: $device-height * $percent / 100;
+
+      @if ($unit == vmin or $unit == vmax) {
+        @media #{$device-query} {
+          #{$property}: if($unit == vmin, $percent-width, $percent-height);
+        }
+      }
+      @else {
+        @media #{$device-query} and (orientation: portrait) {
+          #{$property}: if($unit == vw, $percent-width, $percent-height);
+        }
+
+        @media #{$device-query} and (orientation: landscape) {
+          #{$property}: if($unit == vw, $percent-height, $percent-width);
+        }
+      }
+    }
   }
 }

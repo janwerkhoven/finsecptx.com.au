@@ -29,7 +29,6 @@ section {
   }
 }
 main {
-  // transition: filter 500ms ease-out;
   &.blur {
     @media (max-width: 900px) {
       filter: blur(10px);
@@ -188,19 +187,22 @@ i {
 }
 
 #hero {
-  height: 90vh;
   height: 100vh;
+  @include viewport-unit(height, 100vh);
   min-height: 72vw;
+  @include viewport-unit(min-height, 72vw);
   max-height: 1200px;
   @media (min-width: 901px) {
     min-height: 700px;
     max-height: 1100px;
     height: 100vh;
+    @include viewport-unit(height, 100vh);
   }
   @media (max-width: 900px) {
     min-height: 500px;
     max-height: 800px;
     height: 160vw;
+    @include viewport-unit(height, 160vw);
   }
   > div {
     position: relative;
@@ -209,11 +211,13 @@ i {
     flex-flow: column nowrap;
     justify-content: center;
     text-align: center;
+    max-width: 840px;
     @media (min-width: 901px) {
       padding-top: 40px;
     }
   }
   h1 {
+    display: inline-block;
     font-family: $black;
     font-size: 50px;
     line-height: 120%;
@@ -249,6 +253,7 @@ i {
   a.button.arrow {
     position: absolute;
     bottom: 4vh;
+    @include viewport-unit(bottom, 4vh);
     left: 50%;
     margin-left: -35px;
     min-width: 50px;
@@ -256,12 +261,17 @@ i {
     border-width: 3px;
     @media (max-height: 770px) {
       width: 9vh;
+      @include viewport-unit(width, 9vh);
       height: 9vh;
+      @include viewport-unit(height, 9vh);
       margin-left: -4.5vh;
+      @include viewport-unit(margin-left, -4.5vh);
       bottom: 3vh;
+      @include viewport-unit(bottom, 3vh);
       &:after,
       &:before {
         height: 3.5vh;
+        @include viewport-unit(height, 3.5vh);
         min-height: 20px;
       }
     }
@@ -294,7 +304,7 @@ i {
       width: 30%;
       background: #d3d3d3;
       max-width: 400px;
-      margin: 1%;
+      margin: 1% 1% 20px;
       @media (max-width: 1040px) {
         width: 48%;
       }
@@ -406,5 +416,11 @@ i {
         }
       }
     }
+  }
+}
+
+#outdated {
+  p {
+    max-width: none;
   }
 }

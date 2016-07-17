@@ -92,6 +92,7 @@ module.exports = function(grunt) {
       options: {
         map: false,
         processors: [
+          require('pixrem')(),
           require('autoprefixer')({
             browsers: ['> 1% in AU', 'IE > 9']
           })
@@ -129,15 +130,22 @@ module.exports = function(grunt) {
       options: {
         separator: ';\n\n',
       },
-      dist: {
+      main: {
         files: {
           'dist/assets/js/main.min.js': [
-            'src/js/vendor/jquery.min.js',
-            'src/js/vendor/velocity.min.js',
+            'bower_components/jquery/dist/jquery.min.js',
             'temp/main.min.js'
           ]
         },
       },
+      outdated_browser: {
+        files: {
+          'dist/assets/js/outdated-browser.js': [
+            'bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
+            'src/js/outdated-browser-init.js'
+          ]
+        },
+      }
     },
 
     clean: {

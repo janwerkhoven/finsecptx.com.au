@@ -3,6 +3,9 @@
     #hero {
       background: #191925 url('/assets/img/about/hero@2000x1350.jpg') 87% 50% / cover fixed;
       background: #1c161f;
+      @media (max-width: 900px) {
+        background-attachment: scroll;
+      }
     }
   }
 }
