@@ -85,6 +85,7 @@ button {
   background: none;
   outline: 0;
   box-shadow: 0;
+  user-select: none;
   &.big {
     text-align: center;
     font-size: 20px;

@@ -361,6 +361,10 @@ button {
   background: none;
   outline: 0;
   box-shadow: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 a.button.big,
 button.big {
@@ -2345,6 +2349,78 @@ footer #nav ul li a:hover {
 #disclaimer main #body .button,
 #privacy-policy main #body .button {
   margin-top: 60px;
+}
+
+#form {
+  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 50%/cover;
+}
+#form footer,
+#form header {
+  display: none;
+}
+#form main nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 28px 30px;
+}
+#form main nav h1 {
+  font-family: "Rick-Medium", sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 20px 0 30px;
+}
+#form aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 28px 30px;
+}
+#form aside p {
+  font-family: "Rick-Bold", sans-serif;
+  font-size: 20px;
+  color: #6b6b99;
+}
+#form aside ul li {
+  background: #090921;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 20px;
+}
+#form aside ul li.done {
+  background: #6b6b99;
+}
+#form section {
+  display: none;
+  min-height: 100vh;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#form section > div {
+  max-width: 500px;
+}
+#form section h2 {
+  font-size: 30px;
+}
+#form section .buttons {
+  margin-top: 40px;
+}
+#form section .buttons .button,
+#form section .buttons button {
+  width: 100%;
+  font-size: 22px;
+  font-family: "Rick-Bold", sans-serif;
+  line-height: 180%;
+}
+#form #hello {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /* Temporary */

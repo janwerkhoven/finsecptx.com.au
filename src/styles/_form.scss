@@ -1,0 +1,73 @@
+#form {
+  background: $finsec-royal-blue url('/assets/img/form/bg.jpg') 50% 50% / cover;
+  footer,
+  header {
+    display: none;
+  }
+  main nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 28px 30px;
+    a.logo {
+      img {
+        // width: 200px;
+      }
+    }
+    h1 {
+      font-family: $medium;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin: 20px 0 30px;
+    }
+  }
+  aside {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 28px 30px;
+    p {
+      font-family: $bold;
+      font-size: 20px;
+      color: #6b6b99;
+    }
+    ul {
+
+      li {
+        background: #090921;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 20px;
+        &.done {
+          background: #6b6b99;
+        }
+      }
+    }
+  }
+  section {
+    display: none;
+    min-height: 100vh;
+    flex-flow: column nowrap;
+    justify-content: center;
+    > div {
+      max-width: 500px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    .buttons {
+      margin-top: 40px;
+      .button,
+      button {
+        width: 100%;
+        font-size: 22px;
+        font-family: $bold;
+        line-height: 180%;
+      }
+    }
+  }
+  #hello {
+    display: flex;
+  }
+}
