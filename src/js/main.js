@@ -117,7 +117,8 @@ $(document).ready(function() {
   }
 
   if (location.hash && $('#form ' + location.hash).length) {
-    goToStep(location.hash)
+    history.replaceState(null, null, location.hash);
+    goToStep(location.hash);
   }
 
   $(window).on('popstate', function(e) {
@@ -155,13 +156,19 @@ $(document).ready(function() {
       window.history.back();
     });
 
-    $('#form .field.text input').on('focus', function() {
+    $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
       $(this).parent().removeClass('focus');
+    }).on('change', function() {
+      if ($(this).val()) {
+        $(this).parent().addClass('has-value');
+      } else {
+        $(this).parent().removeClass('has-value');
+      };
     });
 
-    $('#form .field.select select').on('change', function() {
+    $('#form select').on('change', function() {
       if ($(this).val()) {
         $(this).addClass('selected');
       } else {
@@ -169,6 +176,16 @@ $(document).ready(function() {
       };
     });
 
-  }
+    $('#form input[type="range"]').on('change mousemove', function(e) {
+      if (e.type === 'change' || e.type === 'mousemove' && $(this).hasClass('dragging')) {
+        $(this).siblings('input[type="text"]').val($(this).val());
+      }
+    }).on('mousedown', function(e) {
+      $(this).addClass('dragging');
+    }).on('mouseup', function(e) {
+      $(this).removeClass('dragging');
+    });
+
+  };
 
 });

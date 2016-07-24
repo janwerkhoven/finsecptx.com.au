@@ -5,31 +5,48 @@
     display: none;
   }
   main nav {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     padding: 28px 30px;
-    a.logo {
-      img {
-        // width: 200px;
-      }
-    }
     h1 {
       font-family: $medium;
       font-size: 22px;
       letter-spacing: 1px;
-      margin: 20px 0 30px;
+      margin: 20px 0;
+    }
+    img {
+      width: 240px;
+      height: auto;
+    }
+    a.back {
+      display: inline-block;
+      &:hover {
+        #arrow-right {
+          stroke: white;
+        }
+      }
+      svg {
+        transform: rotate(180deg);
+        #arrow-right {
+          transition: stroke 200ms ease-out;
+          stroke: $finsec-that-other-blue;
+        }
+      }
     }
   }
   aside {
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
     padding: 28px 30px;
     p {
-      font-family: $bold;
-      font-size: 20px;
-      color: #6b6b99;
+      font-family: $medium;
+      font-size: 24px;
+      color: $finsec-that-other-blue;
+      margin: 0;
+      text-align: center;
+      line-height: 100%;
     }
     ul {
       li {
@@ -51,13 +68,13 @@
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
-      max-width: 500px;
-      padding-top: 150px;
+      max-width: 440px;
+      padding: 220px 0;
     }
-    h2 {
-      font-size: 30px;
-      margin-bottom: 40px;
-
+    p {
+      font-size: 26px;
+      margin: 0 0 26px;
+      font-family: $bold;
     }
     .buttons {
       margin-top: 10px;
@@ -101,10 +118,11 @@
       box-sizing: border-box;
       margin-top: 10px;
     }
+    &.email,
     &.text {
       position: relative;
-      &.done,
-      &.focus {
+      &.focus,
+      &.has-value {
         &:after {
           width: 100%;
           background: white;
@@ -123,10 +141,18 @@
       }
     }
     &.select {
+      position: relative;
       > div {
         border: 2px solid $finsec-that-other-blue;
         margin-top: 10px;
         transition: 300ms border-color ease-out;
+        &:hover {
+          > div {
+            #arrow-right {
+              stroke: white;
+            }
+          }
+        }
         select {
           width: 100%;
           height: 50px;
@@ -144,19 +170,76 @@
             color: #FFF;
           }
         }
+        > div {
+          position: absolute;
+          z-index: -1;
+          right: 0;
+          bottom: 0;
+          height: 50px;
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid $finsec-that-other-blue;
+          svg {
+            width: 60%;
+            #arrow-right {
+              transition: 300ms stroke ease-out;
+              stroke: $finsec-that-other-blue;
+            }
+          }
+        }
       }
     }
     &.range {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
       label {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        border: 2px solid $finsec-that-other-blue;
+        width: 70px;
+        text-align: center;
+        line-height: 40px;
+        padding-top: 5px;
       }
       input[type="range"] {
-        width: 100%;
+        width: 360px;
       }
     }
   }
   #hello {
     display: block;
+  }
+  #over-55 {
+    > div {
+      &:first-child {
+        padding-bottom: 100px;
+      }
+      &:last-child {
+        background: $finsec-kashmir-blue;
+        text-align: center;
+        max-width: none;
+        min-height: 0;
+        padding: 40px;
+        p {
+          max-width: none;
+          margin: 0;
+        }
+        > div {
+          display: flex;
+          justify-content: row wrap;
+          justify-content: center;
+          button {
+            margin: 10px;
+            font-family: $bold;
+          }
+        }
+      }
+    }
   }
 
   // INPUT PLACEHOLDERS
