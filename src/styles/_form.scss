@@ -32,7 +32,6 @@
       color: #6b6b99;
     }
     ul {
-
       li {
         background: #090921;
         width: 20px;
@@ -47,27 +46,97 @@
   }
   section {
     display: none;
-    min-height: 100vh;
-    flex-flow: column nowrap;
-    justify-content: center;
     > div {
+      min-height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
       max-width: 500px;
     }
     h2 {
       font-size: 30px;
+      margin-bottom: 60px;
+
     }
     .buttons {
-      margin-top: 40px;
-      .button,
+      margin-top: 10px;
       button {
-        width: 100%;
         font-size: 22px;
         font-family: $bold;
         line-height: 180%;
+        &:not(.circle) {
+          width: 100%;
+        }
+        &.circle {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .field {
+    margin-bottom: 60px;
+    label {
+      width: 100%;
+      display: block;
+      font-family: $bold;
+      font-size: 28px;
+      line-height: 180%;
+      small {
+        font-size: 18px;
+        display: block;
+        line-height: 20px;
+      }
+    }
+    input {
+      display: block;
+      width: 100%;
+      background: none;
+      border: 0;
+      border-bottom: 2px solid #6f659c;
+      font-size: 30px;
+      outline: none;
+      line-height: 180%;
+      box-sizing: border-box;
+    }
+    &.text {
+      position: relative;
+      &.done,
+      &.focus {
+        &:after {
+          width: 100%;
+          background: white;
+        }
+      }
+      &:after {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: white;
+        background: #6f659c;
+        transition: 300ms all ease-out;
       }
     }
   }
   #hello {
-    display: flex;
+    display: block;
+  }
+  ::-webkit-input-placeholder {
+    color: #6f659c;
+  }
+
+  :-moz-placeholder {
+    color: #6f659c;
+  }
+
+  ::-moz-placeholder {
+    color: #6f659c;
+  }
+
+  :-ms-input-placeholder {
+    color: #6f659c;
   }
 }

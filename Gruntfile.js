@@ -109,6 +109,7 @@ module.exports = function(grunt) {
     jshint: {
       files: ['src/js/main.js'],
       options: {
+        force: true,
         globals: {
           jQuery: true,
           console: true,
@@ -121,7 +122,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'temp/main.min.js': ['src/js/main.js']
+          'temp/js/main.min.js': ['src/js/main.js']
         }
       }
     },
@@ -130,11 +131,19 @@ module.exports = function(grunt) {
       options: {
         separator: ';\n\n',
       },
-      main: {
+      raw: {
+        files: {
+          'dist/assets/js/main.js': [
+            'bower_components/jquery/dist/jquery.min.js',
+            'src/js/main.js'
+          ]
+        },
+      },
+      minified: {
         files: {
           'dist/assets/js/main.min.js': [
             'bower_components/jquery/dist/jquery.min.js',
-            'temp/main.min.js'
+            'temp/js/main.min.js'
           ]
         },
       },

@@ -424,6 +424,23 @@ button.arrow:after {
   -webkit-transform: rotate(-50deg) translateY(1px);
           transform: rotate(-50deg) translateY(1px);
 }
+a.button.circle,
+button.circle {
+  position: relative;
+  border-radius: 50%;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  overflow: hidden;
+}
+a.button.circle svg,
+button.circle svg {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  left: 20%;
+  top: 20%;
+}
 
 i.icon {
   position: relative;
@@ -2352,7 +2369,7 @@ footer #nav ul li a:hover {
 }
 
 #form {
-  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 50%/cover;
+  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover;
 }
 #form footer,
 #form header {
@@ -2393,34 +2410,97 @@ footer #nav ul li a:hover {
 }
 #form section {
   display: none;
+}
+#form section > div {
   min-height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-#form section > div {
   max-width: 500px;
 }
 #form section h2 {
   font-size: 30px;
+  margin-bottom: 60px;
 }
 #form section .buttons {
-  margin-top: 40px;
+  margin-top: 10px;
 }
-#form section .buttons .button,
 #form section .buttons button {
-  width: 100%;
   font-size: 22px;
   font-family: "Rick-Bold", sans-serif;
   line-height: 180%;
 }
+#form section .buttons button:not(.circle) {
+  width: 100%;
+}
+#form section .buttons button.circle {
+  display: block;
+  margin: 0 auto;
+}
+#form .field {
+  margin-bottom: 60px;
+}
+#form .field label {
+  width: 100%;
+  display: block;
+  font-family: "Rick-Bold", sans-serif;
+  font-size: 28px;
+  line-height: 180%;
+}
+#form .field label small {
+  font-size: 18px;
+  display: block;
+  line-height: 20px;
+}
+#form .field input {
+  display: block;
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #6f659c;
+  font-size: 30px;
+  outline: none;
+  line-height: 180%;
+  box-sizing: border-box;
+}
+#form .field.text {
+  position: relative;
+}
+#form .field.text.done:after, #form .field.text.focus:after {
+  width: 100%;
+  background: white;
+}
+#form .field.text:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: white;
+  background: #6f659c;
+  transition: 300ms all ease-out;
+}
 #form #hello {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
+}
+#form ::-webkit-input-placeholder {
+  color: #6f659c;
+}
+#form :-moz-placeholder {
+  color: #6f659c;
+}
+#form ::-moz-placeholder {
+  color: #6f659c;
+}
+#form :-ms-input-placeholder {
+  color: #6f659c;
 }
 
 /* Temporary */

@@ -14,7 +14,7 @@
         <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
       </a>
       <h1>UK Pension Transfer Enquiry</h1>
-      <a href="/" class="logo">Back</a>
+      <a href="/" class="back">Back</a>
     </nav>
 
     <aside>
@@ -46,7 +46,7 @@
           <input type="text">
         </div>
         <div class="buttons">
-          <button>Next</button>
+          <button class="circle">{{> arrow-right}}</button>
         </div>
       </div>
     </section>
@@ -58,10 +58,12 @@
           <input type="email">
         </div>
         <div class="field phone">
-          <label>What’s your email address?</label>
-          <input type="text">
+          <label>Phone number?</label>
+          <input type="text" placeholder="04** *** ***">
         </div>
-        <button>Next</button>
+        <div class="buttons">
+          <button class="circle">{{> arrow-right}}</button>
+        </div>
       </div>
     </section>
 
@@ -72,19 +74,23 @@
           <input type="email">
         </div>
         <div class="field slider">
-          <label>How old are you?<span>(If you don’t mind me asking)</span></label>
+          <label>How old are you?<small>(If you don’t mind me asking)</small></label>
           <input type="text">
         </div>
-        <button>Next</button>
+        <div class="buttons">
+          <button class="circle">{{> arrow-right}}</button>
+        </div>
       </div>
     </section>
 
-    <section id="right-age">
+    <section id="over-55">
       <div>
         <p>Thank you and welcome!</p>
         <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
         <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
-        <button>Get started</button>
+        <div class="buttons">
+          <button>Get started</button>
+        </div>
         <div>
           <p>Not ready just yet? Click one of the below</p>
           <div>

@@ -101,4 +101,66 @@ $(document).ready(function() {
     languagePath: ''
   });
 
+  // FORM LOGIC -----------------------------------------------------------------------
+
+  var page = $('body').attr('id');
+
+  function goToStep(id) {
+    history.pushState(null, null, id);
+    animateToHash();
+    // $('#form ' + id).show().siblings('section').hide();
+  }
+
+  function animateToHash() {
+    var id = location.hash || '#hello';
+    $('#form ' + id).show().siblings('section').hide();
+  }
+
+  if (location.hash && $('#form ' + location.hash).length) {
+    goToStep(location.hash)
+  }
+
+  $(window).on('popstate', function(e) {
+    animateToHash();
+  });
+
+  if (page === 'form') {
+
+    var step = 'hello';
+
+    $('#hello button').on('click', function() {
+      goToStep('#title-name');
+    });
+
+    $('#title-name button').on('click', function() {
+      goToStep('#email-phone');
+    });
+
+    $('#email-phone button').on('click', function() {
+      goToStep('#state-age');
+    });
+
+    $('#state-age button').on('click', function() {
+      var age = 56;
+      if (age > 55) {
+        goToStep('#over-55');
+      } else if (age > 45) {
+        goToStep('#between-45-and-55');
+      } else {
+        goToStep('#below-45');
+      }
+    });
+
+    $('main nav a.back').on('click', function() {
+      window.history.back();
+    });
+
+    $('#form .field.text input').on('focus', function() {
+      $(this).parent().addClass('focus');
+    }).on('blur', function() {
+      $(this).parent().removeClass('focus');
+    })
+
+  }
+
 });

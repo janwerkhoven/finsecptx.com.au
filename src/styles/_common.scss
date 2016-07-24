@@ -133,6 +133,21 @@ button {
       transform: rotate(-50deg) translateY(1px);
     }
   }
+  &.circle {
+    position: relative;
+    border-radius: 50%;
+    width: 76px;
+    height: 76px;
+    padding: 0;
+    overflow: hidden;
+    svg {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      left: 20%;
+      top: 20%;
+    }
+  }
 }
 i {
   &.icon {
