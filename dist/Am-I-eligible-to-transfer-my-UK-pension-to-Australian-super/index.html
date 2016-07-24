@@ -70,7 +70,19 @@
         <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
       </a>
       <h1>UK Pension Transfer Enquiry</h1>
-      <a href="/" class="back">Back</a>
+      <a href="/" class="back"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+Back</a>
     </nav>
 
     <aside>
@@ -123,7 +135,7 @@
       <div>
         <div class="field email">
           <label>What’s your email address?</label>
-          <input type="email">
+          <input type="email" placeholder="your@email.com">
         </div>
         <div class="field phone">
           <label>Phone number?</label>
@@ -151,11 +163,35 @@
       <div>
         <div class="field select">
           <label>What state do you reside in?</label>
-          <input type="email">
+          <div>
+            <select>
+              <option selected>Choose...</option>
+              <option value="ACT">ACT</option>
+              <option value="NSW">NSW</option>
+              <option value="NT">NT</option>
+              <option value="QLD">QLD</option>
+              <option value="SA">SA</option>
+              <option value="TAS">TAS</option>
+              <option value="VIC">VIC</option>
+              <option value="WA">WA</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
-        <div class="field slider">
+        <div class="field range">
           <label>How old are you?<small>(If you don’t mind me asking)</small></label>
-          <input type="text">
+          <input type="range" id="myRange" value="55" min="0" max="120" step="1">
         </div>
         <div class="buttons">
           <button class="circle"><svg width="50px" height="48px" viewBox="0 0 50 48">

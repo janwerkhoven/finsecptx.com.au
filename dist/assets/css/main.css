@@ -2370,6 +2370,7 @@ footer #nav ul li a:hover {
 
 #form {
   background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover;
+  /*hide the outline behind the border*/
 }
 #form footer,
 #form header {
@@ -2423,10 +2424,11 @@ footer #nav ul li a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   max-width: 500px;
+  padding-top: 150px;
 }
 #form section h2 {
   font-size: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 #form section .buttons {
   margin-top: 10px;
@@ -2451,7 +2453,7 @@ footer #nav ul li a:hover {
   display: block;
   font-family: "Rick-Bold", sans-serif;
   font-size: 28px;
-  line-height: 180%;
+  line-height: 150%;
 }
 #form .field label small {
   font-size: 18px;
@@ -2463,11 +2465,12 @@ footer #nav ul li a:hover {
   width: 100%;
   background: none;
   border: 0;
-  border-bottom: 2px solid #6f659c;
+  border-bottom: 2px solid #557ea0;
   font-size: 30px;
   outline: none;
-  line-height: 180%;
+  line-height: 150%;
   box-sizing: border-box;
+  margin-top: 10px;
 }
 #form .field.text {
   position: relative;
@@ -2484,23 +2487,135 @@ footer #nav ul li a:hover {
   bottom: 0;
   left: 0;
   background: white;
-  background: #6f659c;
+  background: #557ea0;
   transition: 300ms all ease-out;
+}
+#form .field.select > div {
+  border: 2px solid #557ea0;
+  margin-top: 10px;
+  transition: 300ms border-color ease-out;
+}
+#form .field.select > div select {
+  width: 100%;
+  height: 50px;
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: 26px;
+  line-height: 180%;
+  font-family: "Rick-Medium", sans-serif;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 2px 30px 0 16px;
+  cursor: pointer;
+  color: #557ea0;
+}
+#form .field.select > div select.selected {
+  color: #FFF;
+}
+#form .field.range label {
+  margin-bottom: 40px;
+}
+#form .field.range input[type="range"] {
+  width: 100%;
 }
 #form #hello {
   display: block;
 }
 #form ::-webkit-input-placeholder {
-  color: #6f659c;
+  color: #557ea0;
 }
 #form :-moz-placeholder {
-  color: #6f659c;
+  color: #557ea0;
 }
 #form ::-moz-placeholder {
-  color: #6f659c;
+  color: #557ea0;
 }
 #form :-ms-input-placeholder {
-  color: #6f659c;
+  color: #557ea0;
+}
+#form input[type=range] {
+  /*removes default webkit styles*/
+  -webkit-appearance: none;
+  /*fix for FF unable to apply focus style bug */
+  border: 1px solid #557ea0;
+  border-radius: 2px;
+  height: 4px;
+  /*required for proper track sizing in FF*/
+  width: 300px;
+}
+#form input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 4px;
+  background: #557ea0;
+  border: none;
+  border-radius: 2px;
+}
+#form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #557ea0;
+  margin-top: -10px;
+}
+#form input[type=range]:focus {
+  outline: none;
+}
+#form input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #557ea0;
+}
+#form input[type=range]::-moz-range-track {
+  width: 300px;
+  height: 5px;
+  background: #557ea0;
+  border: none;
+  border-radius: 3px;
+}
+#form input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #557ea0;
+}
+#form input[type=range]:-moz-focusring {
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+#form input[type=range]::-ms-track {
+  width: 300px;
+  height: 5px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+#form input[type=range]::-ms-fill-lower {
+  background: #557ea0;
+  border-radius: 10px;
+}
+#form input[type=range]::-ms-fill-upper {
+  background: #557ea0;
+  border-radius: 10px;
+}
+#form input[type=range]::-ms-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #557ea0;
+}
+#form input[type=range]:focus::-ms-fill-lower {
+  background: #557ea0;
+}
+#form input[type=range]:focus::-ms-fill-upper {
+  background: #557ea0;
 }
 
 /* Temporary */

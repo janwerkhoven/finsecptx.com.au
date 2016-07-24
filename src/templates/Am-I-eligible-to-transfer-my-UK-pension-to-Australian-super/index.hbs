@@ -14,7 +14,7 @@
         <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
       </a>
       <h1>UK Pension Transfer Enquiry</h1>
-      <a href="/" class="back">Back</a>
+      <a href="/" class="back">{{> arrow-right}}Back</a>
     </nav>
 
     <aside>
@@ -55,7 +55,7 @@
       <div>
         <div class="field email">
           <label>What’s your email address?</label>
-          <input type="email">
+          <input type="email" placeholder="your@email.com">
         </div>
         <div class="field phone">
           <label>Phone number?</label>
@@ -71,11 +71,26 @@
       <div>
         <div class="field select">
           <label>What state do you reside in?</label>
-          <input type="email">
+          <div>
+            <select>
+              <option selected>Choose...</option>
+              <option value="ACT">ACT</option>
+              <option value="NSW">NSW</option>
+              <option value="NT">NT</option>
+              <option value="QLD">QLD</option>
+              <option value="SA">SA</option>
+              <option value="TAS">TAS</option>
+              <option value="VIC">VIC</option>
+              <option value="WA">WA</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
         </div>
-        <div class="field slider">
+        <div class="field range">
           <label>How old are you?<small>(If you don’t mind me asking)</small></label>
-          <input type="text">
+          <input type="range" id="myRange" value="55" min="0" max="120" step="1">
         </div>
         <div class="buttons">
           <button class="circle">{{> arrow-right}}</button>

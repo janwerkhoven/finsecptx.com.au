@@ -159,7 +159,15 @@ $(document).ready(function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
       $(this).parent().removeClass('focus');
-    })
+    });
+
+    $('#form .field.select select').on('change', function() {
+      if ($(this).val()) {
+        $(this).addClass('selected');
+      } else {
+        $(this).removeClass('selected');
+      };
+    });
 
   }
 
