@@ -273,7 +273,6 @@ body {
   line-height: 100%;
   margin: 0;
   color: #FFF;
-  background: #0f1d3c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -2390,6 +2389,7 @@ footer #nav ul li a:hover {
 }
 #form main nav img {
   width: 240px;
+  height: auto;
 }
 #form main nav a.back {
   display: inline-block;
