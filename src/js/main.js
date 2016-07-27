@@ -116,46 +116,101 @@ $(document).ready(function() {
     $('#form ' + id).show().siblings('section').hide();
   }
 
-  if (location.hash && $('#form ' + location.hash).length) {
-    history.replaceState(null, null, location.hash);
-    goToStep(location.hash);
+  function sendStageOne() {
+
+    // Submits the contact form to Formspree
+    // More info: https://formspree.io/
+    var data = {
+      message: 'This is an incomplete form for reference only.',
+      _subject: 'FinsecPTX.com - Preliminary form result - for reference only',
+      _format: 'plain'
+    };
+    var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
+    $.each(keys, function(i, key) {
+      data[key] = sessionStorage.getItem(key) || '-';
+    });
+    console.log('sending', data);
+    $.ajax({
+      url: "https://formspree.io/info@finsecptx.com",
+      method: "POST",
+      data: data,
+      dataType: "json"
+    }).done(function() {
+      console.log('DONE');
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.log('ERROR', jqXHR, textStatus, errorThrown);
+    });
   }
 
+  if (location.hash) {
+    history.pushState('', document.title, window.location.pathname);
+  }
+
+  // if (location.hash && $('#form ' + location.hash).length) {
+  //   history.replaceState(null, null, location.hash);
+  //   goToStep(location.hash);
+  // }
+
+  // On page load, remove any hash from the URL
   $(window).on('popstate', function(e) {
     animateToHash();
   });
 
   if (page === 'form') {
 
+    var answers = {};
+
     var step = 'hello';
 
-    $('#hello button').on('click', function() {
-      goToStep('#title-name');
+    // localStorage.setItem('favoriteflavor', 'vanilla');
+    //   var taste = localStorage.getItem('favoriteflavor');
+    //   localStorage.removeItem('favoriteflavor');
+    // var taste = localStorage.getItem('favoriteflavor');
+
+    // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
+    $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
+      var key = $(this).attr('name').toLowerCase();
+      var value = $(this).val();
+      answers[key] = value;
+      sessionStorage.setItem(key, value);
+      console.log(answers);
     });
 
-    $('#title-name button').on('click', function() {
-      goToStep('#email-phone');
+    // On click button.next, grab the ID of the section, convert to camelcase and execute the matching method
+    $('section button.next').on('click', function() {
+      var id = $(this).parents('section').attr('id').replace(/-([a-z])/g, function(m, w) {
+        return w.toUpperCase();
+      });
+      console.log(id);
+      steps[id]();
     });
 
-    $('#email-phone button').on('click', function() {
-      goToStep('#state-age');
-    });
-
-    $('#state-age button').on('click', function() {
-      var age = 56;
-      if (age > 55) {
-        goToStep('#over-55');
-      } else if (age > 45) {
-        goToStep('#between-45-and-55');
-      } else {
-        goToStep('#below-45');
+    // Each step comes with it's own logic, store them here:
+    var steps = {
+      hello: function() {
+        goToStep('#title-name');
+      },
+      titleName: function() {
+        goToStep('#email-phone');
+      },
+      emailPhone: function() {
+        goToStep('#state-age');
+      },
+      stateAge: function() {
+        var age = answers.age;
+        console.log(age);
+        if (age > 55) {
+          goToStep('#over-55');
+        } else if (age > 45) {
+          goToStep('#between-45-and-55');
+        } else {
+          goToStep('#below-45');
+        }
+        sendStageOne();
       }
-    });
+    };
 
-    $('main nav a.back').on('click', function() {
-      window.history.back();
-    });
-
+    // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
     $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
@@ -165,17 +220,19 @@ $(document).ready(function() {
         $(this).parent().addClass('has-value');
       } else {
         $(this).parent().removeClass('has-value');
-      };
+      }
     });
 
+    // Add class selected if user selected a value from <select>
     $('#form select').on('change', function() {
       if ($(this).val()) {
         $(this).addClass('selected');
       } else {
         $(this).removeClass('selected');
-      };
+      }
     });
 
+    // Make time ranges update the adjecent input box
     $('#form input[type="range"]').on('change mousemove', function(e) {
       if (e.type === 'change' || e.type === 'mousemove' && $(this).hasClass('dragging')) {
         $(this).siblings('input[type="text"]').val($(this).val());
@@ -186,6 +243,11 @@ $(document).ready(function() {
       $(this).removeClass('dragging');
     });
 
-  };
+    // On click of back button use history API to go back
+    // $('main nav a.back').on('click', function() {
+    //   window.history.back();
+    // });
+
+  }
 
 });

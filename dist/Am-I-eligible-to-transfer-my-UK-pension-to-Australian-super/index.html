@@ -96,9 +96,9 @@
 
     <section id="hello">
       <div>
-        <p>We’d like to ask a few quick questions to establish whether you’re eligible for a pension transfer.</p>
+        <p>We’d like to ask a few quick questions to establish whether you’re eligible for transfering your UK Pension to Australian Superannuation.</p>
         <div class="buttons">
-          <button>Start</button>
+          <button class="next">Start</button>
         </div>
       </div>
     </section>
@@ -107,14 +107,14 @@
       <div>
         <div class="field text">
           <label>What’s your title</label>
-          <input type="text">
+          <input type="text" name="TITLE">
         </div>
         <div class="field text">
           <label>And your name?</label>
-          <input type="text">
+          <input type="text" name="NAME">
         </div>
         <div class="buttons">
-          <button class="circle"><svg width="50px" height="48px" viewBox="0 0 50 48">
+          <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
   <title>arrow-right</title>
   <defs></defs>
   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -135,14 +135,14 @@
       <div>
         <div class="field email">
           <label>What’s your email address?</label>
-          <input type="email" placeholder="your@email.com">
+          <input type="email" placeholder="your@email.com" name="EMAIL">
         </div>
         <div class="field text">
           <label>Phone number?</label>
-          <input type="text" placeholder="04** *** ***">
+          <input type="text" placeholder="04** *** ***" name="PHONE">
         </div>
         <div class="buttons">
-          <button class="circle"><svg width="50px" height="48px" viewBox="0 0 50 48">
+          <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
   <title>arrow-right</title>
   <defs></defs>
   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -164,7 +164,7 @@
         <div class="field select">
           <label>What state do you reside in?</label>
           <div>
-            <select>
+            <select name="STATE">
               <option selected>Choose...</option>
               <option value="ACT">Australian Capital Territory</option>
               <option value="NSW">New South Wales</option>
@@ -192,10 +192,10 @@
         <div class="field range">
           <label>How old are you?<small>(if you don’t mind me asking)</small></label>
           <input type="text" placeholder="55">
-          <input type="range" id="myRange" value="55" min="0" max="130" step="1">
+          <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
         </div>
         <div class="buttons">
-          <button class="circle"><svg width="50px" height="48px" viewBox="0 0 50 48">
+          <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
   <title>arrow-right</title>
   <defs></defs>
   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <section id="under-45">
+    <section id="below-45">
       <div>
         <p>Thank you!</p>
         <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>

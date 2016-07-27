@@ -2368,7 +2368,7 @@ footer #nav ul li a:hover {
 }
 
 #form {
-  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover;
+  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover fixed;
   /*hide the outline behind the border*/
 }
 #form footer,
