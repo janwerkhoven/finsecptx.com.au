@@ -205,14 +205,25 @@ $(document).ready(function() {
       stateAge: function() {
         var age = answers.age;
         console.log(age);
-        if (age > 55) {
-          goToStep('#over-55');
-        } else if (age > 45) {
+        if (age < 45) {
+          goToStep('#below-45');
+        } else if (age < 55) {
           goToStep('#between-45-and-55');
         } else {
-          goToStep('#below-45');
+          goToStep('#over-55');
         }
-        sendStageOne();
+        // sendStageOne();
+      },
+      'below-45': function() {
+        debugger;
+        goToStep('#over-55');
+        subscribeToMailChimp();
+      },
+      'betweenp-45-and-55': function() {
+        debugger;
+      },
+      'over-55': function() {
+        debugger;
       }
     };
 
@@ -250,9 +261,10 @@ $(document).ready(function() {
     });
 
     // On click of back button use history API to go back
-    // $('main nav a.back').on('click', function() {
-    //   window.history.back();
-    // });
+    $('main nav a.back').on('click', function(e) {
+      e.preventDefault();
+      window.history.back();
+    });
 
   }
 

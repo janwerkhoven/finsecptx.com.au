@@ -59,7 +59,8 @@ module.exports = function(grunt) {
           modules: ['src/templates/helpers/helpers-*.js'],
           context: {
             formLink: '/Am-I-eligible-to-transfer-my-UK-pension-to-Australian-super',
-            formTitle: 'Am I eligible to transfer my UK Pension to Australian Super'
+            formTitle: 'Am I eligible to transfer my UK Pension to Australian Super',
+            pathPensionTransferGuide: '/assets/PDF/Pension-Transfer-Guide-by-FinSec-PTX.pdf'
           }
         }
       }

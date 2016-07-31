@@ -2451,20 +2451,26 @@ footer #nav ul li a:hover {
   margin: 0 0 26px;
   font-family: "Rick-Bold", sans-serif;
 }
-#form section .buttons {
+#form section ul {
   margin-top: 10px;
 }
-#form section .buttons button {
+#form section ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+#form section ul .button,
+#form section ul button {
   font-size: 22px;
   font-family: "Rick-Bold", sans-serif;
-  line-height: 180%;
+  line-height: 150%;
 }
-#form section .buttons button:not(.circle) {
-  width: 100%;
-}
-#form section .buttons button.circle {
+#form section ul .button.circle,
+#form section ul button.circle {
   display: block;
   margin: 0 auto;
+}
+#form section ul .button.pdf,
+#form section ul button.pdf {
+  max-width: 400px;
 }
 #form .field {
   margin-bottom: 60px;
@@ -2595,6 +2601,7 @@ footer #nav ul li a:hover {
 }
 #form #hello {
   display: block;
+  text-align: center;
 }
 #form #over-55 > div:first-child {
   padding-bottom: 100px;
@@ -2624,6 +2631,16 @@ footer #nav ul li a:hover {
 #form #over-55 > div:last-child > div button {
   margin: 10px;
   font-family: "Rick-Bold", sans-serif;
+}
+#form #below-45,
+#form #between-45-and-55,
+#form #over-55 {
+  text-align: center;
+}
+#form #below-45 > div,
+#form #between-45-and-55 > div,
+#form #over-55 > div {
+  max-width: 540px;
 }
 #form ::-webkit-input-placeholder {
   color: #557ea0;

@@ -76,18 +76,22 @@
       margin: 0 0 26px;
       font-family: $bold;
     }
-    .buttons {
+    ul {
       margin-top: 10px;
+      li:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      .button,
       button {
         font-size: 22px;
         font-family: $bold;
-        line-height: 180%;
-        &:not(.circle) {
-          width: 100%;
-        }
+        line-height: 150%;
         &.circle {
           display: block;
           margin: 0 auto;
+        }
+        &.pdf {
+          max-width: 400px;
         }
       }
     }
@@ -213,6 +217,7 @@
   }
   #hello {
     display: block;
+    text-align: center;
   }
   #over-55 {
     > div {
@@ -239,6 +244,17 @@
           }
         }
       }
+    }
+  }
+  #below-45,
+  #between-45-and-55,
+  #over-55 {
+    text-align: center;
+    > div {
+      max-width: 540px;
+    }
+    ul {
+      // max-width: 500px;
     }
   }
 
