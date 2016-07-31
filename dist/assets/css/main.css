@@ -2642,6 +2642,9 @@ footer #nav ul li a:hover {
 #form #over-55 > div {
   max-width: 540px;
 }
+#form #subscribed {
+  text-align: center;
+}
 #form ::-webkit-input-placeholder {
   color: #557ea0;
 }

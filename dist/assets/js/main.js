@@ -54,6 +54,10 @@ $(document).ready(function() {
     console.log('submitting', data);
     $form.find('input, button').prop('disabled', true);
     $btn.html('Sending...');
+
+    // TODO REPLACE WITH FORMSPREE
+    // Cannot submit to Mailchimp without mailconfirmation
+
     $.ajax({
       type: 'get',
       url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=45b7594928&c=?',
@@ -109,12 +113,15 @@ $(document).ready(function() {
 
   // FORM LOGIC -----------------------------------------------------------------------
 
+  $('#form form button').on('click', function(e) {
+    e.preventDefault();
+  })
+
   var page = $('body').attr('id');
 
   function goToStep(id) {
     history.pushState(null, null, id);
     animateToHash();
-    // $('#form ' + id).show().siblings('section').hide();
   }
 
   function animateToHash() {
@@ -122,7 +129,7 @@ $(document).ready(function() {
     $('#form ' + id).show().siblings('section').hide();
   }
 
-  function sendStageOne() {
+  function emailStageOneWithFormSpree() {
 
     // Submits the contact form to Formspree
     // More info: https://formspree.io/
@@ -148,19 +155,54 @@ $(document).ready(function() {
     });
   }
 
+  function subscribeToMailChimp() {
+    // var $btn = $(this);
+    // var speed = 300;
+    // var easing = 'easeInOut';
+    // var data = $form.serialize();
+    var data = $('#title-name, #email-phone, #state-age').find('input, select').serialize();
+    console.log('submitting', data);
+    // $form.find('input, button').prop('disabled', true);
+    // $btn.html('Sending...');
+    $.ajax({
+      type: 'get',
+      url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?',
+      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
+      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
+      data: data,
+      cache: false,
+      dataType: 'json',
+      contentType: "application/json; charset=utf-8"
+    }).done(function(data) {
+      // $btn.html('Success');
+      // $('#subscription .success').show();
+      console.log('DONE', data);
+      $('#form #subscribed p.email').text(answers.email);
+      goToStep('#subscribed');
+    }).fail(function(error) {
+      // $btn.html('Whoops');
+      // $('#subscription .fail').show();
+      console.log('ERROR', error);
+    }).always(function() {
+      // $('#subscription .form').delay(500).velocity({
+      //   opacity: 0,
+      //   scale: 0.9,
+      // }, speed, easing);
+      // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
+      //   opacity: [1, 0],
+      //   scale: [1, 1.1],
+      // }, speed, easing);
+    });
+  }
+
+  // On page load, remove any hash from the URL
   if (location.hash) {
     history.pushState('', document.title, window.location.pathname);
   }
 
-  // if (location.hash && $('#form ' + location.hash).length) {
-  //   history.replaceState(null, null, location.hash);
-  //   goToStep(location.hash);
-  // }
-
-  // On page load, remove any hash from the URL
-  $(window).on('popstate', function(e) {
-    animateToHash();
-  });
+  // $(window).on('popstate', function(e) {
+  //   animateToHash();
+  // });
 
   if (page === 'form') {
 
@@ -186,7 +228,7 @@ $(document).ready(function() {
     $('section button.next').on('click', function() {
       var id = $(this).parents('section').attr('id').replace(/-([a-z])/g, function(m, w) {
         return w.toUpperCase();
-      });
+      }).replace(/-/g, '');
       console.log(id);
       steps[id]();
     });
@@ -203,27 +245,35 @@ $(document).ready(function() {
         goToStep('#state-age');
       },
       stateAge: function() {
-        var age = answers.age;
+        var age = parseInt(answers.age);
         console.log(age);
-        if (age < 45) {
-          goToStep('#below-45');
-        } else if (age < 55) {
-          goToStep('#between-45-and-55');
+        if (Number.isInteger(age)) {
+          if (age < 45) {
+            goToStep('#below-45');
+          } else if (age < 55) {
+            goToStep('#between-45-and-55');
+          } else {
+            goToStep('#over-55');
+          }
+          // emailStageOneWithFormSpree();
         } else {
-          goToStep('#over-55');
+
+          // TODO
+
+          // $('#state-age .field.age')
         }
-        // sendStageOne();
       },
-      'below-45': function() {
-        debugger;
-        goToStep('#over-55');
+      below45: function() {
         subscribeToMailChimp();
       },
-      'betweenp-45-and-55': function() {
-        debugger;
+      between45And55: function() {
+        subscribeToMailChimp();
       },
-      'over-55': function() {
-        debugger;
+      over55: function() {
+        goToStep('#start-enquiry');
+      },
+      startEnquiry: function() {
+        console.log('start form');
       }
     };
 
@@ -264,6 +314,10 @@ $(document).ready(function() {
     $('main nav a.back').on('click', function(e) {
       e.preventDefault();
       window.history.back();
+    });
+
+    $('#form #start-enquiry button.later').on('click', function(e) {
+      console.log('continue later');
     });
 
   }
