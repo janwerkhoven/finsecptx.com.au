@@ -190,13 +190,13 @@ $(document).ready(function() {
   }
 
   // On page load, remove any hash from the URL
-  if (location.hash) {
-    history.pushState('', document.title, window.location.pathname);
-  }
+  // if (location.hash) {
+  //   history.pushState('', document.title, window.location.pathname);
+  // }
 
-  // $(window).on('popstate', function(e) {
-  //   animateToHash();
-  // });
+  $(window).on('popstate', function(e) {
+    animateToHash();
+  });
 
   if (page === 'form') {
 

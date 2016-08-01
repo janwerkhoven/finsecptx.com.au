@@ -272,12 +272,316 @@
     <section id="start-enquiry">
       <div>
         <p>You are about to begin your UK Pension Transfer Enquiry</p>
-        <p>By answering the following questions, you will be providing us with valuable information that will help start the transfer enquiry.</p>
-        <p>Estimated Time: 10 minutes</p>
-        <p>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</p>
+        <p><small>By answering the following questions, you will be providing us with valuable information that will help start the transfer enquiry.</small></p>
+        <p><em>Estimated Time: 10 minutes</em></p>
+        <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p>
         <ul>
           <li><button class="next">Start form now</button></li>
           <li><button class="complete-later">Complete later</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="name-email-again">
+      <div>
+        <p>Does this all look correct? If not, please adjust them now.</p>
+        <div class="field text">
+          <label>Title</label>
+          <input type="text" name="TITLE">
+        </div>
+        <div class="field text">
+          <label>Name</label>
+          <input type="text" name="NAME">
+        </div>
+        <div class="field email">
+          <label>Email address</label>
+          <input type="email" placeholder="your@email.com" name="EMAIL">
+        </div>
+        <div class="field text">
+          <label>Phone number</label>
+          <input type="text" placeholder="04** *** ***" name="PHONE">
+        </div>
+        <ul>
+          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="address-dob-etc">
+      <div>
+        <div class="field text select">
+          <label>What’s your address?</label>
+          <input type="text" name="STREET1">
+          <input type="text" name="STREET2">
+          <input type="text" name="SUBURB">
+          <div>
+            <select name="STATE">
+              <option selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <input type="text" name="POSTCODE">
+        </div>
+        <div class="field text">
+          <label>Date of birth?</label>
+          <input type="text" name="DOB">
+        </div>
+        <div class="field option">
+          <label>What is your gender?</label>
+          <div>
+            <button>Male</button>
+            <button>Female</button>
+          </div>
+        </div>
+        <div class="field radio married">
+          <label>Are you married?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        </div>
+        <div class="field text spouse">
+          <label>What is your Spouse’s name?</label>
+          <input type="text" name="SPOUSE">
+        </div>
+        <div class="field text">
+          <label>Do you have a maiden name?</label>
+          <input type="text" name="MAIDEN">
+        </div>
+        <div class="field text">
+          <label>What is your Occupation?</label>
+          <input type="text" name="OCCUPATION">
+        </div>
+        <ul>
+          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="end-part-one">
+      <div>
+        <svg width="48px" height="26px" viewBox="0 0 48 26">
+          <title>arrow-right</title>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <p>Part 1. Complete!</p>
+        <ul>
+          <li><button class="next">Proceed to part 2 of 3</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="end-part-two">
+      <div>
+        <svg width="48px" height="26px" viewBox="0 0 48 26">
+          <title>arrow-right</title>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <p>Part 2. Complete!</p>
+        <ul>
+          <li><button class="next">Proceed to part 3 of 3</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="uk-address">
+      <div>
+        <div class="field text select">
+          <label>What was your last UK address?</label>
+          <input type="text" name="STREET1">
+          <input type="text" name="STREET2">
+          <input type="text" name="SUBURB">
+          <div>
+            <select name="STATE">
+              <option selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <input type="text" name="POSTCODE">
+        </div>
+      </div>
+    </section>
+
+    <section id="uk-pension">
+      <div>
+
+      </div>
+    </section>
+
+    <section id="end-part-three">
+      <div>
+        <svg width="48px" height="26px" viewBox="0 0 48 26">
+          <title>arrow-right</title>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <p>Part 3. Complete!</p>
+        <ul>
+          <li><button class="next">Proceed to sign off</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="important">
+      <div>
+        <p><strong>Important</strong></p>
+        <p>If you have more than one fund you must complete a separate Letter of Authority (contained in the next section) for each fund.</p>
+        <ul>
+          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="letter-of-authority">
+      <div>
+        <p><strong>Letter of authority</strong></p>
+        <p><small>To whom it may concern,</small></p>
+        <p><small>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</small></p>
+        <p><small>FinSec Partners<br>
+          T: +61 8 8357 7840<br>
+          F: +61 8 8373 7600<br>
+          PO Box 1096 Unley SA 5061.<br>
+          E: ukpensions@finsecpartners.com.au</small></p>
+        <p><small>Please also accept this form as my authority for you to update your records to reflect my correct address details as shown below:</small></p>
+        <hr>
+        <dl>
+          <dt>Name</dt>
+          <dd>Mr Scott Noell</dd>
+          <dt>Date of birth</dt>
+          <dd>16/6/1964</dd>
+          <dt>Address</dt>
+          <dd>Level 1<br>
+            10 Greenhill Rd<br>
+            Wayville<br>
+            SA 5061</dd>
+          <dt>Last UK address</dt>
+          <dd>Level 1<br>
+            10 Greenhill Rd<br>
+            Wayville<br>
+            SA 5061</dd>
+          <dt>Name of UK Pension</dt>
+          <dd>Example</dd>
+          <dt>Address of UK Pension</dt>
+          <dd>Level 1<br>
+            10 Example St<br>
+            Wayville<br>
+            SA 5061</dd>
+          <dt>Period of fund or scheme</dt>
+          <dd>May 1984 - May 1996</dd>
+          <dt>Policy or reference number</dt>
+          <dd>148 938</dd>
+          <dt>National Insurance number</dt>
+          <dd>8293 2917 3038</dd>
+          <dt>Signature</dt>
+          <dd>John Doe</dd>
+          <dt>Today's Date</dt>
+          <dd>16/06/2016</dd>
+        </dl>
+        <ul>
+          <li><button class="next">Submit</button></li>
+          <li><button class="add">Add another fund</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="thanks">
+      <div>
+        <p>Thank you!</p>
+        <p>Your form has been sent to FinSecPTX.</p>
+        <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
+        <ul>
+          <li><a href="/">Return to site</a></li>
         </ul>
       </div>
     </section>

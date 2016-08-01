@@ -2451,6 +2451,15 @@ footer #nav ul li a:hover {
   margin: 0 0 26px;
   font-family: "Rick-Bold", sans-serif;
 }
+#form section p small {
+  display: block;
+  font-size: 18px;
+  line-height: 150%;
+}
+#form section p em {
+  font-style: normal;
+  color: #4c6f93;
+}
 #form section ul {
   margin-top: 10px;
 }

@@ -75,6 +75,15 @@
       font-size: 26px;
       margin: 0 0 26px;
       font-family: $bold;
+      small {
+        display: block;
+        font-size: 18px;
+        line-height: 150%;
+      }
+      em {
+        font-style: normal;
+        color: $finsec-kashmir-blue;
+      }
     }
     ul {
       margin-top: 10px;
