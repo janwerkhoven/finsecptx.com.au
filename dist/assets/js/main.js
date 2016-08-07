@@ -6,6 +6,60 @@ if(e&&1===a.nodeType)while(c=e[d++])a.removeAttribute(c)}}),hb={set:function(a,b
 
 $(document).ready(function() {
 
+  $('header a.logo').on('click', function(e) {
+    e.preventDefault();
+
+    // POST https://www.webmerge.me/merge/72409/2ygbxs?test=1
+    // first_name=John&last_name=Smith&phone=312-555-3029
+    // {$Name}
+    // {$Email}
+    // {$Phone_Number}
+
+    console.log('Sending to Webmerge');
+
+    var keyValues = 'name=Janneman&email=jw@nabu.io&phone_number=0424787666';
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: url,
+    //   data: data,
+    //   success: success,
+    //   dataType: dataType
+    // });
+
+    $.ajax({
+      type: 'POST',
+      url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
+      data: keyValues
+        // url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=45b7594928&c=?',
+        // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
+        // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
+        // data: data,
+        // data: 'name=Janneman&email=jw@nabu.io&phone_number=0424787666',
+        // cache: false,
+        // dataType: 'json',
+        // contentType: "application/json; charset=utf-8"
+    }).done(function(data) {
+      // $btn.html('Success');
+      // $('#subscription .success').show();
+      console.log('DONE', data);
+    }).fail(function(error) {
+      // $btn.html('Whoops');
+      // $('#subscription .fail').show();
+      console.log('ERROR', error);
+    }).always(function() {
+      // $('#subscription .form').delay(500).velocity({
+      //   opacity: 0,
+      //   scale: 0.9,
+      // }, speed, easing);
+      // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
+      //   opacity: [1, 0],
+      //   scale: [1, 1.1],
+      // }, speed, easing);
+    });
+
+  });
+
   // Mobile navigation
   var showingMobileNav = false;
   $('header button').on('click', function() {
@@ -115,7 +169,7 @@ $(document).ready(function() {
 
   $('#form form button').on('click', function(e) {
     e.preventDefault();
-  })
+  });
 
   var page = $('body').attr('id');
 
@@ -273,7 +327,44 @@ $(document).ready(function() {
         goToStep('#start-enquiry');
       },
       startEnquiry: function() {
-        console.log('start form');
+        keys = ['title', 'name', 'email', 'phone'];
+        $.each(keys, function(i, v) {
+          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+        });
+        goToStep('#name-email-again');
+      },
+      nameEmailAgain: function() {
+        goToStep('#address-dob-etc');
+      },
+      addressDobEtc: function() {
+        goToStep('#residency');
+      },
+      residency: function() {
+        goToStep('#taxable-income');
+      },
+      taxableIncome: function() {
+        goToStep('#super-funds');
+      },
+      superFunds: function() {
+        goToStep('#objectives');
+      },
+      objectives: function() {
+        goToStep('#end-part-two');
+      },
+      endPartTwo: function() {
+        goToStep('#uk-address');
+      },
+      ukAddress: function() {
+        goToStep('#uk-pension');
+      },
+      ukPension: function() {
+        goToStep('#end-part-three');
+      },
+      endPartThree: function() {
+        goToStep('#important');
+      },
+      important: function() {
+        goToStep('#thanks');
       }
     };
 

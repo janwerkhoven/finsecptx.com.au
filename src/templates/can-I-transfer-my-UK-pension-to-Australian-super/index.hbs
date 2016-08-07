@@ -265,6 +265,83 @@
       </div>
     </section>
 
+    <section id="residency">
+      <div>
+        <div class="field select">
+          <label>What is your residency status?</label>
+          <div>
+            <select name="RESIDENCY">
+              <option selected>Choose...</option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field text">
+          <label>What date did you arrive in Australia with the intention to stay permanently? <em>(Or date of return for expats)</em><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
+          <input type="text" name="DATEARRIVAL">
+        </div>
+        <div class="field text">
+          <label>What is the date of your last UK residency?</label>
+          <input type="text" name="DATEUKRESIDENCY">
+        </div>
+        <ul>
+          <li><button class="circle next">{{> arrow-right}}</button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="taxable-income">
+      <div>
+        <div class="field text">
+          <label>What date did you arrive in Australia with the intention to stay permanently? <em>(Or date of return for expats)</em><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
+          <input type="text" name="DATEARRIVAL">
+        </div>
+        <ul>
+          <li><button class="circle next">{{> arrow-right}}</button></li>
+        </ul>
+      </div>
+    </section>
+
+Is your total Australian annual
+taxable income from all sources
+greater than $18,200?
+Yes No
+Have you made any Non
+Concessional (after tax personal)
+contributions to an Australian
+superannuation fund since
+1/7/2007?
+Thank you. Please list the amounts
+and the dates they were made:
+Yes
+1.
+Add...
+No
+2/4
+
+<section id="super-funds">
+  <div>
+<p>Big table</p>
+    <ul>
+      <li><button class="circle next">{{> arrow-right}}</button></li>
+    </ul>
+  </div>
+</section>
+
+<section id="objectives">
+  <div>
+<p>Objectives</p>
+    <ul>
+      <li><button class="circle next">{{> arrow-right}}</button></li>
+    </ul>
+  </div>
+</section>
+
     <section id="end-part-two">
       <div>
         {{> chevron-down}}
@@ -305,7 +382,10 @@
 
     <section id="uk-pension">
       <div>
-
+        <p>UK Pension</p>
+            <ul>
+              <li><button class="circle next">{{> arrow-right}}</button></li>
+            </ul>
       </div>
     </section>
 
