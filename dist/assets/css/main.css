@@ -376,7 +376,8 @@ button.big {
   text-shadow: 0 0 10px RGBA(0, 0, 0, 0.5);
   border-width: 4px;
 }
-a.button:hover,
+a.button:focus, a.button:hover,
+button:focus,
 button:hover {
   background: RGBA(255, 255, 255, 0.5);
 }
@@ -2431,6 +2432,7 @@ footer #nav ul li a:hover {
 }
 #form section {
   display: none;
+  text-align: center;
 }
 #form section > div {
   min-height: 100vh;
@@ -2460,26 +2462,64 @@ footer #nav ul li a:hover {
   font-style: normal;
   color: #4c6f93;
 }
-#form section ul {
-  margin-top: 10px;
+#form section .buttons {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
 }
-#form section ul li:not(:last-child) {
+#form section .buttons.vertical {
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+}
+#form section .buttons.vertical a.button:not(:last-child),
+#form section .buttons.vertical button:not(:last-child) {
   margin-bottom: 20px;
 }
-#form section ul .button,
-#form section ul button {
+#form section .buttons a.button,
+#form section .buttons button {
   font-size: 22px;
   font-family: "Rick-Bold", sans-serif;
   line-height: 150%;
 }
-#form section ul .button.circle,
-#form section ul button.circle {
-  display: block;
-  margin: 0 auto;
+#form section .buttons a.button.back,
+#form section .buttons button.back {
+  text-transform: lowercase;
+  border-color: transparent;
+  padding: 0;
+  color: #4c6f93;
 }
-#form section ul .button.pdf,
-#form section ul button.pdf {
-  max-width: 400px;
+#form section .buttons a.button.back:focus, #form section .buttons a.button.back:hover,
+#form section .buttons button.back:focus,
+#form section .buttons button.back:hover {
+  color: white;
+  background: none;
+}
+#form section .buttons a.button.pdf,
+#form section .buttons button.pdf {
+  width: 400px;
+}
+#form section .buttons > p {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  background: #fff;
+  color: #212c48;
+  padding: 0 8px;
+  right: 0;
+  top: -40px;
 }
 #form .field {
   margin-bottom: 60px;
@@ -2488,8 +2528,9 @@ footer #nav ul li a:hover {
   width: 100%;
   display: block;
   font-family: "Rick-Bold", sans-serif;
-  font-size: 28px;
+  font-size: 25px;
   line-height: 150%;
+  text-align: left;
 }
 #form .field label small {
   font-size: 18px;
@@ -2501,28 +2542,32 @@ footer #nav ul li a:hover {
   width: 100%;
   background: none;
   border: 0;
-  border-bottom: 2px solid #557ea0;
   font-size: 30px;
   outline: none;
   line-height: 150%;
   box-sizing: border-box;
   margin-top: 10px;
+  font-family: "Rick-Bold", sans-serif;
+  padding: 0 2px;
+  font-size: 34px;
 }
 #form .field.email, #form .field.text {
   position: relative;
 }
-#form .field.email.focus:after, #form .field.email.has-value:after, #form .field.text.focus:after, #form .field.text.has-value:after {
-  width: 100%;
+#form .field.email.focus:after, #form .field.text.focus:after {
   background: white;
+}
+#form .field.email.focus:after, #form .field.email.has-placeholder:after, #form .field.email.has-value:after, #form .field.text.focus:after, #form .field.text.has-placeholder:after, #form .field.text.has-value:after {
+  bottom: 0;
 }
 #form .field.email:after, #form .field.text:after {
   content: ' ';
   position: absolute;
-  width: 0;
+  width: 100%;
   height: 2px;
   bottom: 0;
+  bottom: 10px;
   left: 0;
-  background: white;
   background: #557ea0;
   transition: 300ms all ease-out;
 }
@@ -2539,13 +2584,13 @@ footer #nav ul li a:hover {
 }
 #form .field.select > div select {
   width: 100%;
-  height: 50px;
+  height: 55px;
   background: none;
   border: 0;
   outline: 0;
-  font-size: 26px;
+  font-size: 30px;
   line-height: 180%;
-  font-family: "Rick-Medium", sans-serif;
+  font-family: "Rick-Bold", sans-serif;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2561,8 +2606,8 @@ footer #nav ul li a:hover {
   z-index: -1;
   right: 0;
   bottom: 0;
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2602,7 +2647,7 @@ footer #nav ul li a:hover {
   border: 2px solid #557ea0;
   width: 70px;
   text-align: center;
-  line-height: 40px;
+  line-height: 46px;
   padding-top: 5px;
 }
 #form .field.range input[type="range"] {
@@ -2610,10 +2655,12 @@ footer #nav ul li a:hover {
 }
 #form #hello {
   display: block;
-  text-align: center;
 }
 #form #over-55 > div:first-child {
   padding-bottom: 100px;
+}
+#form #over-55 > div:first-child .back {
+  margin-top: 20px;
 }
 #form #over-55 > div:last-child {
   background: #4c6f93;
@@ -2638,21 +2685,12 @@ footer #nav ul li a:hover {
           justify-content: center;
 }
 #form #over-55 > div:last-child > div button {
-  margin: 10px;
   font-family: "Rick-Bold", sans-serif;
-}
-#form #below-45,
-#form #between-45-and-55,
-#form #over-55 {
-  text-align: center;
 }
 #form #below-45 > div,
 #form #between-45-and-55 > div,
 #form #over-55 > div {
   max-width: 540px;
-}
-#form #subscribed {
-  text-align: center;
 }
 #form ::-webkit-input-placeholder {
   color: #557ea0;

@@ -60,6 +60,8 @@ $(document).ready(function() {
 
   });
 
+  PAGE = $('body').attr('id');
+
   // Mobile navigation
   var showingMobileNav = false;
   $('header button').on('click', function() {
@@ -167,22 +169,6 @@ $(document).ready(function() {
 
   // FORM LOGIC -----------------------------------------------------------------------
 
-  $('#form form button').on('click', function(e) {
-    e.preventDefault();
-  });
-
-  var page = $('body').attr('id');
-
-  function goToStep(id) {
-    history.pushState(null, null, id);
-    animateToHash();
-  }
-
-  function animateToHash() {
-    var id = location.hash || '#hello';
-    $('#form ' + id).show().siblings('section').hide();
-  }
-
   function emailStageOneWithFormSpree() {
 
     // Submits the contact form to Formspree
@@ -249,25 +235,91 @@ $(document).ready(function() {
     });
   }
 
-  // On page load, remove any hash from the URL
-  // if (location.hash) {
-  //   history.pushState('', document.title, window.location.pathname);
-  // }
-
-  $(window).on('popstate', function(e) {
+  function goTo(id) {
+    if (!location.hash && id === 'prev') {
+      window.location = '/';
+    }
+    var $active = $('#form section' + location.hash);
+    id = id === 'next' ? $active.next().attr('id') : id;
+    id = id === 'prev' ? $active.prev().attr('id') : id;
+    history.pushState(null, null, '#' + id);
     animateToHash();
+  }
+
+  function animateToHash() {
+    if ($('#form ' + location.hash).length) {
+      $('#form ' + location.hash).show().siblings('section').hide();
+    } else {
+      history.pushState('', document.title, window.location.pathname);
+    };
+  }
+
+  jQuery.fn.extend({
+    isValid: function() {
+      id = this.attr('id');
+      if (rules[id]) {
+        return rules[id]();
+      } else {
+        return true;
+      }
+    }
   });
 
-  if (page === 'form') {
+  if (PAGE === 'form') {
+
+    animateToHash();
 
     var answers = {};
 
-    var step = 'hello';
+    $('section button.back').on('click', function() {
+      // window.history.back();
+      goTo('prev');
+    });
 
-    // localStorage.setItem('favoriteflavor', 'vanilla');
-    //   var taste = localStorage.getItem('favoriteflavor');
-    //   localStorage.removeItem('favoriteflavor');
-    // var taste = localStorage.getItem('favoriteflavor');
+    $('section button.next').on('click', function() {
+      var thisSection = $(this).closest('section');
+      if (thisSection.isValid()) {
+        goTo('next');
+      }
+    });
+
+    $('section button.back').on('click', function() {
+      // window.history.back();
+      goTo('prev');
+    });
+
+    var rules = {
+      'state-age': function() {
+        var age = parseInt(answers.age);
+        if (Number.isInteger(age)) {
+          if (age < 45) {
+            goTo('below-45');
+          } else if (age < 55) {
+            goTo('between-45-and-55');
+          } else {
+            return true;
+          }
+        } else {
+          $('#state-age .buttons p').show();
+        }
+      },
+      // below45: function() {
+      //   subscribeToMailChimp();
+      // },
+      // between45And55: function() {
+      //   subscribeToMailChimp();
+      // },
+      // over55: function() {
+      //   goToStep('#start-enquiry');
+      // },
+      // startEnquiry: function() {
+      //   keys = ['title', 'name', 'email', 'phone'];
+      //   $.each(keys, function(i, v) {
+      //     $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+      //   });
+      //   goToStep('#name-email-again');
+      // }
+    };
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
     $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
@@ -277,96 +329,6 @@ $(document).ready(function() {
       sessionStorage.setItem(key, value);
       console.log(answers);
     });
-
-    // On click button.next, grab the ID of the section, convert to camelcase and execute the matching method
-    $('section button.next').on('click', function() {
-      var id = $(this).parents('section').attr('id').replace(/-([a-z])/g, function(m, w) {
-        return w.toUpperCase();
-      }).replace(/-/g, '');
-      console.log(id);
-      steps[id]();
-    });
-
-    // Each step comes with it's own logic, store them here:
-    var steps = {
-      hello: function() {
-        goToStep('#title-name');
-      },
-      titleName: function() {
-        goToStep('#email-phone');
-      },
-      emailPhone: function() {
-        goToStep('#state-age');
-      },
-      stateAge: function() {
-        var age = parseInt(answers.age);
-        console.log(age);
-        if (Number.isInteger(age)) {
-          if (age < 45) {
-            goToStep('#below-45');
-          } else if (age < 55) {
-            goToStep('#between-45-and-55');
-          } else {
-            goToStep('#over-55');
-          }
-          // emailStageOneWithFormSpree();
-        } else {
-
-          // TODO
-
-          // $('#state-age .field.age')
-        }
-      },
-      below45: function() {
-        subscribeToMailChimp();
-      },
-      between45And55: function() {
-        subscribeToMailChimp();
-      },
-      over55: function() {
-        goToStep('#start-enquiry');
-      },
-      startEnquiry: function() {
-        keys = ['title', 'name', 'email', 'phone'];
-        $.each(keys, function(i, v) {
-          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-        });
-        goToStep('#name-email-again');
-      },
-      nameEmailAgain: function() {
-        goToStep('#address-dob-etc');
-      },
-      addressDobEtc: function() {
-        goToStep('#residency');
-      },
-      residency: function() {
-        goToStep('#taxable-income');
-      },
-      taxableIncome: function() {
-        goToStep('#super-funds');
-      },
-      superFunds: function() {
-        goToStep('#objectives');
-      },
-      objectives: function() {
-        goToStep('#end-part-two');
-      },
-      endPartTwo: function() {
-        goToStep('#uk-address');
-      },
-      ukAddress: function() {
-        goToStep('#uk-pension');
-      },
-      ukPension: function() {
-        goToStep('#end-part-three');
-      },
-      endPartThree: function() {
-        goToStep('#important');
-      },
-      important: function() {
-        goToStep('#thanks');
-      }
-    };
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
     $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
@@ -380,6 +342,9 @@ $(document).ready(function() {
         $(this).parent().removeClass('has-value');
       }
     });
+
+    // Add class to help style
+    $('input[placeholder]').closest('.field').addClass('has-placeholder');
 
     // Add class selected if user selected a value from <select>
     $('#form select').on('change', function() {
@@ -404,11 +369,8 @@ $(document).ready(function() {
     // On click of back button use history API to go back
     $('main nav a.back').on('click', function(e) {
       e.preventDefault();
-      window.history.back();
-    });
-
-    $('#form #start-enquiry button.later').on('click', function(e) {
-      console.log('continue later');
+      // window.history.back();
+      goTo('prev');
     });
 
   }

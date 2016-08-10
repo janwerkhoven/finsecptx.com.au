@@ -17,21 +17,12 @@
       <a href="/" class="back">{{> arrow-right}}</a>
     </nav>
 
-    <aside>
-      <p>1/3</p>
-      <ul>
-        <li class="done"></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </aside>
-
     <section id="hello">
       <div>
         <p>We’d like to ask a few quick questions to establish whether you’re eligible for transfering your UK Pension to Australian Superannuation.</p>
-        <ul>
-          <li><button class="next">Start</button></li>
-        </ul>
+        <div class="buttons vertical">
+          <button class="next">Start</button>
+        </div>
       </div>
     </section>
 
@@ -39,15 +30,24 @@
       <div>
         <div class="field text">
           <label>What’s your title</label>
-          <input type="text" name="TITLE">
+          <input type="text" name="TITLE" tabindex="1">
         </div>
         <div class="field text">
           <label>And your name?</label>
-          <input type="text" name="NAME">
+          <input type="text" name="NAME" tabindex="2">
         </div>
-        <ul>
-          <li><button class="circle next">{{> arrow-right}}</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+        </div>
+        <aside>
+          <p>1/3</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -55,15 +55,24 @@
       <div>
         <div class="field email">
           <label>What’s your email address?</label>
-          <input type="email" placeholder="your@email.com" name="EMAIL">
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="1">
         </div>
         <div class="field text">
           <label>Phone number?</label>
-          <input type="text" placeholder="04** *** ***" name="PHONE">
+          <input type="text" placeholder="04** *** ***" name="PHONE" tabindex="2">
         </div>
-        <ul>
-          <li><button class="circle next">{{> arrow-right}}</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -72,7 +81,7 @@
         <div class="field select">
           <label>What state do you reside in?</label>
           <div>
-            <select name="STATE">
+            <select name="STATE" tabindex="1">
               <option selected>Choose...</option>
               <option value="ACT">Australian Capital Territory</option>
               <option value="NSW">New South Wales</option>
@@ -90,69 +99,88 @@
         </div>
         <div class="field range">
           <label>How old are you?<small>(if you don’t mind me asking)</small></label>
-          <input type="text" placeholder="55">
+          <input type="text" placeholder="?" tabindex="2">
           <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
         </div>
-        <ul>
-          <li><button class="circle next">{{> arrow-right}}</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+          <p>Please enter your age</p>
+        </div>
+        <aside>
+          <p>3/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section id="over-55">
+    <section id="eligibilty">
       <div>
-        <p>Thank you and welcome!</p>
-        <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
-        <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
-        <ul>
-          <li><button class="next">Get started</button></li>
-        </ul>
-      </div>
-      <div>
-        <p>Not ready just yet? Click one of the below</p>
-        <ul>
-          <li><a class="button" href="/contact">Speak to a specialist</a></li>
-          <li><button class="checkbox unchecked subscribe">Keep me up to date via email</button></li>
-        </ul>
-      </div>
-    </section>
 
-    <section id="between-45-and-55">
-      <div>
-        <p>Thank you!</p>
-        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
-        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
-        <ul>
-          <li><button class="checkbox unchecked next subscribe">Keep me up to date via email</button></li>
-          <li><a class="button" href="/contact">Speak to a specialist</a></li>
-          <li><a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a></li>
-        </ul>
-      </div>
-    </section>
+        <div id="over-55">
+          <div>
+            <p>Thank you and welcome!</p>
+            <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
+            <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
+            <div class="buttons vertical">
+              <button class="next" tabindex="1">Get Started</button>
+              <button class="back">Back</button>
+            </div>
+          </div>
+          <div>
+            <p>Not ready just yet?</p>
+            <div class="buttons vertical">
+              <a class="button" href="/contact">Speak to a specialist</a>
+              <button class="checkbox unchecked subscribe">Keep me up to date via email</button>
+            </div>
+          </div>
+        </div>
 
-    <section id="below-45">
-      <div>
-        <p>Thank you!</p>
-        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
-        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
-        <ul>
-          <li><button class="checkbox unchecked next subscribe">Keep me up to date via email</button></li>
-          <li><a class="button" href="/contact">Speak to a specialist</a></li>
-          <li><a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a></li>
-        </ul>
-      </div>
-    </section>
+        <div id="between-45-and-55">
+          <div>
+            <p>Thank you!</p>
+            <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
+            <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
+            <div class="buttons vertical">
+              <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
+              <a class="button" href="/contact">Speak to a specialist</a>
+              <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+              <button class="back">Back</button>
+            </div>
+          </div>
+        </div>
 
-    <section id="subscribed">
-      <div>
-        <p>Great!</p>
-        <p>Almost finished... We need to confirm your email address:</p>
-        <p class="email"></p>
-        <p>To complete the subscription process, please click the link in the email we just sent you.</p>
-        <ul>
-          <li><a class="button" href="/contact">Speak to a specialist</a></li>
-          <li><a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a></li>
-        </ul>
+        <div id="below-45">
+          <div>
+            <p>Thank you!</p>
+            <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
+            <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
+            <div class="buttons vertical">
+              <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
+              <a class="button" href="/contact">Speak to a specialist</a>
+              <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+              <button class="back">Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="subscribed">
+          <div>
+            <p>Great!</p>
+            <p>Almost finished... We need to confirm your email address:</p>
+            <p class="email"></p>
+            <p>To complete the subscription process, please click the link in the email we just sent you.</p>
+            <ul>
+              <li><a class="button" href="/contact">Speak to a specialist</a></li>
+              <li><a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -162,10 +190,11 @@
         <p><small>By answering the following questions, you will be providing us with valuable information that will help start the transfer enquiry.</small></p>
         <p><em>Estimated Time: 10 minutes</em></p>
         <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p>
-        <ul>
-          <li><button class="next">Start form now</button></li>
-          <li><button class="complete-later">Complete later</button></li>
-        </ul>
+        <div class="buttons vertical">
+          <button class="next">Start form now</button>
+          <!-- <button>Complete later</button> -->
+          <button class="back">Back</button>
+        </div>
       </div>
     </section>
 
@@ -174,23 +203,24 @@
         <p>Does this all look correct? If not, please adjust them now.</p>
         <div class="field text">
           <label>Title</label>
-          <input type="text" name="TITLE">
+          <input type="text" name="TITLE" tabindex="1">
         </div>
         <div class="field text">
           <label>Name</label>
-          <input type="text" name="NAME">
+          <input type="text" name="NAME" tabindex="2">
         </div>
         <div class="field email">
           <label>Email address</label>
-          <input type="email" placeholder="your@email.com" name="EMAIL">
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="3">
         </div>
         <div class="field text">
           <label>Phone number</label>
-          <input type="text" placeholder="04** *** ***" name="PHONE">
+          <input type="text" placeholder="04** *** ***" name="PHONE" tabindex="4">
         </div>
-        <ul>
-          <li><button class="circle next">{{> arrow-right}}</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
       </div>
     </section>
 
@@ -198,11 +228,11 @@
       <div>
         <div class="field text select">
           <label>What’s your address?</label>
-          <input type="text" name="STREET1">
-          <input type="text" name="STREET2">
-          <input type="text" name="SUBURB">
+          <input type="text" name="STREET1" tabindex="1">
+          <input type="text" name="STREET2" tabindex="2">
+          <input type="text" name="SUBURB" tabindex="3">
           <div>
-            <select name="STATE">
+            <select name="STATE" tabindex="5">
               <option selected>Choose...</option>
               <option value="ACT">Australian Capital Territory</option>
               <option value="NSW">New South Wales</option>
@@ -217,11 +247,11 @@
               {{> chevron-down}}
             </div>
           </div>
-          <input type="text" name="POSTCODE">
+          <input type="text" name="POSTCODE" tabindex="4">
         </div>
         <div class="field text">
           <label>Date of birth?</label>
-          <input type="text" name="DOB">
+          <input type="text" name="DOB" tabindex="5">
         </div>
         <div class="field option">
           <label>What is your gender?</label>
@@ -239,19 +269,20 @@
         </div>
         <div class="field text spouse">
           <label>What is your Spouse’s name?</label>
-          <input type="text" name="SPOUSE">
+          <input type="text" name="SPOUSE"  tabindex="6">
         </div>
         <div class="field text">
           <label>Do you have a maiden name?</label>
-          <input type="text" name="MAIDEN">
+          <input type="text" name="MAIDEN" tabindex="7">
         </div>
         <div class="field text">
           <label>What is your Occupation?</label>
-          <input type="text" name="OCCUPATION">
+          <input type="text" name="OCCUPATION" tabindex="8">
         </div>
-        <ul>
-          <li><button class="circle next">{{> arrow-right}}</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
       </div>
     </section>
 
@@ -259,9 +290,10 @@
       <div>
         {{> chevron-down}}
         <p>Part 1. Complete!</p>
-        <ul>
-          <li><button class="next">Proceed to part 2 of 3</button></li>
-        </ul>
+        <div class="buttons vertical">
+          <button class="next">Proceed to part 2 of 3</button>
+          <button class="back">Back</button>
+        </div>
       </div>
     </section>
 
@@ -307,7 +339,7 @@
       </div>
     </section>
 
-Is your total Australian annual
+    <!-- Is your total Australian annual
 taxable income from all sources
 greater than $18,200?
 Yes No
@@ -322,25 +354,25 @@ Yes
 1.
 Add...
 No
-2/4
+2/4 -->
 
-<section id="super-funds">
-  <div>
-<p>Big table</p>
-    <ul>
-      <li><button class="circle next">{{> arrow-right}}</button></li>
-    </ul>
-  </div>
-</section>
+    <section id="super-funds">
+      <div>
+        <p>Big table</p>
+        <ul>
+          <li><button class="circle next">{{> arrow-right}}</button></li>
+        </ul>
+      </div>
+    </section>
 
-<section id="objectives">
-  <div>
-<p>Objectives</p>
-    <ul>
-      <li><button class="circle next">{{> arrow-right}}</button></li>
-    </ul>
-  </div>
-</section>
+    <section id="objectives">
+      <div>
+        <p>Objectives</p>
+        <ul>
+          <li><button class="circle next">{{> arrow-right}}</button></li>
+        </ul>
+      </div>
+    </section>
 
     <section id="end-part-two">
       <div>
@@ -383,9 +415,9 @@ No
     <section id="uk-pension">
       <div>
         <p>UK Pension</p>
-            <ul>
-              <li><button class="circle next">{{> arrow-right}}</button></li>
-            </ul>
+        <ul>
+          <li><button class="circle next">{{> arrow-right}}</button></li>
+        </ul>
       </div>
     </section>
 
@@ -427,22 +459,22 @@ No
           <dt>Date of birth</dt>
           <dd>16/6/1964</dd>
           <dt>Address</dt>
-          <dd>Level 1<br>
-            10 Greenhill Rd<br>
-            Wayville<br>
-            SA 5061</dd>
+          <dd>Level 1
+            <br> 10 Greenhill Rd
+            <br> Wayville
+            <br> SA 5061</dd>
           <dt>Last UK address</dt>
-          <dd>Level 1<br>
-            10 Greenhill Rd<br>
-            Wayville<br>
-            SA 5061</dd>
+          <dd>Level 1
+            <br> 10 Greenhill Rd
+            <br> Wayville
+            <br> SA 5061</dd>
           <dt>Name of UK Pension</dt>
           <dd>Example</dd>
           <dt>Address of UK Pension</dt>
-          <dd>Level 1<br>
-            10 Example St<br>
-            Wayville<br>
-            SA 5061</dd>
+          <dd>Level 1
+            <br> 10 Example St
+            <br> Wayville
+            <br> SA 5061</dd>
           <dt>Period of fund or scheme</dt>
           <dd>May 1984 - May 1996</dd>
           <dt>Policy or reference number</dt>
