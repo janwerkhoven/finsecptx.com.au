@@ -242,6 +242,7 @@ $(document).ready(function() {
     var $active = $('#form section' + location.hash);
     id = id === 'next' ? $active.next().attr('id') : id;
     id = id === 'prev' ? $active.prev().attr('id') : id;
+    console.log('goTo', id);
     history.pushState(null, null, '#' + id);
     animateToHash();
   }
@@ -272,8 +273,12 @@ $(document).ready(function() {
     var answers = {};
 
     $('section button.back').on('click', function() {
-      // window.history.back();
-      goTo('prev');
+      var target = $(this).attr('for');
+      if (target) {
+        goTo(target);
+      } else {
+        goTo('prev');
+      }
     });
 
     $('section button.next').on('click', function() {
@@ -281,11 +286,6 @@ $(document).ready(function() {
       if (thisSection.isValid()) {
         goTo('next');
       }
-    });
-
-    $('section button.back').on('click', function() {
-      // window.history.back();
-      goTo('prev');
     });
 
     var rules = {
@@ -300,25 +300,32 @@ $(document).ready(function() {
             return true;
           }
         } else {
-          $('#state-age .buttons p').show();
+          $('#state-age .buttons p').show(300);
         }
       },
-      // below45: function() {
-      //   subscribeToMailChimp();
-      // },
-      // between45And55: function() {
-      //   subscribeToMailChimp();
-      // },
-      // over55: function() {
-      //   goToStep('#start-enquiry');
-      // },
-      // startEnquiry: function() {
-      //   keys = ['title', 'name', 'email', 'phone'];
-      //   $.each(keys, function(i, v) {
-      //     $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-      //   });
-      //   goToStep('#name-email-again');
-      // }
+      'below-45': function() {
+        $('#email-check input').val(sessionStorage.getItem('email'));
+        goTo('email-check');
+      },
+      'between-45-and-55': function() {
+        $('#email-check input').val(sessionStorage.getItem('email'));
+        goTo('email-check');
+      },
+      'email-check': function() {
+        $('#subscribed p.email em').text(sessionStorage.getItem('email'));
+        subscribeToMailChimp();
+        goTo('subscribed');
+      },
+      'over-55': function() {
+        goTo('start-enquiry');
+      },
+      'start-enquiry': function() {
+        keys = ['title', 'name', 'email', 'phone'];
+        $.each(keys, function(i, v) {
+          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+        });
+        goToStep('name-email-again');
+      }
     };
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input

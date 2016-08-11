@@ -118,69 +118,76 @@
       </div>
     </section>
 
-    <section id="eligibilty">
+    <section id="over-55">
       <div>
-
-        <div id="over-55">
-          <div>
-            <p>Thank you and welcome!</p>
-            <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
-            <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
-            <div class="buttons vertical">
-              <button class="next" tabindex="1">Get Started</button>
-              <button class="back">Back</button>
-            </div>
-          </div>
-          <div>
-            <p>Not ready just yet?</p>
-            <div class="buttons vertical">
-              <a class="button" href="/contact">Speak to a specialist</a>
-              <button class="checkbox unchecked subscribe">Keep me up to date via email</button>
-            </div>
-          </div>
+        <p>Thank you and welcome!</p>
+        <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
+        <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
+        <div class="buttons vertical">
+          <button class="next" tabindex="1">Get Started</button>
+          <button class="back" for="state-age">Back</button>
         </div>
-
-        <div id="between-45-and-55">
-          <div>
-            <p>Thank you!</p>
-            <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
-            <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
-            <div class="buttons vertical">
-              <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
-              <a class="button" href="/contact">Speak to a specialist</a>
-              <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
-              <button class="back">Back</button>
-            </div>
-          </div>
+      </div>
+      <div>
+        <p>Not ready just yet?</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <button class="checkbox unchecked subscribe">Keep me up to date via email</button>
         </div>
+      </div>
+    </section>
 
-        <div id="below-45">
-          <div>
-            <p>Thank you!</p>
-            <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
-            <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
-            <div class="buttons vertical">
-              <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
-              <a class="button" href="/contact">Speak to a specialist</a>
-              <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
-              <button class="back">Back</button>
-            </div>
-          </div>
+    <section id="between-45-and-55">
+      <div>
+        <p>Thank you!</p>
+        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
+        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
+        <div class="buttons vertical">
+          <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <button class="back" for="state-age">Back</button>
         </div>
+      </div>
+    </section>
 
-        <div id="subscribed">
-          <div>
-            <p>Great!</p>
-            <p>Almost finished... We need to confirm your email address:</p>
-            <p class="email"></p>
-            <p>To complete the subscription process, please click the link in the email we just sent you.</p>
-            <ul>
-              <li><a class="button" href="/contact">Speak to a specialist</a></li>
-              <li><a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a></li>
-            </ul>
-          </div>
+    <section id="below-45">
+      <div>
+        <p>Thank you!</p>
+        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
+        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
+        <div class="buttons vertical">
+          <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <button class="back" for="state-age">Back</button>
         </div>
+      </div>
+    </section>
 
+    <section id="email-check">
+      <div>
+        <div class="field email">
+          <label>Is this email correct?</label>
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="1">
+        </div>
+        <div class="buttons vertical">
+          <button class="next">Sure is!</button>
+          <button class="back" for="state-age">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribed">
+      <div>
+        <p>Great!</p>
+        <p>To complete the subscription process, please click the link in the email we just sent you.</p>
+        <p class="email"><em>your@email.com</em></p>
+        <p>We will then keep you up to date with legislation changes that matter to you.</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+        </div>
       </div>
     </section>
 
@@ -193,7 +200,7 @@
         <div class="buttons vertical">
           <button class="next">Start form now</button>
           <!-- <button>Complete later</button> -->
-          <button class="back">Back</button>
+          <button class="back" for="state-age">Back</button>
         </div>
       </div>
     </section>
@@ -269,7 +276,7 @@
         </div>
         <div class="field text spouse">
           <label>What is your Spouse’s name?</label>
-          <input type="text" name="SPOUSE"  tabindex="6">
+          <input type="text" name="SPOUSE" tabindex="6">
         </div>
         <div class="field text">
           <label>Do you have a maiden name?</label>
