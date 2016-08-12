@@ -944,7 +944,7 @@ i.icon.burger span {
 #articles ul li {
   position: relative;
   width: 30%;
-  background: #d3d3d3;
+  background: #c6c5c5;
   max-width: 400px;
   margin: 1% 1% 20px;
 }
@@ -1321,6 +1321,71 @@ footer #nav ul li a:hover {
 }
 #ask-us div a.button {
   max-width: 320px;
+}
+
+#article header {
+  position: relative;
+  background: #0f1d3c;
+}
+#article main h2,
+#article main h3,
+#article main h4,
+#article main p {
+  margin-top: 20px;
+}
+#article main section {
+  -webkit-align-items: left;
+      -ms-flex-align: left;
+              -ms-grid-row-align: left;
+          align-items: left;
+  margin-bottom: 40px;
+  max-width: 1260px;
+}
+#article main section img {
+  max-width: 100%;
+  height: auto;
+}
+#article main section h4 {
+  color: #cececd;
+  padding-left: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+#article main section h4 a {
+  color: #cececd;
+}
+#article main section h4 a:hover {
+  color: grey;
+}
+@media (max-width: 900px) {
+  #article main section h4 {
+    padding-left: 40px;
+  }
+}
+#article main section div {
+  color: black;
+  max-width: 600px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+#article main section div h2 {
+  color: #0f1d3c;
+}
+#article main section div strong {
+  display: block;
+}
+#article main section div ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+#article main section div ul li {
+  margin: 20px 0;
+  line-height: 125%;
 }
 
 /* Specific to one page */
@@ -2102,8 +2167,7 @@ footer #nav ul li a:hover {
 }
 
 #keep-informed main #hero {
-  background: #191925 url("/assets/img/about/hero@2000x1350.jpg") 87% 50%/cover fixed;
-  background: #1c161f;
+  background: #191925 url("/assets/img/keep-informed/finsecptx-keepinformed-banner-2000.jpg") 87% 50%/cover fixed;
 }
 @media (max-width: 900px) {
   #keep-informed main #hero {
@@ -2796,73 +2860,3 @@ footer #nav ul li a:hover {
 }
 
 /* Outdate Browsers*/
-/*!--------------------------------------------------------------------
-STYLES "Outdated Browser"
-Version:    1.1.2 - 2015
-author:     Burocratik
-website:    http://www.burocratik.com
-* @preserve
------------------------------------------------------------------------*/
-#outdated {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 170px;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 1500;
-  background-color: #f25648;
-  color: #ffffff;
-}
-#outdated h6 {
-  font-size: 25px;
-  line-height: 25px;
-  margin: 30px 0 10px;
-}
-#outdated p {
-  font-size: 12px;
-  line-height: 12px;
-  margin: 0;
-}
-#outdated #btnUpdateBrowser {
-  display: block;
-  position: relative;
-  padding: 10px 20px;
-  margin: 30px auto 0;
-  width: 230px;
-  /*need for IE*/
-  color: #ffffff;
-  text-decoration: none;
-  border: 2px solid #ffffff;
-  cursor: pointer;
-}
-#outdated #btnUpdateBrowser:hover {
-  color: #f25648;
-  background-color: #ffffff;
-}
-#outdated .last {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  width: 20px;
-  height: 20px;
-}
-#outdated .last[dir='rtl'] {
-  right: auto !important;
-  left: 25px !important;
-}
-#outdated #btnCloseUpdateBrowser {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 36px;
-  line-height: 36px;
-}
-* html #outdated {
-  position: absolute;
-}
