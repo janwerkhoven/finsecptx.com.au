@@ -2103,8 +2103,7 @@ footer #nav ul li a:hover {
 }
 
 #keep-informed main #hero {
-  background: #191925 url("/assets/img/about/hero@2000x1350.jpg") 87% 50%/cover fixed;
-  background: #1c161f;
+  background: #191925 url("/assets/img/keep-informed/finsecptx-keepinformed-banner-2000.jpg") 50% 50%/cover fixed;
 }
 @media (max-width: 900px) {
   #keep-informed main #hero {
@@ -2113,7 +2112,7 @@ footer #nav ul li a:hover {
 }
 
 #contact main #hero {
-  background: #191925 url("/assets/img/contact/hero.jpg") 87% 50%/cover fixed;
+  background: #191925 url("/assets/img/contact/finsecptx-contact-banner-2000.jpg") 87% 50%/cover fixed;
 }
 @media (max-width: 900px) {
   #contact main #hero {
