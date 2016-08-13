@@ -63,6 +63,7 @@
   }
   section {
     display: none;
+    text-align: center;
     > div {
       min-height: 100vh;
       display: flex;
@@ -85,23 +86,51 @@
         color: $finsec-kashmir-blue;
       }
     }
-    ul {
-      margin-top: 10px;
-      li:not(:last-child) {
-        margin-bottom: 20px;
+    .buttons {
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-top: 20px;
+      &.vertical {
+        flex-flow: column nowrap;
+        align-items: center;
+        a.button,
+        button {
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
       }
-      .button,
+      a.button,
       button {
         font-size: 22px;
         font-family: $bold;
         line-height: 150%;
-        &.circle {
-          display: block;
-          margin: 0 auto;
+        &.back {
+          text-transform: lowercase;
+          border-color: transparent;
+          padding: 0;
+          color: $finsec-kashmir-blue;
+          &:focus,
+          &:hover {
+            color: white;
+            background: none;
+          }
         }
         &.pdf {
-          max-width: 400px;
+          width: 400px;
         }
+      }
+      > p {
+        display: none;
+        position: absolute;
+        font-size: 20px;
+        background: #fff;
+        color: #212c48;
+        padding: 0 8px;
+        right: 0;
+        top: -40px;
       }
     }
   }
@@ -111,8 +140,9 @@
       width: 100%;
       display: block;
       font-family: $bold;
-      font-size: 28px;
+      font-size: 25px;
       line-height: 150%;
+      text-align: left;
       small {
         font-size: 18px;
         display: block;
@@ -124,31 +154,38 @@
       width: 100%;
       background: none;
       border: 0;
-      border-bottom: 2px solid $finsec-that-other-blue;
       font-size: 30px;
       outline: none;
       line-height: 150%;
       box-sizing: border-box;
       margin-top: 10px;
+      font-family: $bold;
+      padding: 0 2px;
+      font-size: 34px;
     }
     &.email,
     &.text {
       position: relative;
+      &.focus {
+        &:after {
+          background: white;
+        }
+      }
       &.focus,
+      &.has-placeholder,
       &.has-value {
         &:after {
-          width: 100%;
-          background: white;
+          bottom: 0;
         }
       }
       &:after {
         content: ' ';
         position: absolute;
-        width: 0;
+        width: 100%;
         height: 2px;
         bottom: 0;
+        bottom: 10px;
         left: 0;
-        background: white;
         background: $finsec-that-other-blue;
         transition: 300ms all ease-out;
       }
@@ -168,15 +205,15 @@
         }
         select {
           width: 100%;
-          height: 50px;
+          height: 55px;
           background: none;
           border: 0;
           outline: 0;
-          font-size: 26px;
+          font-size: 34px;
           line-height: 180%;
-          font-family: $medium;
+          font-family: $bold;
           appearance: none;
-          padding: 2px 30px 0 16px;
+          padding: 0 30px 0 16px;
           cursor: pointer;
           color: $finsec-that-other-blue;
           &.selected {
@@ -188,8 +225,8 @@
           z-index: -1;
           right: 0;
           bottom: 0;
-          height: 50px;
-          width: 50px;
+          height: 55px;
+          width: 55px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -216,22 +253,75 @@
         border: 2px solid $finsec-that-other-blue;
         width: 70px;
         text-align: center;
-        line-height: 40px;
+        line-height: 46px;
         padding-top: 5px;
       }
       input[type="range"] {
         width: 360px;
       }
     }
+    &.option {
+      > div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        button {
+          width: 48%;
+          font-size: 20px;
+          font-family: $bold;
+          &.inactive {
+            text-decoration: line-through;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+  .group {
+    &.address {
+      margin-bottom: 40px;
+      .field {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .multi {
+    ul {
+      li {
+        display: flex;
+        flex-flow: row nowrap;
+        span {
+          font-size: 20px;
+          width: 40px;
+          text-align: left;
+          line-height: 40px;
+          margin-top: 18px;
+          font-family: $bold;
+          color: $finsec-kashmir-blue;
+        }
+        .field {
+          margin: 0;
+        }
+      }
+    }
+  }
+  img.check {
+    width: 90px;
+    display: block;
+    margin: 0 auto 20px;
+    transform: translateX(12px);
   }
   #hello {
     display: block;
-    text-align: center;
   }
   #over-55 {
     > div {
       &:first-child {
         padding-bottom: 100px;
+        .back {
+          margin-top: 20px;
+        }
       }
       &:last-child {
         background: $finsec-kashmir-blue;
@@ -248,7 +338,6 @@
           justify-content: row wrap;
           justify-content: center;
           button {
-            margin: 10px;
             font-family: $bold;
           }
         }
@@ -258,17 +347,22 @@
   #below-45,
   #between-45-and-55,
   #over-55 {
-    text-align: center;
     > div {
       max-width: 540px;
     }
-    ul {
-      // max-width: 500px;
+  }
+  #residency {
+    small {
+      color: $finsec-kashmir-blue;
+      margin: 20px 0;
     }
   }
-
-  #subscribed {
-    text-align: center;
+  #taxable-income {
+    .option {
+      > div {
+        margin-top: 30px;
+      }
+    }
   }
 
   // INPUT PLACEHOLDERS

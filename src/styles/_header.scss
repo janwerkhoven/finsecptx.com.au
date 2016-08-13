@@ -85,14 +85,15 @@ header {
           display: block;
           text-decoration: none;
           color: white;
-          font-size: 22px;
+          font-size: 20px;
           font-family: $bold;
           line-height: 40px;
-          padding: 0 10px;
+          padding: 0 15px;
           white-space: nowrap;
           text-shadow: 0 0 5px RGBA(0,0,0,0.5);
           @media (max-width: 900px) {
             line-height: 50px;
+            font-size: 22px;
           }
           &:hover,
           .active {

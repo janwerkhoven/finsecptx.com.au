@@ -1,8 +1,7 @@
 #keep-informed {
   main {
     #hero {
-      background: #191925 url('/assets/img/keep-informed/finsecptx-keepinformed-banner-2000.jpg') 87% 50% / cover fixed;
-      // background: #1c161f;
+      background: #191925 url('/assets/img/keep-informed/finsecptx-keepinformed-banner-2000.jpg') 50% 50% / cover fixed;
       @media (max-width: 900px) {
         background-attachment: scroll;
       }

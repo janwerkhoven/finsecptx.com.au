@@ -60,6 +60,8 @@ $(document).ready(function() {
 
   });
 
+  PAGE = $('body').attr('id');
+
   // Mobile navigation
   var showingMobileNav = false;
   $('header button').on('click', function() {
@@ -167,22 +169,6 @@ $(document).ready(function() {
 
   // FORM LOGIC -----------------------------------------------------------------------
 
-  $('#form form button').on('click', function(e) {
-    e.preventDefault();
-  });
-
-  var page = $('body').attr('id');
-
-  function goToStep(id) {
-    history.pushState(null, null, id);
-    animateToHash();
-  }
-
-  function animateToHash() {
-    var id = location.hash || '#hello';
-    $('#form ' + id).show().siblings('section').hide();
-  }
-
   function emailStageOneWithFormSpree() {
 
     // Submits the contact form to Formspree
@@ -232,7 +218,6 @@ $(document).ready(function() {
       // $('#subscription .success').show();
       console.log('DONE', data);
       $('#form #subscribed p.email').text(answers.email);
-      goToStep('#subscribed');
     }).fail(function(error) {
       // $btn.html('Whoops');
       // $('#subscription .fail').show();
@@ -249,124 +234,143 @@ $(document).ready(function() {
     });
   }
 
-  // On page load, remove any hash from the URL
-  // if (location.hash) {
-  //   history.pushState('', document.title, window.location.pathname);
-  // }
-
-  $(window).on('popstate', function(e) {
+  function goTo(id) {
+    if (!location.hash && id === 'prev') {
+      window.location = '/';
+    }
+    var $active = $('#form section' + location.hash);
+    id = id === 'next' ? $active.next().attr('id') : id;
+    id = id === 'prev' ? $active.prev().attr('id') : id;
+    console.log('goTo', id);
+    history.pushState(null, null, '#' + id);
     animateToHash();
+  }
+
+  function animateToHash() {
+    if ($('#form ' + location.hash).length) {
+      $('#form ' + location.hash).show().siblings('section').hide();
+    } else {
+      history.pushState('', document.title, window.location.pathname);
+    };
+  }
+
+  function store(key, value) {
+    answers[key] = value;
+    sessionStorage.setItem(key, value);
+    console.log(answers);
+    if (rules[key]) {
+      rules[key]();
+    }
+  }
+
+  jQuery.fn.extend({
+    isValid: function() {
+      id = this.attr('id');
+      if (rules[id]) {
+        return rules[id]();
+      } else {
+        return true;
+      }
+    }
   });
 
-  if (page === 'form') {
+  if (PAGE === 'form') {
+
+    animateToHash();
 
     var answers = {};
 
-    var step = 'hello';
+    var rules = {
+      'state-age': function() {
+        var age = parseInt(answers.age);
+        if (Number.isInteger(age)) {
+          if (age < 45) {
+            goTo('below-45');
+          } else if (age < 55) {
+            goTo('between-45-and-55');
+          } else {
+            return true;
+          }
+        } else {
+          $('#state-age .buttons p').show(300);
+        }
+      },
+      'below-45': function() {
+        $('#email-check input').val(sessionStorage.getItem('email'));
+        goTo('email-check');
+      },
+      'between-45-and-55': function() {
+        $('#email-check input').val(sessionStorage.getItem('email'));
+        goTo('email-check');
+      },
+      'email-check': function() {
+        $('#subscribed p.email em').text(sessionStorage.getItem('email'));
+        subscribeToMailChimp();
+        goTo('subscribed');
+      },
+      'over-55': function() {
+        goTo('start-enquiry');
+      },
+      'start-enquiry': function() {
+        keys = ['title', 'name', 'email', 'phone'];
+        $.each(keys, function(i, v) {
+          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+        });
+        goTo('name-email-again');
+      },
+      'gender': function() {
+        if (sessionStorage.getItem('gender') === 'Female') {
+          $('.field.maiden').show();
+        } else {
+          $('.field.maiden').hide();
+        }
+      },
+      'married': function() {
+        if (sessionStorage.getItem('married') === 'Yes') {
+          $('.field.spouse').show();
+        } else {
+          $('.field.spouse').hide();
+        }
+      },
+      'non_concessional_contributions': function() {
+        if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
+          $('.field.contributions').show();
+        } else {
+          $('.field.contributions').hide();
+        }
+      }
+    };
 
-    // localStorage.setItem('favoriteflavor', 'vanilla');
-    //   var taste = localStorage.getItem('favoriteflavor');
-    //   localStorage.removeItem('favoriteflavor');
-    // var taste = localStorage.getItem('favoriteflavor');
+    $('section button.back').on('click', function() {
+      var target = $(this).attr('for');
+      if (target) {
+        goTo(target);
+      } else {
+        goTo('prev');
+      }
+    });
+
+    $('section button.next').on('click', function() {
+      var thisSection = $(this).closest('section');
+      if (thisSection.isValid()) {
+        goTo('next');
+      }
+    });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
     $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
       var key = $(this).attr('name').toLowerCase();
       var value = $(this).val();
-      answers[key] = value;
-      sessionStorage.setItem(key, value);
-      console.log(answers);
+      store(key, value);
     });
 
-    // On click button.next, grab the ID of the section, convert to camelcase and execute the matching method
-    $('section button.next').on('click', function() {
-      var id = $(this).parents('section').attr('id').replace(/-([a-z])/g, function(m, w) {
-        return w.toUpperCase();
-      }).replace(/-/g, '');
-      console.log(id);
-      steps[id]();
+    // On click of option buttons, disable the other buttons, populate attribute to answers
+    $('.field.option button').on('click', function() {
+      $(this).removeClass('inactive').blur().siblings().addClass('inactive');
+      var key = $(this).closest('.field').attr('name').toLowerCase();
+      var value = $(this).text();
+      store(key, value);
     });
-
-    // Each step comes with it's own logic, store them here:
-    var steps = {
-      hello: function() {
-        goToStep('#title-name');
-      },
-      titleName: function() {
-        goToStep('#email-phone');
-      },
-      emailPhone: function() {
-        goToStep('#state-age');
-      },
-      stateAge: function() {
-        var age = parseInt(answers.age);
-        console.log(age);
-        if (Number.isInteger(age)) {
-          if (age < 45) {
-            goToStep('#below-45');
-          } else if (age < 55) {
-            goToStep('#between-45-and-55');
-          } else {
-            goToStep('#over-55');
-          }
-          // emailStageOneWithFormSpree();
-        } else {
-
-          // TODO
-
-          // $('#state-age .field.age')
-        }
-      },
-      below45: function() {
-        subscribeToMailChimp();
-      },
-      between45And55: function() {
-        subscribeToMailChimp();
-      },
-      over55: function() {
-        goToStep('#start-enquiry');
-      },
-      startEnquiry: function() {
-        keys = ['title', 'name', 'email', 'phone'];
-        $.each(keys, function(i, v) {
-          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-        });
-        goToStep('#name-email-again');
-      },
-      nameEmailAgain: function() {
-        goToStep('#address-dob-etc');
-      },
-      addressDobEtc: function() {
-        goToStep('#residency');
-      },
-      residency: function() {
-        goToStep('#taxable-income');
-      },
-      taxableIncome: function() {
-        goToStep('#super-funds');
-      },
-      superFunds: function() {
-        goToStep('#objectives');
-      },
-      objectives: function() {
-        goToStep('#end-part-two');
-      },
-      endPartTwo: function() {
-        goToStep('#uk-address');
-      },
-      ukAddress: function() {
-        goToStep('#uk-pension');
-      },
-      ukPension: function() {
-        goToStep('#end-part-three');
-      },
-      endPartThree: function() {
-        goToStep('#important');
-      },
-      important: function() {
-        goToStep('#thanks');
-      }
-    };
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
     $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
@@ -380,6 +384,9 @@ $(document).ready(function() {
         $(this).parent().removeClass('has-value');
       }
     });
+
+    // Add class to help style
+    $('input[placeholder]').closest('.field').addClass('has-placeholder');
 
     // Add class selected if user selected a value from <select>
     $('#form select').on('change', function() {
@@ -404,12 +411,22 @@ $(document).ready(function() {
     // On click of back button use history API to go back
     $('main nav a.back').on('click', function(e) {
       e.preventDefault();
-      window.history.back();
+      // window.history.back();
+      goTo('prev');
     });
 
-    $('#form #start-enquiry button.later').on('click', function(e) {
-      console.log('continue later');
+    $('.field.contributions input').on('focus', function() {
+      console.log($('.field.contributions li').index($(this).closest('li')));
     });
+
+    // Maiden name is hidden until user selects gender
+    rules['gender']();
+
+    // Spouse is hidden until user selects married
+    rules['married']();
+
+    // Hide contribution dates until user selects yes I contributed
+    rules['non_concessional_contributions']();
 
   }
 
