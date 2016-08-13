@@ -1,12 +1,10 @@
 #landing {
-
   #hero {
     background: #191925 url('/assets/img/landing/hero-bg-london-2000.jpg') 63% 50% / cover;
     @media (max-width: 400px) {
       height: 180vw;
     }
   }
-
   #intro {
     background: $finsec-royal-blue;
     @media (min-width: 621px) {
@@ -96,7 +94,6 @@
       }
     }
   }
-
   #get-in-touch {
     position: relative;
     background: $finsec-kashmir-blue radial-gradient(circle 1200px at 50% 80%, #53779b 0%, #29506f 100%);
@@ -173,6 +170,7 @@
           }
           @media (max-width: 940px) {
             padding-right: 30px;
+            margin: 20px 0;
           }
           @media (max-width: 660px) {
             padding-right: 10px;
@@ -197,6 +195,7 @@
           }
           @media (max-width: 940px) {
             padding-left: 30px;
+            margin: 20px 0;
           }
           @media (max-width: 660px) {
             padding-left: 10px;

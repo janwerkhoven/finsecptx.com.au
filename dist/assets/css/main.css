@@ -1214,13 +1214,14 @@ footer {
   text-align: center;
 }
 footer #legal a.logo {
+  margin: 15px;
   display: inline-block;
 }
 footer #legal img {
-  margin: 50px auto 20px;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   transition: all 200ms cubic-bezier(0.35, 0.9, 0.57, 1);
+  height: 58px;
 }
 footer #legal img:hover {
   -webkit-transform: scale(1.05);
@@ -1625,6 +1626,7 @@ footer #copyright p a:hover {
 @media (max-width: 940px) {
   #landing #get-in-touch .duo .call.david {
     padding-right: 30px;
+    margin: 20px 0;
   }
 }
 @media (max-width: 660px) {
@@ -1658,6 +1660,7 @@ footer #copyright p a:hover {
 @media (max-width: 940px) {
   #landing #get-in-touch .duo .call.scott {
     padding-left: 30px;
+    margin: 20px 0;
   }
 }
 @media (max-width: 660px) {
