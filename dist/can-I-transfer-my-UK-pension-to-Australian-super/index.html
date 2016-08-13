@@ -305,6 +305,13 @@
           <button class="back">Back</button>
           <button class="next" tabindex="5">Next</button>
         </div>
+        <aside>
+          <p>1/2</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -373,16 +380,23 @@
         </div>
         <div class="field text spouse">
           <label>What is your Spouse’s name?</label>
-          <input type="text" name="SPOUSE" tabindex="6">
+          <input type="text" name="SPOUSE" tabindex="8">
         </div>
         <div class="field text">
           <label>What is your Occupation?</label>
-          <input type="text" name="OCCUPATION" tabindex="8">
+          <input type="text" name="OCCUPATION" tabindex="9">
         </div>
         <div class="buttons">
           <button class="back">Back</button>
-          <button class="next" tabindex="5">Next</button>
+          <button class="next" tabindex="10">Next</button>
         </div>
+        <aside>
+          <p>2/2</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -402,7 +416,7 @@
         <div class="field select">
           <label>What is your residency status?</label>
           <div>
-            <select name="RESIDENCY">
+            <select name="RESIDENCY" tabindex="1">
               <option selected>Choose...</option>
               <option value="1">Option 1</option>
               <option value="1">Option 2</option>
@@ -424,16 +438,25 @@
         </div>
         <div class="field text">
           <label>What date did you arrive in Australia with the intention to stay permanently? <small>(Or date of return for expats)</small><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
-          <input type="text" name="DATEARRIVAL" placeholder="DD/MM/YYYYY">
+          <input type="text" name="DATE_ARRIVAL" placeholder="DD/MM/YYYYY" tabindex="2">
         </div>
         <div class="field text">
           <label>What is the date of your last UK residency?</label>
-          <input type="text" name="DATEUKRESIDENCY" placeholder="DD/MM/YYYYY">
+          <input type="text" name="DATE_UK_RESIDENCY" placeholder="DD/MM/YYYYY" tabindex="3">
         </div>
         <div class="buttons">
           <button class="back">Back</button>
-          <button class="next" tabindex="5">Next</button>
+          <button class="next" tabindex="4">Next</button>
         </div>
+        <aside>
+          <p>1/4</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -459,86 +482,74 @@
             <li>
               <span>1. </span>
               <div class="field text">
-                <input type="text" name="CONTRIBUTION_1" placeholder="DD/MM/YYYYY">
+                <input type="text" name="CONTRIBUTION1" placeholder="DD/MM/YYYYY">
               </div>
             </li>
             <li>
               <span>2. </span>
               <div class="field text">
-                <input type="text" name="CONTRIBUTION_2" placeholder="DD/MM/YYYYY">
+                <input type="text" name="CONTRIBUTION2" placeholder="DD/MM/YYYYY">
               </div>
             </li>
             <li>
               <span>3. </span>
               <div class="field text">
-                <input type="text" name="CONTRIBUTION_3" placeholder="DD/MM/YYYYY">
+                <input type="text" name="CONTRIBUTION3" placeholder="DD/MM/YYYYY">
               </div>
             </li>
           </ul>
         </div>
         <div class="buttons">
           <button class="back">Back</button>
-          <button class="next" tabindex="5">Next</button>
+          <button class="next">Next</button>
         </div>
+        <aside>
+          <p>2/4</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
-
-    <!-- Is your total Australian annual
-taxable income from all sources
-greater than $18,200?
-Yes No
-Have you made any Non
-Concessional (after tax personal)
-contributions to an Australian
-superannuation fund since
-1/7/2007?
-Thank you. Please list the amounts
-and the dates they were made:
-Yes
-1.
-Add...
-No
-2/4 -->
 
     <section id="super-funds">
       <div>
         <p>Big table</p>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>3/4</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
     <section id="objectives">
       <div>
         <p>Objectives</p>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>4/4</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -546,9 +557,10 @@ No
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 2. Complete!</p>
-        <ul>
-          <li><button class="next">Proceed to part 3 of 3</button></li>
-        </ul>
+        <div class="buttons vertical">
+          <button class="next">Proceed to part 3 of 3</button>
+          <button class="back">Back</button>
+        </div>
       </div>
     </section>
 
@@ -586,27 +598,34 @@ No
           </div>
           <input type="text" name="POSTCODE">
         </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>1/2</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
     <section id="uk-pension">
       <div>
         <p>UK Pension</p>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>2/2</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -614,9 +633,10 @@ No
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 3. Complete!</p>
-        <ul>
-          <li><button class="next">Proceed to sign off</button></li>
-        </ul>
+        <div class="buttons vertical">
+          <button class="next">Proceed to part sign off</button>
+          <button class="back">Back</button>
+        </div>
       </div>
     </section>
 
@@ -624,21 +644,10 @@ No
       <div>
         <p><strong>Important</strong></p>
         <p>If you have more than one fund you must complete a separate Letter of Authority (contained in the next section) for each fund.</p>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
       </div>
     </section>
 
@@ -687,10 +696,11 @@ No
           <dt>Today's Date</dt>
           <dd>16/06/2016</dd>
         </dl>
-        <ul>
-          <li><button class="next">Submit</button></li>
-          <li><button class="add">Add another fund</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Submit</button>
+          <button class="next">Add another fund</button>
+        </div>
       </div>
     </section>
 

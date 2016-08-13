@@ -358,9 +358,12 @@ $(document).ready(function() {
     });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
+
     $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
+      // $(document).on('focus', '#form input[type="text"], #form input[type="email"]', function() {
       var key = $(this).attr('name').toLowerCase();
       var value = $(this).val();
+      console.log(key, value);
       store(key, value);
     });
 
@@ -374,6 +377,8 @@ $(document).ready(function() {
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
     $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
+      // var selector = '#form input[type="text"], #form input[type="email"]';
+      // $(document).on('focus', selector, function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
       $(this).parent().removeClass('focus');
@@ -386,7 +391,7 @@ $(document).ready(function() {
     });
 
     // Add class to help style
-    $('input[placeholder]').closest('.field').addClass('has-placeholder');
+    // $('input[placeholder]').closest('.field').addClass('has-placeholder');
 
     // Add class selected if user selected a value from <select>
     $('#form select').on('change', function() {
@@ -415,8 +420,17 @@ $(document).ready(function() {
       goTo('prev');
     });
 
-    $('.field.contributions input').on('focus', function() {
-      console.log($('.field.contributions li').index($(this).closest('li')));
+    $(document).on('focus', '.field.contributions input', function() {
+      var $items = $('.field.contributions li');
+      var nth = $items.index($(this).closest('li')) + 1;
+      var length = $items.length;
+      console.log('focus', nth, length);
+      if (nth === length) {
+        console.log('equal', nth);
+        nth++;
+        console.log('equal', nth);
+        $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
+      };
     });
 
     // Maiden name is hidden until user selects gender
