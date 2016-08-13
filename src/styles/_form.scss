@@ -209,11 +209,11 @@
           background: none;
           border: 0;
           outline: 0;
-          font-size: 30px;
+          font-size: 34px;
           line-height: 180%;
           font-family: $bold;
           appearance: none;
-          padding: 2px 30px 0 16px;
+          padding: 0 30px 0 16px;
           cursor: pointer;
           color: $finsec-that-other-blue;
           &.selected {
@@ -260,6 +260,57 @@
         width: 360px;
       }
     }
+    &.option {
+      > div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        button {
+          width: 48%;
+          font-size: 20px;
+          font-family: $bold;
+          &.inactive {
+            text-decoration: line-through;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+  .group {
+    &.address {
+      margin-bottom: 40px;
+      .field {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .multi {
+    ul {
+      li {
+        display: flex;
+        flex-flow: row nowrap;
+        span {
+          font-size: 20px;
+          width: 40px;
+          text-align: left;
+          line-height: 40px;
+          margin-top: 18px;
+          font-family: $bold;
+          color: $finsec-kashmir-blue;
+        }
+        .field {
+          margin: 0;
+        }
+      }
+    }
+  }
+  img.check {
+    width: 90px;
+    display: block;
+    margin: 0 auto 20px;
+    transform: translateX(12px);
   }
   #hello {
     display: block;
@@ -298,6 +349,19 @@
   #over-55 {
     > div {
       max-width: 540px;
+    }
+  }
+  #residency {
+    small {
+      color: $finsec-kashmir-blue;
+      margin: 20px 0;
+    }
+  }
+  #taxable-income {
+    .option {
+      > div {
+        margin-top: 30px;
+      }
     }
   }
 

@@ -310,50 +310,61 @@
 
     <section id="address-dob-etc">
       <div>
-        <div class="field text select">
-          <label>What’s your address?</label>
-          <input type="text" name="STREET1" tabindex="1">
-          <input type="text" name="STREET2" tabindex="2">
-          <input type="text" name="SUBURB" tabindex="3">
-          <div>
-            <select name="STATE" tabindex="5">
-              <option selected>Choose...</option>
-              <option value="ACT">Australian Capital Territory</option>
-              <option value="NSW">New South Wales</option>
-              <option value="NT">Northern Territory</option>
-              <option value="QLD">Queensland</option>
-              <option value="SA">South Australia</option>
-              <option value="TAS">Tasmania</option>
-              <option value="VIC">Victoria</option>
-              <option value="WA">Western Australia</option>
-            </select>
+        <div class="address group">
+          <div class="field text">
+            <label>What’s your address?</label>
+            <input type="text" name="STREET" tabindex="1" placeholder="Street address">
+          </div>
+          <div class="field text">
+            <input type="text" name="SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field select">
             <div>
-              <svg width="48px" height="26px" viewBox="0 0 48 26">
-                <title>arrow-right</title>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+              <select name="STATE" tabindex="3">
+                <option selected>Choose...</option>
+                <option value="ACT">Australian Capital Territory</option>
+                <option value="NSW">New South Wales</option>
+                <option value="NT">Northern Territory</option>
+                <option value="QLD">Queensland</option>
+                <option value="SA">South Australia</option>
+                <option value="TAS">Tasmania</option>
+                <option value="VIC">Victoria</option>
+                <option value="WA">Western Australia</option>
+              </select>
+              <div>
+                <svg width="48px" height="26px" viewBox="0 0 48 26">
+                  <title>arrow-right</title>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                    <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                      <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                        <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                      </g>
                     </g>
                   </g>
-                </g>
-              </svg>
+                </svg>
+              </div>
             </div>
           </div>
-          <input type="text" name="POSTCODE" tabindex="4">
+          <div class="field text">
+            <input type="text" name="POSTCODE" tabindex="4" placeholder="Postcode">
+          </div>
         </div>
         <div class="field text">
           <label>Date of birth?</label>
-          <input type="text" name="DOB" tabindex="5">
+          <input type="text" name="DOB" tabindex="5" placeholder="DD/MM/YYYY">
         </div>
-        <div class="field option">
+        <div class="field option" name="GENDER">
           <label>What is your gender?</label>
           <div>
             <button>Male</button>
             <button>Female</button>
           </div>
         </div>
-        <div class="field radio married">
+        <div class="field text maiden">
+          <label>Do you have a maiden name?</label>
+          <input type="text" name="MAIDEN" tabindex="7">
+        </div>
+        <div class="field option" name="MARRIED">
           <label>Are you married?</label>
           <div>
             <button>Yes</button>
@@ -363,10 +374,6 @@
         <div class="field text spouse">
           <label>What is your Spouse’s name?</label>
           <input type="text" name="SPOUSE" tabindex="6">
-        </div>
-        <div class="field text">
-          <label>Do you have a maiden name?</label>
-          <input type="text" name="MAIDEN" tabindex="7">
         </div>
         <div class="field text">
           <label>What is your Occupation?</label>
@@ -381,16 +388,7 @@
 
     <section id="end-part-one">
       <div>
-        <svg width="48px" height="26px" viewBox="0 0 48 26">
-          <title>arrow-right</title>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
-              </g>
-            </g>
-          </g>
-        </svg>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 1. Complete!</p>
         <div class="buttons vertical">
           <button class="next">Proceed to part 2 of 3</button>
@@ -425,52 +423,63 @@
           </div>
         </div>
         <div class="field text">
-          <label>What date did you arrive in Australia with the intention to stay permanently? <em>(Or date of return for expats)</em><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
-          <input type="text" name="DATEARRIVAL">
+          <label>What date did you arrive in Australia with the intention to stay permanently? <small>(Or date of return for expats)</small><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
+          <input type="text" name="DATEARRIVAL" placeholder="DD/MM/YYYYY">
         </div>
         <div class="field text">
           <label>What is the date of your last UK residency?</label>
-          <input type="text" name="DATEUKRESIDENCY">
+          <input type="text" name="DATEUKRESIDENCY" placeholder="DD/MM/YYYYY">
         </div>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
       </div>
     </section>
 
     <section id="taxable-income">
       <div>
-        <div class="field text">
-          <label>What date did you arrive in Australia with the intention to stay permanently? <em>(Or date of return for expats)</em><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
-          <input type="text" name="DATEARRIVAL">
+        <div class="field option" name="TAXABLE_INCOME_GT_18200">
+          <label>Is your total Australian annual taxable income from all sources greater than $18,200?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
         </div>
-        <ul>
-          <li><button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
-  <title>arrow-right</title>
-  <defs></defs>
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
-      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
-        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
-        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
-      </g>
-    </g>
-  </g>
-</svg>
-</button></li>
-        </ul>
+        <div class="field option" name="NON_CONCESSIONAL_CONTRIBUTIONS">
+          <label>Have you made any Non Concessional (after tax personal) contributions to an Australian superannuation fund since 1/7/2007?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        </div>
+        <div class="field multi contributions">
+          <label>Thank you. Please list the amounts and the dates they were made:</label>
+          <ul>
+            <li>
+              <span>1. </span>
+              <div class="field text">
+                <input type="text" name="CONTRIBUTION_1" placeholder="DD/MM/YYYYY">
+              </div>
+            </li>
+            <li>
+              <span>2. </span>
+              <div class="field text">
+                <input type="text" name="CONTRIBUTION_2" placeholder="DD/MM/YYYYY">
+              </div>
+            </li>
+            <li>
+              <span>3. </span>
+              <div class="field text">
+                <input type="text" name="CONTRIBUTION_3" placeholder="DD/MM/YYYYY">
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
       </div>
     </section>
 
@@ -535,16 +544,7 @@ No
 
     <section id="end-part-two">
       <div>
-        <svg width="48px" height="26px" viewBox="0 0 48 26">
-          <title>arrow-right</title>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
-              </g>
-            </g>
-          </g>
-        </svg>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 2. Complete!</p>
         <ul>
           <li><button class="next">Proceed to part 3 of 3</button></li>
@@ -612,16 +612,7 @@ No
 
     <section id="end-part-three">
       <div>
-        <svg width="48px" height="26px" viewBox="0 0 48 26">
-          <title>arrow-right</title>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-            <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-              <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
-              </g>
-            </g>
-          </g>
-        </svg>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 3. Complete!</p>
         <ul>
           <li><button class="next">Proceed to sign off</button></li>
@@ -727,7 +718,6 @@ No
           <p><a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=98135591829" target="_blank" title="ABN details of Finsect Partners Pty Ltd">FinSec Partners Pty Ltd (ABN 98 135 591 829)</a>, is a corporate authorised representative of <a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=19608040062" target="_blank" title="ABN details of Kaizen Wealth Pty Ltd">Kaizen Wealth Pty Ltd. ABN 19 608 040 062</a>
             <nobr>AFSL 480 797</nobr>
           </p>
-          <p>Copyright 2016 Finsec Partners. Website by <a href="http://hannahsuttondesign.com/" target="_blank" title="Graphic Design studio in Melbourne by Hannah Sutton" class="hannah">Hannah Sutton Design</a></p>
         </div>
       </section>
     
@@ -741,7 +731,14 @@ No
             <li><a href="/contact">Contact</a></li>
             <li><a href="/disclaimer">Disclaimer</a></li>
             <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/assets/PDF/FSG-FinSec-Partners.pdf" target="_blank">FSG</a></li>
           </ul>
+        </div>
+      </section>
+    
+      <section id="copyright">
+        <div>
+          <p>Copyright 2016 Finsec Partners. Website by <a href="http://hannahsuttondesign.com/" target="_blank" title="Graphic Design studio in Melbourne by Hannah Sutton" class="hannah">Hannah Sutton Design</a></p>
         </div>
       </section>
     

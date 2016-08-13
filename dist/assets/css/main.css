@@ -1191,16 +1191,17 @@ header nav .menu ul a {
   display: block;
   text-decoration: none;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-family: "Rick-Bold", sans-serif;
   line-height: 40px;
-  padding: 0 10px;
+  padding: 0 15px;
   white-space: nowrap;
   text-shadow: 0 0 5px RGBA(0, 0, 0, 0.5);
 }
 @media (max-width: 900px) {
   header nav .menu ul a {
     line-height: 50px;
+    font-size: 22px;
   }
 }
 header nav .menu ul a:hover,
@@ -1253,9 +1254,9 @@ footer #legal p a:hover {
   color: white;
 }
 footer #nav > div {
-  padding: 30px 20px 50px;
+  padding: 30px 20px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   footer #nav > div {
     max-width: 600px;
   }
@@ -1284,6 +1285,22 @@ footer #nav ul li a {
 footer #nav ul li a:hover {
   text-decoration: underline;
   color: white;
+}
+footer #copyright p {
+  margin: 0 auto 40px;
+  font-size: 15px;
+  line-height: 140%;
+  color: #6f6c67;
+}
+footer #copyright p a {
+  color: #AAA;
+}
+footer #copyright p a:hover {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+  background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 #ask-us {
@@ -2112,7 +2129,7 @@ footer #nav ul li a:hover {
 }
 
 #contact main #hero {
-  background: #191925 url("/assets/img/contact/finsecptx-contact-banner-2000.jpg") 87% 50%/cover fixed;
+  background: #191925 url("/assets/img/contact/finsecptx-contact-banner-2000.jpg") 50% 50%/cover fixed;
 }
 @media (max-width: 900px) {
   #contact main #hero {
@@ -2587,13 +2604,13 @@ footer #nav ul li a:hover {
   background: none;
   border: 0;
   outline: 0;
-  font-size: 30px;
+  font-size: 34px;
   line-height: 180%;
   font-family: "Rick-Bold", sans-serif;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  padding: 2px 30px 0 16px;
+  padding: 0 30px 0 16px;
   cursor: pointer;
   color: #557ea0;
 }
@@ -2652,6 +2669,60 @@ footer #nav ul li a:hover {
 #form .field.range input[type="range"] {
   width: 360px;
 }
+#form .field.option > div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+#form .field.option > div button {
+  width: 48%;
+  font-size: 20px;
+  font-family: "Rick-Bold", sans-serif;
+}
+#form .field.option > div button.inactive {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+#form .group.address {
+  margin-bottom: 40px;
+}
+#form .group.address .field {
+  margin-bottom: 20px;
+}
+#form .multi ul li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+#form .multi ul li span {
+  font-size: 20px;
+  width: 40px;
+  text-align: left;
+  line-height: 40px;
+  margin-top: 18px;
+  font-family: "Rick-Bold", sans-serif;
+  color: #4c6f93;
+}
+#form .multi ul li .field {
+  margin: 0;
+}
+#form img.check {
+  width: 90px;
+  display: block;
+  margin: 0 auto 20px;
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
+}
 #form #hello {
   display: block;
 }
@@ -2690,6 +2761,13 @@ footer #nav ul li a:hover {
 #form #between-45-and-55 > div,
 #form #over-55 > div {
   max-width: 540px;
+}
+#form #residency small {
+  color: #4c6f93;
+  margin: 20px 0;
+}
+#form #taxable-income .option > div {
+  margin-top: 30px;
 }
 #form ::-webkit-input-placeholder {
   color: #557ea0;

@@ -212,7 +212,6 @@ $(document).ready(function() {
       // $('#subscription .success').show();
       console.log('DONE', data);
       $('#form #subscribed p.email').text(answers.email);
-      goToStep('#subscribed');
     }).fail(function(error) {
       // $btn.html('Whoops');
       // $('#subscription .fail').show();
@@ -249,6 +248,15 @@ $(document).ready(function() {
     };
   }
 
+  function store(key, value) {
+    answers[key] = value;
+    sessionStorage.setItem(key, value);
+    console.log(answers);
+    if (rules[key]) {
+      rules[key]();
+    }
+  }
+
   jQuery.fn.extend({
     isValid: function() {
       id = this.attr('id');
@@ -265,22 +273,6 @@ $(document).ready(function() {
     animateToHash();
 
     var answers = {};
-
-    $('section button.back').on('click', function() {
-      var target = $(this).attr('for');
-      if (target) {
-        goTo(target);
-      } else {
-        goTo('prev');
-      }
-    });
-
-    $('section button.next').on('click', function() {
-      var thisSection = $(this).closest('section');
-      if (thisSection.isValid()) {
-        goTo('next');
-      }
-    });
 
     var rules = {
       'state-age': function() {
@@ -318,17 +310,60 @@ $(document).ready(function() {
         $.each(keys, function(i, v) {
           $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
         });
-        goToStep('name-email-again');
+        goTo('name-email-again');
+      },
+      'gender': function() {
+        if (sessionStorage.getItem('gender') === 'Female') {
+          $('.field.maiden').show();
+        } else {
+          $('.field.maiden').hide();
+        }
+      },
+      'married': function() {
+        if (sessionStorage.getItem('married') === 'Yes') {
+          $('.field.spouse').show();
+        } else {
+          $('.field.spouse').hide();
+        }
+      },
+      'non_concessional_contributions': function() {
+        if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
+          $('.field.contributions').show();
+        } else {
+          $('.field.contributions').hide();
+        }
       }
     };
+
+    $('section button.back').on('click', function() {
+      var target = $(this).attr('for');
+      if (target) {
+        goTo(target);
+      } else {
+        goTo('prev');
+      }
+    });
+
+    $('section button.next').on('click', function() {
+      var thisSection = $(this).closest('section');
+      if (thisSection.isValid()) {
+        goTo('next');
+      }
+    });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
     $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
       var key = $(this).attr('name').toLowerCase();
       var value = $(this).val();
-      answers[key] = value;
-      sessionStorage.setItem(key, value);
-      console.log(answers);
+      store(key, value);
+    });
+
+    // On click of option buttons, disable the other buttons, populate attribute to answers
+    $('.field.option button').on('click', function() {
+      $(this).removeClass('inactive').blur().siblings().addClass('inactive');
+      var key = $(this).closest('.field').attr('name').toLowerCase();
+      var value = $(this).text();
+      store(key, value);
     });
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
@@ -373,6 +408,19 @@ $(document).ready(function() {
       // window.history.back();
       goTo('prev');
     });
+
+    $('.field.contributions input').on('focus', function() {
+      console.log($('.field.contributions li').index($(this).closest('li')));
+    });
+
+    // Maiden name is hidden until user selects gender
+    rules['gender']();
+
+    // Spouse is hidden until user selects married
+    rules['married']();
+
+    // Hide contribution dates until user selects yes I contributed
+    rules['non_concessional_contributions']();
 
   }
 
