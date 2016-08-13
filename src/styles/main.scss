@@ -1,32 +1,26 @@
-
 /* SASS */
 @import 'variables';
 @import 'mixins';
 @import 'animations';
-
 /* Cross-browser normalisation */
 @import 'normalize';
-
 /* Fonts */
 @import 'fonts';
-
 /* Common to many pages */
 @import 'common';
 @import 'header';
 @import 'footer';
 @import 'ask-us';
-
+@import 'article';
 /* Specific to one page */
 @import 'landing';
 @import 'services';
 @import 'about';
-@import 'keep-informed';
+@import 'legislation-changes';
 @import 'contact';
 @import 'legal';
 @import 'form';
-
 /* Temporary */
 @import 'coming-soon';
-
 /* Outdate Browsers*/
 @import '../../bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.scss';

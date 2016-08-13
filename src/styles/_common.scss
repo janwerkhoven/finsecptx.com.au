@@ -202,7 +202,6 @@ i {
     }
   }
 }
-
 #hero {
   height: 100vh;
   @include viewport-unit(height, 100vh);
@@ -294,7 +293,6 @@ i {
     }
   }
 }
-
 #articles {
   background: #FFF;
   h2 {
@@ -319,7 +317,7 @@ i {
     li {
       position: relative;
       width: 30%;
-      background: #d3d3d3;
+      background: #c6c5c5;
       max-width: 400px;
       margin: 1% 1% 20px;
       @media (max-width: 1040px) {
@@ -392,7 +390,6 @@ i {
     }
   }
 }
-
 #links {
   background: $finsec-royal-blue;
   text-align: center;
@@ -435,7 +432,6 @@ i {
     }
   }
 }
-
 #outdated {
   p {
     max-width: none;
