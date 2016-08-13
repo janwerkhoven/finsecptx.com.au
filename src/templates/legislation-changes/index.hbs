@@ -1,0 +1,59 @@
+{{#extend "layout"}}
+
+  {{#replace "meta"}}
+    <title>Keep informed about legislation changes | FinSecPTX</title>
+    <meta name="description" content="Get an overview of what Finsec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
+  {{/replace}}
+
+  {{#replace "body-id"}}legislation-changes{{/replace}}
+
+  {{#replace "main"}}
+
+    <section id="hero">
+      <div>
+        <h1>The latest in pension transfer news</h1>
+        <div>
+          <a href="{{formLink}}" title="{{formTitle}}" class="button big">Keep me informed</a>
+        </div>
+        <a href="#articles" class="button arrow"></a>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div>
+        <h2>Keep Informed</h2>
+        <ul>
+          <li>
+            <img src="/assets/img/landing/post-example-one@2x.jpg" width="300" height="320" alt="article about federal budget 2016-17" />
+            <h3>How the 2016/17 federal budget will affect your superannuation</h3>
+            <p>12th August 2016</p>
+            <a href="/legislation-changes/how-the-federal-budget-2017-will-affect-your-superannuation"><img src="/assets/img/landing/arrow-right.svg" width="40" height="40" /></a>
+          </li>
+          <li>
+            <img src="/assets/img/landing/post-example-two@2x.jpg" width="300" height="320" alt="article Her Majesty's Revenue and Customs changes" />
+            <h3>Her Majesty’s Revenue and Customs changes, April 2015</h3>
+            <p>12th August 2016</p>
+            <a href="/legislation-changes/her-majestys-revenue-and-customs-2015"><img src="/assets/img/landing/arrow-right.svg" width="40" height="40" /></a>
+          </li>
+
+          <li class="ayem-special">
+            <p>Keep up to date with all of the current issues affecting UK Pension Transfers</p>
+            <a href="{{formLink}}" title="formTitle" class="button">Keep me informed</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="links">
+      <div>
+        <h2>Useful links</h2>
+        <ul>
+          <li><a href="{{formLink}}" title="{{formTitle}}" class="button">Am I eligible to transfer?</a></li>
+          <li><a href="/contact" class="button">Talk to a QROPS specialist</a></li>
+          <li><a href="{{pathPensionTransferGuide}}" class="button" target="_blank">Download the pension transfer <nobr>guide (PDF)</nobr></a></li>
+        </ul>
+      </div>
+    </section>
+
+  {{/replace}}
+{{/extend}}
