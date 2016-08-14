@@ -24,7 +24,6 @@
               a {
                 position: absolute;
                 bottom: 0;
-                width: 180px;
                 left: 50%;
                 margin-left: -90px;
               }
@@ -38,6 +37,9 @@
             }
             .button {
               border-width: 4px;
+              width: 180px;
+              padding-left: 0;
+              padding-right: 0;
             }
           }
         }
@@ -143,6 +145,12 @@
         margin: 10px 40px 0 0;
         @media (max-width: 750px) {
           margin-right: 0;
+        }
+        a {
+          color: $finsec-royal-blue;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
