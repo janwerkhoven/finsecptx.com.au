@@ -150,6 +150,20 @@ button {
     }
   }
 }
+a[href^="tel"] {
+  .phone {
+    display: none;
+  }
+  &:focus,
+  &:hover {
+    .name {
+      display: none;
+    }
+    .phone {
+      display: block;
+    }
+  }
+}
 i {
   &.icon {
     position: relative;

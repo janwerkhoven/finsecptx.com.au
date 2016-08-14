@@ -423,6 +423,13 @@
     <section id="super-funds">
       <div>
         <p>Big table</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next">{{> arrow-right}}</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -436,12 +443,20 @@
             <li></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
     <section id="objectives">
       <div>
         <p>Objectives</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next">{{> arrow-right}}</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -455,6 +470,7 @@
             <li class="done"></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -462,10 +478,18 @@
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 2. Complete!</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Proceed to part 3 of 3</button>
+          </li>
+        </ul>
+=======
         <div class="buttons vertical">
           <button class="next">Proceed to part 3 of 3</button>
           <button class="back">Back</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -511,6 +535,13 @@
     <section id="uk-pension">
       <div>
         <p>UK Pension</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next">{{> arrow-right}}</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -522,6 +553,7 @@
             <li class="done"></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -529,10 +561,18 @@
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 3. Complete!</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Proceed to sign off</button>
+          </li>
+        </ul>
+=======
         <div class="buttons vertical">
           <button class="next">Proceed to part sign off</button>
           <button class="back">Back</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -540,10 +580,18 @@
       <div>
         <p><strong>Important</strong></p>
         <p>If you have more than one fund you must complete a separate Letter of Authority (contained in the next section) for each fund.</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next">{{> arrow-right}}</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -592,11 +640,22 @@
           <dt>Today's Date</dt>
           <dd>16/06/2016</dd>
         </dl>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Submit</button>
+          </li>
+          <li>
+            <button class="add">Add another fund</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Submit</button>
           <button class="next">Add another fund</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 

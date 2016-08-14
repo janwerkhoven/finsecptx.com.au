@@ -442,6 +442,16 @@ button.circle svg {
   top: 20%;
 }
 
+a[href^="tel"] .phone {
+  display: none;
+}
+a[href^="tel"]:focus .name, a[href^="tel"]:hover .name {
+  display: none;
+}
+a[href^="tel"]:focus .phone, a[href^="tel"]:hover .phone {
+  display: block;
+}
+
 i.icon {
   position: relative;
 }
@@ -2239,7 +2249,6 @@ footer #copyright p a:hover {
 #contact main #hero > div > div > div:last-child a {
   position: absolute;
   bottom: 0;
-  width: 180px;
   left: 50%;
   margin-left: -90px;
 }
@@ -2252,6 +2261,9 @@ footer #copyright p a:hover {
 }
 #contact main #hero > div > div > div .button {
   border-width: 4px;
+  width: 180px;
+  padding-left: 0;
+  padding-right: 0;
 }
 #contact main #call-back {
   background: #0f1d3c;
@@ -2389,6 +2401,12 @@ footer #copyright p a:hover {
   #contact main #head-office p {
     margin-right: 0;
   }
+}
+#contact main #head-office p a {
+  color: #0f1d3c;
+}
+#contact main #head-office p a:hover {
+  text-decoration: underline;
 }
 #contact main #map {
   position: relative;
