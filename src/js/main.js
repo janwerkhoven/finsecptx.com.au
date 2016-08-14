@@ -97,10 +97,9 @@ $(document).ready(function() {
   $('#call-back button').on('click', function(e) {
     e.preventDefault();
     var $btn = $(this);
-    var $form = $('#call-back form');
-    var speed = 300;
-    var easing = 'easeInOut';
-    var data = $form.serialize();
+    var $form = $('#call-back');
+    // var speed = 300;
+    // var easing = 'easeInOut';
     console.log('submitting', data);
     $form.find('input, button').prop('disabled', true);
     $btn.html('Sending...');
@@ -108,33 +107,29 @@ $(document).ready(function() {
     // TODO REPLACE WITH FORMSPREE
     // Cannot submit to Mailchimp without mailconfirmation
 
-    $.ajax({
-      type: 'get',
-      url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=45b7594928&c=?',
-      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
-      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
-      data: data,
-      cache: false,
-      dataType: 'json',
-      contentType: "application/json; charset=utf-8"
-    }).done(function(data) {
-      $btn.html('Success');
-      // $('#subscription .success').show();
-      console.log('DONE', data);
-    }).fail(function(error) {
-      $btn.html('Whoops');
-      // $('#subscription .fail').show();
-      console.log('ERROR', error);
-    }).always(function() {
-      // $('#subscription .form').delay(500).velocity({
-      //   opacity: 0,
-      //   scale: 0.9,
-      // }, speed, easing);
-      // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
-      //   opacity: [1, 0],
-      //   scale: [1, 1.1],
-      // }, speed, easing);
-    });
+    // Submits the contact form to Formspree
+    // More info: https://formspree.io/
+    var data = {
+      message: 'This is an incomplete form for reference only.',
+      name: $form.find('input').eq(0).val(),
+      phone: $form.find('input').eq(1).val(),
+      'preferred time': $form.find('input').eq(2).val(),
+      _subject: 'FinsecPTX.com - Preliminary form result - for reference only',
+      _format: 'plain'
+    };
+    console.log('Sending call back request ...', data);
+    // $.ajax({
+    //   url: "https://formspree.io/info@finsecptx.com",
+    //   method: "POST",
+    //   data: data,
+    //   dataType: "json"
+    // }).done(function() {
+    //   $btn.html('Success');
+    //   console.log('Call back request emailed to info@finsecptx.com');
+    // }).fail(function(jqXHR, textStatus, errorThrown) {
+    //   $btn.html('Whoops');
+    //   console.error('Call back request failed to send', jqXHR, textStatus, errorThrown);
+    // });
   });
 
   // Make any hashtag link scroll with animation to element with matching ID

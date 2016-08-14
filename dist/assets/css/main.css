@@ -442,6 +442,16 @@ button.circle svg {
   top: 20%;
 }
 
+a[href^="tel"] .phone {
+  display: none;
+}
+a[href^="tel"]:focus .name, a[href^="tel"]:hover .name {
+  display: none;
+}
+a[href^="tel"]:focus .phone, a[href^="tel"]:hover .phone {
+  display: block;
+}
+
 i.icon {
   position: relative;
 }
