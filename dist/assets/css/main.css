@@ -2305,6 +2305,9 @@ footer #copyright p a:hover {
   color: #0f1d3c;
   width: 24%;
 }
+#contact main #call-back input[disabled] {
+  opacity: 0.3;
+}
 @media (max-width: 900px) {
   #contact main #call-back input {
     width: 100%;
@@ -2322,6 +2325,9 @@ footer #copyright p a:hover {
   #contact main #call-back button {
     width: 100%;
   }
+}
+#contact main #call-back button[disabled] {
+  background: none;
 }
 #contact main #head-office {
   background: white;

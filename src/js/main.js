@@ -93,43 +93,37 @@ $(document).ready(function() {
     $(this).parent('li').addClass('active').siblings('li').removeClass('active');
   });
 
-  // Submit call back form on contact page
+  // Submit call back form on contact page to Formspree
   $('#call-back button').on('click', function(e) {
     e.preventDefault();
     var $btn = $(this);
     var $form = $('#call-back');
-    // var speed = 300;
-    // var easing = 'easeInOut';
-    console.log('submitting', data);
     $form.find('input, button').prop('disabled', true);
     $btn.html('Sending...');
-
-    // TODO REPLACE WITH FORMSPREE
-    // Cannot submit to Mailchimp without mailconfirmation
-
-    // Submits the contact form to Formspree
-    // More info: https://formspree.io/
+    var name = $form.find('input').eq(0).val();
+    var phone = $form.find('input').eq(1).val();
+    var time = $form.find('input').eq(2).val();
     var data = {
-      message: 'This is an incomplete form for reference only.',
+      message: 'Someone requested a call back on www.finsecptx.com.au/contact',
       name: $form.find('input').eq(0).val(),
       phone: $form.find('input').eq(1).val(),
-      'preferred time': $form.find('input').eq(2).val(),
-      _subject: 'FinsecPTX.com - Preliminary form result - for reference only',
+      time: $form.find('input').eq(2).val(),
+      _subject: 'Please call me | ' + name + ' | ' + phone + ' | ' + time,
       _format: 'plain'
     };
     console.log('Sending call back request ...', data);
-    // $.ajax({
-    //   url: "https://formspree.io/info@finsecptx.com",
-    //   method: "POST",
-    //   data: data,
-    //   dataType: "json"
-    // }).done(function() {
-    //   $btn.html('Success');
-    //   console.log('Call back request emailed to info@finsecptx.com');
-    // }).fail(function(jqXHR, textStatus, errorThrown) {
-    //   $btn.html('Whoops');
-    //   console.error('Call back request failed to send', jqXHR, textStatus, errorThrown);
-    // });
+    $.ajax({
+      url: "https://formspree.io/info@finsecptx.com",
+      method: "POST",
+      data: data,
+      dataType: "json"
+    }).done(function() {
+      $btn.html('Sent!');
+      console.log('Call back request emailed to info@finsecptx.com');
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      $btn.html('Whoops');
+      console.error('Call back request failed to send', jqXHR, textStatus, errorThrown);
+    });
   });
 
   // Make any hashtag link scroll with animation to element with matching ID

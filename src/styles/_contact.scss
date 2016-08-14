@@ -78,6 +78,9 @@
         outline: 0;
         color: $finsec-royal-blue;
         width: 24%;
+        &[disabled] {
+          opacity: 0.3;
+        }
         @media (max-width: 900px) {
           width: 100%;
           margin-bottom: 10px;
@@ -91,6 +94,9 @@
         line-height: 58px;
         @media (max-width: 900px) {
           width: 100%;
+        }
+        &[disabled] {
+          background: none;
         }
       }
     }
