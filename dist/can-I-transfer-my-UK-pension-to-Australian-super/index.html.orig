@@ -10,7 +10,7 @@
     <meta name="developer" content="Jan Werkhoven jan@nabu.io www.nabu.io">
     <meta name="robots" content="index, follow">
 
-    <title>Am I eligible to transfer my UK Pension to Australian Super - FinSec PTX</title>
+    <title>Am I eligible to transfer my UK Pension to Australian Super - FinSecPTX</title>
     <meta name="description" content="Get an overview of what Finsec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
 
     <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,7 @@
       <div>
         <nav>
           <a href="/" class="logo">
-            <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
+            <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
           </a>
           <button>Menu <i class="icon burger"><span></span></i></button>
           <div class="menu">
@@ -67,7 +67,7 @@
       
     <nav>
       <a href="/" class="logo">
-        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
+        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
       </a>
       <h1>UK Pension Transfer Enquiry</h1>
       <a href="/" class="back"><svg width="50px" height="48px" viewBox="0 0 50 48">
@@ -418,9 +418,9 @@
           <div>
             <select name="RESIDENCY" tabindex="1">
               <option selected>Choose...</option>
-              <option value="Temporary">Temporary</option>
-              <option value="Permanent">Permanent</option>
-              <option value="Australian Citizen">Australian Citizen</option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
             </select>
             <div>
               <svg width="48px" height="26px" viewBox="0 0 48 26">
@@ -518,6 +518,25 @@
     <section id="super-funds">
       <div>
         <p>Big table</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -531,12 +550,32 @@
             <li></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
     <section id="objectives">
       <div>
         <p>Objectives</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -550,6 +589,7 @@
             <li class="done"></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -557,16 +597,55 @@
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 2. Complete!</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Proceed to part 3 of 3</button>
+          </li>
+        </ul>
+=======
         <div class="buttons vertical">
           <button class="next">Proceed to part 3 of 3</button>
           <button class="back">Back</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
     <section id="uk-address">
       <div>
-        <p>UK address</p>
+        <div class="field text select">
+          <label>What was your last UK address?</label>
+          <input type="text" name="STREET1">
+          <input type="text" name="STREET2">
+          <input type="text" name="SUBURB">
+          <div>
+            <select name="STATE">
+              <option selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <input type="text" name="POSTCODE">
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -583,7 +662,26 @@
 
     <section id="uk-pension">
       <div>
-        <p>UK pension fund #1</p>
+        <p>UK Pension</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -595,6 +693,7 @@
             <li class="done"></li>
           </ul>
         </aside>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
@@ -602,105 +701,124 @@
       <div>
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 3. Complete!</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Proceed to sign off</button>
+          </li>
+        </ul>
+=======
         <div class="buttons vertical">
           <button class="next">Proceed to part sign off</button>
           <button class="back">Back</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
     <section id="important">
       <div>
         <p><strong>Important</strong></p>
-        <p>For FinSec PTX to process your pension transfer you need to give your Pension funds / employers the authority to provide us with information.</p>
-        <p>To do so, please review the next letters we have prepared for you for each of your funds / employers.</p>
+        <p>If you have more than one fund you must complete a separate Letter of Authority (contained in the next section) for each fund.</p>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="circle next"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</button>
+          </li>
+        </ul>
+=======
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
         </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
-    <section id="review">
+    <section id="letter-of-authority">
       <div>
-        <p>Please review and submit.</p>
-
-        <div class="letter-of-authority">
-          <p>To: <strong>UK Pension Funds #1</strong><br />
-          80 Duke of York Square,<br />
-          London SW3 4LY, United Kingdom</p>
-          <p> </p>
-          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
-          <p> </p>
-          <p>To whom it may concern,</p>
-          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><strong>FinSec Partners</strong><br />
-          Tel: +61 8 8357 7840<br />
-          Fax: +61 8 8373 7600<br />
-          PO Box 1096 Unley SA 5061, Australia<br />
-          Email: transfers@finsecptx.com.au<br />
-          www.finsecptx.com.au</p>
-          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: {$Name} (${MaidenName})<br />
-          Date of Birth: {$DateOfBirth}<br />
-          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
-          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
-          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
-          Policy / Reference number: {$Reference}<br />
-          National insurance number: {$NationalInsuranceID}</p>
-          <p>Yours faithfully</p>
-          <p> </p>
-          <p><strong>John Doe</strong></p>
-          <p>Signature:</p>
-          <p>Today's Date:</p>
+        <p><strong>Letter of authority</strong></p>
+        <p><small>To whom it may concern,</small></p>
+        <p><small>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</small></p>
+        <p><small>FinSec Partners<br>
+          T: +61 8 8357 7840<br>
+          F: +61 8 8373 7600<br>
+          PO Box 1096 Unley SA 5061.<br>
+          E: ukpensions@finsecpartners.com.au</small></p>
+        <p><small>Please also accept this form as my authority for you to update your records to reflect my correct address details as shown below:</small></p>
+        <hr>
+        <dl>
+          <dt>Name</dt>
+          <dd>Mr Scott Noell</dd>
+          <dt>Date of birth</dt>
+          <dd>16/6/1964</dd>
+          <dt>Address</dt>
+          <dd>Level 1
+            <br> 10 Greenhill Rd
+            <br> Wayville
+            <br> SA 5061</dd>
+          <dt>Last UK address</dt>
+          <dd>Level 1
+            <br> 10 Greenhill Rd
+            <br> Wayville
+            <br> SA 5061</dd>
+          <dt>Name of UK Pension</dt>
+          <dd>Example</dd>
+          <dt>Address of UK Pension</dt>
+          <dd>Level 1
+            <br> 10 Example St
+            <br> Wayville
+            <br> SA 5061</dd>
+          <dt>Period of fund or scheme</dt>
+          <dd>May 1984 - May 1996</dd>
+          <dt>Policy or reference number</dt>
+          <dd>148 938</dd>
+          <dt>National Insurance number</dt>
+          <dd>8293 2917 3038</dd>
+          <dt>Signature</dt>
+          <dd>John Doe</dd>
+          <dt>Today's Date</dt>
+          <dd>16/06/2016</dd>
+        </dl>
+<<<<<<< HEAD
+        <ul>
+          <li>
+            <button class="next">Submit</button>
+          </li>
+          <li>
+            <button class="add">Add another fund</button>
+          </li>
+        </ul>
+=======
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Submit</button>
+          <button class="next">Add another fund</button>
         </div>
-
-        <div class="letter-of-authority">
-          <p>To: <strong>UK Pension Employer Funds #2</strong><br />
-          80 Duke of York Square,<br />
-          London SW3 4LY, United Kingdom</p>
-          <p> </p>
-          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
-          <p> </p>
-          <p>To whom it may concern,</p>
-          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><strong>FinSec Partners</strong><br />
-          Tel: +61 8 8357 7840<br />
-          Fax: +61 8 8373 7600<br />
-          PO Box 1096 Unley SA 5061, Australia<br />
-          Email: transfers@finsecptx.com.au<br />
-          www.finsecptx.com.au</p>
-          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: <strong>{$Name}</strong><br />
-          Maiden name: ${MaidenName}<br />
-          Date of Birth: {$DateOfBirth}<br />
-          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
-          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
-          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
-          Policy / Reference number: {$Reference}<br />
-          National insurance number: {$NationalInsuranceID}</p>
-          <p> </p>
-          <p>Signature:</p>
-          <p> </p>
-          <p>Today's Date:</p>
-          <p> </p>
-        </div>
-
-        <div class="buttons vertical">
-          <button class="submit">Looks good<br>request my pension transfer!</button>
-          <button class="back">Go back and edit</button>
-        </div>
+>>>>>>> 64208fee2d0187a15c6826a8ccb094fe3c8bff1e
       </div>
     </section>
 
     <section id="thanks">
       <div>
         <p>Thank you!</p>
-        <p>Your form has been sent to FinSec PTX.</p>
+        <p>Your form has been sent to FinSecPTX.</p>
         <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
-        <div class="buttons vertical">
-          <a href="/" class="button">Return to site</a>
-        </div>
+        <ul>
+          <li><a href="/">Return to site</a></li>
+        </ul>
       </div>
     </section>
 
