@@ -1,7 +1,7 @@
 {{#extend "layout"}}
 
   {{#replace "meta"}}
-    <title>Am I eligible to transfer my UK Pension to Australian Super - FinSecPTX</title>
+    <title>Am I eligible to transfer my UK Pension to Australian Super - FinSec PTX</title>
     <meta name="description" content="Get an overview of what Finsec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
   {{/replace}}
 
@@ -11,7 +11,7 @@
 
     <nav>
       <a href="/" class="logo">
-        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSecPTX" width="281" height="46" />
+        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
       </a>
       <h1>UK Pension Transfer Enquiry</h1>
       <a href="/" class="back">{{> arrow-right}}</a>
@@ -332,9 +332,9 @@
           <div>
             <select name="RESIDENCY" tabindex="1">
               <option selected>Choose...</option>
-              <option value="1">Option 1</option>
-              <option value="1">Option 2</option>
-              <option value="1">Option 3</option>
+              <option value="Temporary">Temporary</option>
+              <option value="Permanent">Permanent</option>
+              <option value="Australian Citizen">Australian Citizen</option>
             </select>
             <div>
               {{> chevron-down}}
@@ -471,29 +471,7 @@
 
     <section id="uk-address">
       <div>
-        <div class="field text select">
-          <label>What was your last UK address?</label>
-          <input type="text" name="STREET1">
-          <input type="text" name="STREET2">
-          <input type="text" name="SUBURB">
-          <div>
-            <select name="STATE">
-              <option selected>Choose...</option>
-              <option value="ACT">Australian Capital Territory</option>
-              <option value="NSW">New South Wales</option>
-              <option value="NT">Northern Territory</option>
-              <option value="QLD">Queensland</option>
-              <option value="SA">South Australia</option>
-              <option value="TAS">Tasmania</option>
-              <option value="VIC">Victoria</option>
-              <option value="WA">Western Australia</option>
-            </select>
-            <div>
-              {{> chevron-down}}
-            </div>
-          </div>
-          <input type="text" name="POSTCODE">
-        </div>
+        <p>UK address</p>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -510,7 +488,7 @@
 
     <section id="uk-pension">
       <div>
-        <p>UK Pension</p>
+        <p>UK pension fund #1</p>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -539,7 +517,8 @@
     <section id="important">
       <div>
         <p><strong>Important</strong></p>
-        <p>If you have more than one fund you must complete a separate Letter of Authority (contained in the next section) for each fund.</p>
+        <p>For FinSec PTX to process your pension transfer you need to give your Pension funds / employers the authority to provide us with information.</p>
+        <p>To do so, please review the next letters we have prepared for you for each of your funds / employers.</p>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -547,55 +526,74 @@
       </div>
     </section>
 
-    <section id="letter-of-authority">
+    <section id="review">
       <div>
-        <p><strong>Letter of authority</strong></p>
-        <p><small>To whom it may concern,</small></p>
-        <p><small>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</small></p>
-        <p><small>FinSec Partners<br>
-          T: +61 8 8357 7840<br>
-          F: +61 8 8373 7600<br>
-          PO Box 1096 Unley SA 5061.<br>
-          E: ukpensions@finsecpartners.com.au</small></p>
-        <p><small>Please also accept this form as my authority for you to update your records to reflect my correct address details as shown below:</small></p>
-        <hr>
-        <dl>
-          <dt>Name</dt>
-          <dd>Mr Scott Noell</dd>
-          <dt>Date of birth</dt>
-          <dd>16/6/1964</dd>
-          <dt>Address</dt>
-          <dd>Level 1
-            <br> 10 Greenhill Rd
-            <br> Wayville
-            <br> SA 5061</dd>
-          <dt>Last UK address</dt>
-          <dd>Level 1
-            <br> 10 Greenhill Rd
-            <br> Wayville
-            <br> SA 5061</dd>
-          <dt>Name of UK Pension</dt>
-          <dd>Example</dd>
-          <dt>Address of UK Pension</dt>
-          <dd>Level 1
-            <br> 10 Example St
-            <br> Wayville
-            <br> SA 5061</dd>
-          <dt>Period of fund or scheme</dt>
-          <dd>May 1984 - May 1996</dd>
-          <dt>Policy or reference number</dt>
-          <dd>148 938</dd>
-          <dt>National Insurance number</dt>
-          <dd>8293 2917 3038</dd>
-          <dt>Signature</dt>
-          <dd>John Doe</dd>
-          <dt>Today's Date</dt>
-          <dd>16/06/2016</dd>
-        </dl>
-        <div class="buttons">
-          <button class="back">Back</button>
-          <button class="next">Submit</button>
-          <button class="next">Add another fund</button>
+        <p>Please review and submit.</p>
+
+        <div class="letter-of-authority">
+          <p>To: <strong>UK Pension Funds #1</strong><br />
+          80 Duke of York Square,<br />
+          London SW3 4LY, United Kingdom</p>
+          <p> </p>
+          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
+          <p> </p>
+          <p>To whom it may concern,</p>
+          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
+          <p><strong>FinSec Partners</strong><br />
+          Tel: +61 8 8357 7840<br />
+          Fax: +61 8 8373 7600<br />
+          PO Box 1096 Unley SA 5061, Australia<br />
+          Email: transfers@finsecptx.com.au<br />
+          www.finsecptx.com.au</p>
+          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
+          <p>Name: {$Name} (${MaidenName})<br />
+          Date of Birth: {$DateOfBirth}<br />
+          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
+          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
+          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
+          Policy / Reference number: {$Reference}<br />
+          National insurance number: {$NationalInsuranceID}</p>
+          <p>Yours faithfully</p>
+          <p> </p>
+          <p><strong>John Doe</strong></p>
+          <p>Signature:</p>
+          <p>Today's Date:</p>
+        </div>
+
+        <div class="letter-of-authority">
+          <p>To: <strong>UK Pension Employer Funds #2</strong><br />
+          80 Duke of York Square,<br />
+          London SW3 4LY, United Kingdom</p>
+          <p> </p>
+          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
+          <p> </p>
+          <p>To whom it may concern,</p>
+          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
+          <p><strong>FinSec Partners</strong><br />
+          Tel: +61 8 8357 7840<br />
+          Fax: +61 8 8373 7600<br />
+          PO Box 1096 Unley SA 5061, Australia<br />
+          Email: transfers@finsecptx.com.au<br />
+          www.finsecptx.com.au</p>
+          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
+          <p>Name: <strong>{$Name}</strong><br />
+          Maiden name: ${MaidenName}<br />
+          Date of Birth: {$DateOfBirth}<br />
+          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
+          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
+          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
+          Policy / Reference number: {$Reference}<br />
+          National insurance number: {$NationalInsuranceID}</p>
+          <p> </p>
+          <p>Signature:</p>
+          <p> </p>
+          <p>Today's Date:</p>
+          <p> </p>
+        </div>
+
+        <div class="buttons vertical">
+          <button class="submit">Looks good<br>request my pension transfer!</button>
+          <button class="back">Go back and edit</button>
         </div>
       </div>
     </section>
@@ -603,11 +601,11 @@
     <section id="thanks">
       <div>
         <p>Thank you!</p>
-        <p>Your form has been sent to FinSecPTX.</p>
+        <p>Your form has been sent to FinSec PTX.</p>
         <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
-        <ul>
-          <li><a href="/">Return to site</a></li>
-        </ul>
+        <div class="buttons vertical">
+          <a href="/" class="button">Return to site</a>
+        </div>
       </div>
     </section>
 

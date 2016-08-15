@@ -364,6 +364,40 @@
       }
     }
   }
+  #review {
+    > div {
+      max-width: 1080px;
+    }
+    p {
+      max-width: none;
+    }
+    .buttons {
+      margin-top: 60px;
+    }
+    .letter-of-authority {
+      // A4 = 210 × 297
+      // 1080 x 1527
+      font-size: 16px;
+      background: white;
+      box-shadow: 0 10px 20px RGBA(0,0,0,0.2);
+      margin: 20px;
+      padding: 120px 80px;
+      @media (min-width: 1080px) {
+        height: 1527px;
+      }
+      p {
+        font-size: 18px;
+        color: $finsec-black-pearl;
+        text-align: left;
+        font-family: $book;
+        max-width: none;
+        strong {
+          font-family: $medium;
+          color: $finsec-royal-blue;
+        }
+      }
+    }
+  }
 
   // INPUT PLACEHOLDERS
   ::-webkit-input-placeholder {

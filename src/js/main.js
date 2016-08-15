@@ -1,58 +1,165 @@
-$(document).ready(function() {
+answers = {};
 
-  $('header a.logo').on('click', function(e) {
-    e.preventDefault();
+// function emailStageOneWithFormSpree() {
+//
+//   // Submits the contact form to Formspree
+//   // More info: https://formspree.io/
+//   var data = {
+//     message: 'This is an incomplete form for reference only.',
+//     _subject: 'finsecptx.com.au - Preliminary form result - for reference only',
+//     _format: 'plain'
+//   };
+//   var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
+//   $.each(keys, function(i, key) {
+//     data[key] = sessionStorage.getItem(key) || '-';
+//   });
+//   console.log('sending', data);
+//   $.ajax({
+//     url: "https://formspree.io/info@finsecptx.com",
+//     method: "POST",
+//     data: data,
+//     dataType: "json"
+//   }).done(function() {
+//     console.log('DONE');
+//   }).fail(function(jqXHR, textStatus, errorThrown) {
+//     console.log('ERROR', jqXHR, textStatus, errorThrown);
+//   });
+// }
 
-    // POST https://www.webmerge.me/merge/72409/2ygbxs?test=1
-    // first_name=John&last_name=Smith&phone=312-555-3029
-    // {$Name}
-    // {$Email}
-    // {$Phone_Number}
-
-    console.log('Sending to Webmerge');
-
-    var keyValues = 'name=Janneman&email=jw@nabu.io&phone_number=0424787666';
-
-    // $.ajax({
-    //   type: "POST",
-    //   url: url,
-    //   data: data,
-    //   success: success,
-    //   dataType: dataType
-    // });
-
-    $.ajax({
-      type: 'POST',
-      url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
-      data: keyValues
-        // url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=45b7594928&c=?',
-        // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
-        // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
-        // data: data,
-        // data: 'name=Janneman&email=jw@nabu.io&phone_number=0424787666',
-        // cache: false,
-        // dataType: 'json',
-        // contentType: "application/json; charset=utf-8"
-    }).done(function(data) {
-      // $btn.html('Success');
-      // $('#subscription .success').show();
-      console.log('DONE', data);
-    }).fail(function(error) {
-      // $btn.html('Whoops');
-      // $('#subscription .fail').show();
-      console.log('ERROR', error);
-    }).always(function() {
-      // $('#subscription .form').delay(500).velocity({
-      //   opacity: 0,
-      //   scale: 0.9,
-      // }, speed, easing);
-      // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
-      //   opacity: [1, 0],
-      //   scale: [1, 1.1],
-      // }, speed, easing);
-    });
-
+function subscribeToMailChimp() {
+  // var $btn = $(this);
+  // var speed = 300;
+  // var easing = 'easeInOut';
+  // var data = $form.serialize();
+  var data = $('#title-name, #email-phone, #state-age').find('input, select').serialize();
+  console.log('submitting', data);
+  // $form.find('input, button').prop('disabled', true);
+  // $btn.html('Sending...');
+  $.ajax({
+    type: 'get',
+    url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?',
+    // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
+    // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
+    data: data,
+    cache: false,
+    dataType: 'json',
+    contentType: "application/json; charset=utf-8"
+  }).done(function(data) {
+    // $btn.html('Success');
+    // $('#subscription .success').show();
+    console.log('DONE', data);
+    $('#form #subscribed p.email').text(answers.email);
+  }).fail(function(error) {
+    // $btn.html('Whoops');
+    // $('#subscription .fail').show();
+    console.log('ERROR', error);
+  }).always(function() {
+    // $('#subscription .form').delay(500).velocity({
+    //   opacity: 0,
+    //   scale: 0.9,
+    // }, speed, easing);
+    // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
+    //   opacity: [1, 0],
+    //   scale: [1, 1.1],
+    // }, speed, easing);
   });
+}
+
+function submitFormToWebMerge() {
+
+  // POST https://www.webmerge.me/merge/72409/2ygbxs?test=1
+  // first_name=John&last_name=Smith&phone=312-555-3029
+  // {$Name}
+  // {$Email}
+  // {$Phone_Number}
+
+  var $btn = $('#review button.submit');
+  $btn.html('Sending...').prop('disabled', true);
+
+  // console.log('Submitting form to Webmerge ...', date);
+  // $.ajax({
+  //   url: "https://formspree.io/info@finsecptx.com",
+  //   method: "POST",
+  //   data: data,
+  //   dataType: "json"
+  // }).done(function() {
+  //   $btn.html('Sent!');
+  //   console.log('Call back request emailed to info@finsecptx.com');
+  // }).fail(function(jqXHR, textStatus, errorThrown) {
+  //   $btn.html('Whoops');
+  //   console.error('Call back request failed to send', jqXHR, textStatus, errorThrown);
+  // });
+
+  // var keyValues = 'name=Janneman&email=jw@nabu.io&phone_number=0424787666';
+
+  console.log(answers);
+  console.log($.param(answers));
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
+    data: $.param(answers),
+    // data: keyValues
+    // data: 'name=Janneman&email=jw@nabu.io&phone_number=0424787666',
+    // cache: false,
+    // dataType: 'json',
+    // contentType: "application/json; charset=utf-8"
+  }).done(function(data) {
+    $btn.html('Sent!');
+    goTo('thanks');
+    console.log('DONE', data);
+  }).fail(function(jqXHR, textStatus, errorThrown) {
+    $btn.html('Whoops');
+    console.error('Failed to submit to webmerge', jqXHR, textStatus, errorThrown);
+  });
+
+}
+
+// Fill out the entire form by running lazyPanda() in browser console
+function lazyPanda() {
+  var data = {
+    title: 'Mr',
+    name: 'Jan Testing',
+    phone: '0424 787 652',
+    email: 'testing@nabu.io',
+  };
+  $.each(data, function(key, value) {
+    sessionStorage.setItem(key, value);
+    answers[key] = value;
+  });
+  goTo('review');
+}
+
+function goTo(id) {
+  if (!location.hash && id === 'prev') {
+    window.location = '/';
+  }
+  var $active = $('#form section' + location.hash);
+  id = id === 'next' ? $active.next().attr('id') : id;
+  id = id === 'prev' ? $active.prev().attr('id') : id;
+  console.log('goTo', id);
+  history.pushState(null, null, '#' + id);
+  animateToHash();
+}
+
+function animateToHash() {
+  if ($('#form ' + location.hash).length) {
+    $('#form ' + location.hash).show().siblings('section').hide();
+  } else {
+    history.pushState('', document.title, window.location.pathname);
+  }
+}
+
+function store(key, value) {
+  answers[key] = value;
+  sessionStorage.setItem(key, value);
+  console.log(answers);
+  if (rules[key]) {
+    rules[key]();
+  }
+}
+
+$(document).ready(function() {
 
   PAGE = $('body').attr('id');
 
@@ -152,100 +259,6 @@ $(document).ready(function() {
 
   // FORM LOGIC -----------------------------------------------------------------------
 
-  function emailStageOneWithFormSpree() {
-
-    // Submits the contact form to Formspree
-    // More info: https://formspree.io/
-    var data = {
-      message: 'This is an incomplete form for reference only.',
-      _subject: 'FinsecPTX.com - Preliminary form result - for reference only',
-      _format: 'plain'
-    };
-    var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
-    $.each(keys, function(i, key) {
-      data[key] = sessionStorage.getItem(key) || '-';
-    });
-    console.log('sending', data);
-    $.ajax({
-      url: "https://formspree.io/info@finsecptx.com",
-      method: "POST",
-      data: data,
-      dataType: "json"
-    }).done(function() {
-      console.log('DONE');
-    }).fail(function(jqXHR, textStatus, errorThrown) {
-      console.log('ERROR', jqXHR, textStatus, errorThrown);
-    });
-  }
-
-  function subscribeToMailChimp() {
-    // var $btn = $(this);
-    // var speed = 300;
-    // var easing = 'easeInOut';
-    // var data = $form.serialize();
-    var data = $('#title-name, #email-phone, #state-age').find('input, select').serialize();
-    console.log('submitting', data);
-    // $form.find('input, button').prop('disabled', true);
-    // $btn.html('Sending...');
-    $.ajax({
-      type: 'get',
-      url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?',
-      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
-      // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
-      data: data,
-      cache: false,
-      dataType: 'json',
-      contentType: "application/json; charset=utf-8"
-    }).done(function(data) {
-      // $btn.html('Success');
-      // $('#subscription .success').show();
-      console.log('DONE', data);
-      $('#form #subscribed p.email').text(answers.email);
-    }).fail(function(error) {
-      // $btn.html('Whoops');
-      // $('#subscription .fail').show();
-      console.log('ERROR', error);
-    }).always(function() {
-      // $('#subscription .form').delay(500).velocity({
-      //   opacity: 0,
-      //   scale: 0.9,
-      // }, speed, easing);
-      // $('#subscription .overlay').delay(500 + (speed * 0.8)).addClass('show').velocity({
-      //   opacity: [1, 0],
-      //   scale: [1, 1.1],
-      // }, speed, easing);
-    });
-  }
-
-  function goTo(id) {
-    if (!location.hash && id === 'prev') {
-      window.location = '/';
-    }
-    var $active = $('#form section' + location.hash);
-    id = id === 'next' ? $active.next().attr('id') : id;
-    id = id === 'prev' ? $active.prev().attr('id') : id;
-    console.log('goTo', id);
-    history.pushState(null, null, '#' + id);
-    animateToHash();
-  }
-
-  function animateToHash() {
-    if ($('#form ' + location.hash).length) {
-      $('#form ' + location.hash).show().siblings('section').hide();
-    } else {
-      history.pushState('', document.title, window.location.pathname);
-    };
-  }
-
-  function store(key, value) {
-    answers[key] = value;
-    sessionStorage.setItem(key, value);
-    console.log(answers);
-    if (rules[key]) {
-      rules[key]();
-    }
-  }
-
   jQuery.fn.extend({
     isValid: function() {
       id = this.attr('id');
@@ -260,8 +273,6 @@ $(document).ready(function() {
   if (PAGE === 'form') {
 
     animateToHash();
-
-    var answers = {};
 
     var rules = {
       'state-age': function() {
@@ -413,17 +424,21 @@ $(document).ready(function() {
         nth++;
         console.log('equal', nth);
         $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
-      };
+      }
     });
 
     // Maiden name is hidden until user selects gender
-    rules['gender']();
+    rules.gender();
 
     // Spouse is hidden until user selects married
-    rules['married']();
+    rules.married();
 
     // Hide contribution dates until user selects yes I contributed
-    rules['non_concessional_contributions']();
+    rules.non_concessional_contributions();
+
+    $('#review button.submit').on('click', function() {
+      submitFormToWebMerge();
+    });
 
   }
 

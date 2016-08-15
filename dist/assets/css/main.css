@@ -2858,6 +2858,38 @@ footer #copyright p a:hover {
 #form #taxable-income .option > div {
   margin-top: 30px;
 }
+#form #review > div {
+  max-width: 1080px;
+}
+#form #review p {
+  max-width: none;
+}
+#form #review .buttons {
+  margin-top: 60px;
+}
+#form #review .letter-of-authority {
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 10px 20px RGBA(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 120px 80px;
+}
+@media (min-width: 1080px) {
+  #form #review .letter-of-authority {
+    height: 1527px;
+  }
+}
+#form #review .letter-of-authority p {
+  font-size: 18px;
+  color: #0d0d13;
+  text-align: left;
+  font-family: "Rick-Book", sans-serif;
+  max-width: none;
+}
+#form #review .letter-of-authority p strong {
+  font-family: "Rick-Medium", sans-serif;
+  color: #0f1d3c;
+}
 #form ::-webkit-input-placeholder {
   color: #557ea0;
 }
