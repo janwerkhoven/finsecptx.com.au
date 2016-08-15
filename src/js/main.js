@@ -120,8 +120,21 @@ function lazyPanda() {
   var data = {
     title: 'Mr',
     name: 'Jan Testing',
+    maiden: 'Johannes',
     phone: '0424 787 652',
     email: 'testing@nabu.io',
+    street: '82 Flinders',
+    suburb: 'Melbourne',
+    state: 'VIC',
+    postcode: '3000',
+    UKstreet: '94 Christchurch Rd',
+    UKsuburb: 'Winchester',
+    UKpostcode: 'SO23 9TE',
+    fund1Name: 'UK Pension Fund #1',
+    fund1Street: '80 Duke of York Square',
+    fund1Suburb: 'London',
+    fund1Postcode: 'SW3 4LY',
+    dateOfBirth: '16 Oct 1940',
   };
   $.each(data, function(key, value) {
     sessionStorage.setItem(key, value);
