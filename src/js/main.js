@@ -31,15 +31,13 @@ function subscribeToMailChimp() {
   // var speed = 300;
   // var easing = 'easeInOut';
   // var data = $form.serialize();
-  var data = $('#title-name, #email-phone, #state-age').find('input, select').serialize();
+  var data = $('#subscribe #start, #subscribe #phone-state-age').find('input, select').serialize();
   console.log('submitting', data);
   // $form.find('input, button').prop('disabled', true);
   // $btn.html('Sending...');
   $.ajax({
     type: 'get',
     url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?',
-    // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=5d51cd78d5&c=?',
-    // url: '//colettewerden.us8.list-manage.com/subscribe/post-json?u=63fca17be61d516e518647941&id=f0f8a6944e&c=?', // testing list
     data: data,
     cache: false,
     dataType: 'json',
@@ -48,7 +46,7 @@ function subscribeToMailChimp() {
     // $btn.html('Success');
     // $('#subscription .success').show();
     console.log('DONE', data);
-    $('#form #subscribed p.email').text(answers.email);
+    $('.form #subscribed p.email em').text(answers.email);
   }).fail(function(error) {
     // $btn.html('Whoops');
     // $('#subscription .fail').show();
@@ -97,7 +95,8 @@ function submitFormToWebMerge() {
 
   $.ajax({
     type: 'POST',
-    url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
+    // url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
+    url: 'https://www.webmerge.me/merge/72409/2ygbxs',
     data: $.param(answers),
     // data: keyValues
     // data: 'name=Janneman&email=jw@nabu.io&phone_number=0424787666',
@@ -147,7 +146,7 @@ function goTo(id) {
   if (!location.hash && id === 'prev') {
     window.location = '/';
   }
-  var $active = $('#form section' + location.hash);
+  var $active = $('.form section' + location.hash);
   id = id === 'next' ? $active.next().attr('id') : id;
   id = id === 'prev' ? $active.prev().attr('id') : id;
   console.log('goTo', id);
@@ -156,8 +155,8 @@ function goTo(id) {
 }
 
 function animateToHash() {
-  if ($('#form ' + location.hash).length) {
-    $('#form ' + location.hash).show().siblings('section').hide();
+  if ($('.form ' + location.hash).length) {
+    $('.form ' + location.hash).show().siblings('section').hide();
   } else {
     history.pushState('', document.title, window.location.pathname);
   }
@@ -171,6 +170,76 @@ function store(key, value) {
     rules[key]();
   }
 }
+
+var rules = {
+  'state-age': function() {
+    var age = parseInt(answers.age);
+    if (Number.isInteger(age)) {
+      if (age < 45) {
+        goTo('below-45');
+      } else if (age < 55) {
+        goTo('between-45-and-55');
+      } else {
+        return true;
+      }
+    } else {
+      $('#state-age .buttons p').show(300);
+    }
+  },
+  'below-45': function() {
+    $('#email-check input').val(sessionStorage.getItem('email'));
+    goTo('email-check');
+  },
+  'between-45-and-55': function() {
+    $('#email-check input').val(sessionStorage.getItem('email'));
+    goTo('email-check');
+  },
+  'email-check': function() {
+    $('#subscribed p.email em').text(sessionStorage.getItem('email'));
+    subscribeToMailChimp();
+    goTo('subscribed');
+  },
+  'over-55': function() {
+    goTo('start-enquiry');
+  },
+  'start-enquiry': function() {
+    keys = ['title', 'name', 'email', 'phone'];
+    $.each(keys, function(i, v) {
+      $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+    });
+    goTo('name-email-again');
+  },
+  'gender': function() {
+    if (sessionStorage.getItem('gender') === 'Female') {
+      $('.field.maiden').show();
+    } else {
+      $('.field.maiden').hide();
+    }
+  },
+  'married': function() {
+    if (sessionStorage.getItem('married') === 'Yes') {
+      $('.field.spouse').show();
+    } else {
+      $('.field.spouse').hide();
+    }
+  },
+  'non_concessional_contributions': function() {
+    if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
+      $('.field.contributions').show();
+    } else {
+      $('.field.contributions').hide();
+    }
+  },
+  'phone-state-age': function() {
+    var age = parseInt(answers.age);
+    if (Number.isInteger(age)) {
+      subscribeToMailChimp();
+      goTo('subscribed');
+    } else {
+      $('#phone-state-age .buttons p').show(300);
+    }
+  }
+};
 
 $(document).ready(function() {
 
@@ -283,70 +352,9 @@ $(document).ready(function() {
     }
   });
 
-  if (PAGE === 'form') {
+  if (PAGE === 'subscribe' || PAGE === 'form') {
 
     animateToHash();
-
-    var rules = {
-      'state-age': function() {
-        var age = parseInt(answers.age);
-        if (Number.isInteger(age)) {
-          if (age < 45) {
-            goTo('below-45');
-          } else if (age < 55) {
-            goTo('between-45-and-55');
-          } else {
-            return true;
-          }
-        } else {
-          $('#state-age .buttons p').show(300);
-        }
-      },
-      'below-45': function() {
-        $('#email-check input').val(sessionStorage.getItem('email'));
-        goTo('email-check');
-      },
-      'between-45-and-55': function() {
-        $('#email-check input').val(sessionStorage.getItem('email'));
-        goTo('email-check');
-      },
-      'email-check': function() {
-        $('#subscribed p.email em').text(sessionStorage.getItem('email'));
-        subscribeToMailChimp();
-        goTo('subscribed');
-      },
-      'over-55': function() {
-        goTo('start-enquiry');
-      },
-      'start-enquiry': function() {
-        keys = ['title', 'name', 'email', 'phone'];
-        $.each(keys, function(i, v) {
-          $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-        });
-        goTo('name-email-again');
-      },
-      'gender': function() {
-        if (sessionStorage.getItem('gender') === 'Female') {
-          $('.field.maiden').show();
-        } else {
-          $('.field.maiden').hide();
-        }
-      },
-      'married': function() {
-        if (sessionStorage.getItem('married') === 'Yes') {
-          $('.field.spouse').show();
-        } else {
-          $('.field.spouse').hide();
-        }
-      },
-      'non_concessional_contributions': function() {
-        if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
-          $('.field.contributions').show();
-        } else {
-          $('.field.contributions').hide();
-        }
-      }
-    };
 
     $('section button.back').on('click', function() {
       var target = $(this).attr('for');
@@ -365,9 +373,8 @@ $(document).ready(function() {
     });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
-
     $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
-      // $(document).on('focus', '#form input[type="text"], #form input[type="email"]', function() {
+      // $(document).on('focus', '.form input[type="text"], .form, #subcribe input[type="email"]', function() {
       var key = $(this).attr('name').toLowerCase();
       var value = $(this).val();
       console.log(key, value);
@@ -383,8 +390,8 @@ $(document).ready(function() {
     });
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
-    $('#form').find('input[type="text"], input[type="email"]').on('focus', function() {
-      // var selector = '#form input[type="text"], #form input[type="email"]';
+    $('.form').find('input[type="text"], input[type="email"]').on('focus', function() {
+      // var selector = '.form input[type="text"], .form input[type="email"]';
       // $(document).on('focus', selector, function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
@@ -401,7 +408,7 @@ $(document).ready(function() {
     // $('input[placeholder]').closest('.field').addClass('has-placeholder');
 
     // Add class selected if user selected a value from <select>
-    $('#form select').on('change', function() {
+    $('.form select').on('change', function() {
       if ($(this).val()) {
         $(this).addClass('selected');
       } else {
@@ -410,7 +417,7 @@ $(document).ready(function() {
     });
 
     // Make time ranges update the adjecent input box
-    $('#form input[type="range"]').on('change mousemove', function(e) {
+    $('.form input[type="range"]').on('change mousemove', function(e) {
       if (e.type === 'change' || e.type === 'mousemove' && $(this).hasClass('dragging')) {
         $(this).siblings('input[type="text"]').val($(this).val());
       }

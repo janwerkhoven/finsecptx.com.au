@@ -6,6 +6,7 @@
   {{/replace}}
 
   {{#replace "body-id"}}form{{/replace}}
+  {{#replace "body-class"}}form{{/replace}}
 
   {{#replace "main"}}
 
@@ -13,15 +14,15 @@
       <a href="/" class="logo">
         <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
       </a>
-      <h1>UK Pension Transfer Enquiry</h1>
       <a href="/" class="back">{{> arrow-right}}</a>
     </nav>
 
     <section id="hello">
       <div>
+        <h1>Am I eligible?</h1>
         <p>We’d like to ask a few quick questions to establish whether you’re eligible for transferring your UK Pension to Australian Superannuation.</p>
         <div class="buttons vertical">
-          <button class="next">Start</button>
+          <button class="next">Continue</button>
         </div>
       </div>
     </section>
@@ -91,6 +92,7 @@
               <option value="TAS">Tasmania</option>
               <option value="VIC">Victoria</option>
               <option value="WA">Western Australia</option>
+              <option value="I live outside Australia">I live outside Australia</option>
             </select>
             <div>
               {{> chevron-down}}

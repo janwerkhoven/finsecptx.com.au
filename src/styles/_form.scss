@@ -1,4 +1,4 @@
-#form {
+body.form {
   background: $finsec-royal-blue url('/assets/img/form/bg.jpg') 50% 100% / cover fixed;
   footer,
   header {
@@ -14,6 +14,10 @@
       font-size: 22px;
       letter-spacing: 1px;
       margin: 20px 0;
+    }
+    .logo {
+      margin: 0 0 30px;
+      display: block;
     }
     img {
       width: 240px;
@@ -72,6 +76,9 @@
       max-width: 440px;
       padding: 220px 0;
     }
+    h1 {
+      margin-bottom: 20px;
+    }
     p {
       font-size: 26px;
       margin: 0 0 26px;
@@ -108,7 +115,7 @@
         font-family: $bold;
         line-height: 150%;
         &.back {
-          text-transform: lowercase;
+          text-transform: none;
           border-color: transparent;
           padding: 0;
           color: $finsec-kashmir-blue;
@@ -124,13 +131,10 @@
       }
       > p {
         display: none;
-        position: absolute;
         font-size: 20px;
         background: #fff;
         color: #212c48;
         padding: 0 8px;
-        right: 0;
-        top: -40px;
       }
     }
   }
@@ -507,5 +511,16 @@
   }
   input[type=range]:focus::-ms-fill-upper {
     background: $finsec-that-other-blue;
+  }
+}
+#subscribe {
+  #start {
+    display: block;
+    .field {
+      margin-bottom: 20px;
+    }
+    .buttons {
+      margin-top: 40px;
+    }
   }
 }

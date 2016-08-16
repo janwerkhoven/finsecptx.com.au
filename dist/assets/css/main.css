@@ -2480,51 +2480,55 @@ footer #copyright p a:hover {
   margin-top: 60px;
 }
 
-#form {
+body.form {
   background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover fixed;
   /*hide the outline behind the border*/
 }
-#form footer,
-#form header {
+body.form footer,
+body.form header {
   display: none;
 }
-#form main nav {
+body.form main nav {
   position: absolute;
   left: 0;
   top: 0;
   padding: 28px 30px;
 }
-#form main nav h1 {
+body.form main nav h1 {
   font-family: "Rick-Medium", sans-serif;
   font-size: 22px;
   letter-spacing: 1px;
   margin: 20px 0;
 }
-#form main nav img {
+body.form main nav .logo {
+  margin: 0 0 30px;
+  display: block;
+}
+body.form main nav img {
   width: 240px;
   height: auto;
 }
-#form main nav a.back {
+body.form main nav a.back {
   display: inline-block;
 }
-#form main nav a.back:hover #arrow-right {
+body.form main nav a.back:hover #arrow-right {
   stroke: white;
 }
-#form main nav a.back svg {
+body.form main nav a.back svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-#form main nav a.back svg #arrow-right {
+body.form main nav a.back svg #arrow-right {
   transition: stroke 200ms ease-out;
   stroke: #557ea0;
 }
-#form aside {
+body.form aside {
   position: absolute;
   right: 0;
   top: 0;
   padding: 28px 30px;
 }
-#form aside p {
+body.form aside p {
   font-family: "Rick-Medium", sans-serif;
   font-size: 24px;
   color: #557ea0;
@@ -2532,21 +2536,21 @@ footer #copyright p a:hover {
   text-align: center;
   line-height: 100%;
 }
-#form aside ul li {
+body.form aside ul li {
   background: #090921;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   margin: 20px;
 }
-#form aside ul li.done {
+body.form aside ul li.done {
   background: #6b6b99;
 }
-#form section {
+body.form section {
   display: none;
   text-align: center;
 }
-#form section > div {
+body.form section > div {
   min-height: 100vh;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2560,21 +2564,24 @@ footer #copyright p a:hover {
   max-width: 440px;
   padding: 220px 0;
 }
-#form section p {
+body.form section h1 {
+  margin-bottom: 20px;
+}
+body.form section p {
   font-size: 26px;
   margin: 0 0 26px;
   font-family: "Rick-Bold", sans-serif;
 }
-#form section p small {
+body.form section p small {
   display: block;
   font-size: 18px;
   line-height: 150%;
 }
-#form section p em {
+body.form section p em {
   font-style: normal;
   color: #4c6f93;
 }
-#form section .buttons {
+body.form section .buttons {
   position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2587,7 +2594,7 @@ footer #copyright p a:hover {
           justify-content: space-between;
   margin-top: 20px;
 }
-#form section .buttons.vertical {
+body.form section .buttons.vertical {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
@@ -2596,47 +2603,44 @@ footer #copyright p a:hover {
               -ms-grid-row-align: center;
           align-items: center;
 }
-#form section .buttons.vertical a.button:not(:last-child),
-#form section .buttons.vertical button:not(:last-child) {
+body.form section .buttons.vertical a.button:not(:last-child),
+body.form section .buttons.vertical button:not(:last-child) {
   margin-bottom: 20px;
 }
-#form section .buttons a.button,
-#form section .buttons button {
+body.form section .buttons a.button,
+body.form section .buttons button {
   font-size: 22px;
   font-family: "Rick-Bold", sans-serif;
   line-height: 150%;
 }
-#form section .buttons a.button.back,
-#form section .buttons button.back {
-  text-transform: lowercase;
+body.form section .buttons a.button.back,
+body.form section .buttons button.back {
+  text-transform: none;
   border-color: transparent;
   padding: 0;
   color: #4c6f93;
 }
-#form section .buttons a.button.back:focus, #form section .buttons a.button.back:hover,
-#form section .buttons button.back:focus,
-#form section .buttons button.back:hover {
+body.form section .buttons a.button.back:focus, body.form section .buttons a.button.back:hover,
+body.form section .buttons button.back:focus,
+body.form section .buttons button.back:hover {
   color: white;
   background: none;
 }
-#form section .buttons a.button.pdf,
-#form section .buttons button.pdf {
+body.form section .buttons a.button.pdf,
+body.form section .buttons button.pdf {
   width: 400px;
 }
-#form section .buttons > p {
+body.form section .buttons > p {
   display: none;
-  position: absolute;
   font-size: 20px;
   background: #fff;
   color: #212c48;
   padding: 0 8px;
-  right: 0;
-  top: -40px;
 }
-#form .field {
+body.form .field {
   margin-bottom: 60px;
 }
-#form .field label {
+body.form .field label {
   width: 100%;
   display: block;
   font-family: "Rick-Bold", sans-serif;
@@ -2644,12 +2648,12 @@ footer #copyright p a:hover {
   line-height: 150%;
   text-align: left;
 }
-#form .field label small {
+body.form .field label small {
   font-size: 18px;
   display: block;
   line-height: 20px;
 }
-#form .field input {
+body.form .field input {
   display: block;
   width: 100%;
   background: none;
@@ -2663,16 +2667,16 @@ footer #copyright p a:hover {
   padding: 0 2px;
   font-size: 34px;
 }
-#form .field.email, #form .field.text {
+body.form .field.email, body.form .field.text {
   position: relative;
 }
-#form .field.email.focus:after, #form .field.text.focus:after {
+body.form .field.email.focus:after, body.form .field.text.focus:after {
   background: white;
 }
-#form .field.email.focus:after, #form .field.email.has-placeholder:after, #form .field.email.has-value:after, #form .field.text.focus:after, #form .field.text.has-placeholder:after, #form .field.text.has-value:after {
+body.form .field.email.focus:after, body.form .field.email.has-placeholder:after, body.form .field.email.has-value:after, body.form .field.text.focus:after, body.form .field.text.has-placeholder:after, body.form .field.text.has-value:after {
   bottom: 0;
 }
-#form .field.email:after, #form .field.text:after {
+body.form .field.email:after, body.form .field.text:after {
   content: ' ';
   position: absolute;
   width: 100%;
@@ -2683,18 +2687,18 @@ footer #copyright p a:hover {
   background: #557ea0;
   transition: 300ms all ease-out;
 }
-#form .field.select {
+body.form .field.select {
   position: relative;
 }
-#form .field.select > div {
+body.form .field.select > div {
   border: 2px solid #557ea0;
   margin-top: 10px;
   transition: 300ms border-color ease-out;
 }
-#form .field.select > div:hover > div #arrow-right {
+body.form .field.select > div:hover > div #arrow-right {
   stroke: white;
 }
-#form .field.select > div select {
+body.form .field.select > div select {
   width: 100%;
   height: 55px;
   background: none;
@@ -2710,10 +2714,10 @@ footer #copyright p a:hover {
   cursor: pointer;
   color: #557ea0;
 }
-#form .field.select > div select.selected {
+body.form .field.select > div select.selected {
   color: #FFF;
 }
-#form .field.select > div > div {
+body.form .field.select > div > div {
   position: absolute;
   z-index: -1;
   right: 0;
@@ -2731,14 +2735,14 @@ footer #copyright p a:hover {
           align-items: center;
   border: 2px solid #557ea0;
 }
-#form .field.select > div > div svg {
+body.form .field.select > div > div svg {
   width: 60%;
 }
-#form .field.select > div > div svg #arrow-right {
+body.form .field.select > div > div svg #arrow-right {
   transition: 300ms stroke ease-out;
   stroke: #557ea0;
 }
-#form .field.range {
+body.form .field.range {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2752,20 +2756,20 @@ footer #copyright p a:hover {
       -ms-flex-align: center;
           align-items: center;
 }
-#form .field.range label {
+body.form .field.range label {
   margin-bottom: 20px;
 }
-#form .field.range input[type="text"] {
+body.form .field.range input[type="text"] {
   border: 2px solid #557ea0;
   width: 70px;
   text-align: center;
   line-height: 46px;
   padding-top: 5px;
 }
-#form .field.range input[type="range"] {
+body.form .field.range input[type="range"] {
   width: 360px;
 }
-#form .field.option > div {
+body.form .field.option > div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2777,22 +2781,22 @@ footer #copyright p a:hover {
           justify-content: space-between;
   margin-top: 10px;
 }
-#form .field.option > div button {
+body.form .field.option > div button {
   width: 48%;
   font-size: 20px;
   font-family: "Rick-Bold", sans-serif;
 }
-#form .field.option > div button.inactive {
+body.form .field.option > div button.inactive {
   text-decoration: line-through;
   opacity: 0.3;
 }
-#form .group.address {
+body.form .group.address {
   margin-bottom: 40px;
 }
-#form .group.address .field {
+body.form .group.address .field {
   margin-bottom: 20px;
 }
-#form .multi ul li {
+body.form .multi ul li {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2800,7 +2804,7 @@ footer #copyright p a:hover {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
 }
-#form .multi ul li span {
+body.form .multi ul li span {
   font-size: 20px;
   width: 40px;
   text-align: left;
@@ -2809,37 +2813,37 @@ footer #copyright p a:hover {
   font-family: "Rick-Bold", sans-serif;
   color: #4c6f93;
 }
-#form .multi ul li .field {
+body.form .multi ul li .field {
   margin: 0;
 }
-#form img.check {
+body.form img.check {
   width: 90px;
   display: block;
   margin: 0 auto 20px;
   -webkit-transform: translateX(12px);
           transform: translateX(12px);
 }
-#form #hello {
+body.form #hello {
   display: block;
 }
-#form #over-55 > div:first-child {
+body.form #over-55 > div:first-child {
   padding-bottom: 100px;
 }
-#form #over-55 > div:first-child .back {
+body.form #over-55 > div:first-child .back {
   margin-top: 20px;
 }
-#form #over-55 > div:last-child {
+body.form #over-55 > div:last-child {
   background: #4c6f93;
   text-align: center;
   max-width: none;
   min-height: 0;
   padding: 40px;
 }
-#form #over-55 > div:last-child p {
+body.form #over-55 > div:last-child p {
   max-width: none;
   margin: 0;
 }
-#form #over-55 > div:last-child > div {
+body.form #over-55 > div:last-child > div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2850,31 +2854,31 @@ footer #copyright p a:hover {
       -ms-flex-pack: center;
           justify-content: center;
 }
-#form #over-55 > div:last-child > div button {
+body.form #over-55 > div:last-child > div button {
   font-family: "Rick-Bold", sans-serif;
 }
-#form #below-45 > div,
-#form #between-45-and-55 > div,
-#form #over-55 > div {
+body.form #below-45 > div,
+body.form #between-45-and-55 > div,
+body.form #over-55 > div {
   max-width: 540px;
 }
-#form #residency small {
+body.form #residency small {
   color: #4c6f93;
   margin: 20px 0;
 }
-#form #taxable-income .option > div {
+body.form #taxable-income .option > div {
   margin-top: 30px;
 }
-#form #review > div {
+body.form #review > div {
   max-width: 1080px;
 }
-#form #review p {
+body.form #review p {
   max-width: none;
 }
-#form #review .buttons {
+body.form #review .buttons {
   margin-top: 60px;
 }
-#form #review .letter-of-authority {
+body.form #review .letter-of-authority {
   font-size: 16px;
   background: white;
   box-shadow: 0 10px 20px RGBA(0, 0, 0, 0.2);
@@ -2882,34 +2886,34 @@ footer #copyright p a:hover {
   padding: 120px 80px;
 }
 @media (min-width: 1080px) {
-  #form #review .letter-of-authority {
+  body.form #review .letter-of-authority {
     height: 1527px;
   }
 }
-#form #review .letter-of-authority p {
+body.form #review .letter-of-authority p {
   font-size: 18px;
   color: #0d0d13;
   text-align: left;
   font-family: "Rick-Book", sans-serif;
   max-width: none;
 }
-#form #review .letter-of-authority p strong {
+body.form #review .letter-of-authority p strong {
   font-family: "Rick-Medium", sans-serif;
   color: #0f1d3c;
 }
-#form ::-webkit-input-placeholder {
+body.form ::-webkit-input-placeholder {
   color: #557ea0;
 }
-#form :-moz-placeholder {
+body.form :-moz-placeholder {
   color: #557ea0;
 }
-#form ::-moz-placeholder {
+body.form ::-moz-placeholder {
   color: #557ea0;
 }
-#form :-ms-input-placeholder {
+body.form :-ms-input-placeholder {
   color: #557ea0;
 }
-#form input[type=range] {
+body.form input[type=range] {
   /*removes default webkit styles*/
   -webkit-appearance: none;
   /*fix for FF unable to apply focus style bug */
@@ -2919,14 +2923,14 @@ footer #copyright p a:hover {
   /*required for proper track sizing in FF*/
   width: 300px;
 }
-#form input[type=range]::-webkit-slider-runnable-track {
+body.form input[type=range]::-webkit-slider-runnable-track {
   width: 300px;
   height: 4px;
   background: #557ea0;
   border: none;
   border-radius: 2px;
 }
-#form input[type=range]::-webkit-slider-thumb {
+body.form input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
   height: 24px;
@@ -2935,31 +2939,31 @@ footer #copyright p a:hover {
   background: #557ea0;
   margin-top: -10px;
 }
-#form input[type=range]:focus {
+body.form input[type=range]:focus {
   outline: none;
 }
-#form input[type=range]:focus::-webkit-slider-runnable-track {
+body.form input[type=range]:focus::-webkit-slider-runnable-track {
   background: #557ea0;
 }
-#form input[type=range]::-moz-range-track {
+body.form input[type=range]::-moz-range-track {
   width: 300px;
   height: 5px;
   background: #557ea0;
   border: none;
   border-radius: 3px;
 }
-#form input[type=range]::-moz-range-thumb {
+body.form input[type=range]::-moz-range-thumb {
   border: none;
   height: 16px;
   width: 16px;
   border-radius: 50%;
   background: #557ea0;
 }
-#form input[type=range]:-moz-focusring {
+body.form input[type=range]:-moz-focusring {
   outline: 1px solid white;
   outline-offset: -1px;
 }
-#form input[type=range]::-ms-track {
+body.form input[type=range]::-ms-track {
   width: 300px;
   height: 5px;
   /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
@@ -2970,26 +2974,36 @@ footer #copyright p a:hover {
   /*remove default tick marks*/
   color: transparent;
 }
-#form input[type=range]::-ms-fill-lower {
+body.form input[type=range]::-ms-fill-lower {
   background: #557ea0;
   border-radius: 10px;
 }
-#form input[type=range]::-ms-fill-upper {
+body.form input[type=range]::-ms-fill-upper {
   background: #557ea0;
   border-radius: 10px;
 }
-#form input[type=range]::-ms-thumb {
+body.form input[type=range]::-ms-thumb {
   border: none;
   height: 16px;
   width: 16px;
   border-radius: 50%;
   background: #557ea0;
 }
-#form input[type=range]:focus::-ms-fill-lower {
+body.form input[type=range]:focus::-ms-fill-lower {
   background: #557ea0;
 }
-#form input[type=range]:focus::-ms-fill-upper {
+body.form input[type=range]:focus::-ms-fill-upper {
   background: #557ea0;
+}
+
+#subscribe #start {
+  display: block;
+}
+#subscribe #start .field {
+  margin-bottom: 20px;
+}
+#subscribe #start .buttons {
+  margin-top: 40px;
 }
 
 /* Temporary */

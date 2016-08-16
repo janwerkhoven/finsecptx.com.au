@@ -10,8 +10,8 @@
     <meta name="developer" content="Jan Werkhoven jan@nabu.io www.nabu.io">
     <meta name="robots" content="index, follow">
 
-    <title>Disclaimer | FinSec PTX</title>
-    <meta name="description" content="">
+    <title>Get the latest news affecting your UK pension transfer - FinSec PTX</title>
+    <meta name="description" content="Get an overview of what FinSec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
 
     <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css">
 
@@ -32,7 +32,7 @@
 
   </head>
 
-  <body id="disclaimer" class="">
+  <body id="subscribe" class="form">
 
     <header>
       <div>
@@ -65,13 +65,100 @@
     </header>
     <main>
       
-    <section id="body">
+    <nav>
+      <a href="/" class="logo">
+        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
+      </a>
+      <a href="/" class="back"><svg width="50px" height="48px" viewBox="0 0 50 48">
+  <title>arrow-right</title>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Artboard" transform="translate(-77.000000, -140.000000)" stroke="#FFFFFF" stroke-width="4">
+      <g id="arrow-right" transform="translate(77.000000, 143.000000)">
+        <path d="M0.5,21 L46.5,21" id="Line" stroke-linejoin="round"></path>
+        <polyline id="Line" stroke-linecap="square" points="27.5 0.5 47 21 27.5 41.5"></polyline>
+      </g>
+    </g>
+  </g>
+</svg>
+</a>
+    </nav>
+
+    <section id="start">
       <div>
-        <h1>Disclaimer</h1>
-        <p>Any advice contained in this website is general advice only and does not take into consideration the readers' personal circumstances. To avoid making a decision not appropriate to you, the content should not be relied upon or act as a substitute for receiving financial advice suitable to your circumstances. Any reference to the readers' actual circumstances is entirely coincidental. When considering a financial product please consider the Product Disclosure Statement. Kaizen Wealth and its representatives receive fees and brokerage from the provision of financial advice or placement of financial products.</p>
-        <p>Information provided on this website is general in nature and does not constitute financial advice. FinSec Partners will endeavour to update the website/blog as needed. However, information can change without notice and FinSec Partners does not guarantee the accuracy of information on the website, including information provided by third parties, at any particular time. Every effort has been made to ensure that the information provided is accurate. Individuals must not rely on this information to make a financial or investment decision. Before making any decision, we recommend you consult a financial planner to take into account your particular investment objectives, financial situation and individual needs.</p>
-        <p>FinSec Partners does not give any warranty as to the accuracy, reliability or completeness of information which is contained in this website. Except insofar as any liability under statute cannot be excluded, FinSec Partners, its employees do not accept any liability for any error or omission on this web site or for any resulting loss or damage suffered by the recipient or any other person.</p>
-        <p>Unless otherwise specified, copyright of information provided on this website is owned by FinSec Partners Pty Ltd. You may not alter or modify this information in any way, including the removal of this copyright notice.</p>
+        <h1>Keep me informed</h1>
+        <p>Get the latest news affecting your UK pension transfer</p>
+        <div class="field text">
+          <input type="text" name="NAME" placeholder="Your name">
+        </div>
+        <div class="field email">
+          <input type="email" placeholder="your@email.com" name="EMAIL">
+        </div>
+        <div class="buttons vertical">
+          <button class="next">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="phone-state-age">
+      <div>
+        <div class="field text">
+          <label>Phone number?</label>
+          <input type="text" placeholder="04** *** ***" name="PHONE">
+        </div>
+        <div class="field select">
+          <label>What state do you reside in?</label>
+          <div>
+            <select name="STATE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+              <option value="I live outside Australia">I live outside Australia</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="field range">
+          <label>How old are you?<small>(if you don’t mind me asking)</small></label>
+          <input type="text" placeholder="?" tabindex="2">
+          <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
+        </div>
+        <div class="buttons vertical">
+          <p>Please enter your age</p>
+          <button class="next">Email me updates</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribed">
+      <div>
+        <p>Great!</p>
+        <p>To complete the subscription process, please click the link in the email we just sent you.</p>
+        <p class="email"><em>your@email.com</em></p>
+        <p>We will then keep you up to date with legislation changes that matter to you.</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="/assets/PDF/Pension-Transfer-Guide-by-FinSec-PTX.pdf" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <a class="button" href="/legislation-changes">Return to website</a>
+        </div>
       </div>
     </section>
 
