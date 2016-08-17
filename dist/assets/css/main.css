@@ -1230,6 +1230,10 @@ footer #legal a.logo {
   margin: 15px;
   display: inline-block;
 }
+footer #legal a.logo.finsec img {
+  height: 46px;
+  padding-bottom: 7px;
+}
 footer #legal img {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
@@ -2481,7 +2485,7 @@ footer #copyright p a:hover {
 }
 
 body.form {
-  background: #0f1d3c url("/assets/img/form/bg.jpg") 50% 100%/cover fixed;
+  background: #0f1d3c url("/assets/img/form/form-banner-2000px.jpg") 50% 100%/cover fixed;
   /*hide the outline behind the border*/
 }
 body.form footer,
@@ -2565,7 +2569,7 @@ body.form section > div {
   padding: 220px 0;
 }
 body.form section h1 {
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 body.form section p {
   font-size: 26px;
@@ -2580,6 +2584,26 @@ body.form section p small {
 body.form section p em {
   font-style: normal;
   color: #4c6f93;
+}
+body.form section hr {
+  width: 100%;
+  border: 0;
+  border-top: 2px dashed #FFF;
+  margin: 40px 0 35px;
+}
+body.form section .errors {
+  position: relative;
+}
+body.form section .errors p {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-size: 20px;
+  background: #fff;
+  color: #212c48;
+  padding: 0 8px;
+  margin: 0;
 }
 body.form section .buttons {
   position: relative;
@@ -2629,13 +2653,6 @@ body.form section .buttons button.back:hover {
 body.form section .buttons a.button.pdf,
 body.form section .buttons button.pdf {
   width: 400px;
-}
-body.form section .buttons > p {
-  display: none;
-  font-size: 20px;
-  background: #fff;
-  color: #212c48;
-  padding: 0 8px;
 }
 body.form .field {
   margin-bottom: 60px;
@@ -2713,6 +2730,9 @@ body.form .field.select > div select {
   padding: 0 30px 0 16px;
   cursor: pointer;
   color: #557ea0;
+  padding-right: 70px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 body.form .field.select > div select.selected {
   color: #FFF;
@@ -2823,44 +2843,15 @@ body.form img.check {
   -webkit-transform: translateX(12px);
           transform: translateX(12px);
 }
-body.form #hello {
+body.form #start {
   display: block;
 }
-body.form #over-55 > div:first-child {
-  padding-bottom: 100px;
-}
-body.form #over-55 > div:first-child .back {
-  margin-top: 20px;
-}
-body.form #over-55 > div:last-child {
-  background: #4c6f93;
-  text-align: center;
-  max-width: none;
-  min-height: 0;
-  padding: 40px;
-}
-body.form #over-55 > div:last-child p {
-  max-width: none;
-  margin: 0;
-}
-body.form #over-55 > div:last-child > div {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: row wrap;
-      -ms-flex-pack: row wrap;
-          justify-content: row wrap;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body.form #over-55 > div:last-child > div button {
-  font-family: "Rick-Bold", sans-serif;
-}
-body.form #below-45 > div,
-body.form #between-45-and-55 > div,
-body.form #over-55 > div {
+body.form #eligible > div,
+body.form #not-yet-eligible > div {
   max-width: 540px;
+}
+body.form #eligible .buttons {
+  margin: 12px 0 0;
 }
 body.form #residency small {
   color: #4c6f93;
@@ -2996,9 +2987,6 @@ body.form input[type=range]:focus::-ms-fill-upper {
   background: #557ea0;
 }
 
-#subscribe #start {
-  display: block;
-}
 #subscribe #start .field {
   margin-bottom: 20px;
 }

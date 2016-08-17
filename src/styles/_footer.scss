@@ -6,6 +6,12 @@ footer {
     a.logo {
       margin: 15px;
       display: inline-block;
+      &.finsec {
+        img {
+          height: 46px;
+          padding-bottom: 7px;
+        }
+      }
     }
     img {
       transform-origin: bottom;

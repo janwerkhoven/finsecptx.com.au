@@ -84,7 +84,7 @@
 </a>
     </nav>
 
-    <section id="hello">
+    <section id="start">
       <div>
         <h1>Am I eligible?</h1>
         <p>We’d like to ask a few quick questions to establish whether you’re eligible for transferring your UK Pension to Australian Superannuation.</p>
@@ -96,12 +96,33 @@
 
     <section id="title-name">
       <div>
-        <div class="field text">
-          <label>What’s your title</label>
-          <input type="text" name="TITLE" tabindex="1">
+        <div class="field select">
+          <label>What is your title?</label>
+          <div>
+            <select name="TITLE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Ms">Miss</option>
+              <option value="Dr">Dr</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
         <div class="field text">
-          <label>And your name?</label>
+          <label>And your full name?</label>
           <input type="text" name="NAME" tabindex="2">
         </div>
         <div class="buttons">
@@ -150,7 +171,7 @@
           <label>What state do you reside in?</label>
           <div>
             <select name="STATE" tabindex="1">
-              <option selected>Choose...</option>
+              <option value="" selected>Choose...</option>
               <option value="ACT">Australian Capital Territory</option>
               <option value="NSW">New South Wales</option>
               <option value="NT">Northern Territory</option>
@@ -159,7 +180,7 @@
               <option value="TAS">Tasmania</option>
               <option value="VIC">Victoria</option>
               <option value="WA">Western Australia</option>
-              <option value="I live outside Australia">I live outside Australia</option>
+              <option value="Outside Australia">I live outside Australia</option>
             </select>
             <div>
               <svg width="48px" height="26px" viewBox="0 0 48 26">
@@ -176,14 +197,16 @@
           </div>
         </div>
         <div class="field range">
-          <label>How old are you?<small>(if you don’t mind me asking)</small></label>
+          <label>How old are you?</label>
           <input type="text" placeholder="?" tabindex="2">
           <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
+        </div>
+        <div class="errors">
+          <p></p>
         </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next" tabindex="3">Next</button>
-          <p>Please enter your age</p>
         </div>
         <aside>
           <p>3/3</p>
@@ -196,46 +219,31 @@
       </div>
     </section>
 
-    <section id="over-55">
+    <section id="eligible">
       <div>
-        <p>Thank you and welcome!</p>
-        <p>You’re the right age to make a Pension transfer, so we’re glad you’re making a step in the right direction.</p>
-        <p>Whilst you’re eligible it’s important to understand if a transfer if appropriate for you. Our complimentary report will provide the answer.</p>
+        <h1>You’re the right age to make a Pension transfer!</h1>
+        <p>We’re glad you’re making a step in the right direction.</p>
+        <p>Whilst you’re eligible it’s important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
         <div class="buttons vertical">
           <button class="next" tabindex="1">Get Started</button>
-          <button class="back" for="state-age">Back</button>
         </div>
-      </div>
-      <div>
+        <hr>
         <p>Not ready just yet?</p>
         <div class="buttons vertical">
           <a class="button" href="/contact">Speak to a specialist</a>
-          <button class="checkbox unchecked subscribe">Keep me up to date via email</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="between-45-and-55">
-      <div>
-        <p>Thank you!</p>
-        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
-        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
-        <div class="buttons vertical">
-          <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
-          <a class="button" href="/contact">Speak to a specialist</a>
-          <a class="button pdf" href="/assets/PDF/Pension-Transfer-Guide-by-FinSec-PTX.pdf" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <button class="next" for="email-check">Keep me informed via email</button>
           <button class="back" for="state-age">Back</button>
         </div>
       </div>
     </section>
 
-    <section id="below-45">
+    <section id="not-yet-eligible">
       <div>
-        <p>Thank you!</p>
-        <p>Currently, you must be over 55 in order to be eligible to make a Pension transfer to an Australian Super Fund.</p>
+        <h1>Thank you!</h1>
+        <p>You must be over 55 in order to be eligible to make a UK Pension transfer to an Australian Super Fund.</p>
         <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
         <div class="buttons vertical">
-          <button class="checkbox unchecked next subscribe">Keep me up to date via email</button>
+          <button class="next" for="email-check">Keep me informed via email</button>
           <a class="button" href="/contact">Speak to a specialist</a>
           <a class="button pdf" href="/assets/PDF/Pension-Transfer-Guide-by-FinSec-PTX.pdf" target="_blank">Download our Pension Transfer Guide (PDF)</a>
           <button class="back" for="state-age">Back</button>
@@ -271,8 +279,8 @@
 
     <section id="start-enquiry">
       <div>
-        <p>You are about to begin your UK Pension Transfer Enquiry</p>
-        <p><small>By answering the following questions, you will be providing us with valuable information that will help start the transfer enquiry.</small></p>
+        <p>You are about to begin your UK Pension Transfer Enquiry.</p>
+        <p><small>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</small></p>
         <p><em>Estimated Time: 10 minutes</em></p>
         <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p>
         <div class="buttons vertical">
@@ -681,14 +689,15 @@
           Policy / Reference number: {$Reference}<br />
           National insurance number: {$NationalInsuranceID}</p>
           <p> </p>
-          <p>Signature:</p>
+          <p>Yours Sincerely,</p>
           <p> </p>
-          <p>Today's Date:</p>
+          <p>X</p>
           <p> </p>
+          <p><span class="name">{name}</span></p>
         </div>
 
         <div class="buttons vertical">
-          <button class="submit">Looks good<br>request my pension transfer!</button>
+          <button class="submit">Submit to FinSec Partners</button>
           <button class="back">Go back and edit</button>
         </div>
       </div>
@@ -712,17 +721,16 @@
       <section id="legal">
         <div>
           <div>
-            <a href="http://www.kaizenwealth.com.au/" target="_blank" title="Authorised AFSL Representative of FinSec Partners" class="logo">
+            <a href="http://www.kaizenwealth.com.au/" target="_blank" title="Authorised AFSL Representative of FinSec Partners" class="logo kaizen">
               <img src="/assets/img/footer/kaizen-wealth-logo@2x.png" alt="Kaizen Wealth Australia logo" />
             </a>
-            <a href="http://www.finsecpartners.com.au" target="_blank" title="Financial Planning Services, wealth creation and retirement planning, risk and insurance analysis" class="logo">
+            <a href="http://www.finsecpartners.com.au" target="_blank" title="Financial Planning Services, wealth creation and retirement planning, risk and insurance analysis" class="logo finsec">
               <img src="/assets/img/footer/finsec-partners-logo.png" alt="Finsec Partners logo" />
             </a>
           </div>
     
           <h3>FinSec PTX is a division of <a href="http://www.finsecpartners.com.au/" title="Professional Financial Planners in Adelaide" target="_blank">FinSec Partners Pty Ltd.</h3>
-          <p><a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=98135591829" target="_blank" title="ABN details of Finsect Partners Pty Ltd">FinSec Partners Pty Ltd (ABN 98 135 591 829)</a>, is a corporate authorised representative of <a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=19608040062"
-                target="_blank" title="ABN details of Kaizen Wealth Pty Ltd">Kaizen Wealth Pty Ltd. ABN 19 608 040 062</a>
+          <p><a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=98135591829" target="_blank" title="ABN details of Finsect Partners Pty Ltd">FinSec Partners Pty Ltd (ABN 98 135 591 829)</a>, is a corporate authorised representative of <a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=19608040062" target="_blank" title="ABN details of Kaizen Wealth Pty Ltd">Kaizen Wealth Pty Ltd. ABN 19 608 040 062</a>
             <nobr>AFSL 480 797</nobr>
           </p>
         </div>
