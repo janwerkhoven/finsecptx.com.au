@@ -148,6 +148,9 @@ body.form {
         &.pdf {
           width: 400px;
         }
+        &[disabled] {
+          opacity: 0.3;
+        }
       }
     }
   }
@@ -511,6 +514,13 @@ body.form {
     }
     .buttons {
       margin-top: 40px;
+    }
+  }
+  #phone-state-age {
+    .errors {
+      p {
+        position: relative;
+      }
     }
   }
 }

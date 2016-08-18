@@ -2654,6 +2654,10 @@ body.form section .buttons a.button.pdf,
 body.form section .buttons button.pdf {
   width: 400px;
 }
+body.form section .buttons a.button[disabled],
+body.form section .buttons button[disabled] {
+  opacity: 0.3;
+}
 body.form .field {
   margin-bottom: 60px;
 }
@@ -2992,6 +2996,9 @@ body.form input[type=range]:focus::-ms-fill-upper {
 }
 #subscribe #start .buttons {
   margin-top: 40px;
+}
+#subscribe #phone-state-age .errors p {
+  position: relative;
 }
 
 /* Temporary */

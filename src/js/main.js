@@ -1,12 +1,15 @@
+isProduction = location.host === 'www.finsecptx.com.au' ? true : false;
+
 answers = {};
 
+// The AJAX request to Formspree
 function formSpree(data) {
   var deferred = $.Deferred();
   $.ajax({
-    url: "https://formspree.io/info@finsecptx.com",
-    method: "POST",
+    url: 'https://formspree.io/info@finsecptx.com',
+    method: 'POST',
     data: data,
-    dataType: "json"
+    dataType: 'json'
   }).done(function(data) {
     deferred.resolve('success');
     console.log('AJAX success', data);
@@ -17,12 +20,16 @@ function formSpree(data) {
   return deferred.promise();
 }
 
+// The AJAX request to Webmerge
 function webMerge(data) {
   var deferred = $.Deferred();
+  var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
+  if (isProduction) {
+    url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
+  }
   $.ajax({
     type: 'POST',
-    // url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
-    url: 'https://www.webmerge.me/merge/72409/2ygbxs',
+    url: url,
     data: $.param(answers),
   }).done(function(data) {
     deferred.resolve('success');
@@ -34,15 +41,20 @@ function webMerge(data) {
   return deferred.promise();
 }
 
+// The AJAX request to Mailchimp
 function mailChimp(data) {
   var deferred = $.Deferred();
+  var url = '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?'; // Testing
+  if (isProduction) {
+    url = '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=202853ccf3&c=?'; // Live
+  }
   $.ajax({
-    type: 'get',
-    url: '//finsecptx.us13.list-manage.com/subscribe/post-json?u=500670fda51c3a1aa312eecfa&id=0d0bbdfa29&c=?',
+    type: 'GET',
+    url: url,
     data: $.param(data),
     cache: false,
     dataType: 'json',
-    contentType: "application/json; charset=utf-8"
+    contentType: 'application/json; charset=utf-8'
   }).done(function(data) {
     deferred.resolve('success');
     console.log('AJAX success', data);
@@ -53,6 +65,7 @@ function mailChimp(data) {
   return deferred.promise();
 }
 
+// Submit call-back to Forspree
 function submitCallBack() {
   var $form = $('#call-back');
   var $btn = $form.find('button');
@@ -74,6 +87,7 @@ function submitCallBack() {
   });
 }
 
+// Submit first section of the big form, preliminary, to Formspree
 function submitEligbility() {
   var data = {
     message: 'Someone completed the eligibility form on www.finsecptx.com.au.',
@@ -88,9 +102,10 @@ function submitEligbility() {
   formSpree(data);
 }
 
+// Submit the keep me informed subscription to Mailchimp and Formspree
 function submitSubscription() {
-  var $btn = $('#email-check button.next');
-  $btn.html('Sending...');
+  var $btn = $('button.subscribe');
+  $btn.html('Sending...').prop('disabled', true);
   var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
   var dataMailChimp = {};
   var dataFormSpree = {
@@ -99,10 +114,8 @@ function submitSubscription() {
     _format: 'plain'
   };
   $.each(keys, function(i, key) {
-    dataFormSpree[key] = dataMailChimp[key] = sessionStorage.getItem(key) || '-';
+    dataFormSpree[key] = dataMailChimp[key.toUpperCase()] = sessionStorage.getItem(key) || '-';
   });
-  debugger;
-  // var data2 = $('#subscribe #start, #subscribe #phone-state-age').find('input, select').serialize();
   console.log('Submitting subscription to FormSpree ...', dataFormSpree);
   formSpree(dataFormSpree);
   console.log('Submitting subscription to Mailchimp ...', dataMailChimp);
@@ -115,76 +128,26 @@ function submitSubscription() {
   });
 }
 
+// Submit the big pension transfer enquiry form to Webmerge and Formspree
 function submitEnquiry() {
-  var data = {
-    message: 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.',
-    _subject: '[WEBSITE] Someone subscribed',
-    _format: 'plain'
-  };
-  $.each(answers, function(i, key) {
-    data[key] = sessionStorage.getItem(key) || '-';
-  });
-  console.log('Submitting subscription to FormSpree ...', data);
-  formSpree(data);
-  $.when(webMerge(data)).then(function(status) {
+  var $btn = $('#review button.next');
+  $btn.html('Sending...').prop('disabled', true);
+  var dataWebMerge = dataFormSpree = answers;
+  dataFormSpree['message'] = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
+  dataFormSpree['_subject'] = '[WEBSITE] Someone subscribed!';
+  dataFormSpree['_format'] = 'plain';
+  console.log('Submitting enquiry to FormSpree ...', dataFormSpree);
+  formSpree(dataFormSpree);
+  console.log('Submitting enquiry to WebMerge ...', dataWebMerge);
+  $.when(webMerge(dataWebMerge)).then(function(status) {
     $btn.html('Sent!');
+    goTo('thanks');
   }, function(status) {
     $btn.html('Whoops');
   });
 }
 
-function submitFormToWebMerge() {
-
-  // POST https://www.webmerge.me/merge/72409/2ygbxs?test=1
-  // first_name=John&last_name=Smith&phone=312-555-3029
-  // {$Name}
-  // {$Email}
-  // {$Phone_Number}
-
-  var $btn = $('#review button.submit');
-  $btn.html('Sending...').prop('disabled', true);
-
-  // console.log('Submitting form to Webmerge ...', date);
-  // $.ajax({
-  //   url: "https://formspree.io/info@finsecptx.com",
-  //   method: "POST",
-  //   data: data,
-  //   dataType: "json"
-  // }).done(function() {
-  //   $btn.html('Sent!');
-  //   console.log('Call back request emailed to info@finsecptx.com');
-  // }).fail(function(jqXHR, textStatus, errorThrown) {
-  //   $btn.html('Whoops');
-  //   console.error('Call back request failed to send', jqXHR, textStatus, errorThrown);
-  // });
-
-  // var keyValues = 'name=Janneman&email=jw@nabu.io&phone_number=0424787666';
-
-  console.log(answers);
-  console.log($.param(answers));
-
-  $.ajax({
-    type: 'POST',
-    // url: 'https://www.webmerge.me/merge/72409/2ygbxs?test=1',
-    url: 'https://www.webmerge.me/merge/72409/2ygbxs',
-    data: $.param(answers),
-    // data: keyValues
-    // data: 'name=Janneman&email=jw@nabu.io&phone_number=0424787666',
-    // cache: false,
-    // dataType: 'json',
-    // contentType: "application/json; charset=utf-8"
-  }).done(function(data) {
-    $btn.html('Sent!');
-    goTo('thanks');
-    console.log('DONE', data);
-  }).fail(function(jqXHR, textStatus, errorThrown) {
-    $btn.html('Whoops');
-    console.error('Failed to submit to webmerge', jqXHR, textStatus, errorThrown);
-  });
-
-}
-
-// Fill out the entire form by running lazyPanda() in browser console
+// Fill out the entire form by entering lazyPanda() in browser console
 function lazyPanda() {
   var data = {
     title: 'Mr',
@@ -259,15 +222,27 @@ var rules = {
       $('#state-age .errors p').text('Please choose state').show(300);
     }
   },
+  'phone-state-age': function() {
+    if (answers.state) {
+      var age = parseInt(answers.age);
+      if (Number.isInteger(age)) {
+        submitSubscription();
+      } else {
+        $('#phone-state-age .errors p').text('Please choose age').show(300);
+      }
+    } else {
+      $('#phone-state-age .errors p').text('Please choose state').show(300);
+    }
+  },
   'email-check': function() {
-    $('#subscribed p.email em').text(sessionStorage.getItem('email'));
+    // $('#subscribed p.email em').text(sessionStorage.getItem('email'));
     submitSubscription();
   },
   'start-enquiry': function() {
-    keys = ['title', 'name', 'email', 'phone'];
-    $.each(keys, function(i, v) {
-      $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-    });
+    // keys = ['title', 'name', 'email', 'phone'];
+    // $.each(keys, function(i, v) {
+    //   $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
+    // });
     goTo('name-email-again');
   },
   'gender': function() {
@@ -291,14 +266,8 @@ var rules = {
       $('.field.contributions').hide();
     }
   },
-  'phone-state-age': function() {
-    var age = parseInt(answers.age);
-    if (Number.isInteger(age)) {
-      submitSubscription();
-      goTo('subscribed');
-    } else {
-      $('#phone-state-age .buttons p').show(300);
-    }
+  'review': function() {
+    submitEnquiry();
   }
 };
 
@@ -494,10 +463,6 @@ $(document).ready(function() {
 
     // Hide contribution dates until user selects yes I contributed
     rules.non_concessional_contributions();
-
-    $('#review button.submit').on('click', function() {
-      submitEnquiry();
-    });
 
   }
 
