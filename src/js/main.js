@@ -132,10 +132,11 @@ function submitSubscription() {
 function submitEnquiry() {
   var $btn = $('#review button.next');
   $btn.html('Sending...').prop('disabled', true);
-  var dataWebMerge = dataFormSpree = answers;
-  dataFormSpree['message'] = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
-  dataFormSpree['_subject'] = '[WEBSITE] Someone subscribed!';
-  dataFormSpree['_format'] = 'plain';
+  var dataWebMerge = answers;
+  var dataFormSpree = answers;
+  dataFormSpree.message = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
+  dataFormSpree._subject = '[WEBSITE] Someone subscribed!';
+  dataFormSpree._format = 'plain';
   console.log('Submitting enquiry to FormSpree ...', dataFormSpree);
   formSpree(dataFormSpree);
   console.log('Submitting enquiry to WebMerge ...', dataWebMerge);
@@ -237,6 +238,9 @@ var rules = {
   'email-check': function() {
     // $('#subscribed p.email em').text(sessionStorage.getItem('email'));
     submitSubscription();
+  },
+  'eligible': function() {
+    goTo('start-enquiry');
   },
   'start-enquiry': function() {
     // keys = ['title', 'name', 'email', 'phone'];
