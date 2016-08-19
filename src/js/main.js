@@ -1,4 +1,5 @@
 isProduction = location.host === 'www.finsecptx.com.au' ? true : false;
+environmentLabel = isProduction ? '[LIVE WEBSITE]' : '[STAGING WEBSITE]' + ' ';
 
 answers = {};
 
@@ -76,7 +77,7 @@ function submitCallBack() {
     name: $form.find('input').eq(0).val(),
     phone: $form.find('input').eq(1).val(),
     time: $form.find('input').eq(2).val(),
-    _subject: '[WEBSITE] Someone requested a call-back',
+    _subject: environmentLabel + 'Someone requested a call-back',
     _format: 'plain'
   };
   console.log('Submitting call-back request to FormSpree ...', data);
@@ -91,7 +92,7 @@ function submitCallBack() {
 function submitEligbility() {
   var data = {
     message: 'Someone completed the eligibility form on www.finsecptx.com.au.',
-    _subject: '[WEBSITE] Someone completed the eligibility form',
+    _subject: environmentLabel + 'Someone completed the eligibility form',
     _format: 'plain'
   };
   var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
@@ -110,7 +111,7 @@ function submitSubscription() {
   var dataMailChimp = {};
   var dataFormSpree = {
     message: 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.',
-    _subject: '[WEBSITE] Someone subscribed!',
+    _subject: environmentLabel + 'Someone subscribed!',
     _format: 'plain'
   };
   $.each(keys, function(i, key) {
@@ -135,7 +136,7 @@ function submitEnquiry() {
   var dataWebMerge = answers;
   var dataFormSpree = answers;
   dataFormSpree.message = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
-  dataFormSpree._subject = '[WEBSITE] Someone subscribed!';
+  dataFormSpree._subject = environmentLabel + 'Someone subscribed!';
   dataFormSpree._format = 'plain';
   console.log('Submitting enquiry to FormSpree ...', dataFormSpree);
   formSpree(dataFormSpree);
