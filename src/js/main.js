@@ -123,7 +123,6 @@ function submitSubscription() {
   $.when(mailChimp(dataMailChimp)).then(function(status) {
     $btn.html('Sent!');
     goTo('subscribed');
-    $('.form #subscribed p.email em').text(answers.email);
   }, function(status) {
     $btn.html('Whoops');
   });
@@ -149,7 +148,13 @@ function submitEnquiry() {
   });
 }
 
-// Fill out the entire form by entering lazyPanda() in browser console
+// Cheat code to show all form sections at once
+function wisePanda() {
+  $('#form section').show();
+  return true;
+}
+
+// Cheat code to fill out the entire form and go to review section
 function lazyPanda() {
   var data = {
     title: 'Mr',
@@ -175,6 +180,7 @@ function lazyPanda() {
     answers[key] = value;
   });
   goTo('review');
+  return data;
 }
 
 function goTo(id) {
@@ -237,18 +243,7 @@ var rules = {
     }
   },
   'email-check': function() {
-    // $('#subscribed p.email em').text(sessionStorage.getItem('email'));
     submitSubscription();
-  },
-  'eligible': function() {
-    goTo('start-enquiry');
-  },
-  'start-enquiry': function() {
-    // keys = ['title', 'name', 'email', 'phone'];
-    // $.each(keys, function(i, v) {
-    //   $('#name-email-again ' + 'input[name="' + v.toUpperCase() + '"]').val(sessionStorage.getItem(v));
-    // });
-    goTo('name-email-again');
   },
   'gender': function() {
     if (sessionStorage.getItem('gender') === 'Female') {
@@ -361,7 +356,11 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    animateToHash();
+    // animateToHash();
+
+    goTo('hello');
+
+    // wisePanda();
 
     $('section button.next').on('click', function() {
       var thisSection = $(this).closest('section');
@@ -385,14 +384,28 @@ $(document).ready(function() {
     });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
-    $('input[type="text"], input[type="email"], input[type="range"], select').on('keyup blur change', function() {
-      // $(document).on('focus', '.form input[type="text"], .form, #subcribe input[type="email"]', function() {
-      var key = $(this).attr('name').toLowerCase();
+    $('input[type="text"], input[type="email"], input[type="range"], select, textarea').on('keyup blur change', function() {
+      var key = $(this).attr('name');
       var value = $(this).val();
-      console.log(key, value);
-      store(key, value);
+      store(key.toLowerCase(), value);
+      $('input[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+      $('select[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+      $('span[name="' + key + '"]').text(value);
       $(this).closest('section').find('.errors p').hide(300);
     });
+
+    // Trigger all fields with pre-filled info to be stored
+    $('input[type="text"][value]').trigger('change');
+
+    // $('input[type="email"]').on('keyup, blur, change, sync', function() {
+    //   console.log($(this).val().length, $(this));
+    //   if ($(this).val().length > 10) {
+    //     console.log('BIGGER');
+    //     $(this).closest('.field').addClass('small-font');
+    //   } else {
+    //     $(this).removeClass('small-font');
+    //   }
+    // });
 
     // On click of option buttons, disable the other buttons, populate attribute to answers
     $('.field.option button').on('click', function() {
@@ -404,12 +417,10 @@ $(document).ready(function() {
 
     // Animate a line under text input fields on focus, blur and change. Maintain line if has value.
     $('.form').find('input[type="text"], input[type="email"]').on('focus', function() {
-      // var selector = '.form input[type="text"], .form input[type="email"]';
-      // $(document).on('focus', selector, function() {
       $(this).parent().addClass('focus');
     }).on('blur', function() {
       $(this).parent().removeClass('focus');
-    }).on('change', function() {
+    }).on('change sync', function() {
       if ($(this).val()) {
         $(this).parent().addClass('has-value');
       } else {
@@ -417,16 +428,28 @@ $(document).ready(function() {
       }
     });
 
-    // Add class to help style
-    // $('input[placeholder]').closest('.field').addClass('has-placeholder');
-
     // Add class selected if user selected a value from <select>
-    $('.form select').on('change', function() {
+    $('.form select').on('change sync', function() {
       if ($(this).val()) {
         $(this).addClass('selected');
       } else {
         $(this).removeClass('selected');
       }
+    });
+
+    // Logic for aggregating checkboxes
+    $('.checkboxes button').on('click', function() {
+      $(this).toggleClass('checked').blur();
+      var key = $(this).closest('.field').attr('name');
+      var value = '';
+      $(this).closest('.field').find('button.checked').each(function(i, element) {
+        if (i > 0) {
+          value += ' + ';
+        }
+        value += $(this).html();
+      });
+      store(key.toLowerCase(), value);
+      $(this).closest('section').find('.errors p').hide(300);
     });
 
     // Make time ranges update the adjecent input box
@@ -443,7 +466,6 @@ $(document).ready(function() {
     // On click of back button use history API to go back
     $('main nav a.back').on('click', function(e) {
       e.preventDefault();
-      // window.history.back();
       goTo('prev');
     });
 

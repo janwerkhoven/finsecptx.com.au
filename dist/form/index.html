@@ -89,7 +89,7 @@
         <h1>Am I eligible?</h1>
         <p>We’d like to ask a few quick questions to establish whether you’re eligible for transferring your UK Pension to Australian Superannuation.</p>
         <div class="buttons vertical">
-          <button class="next">Continue</button>
+          <button class="next">Start</button>
         </div>
       </div>
     </section>
@@ -225,7 +225,7 @@
         <p>We’re glad you’re making a step in the right direction.</p>
         <p>Whilst you’re eligible it’s important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
         <div class="buttons vertical">
-          <button class="next" tabindex="1">Get Started</button>
+          <button class="next" tabindex="1" for="start-enquiry">Get Started</button>
         </div>
         <hr>
         <p>Not ready just yet?</p>
@@ -266,9 +266,9 @@
 
     <section id="subscribed">
       <div>
-        <p>Great!</p>
+        <h1>Great!</h1>
         <p>To complete the subscription process, please click the link in the email we just sent you.</p>
-        <p class="email"><em>your@email.com</em></p>
+        <p class="email"><em><span name="EMAIL">your@email.com</span></em></p>
         <p>We will then keep you up to date with legislation changes that matter to you.</p>
         <div class="buttons vertical">
           <a class="button" href="/contact">Speak to a specialist</a>
@@ -280,10 +280,11 @@
 
     <section id="start-enquiry">
       <div>
-        <p>You are about to begin your UK Pension Transfer Enquiry.</p>
-        <p><small>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</small></p>
+        <h1>You are about to begin your UK Pension Transfer Enquiry.</h1>
+        <p>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</p>
         <p><em>Estimated Time: 10 minutes</em></p>
-        <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p>
+        <p><small>If you don’t have all these details right now, simply skip those steps.</small></p>
+        <!-- <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p> -->
         <div class="buttons vertical">
           <button class="next">Start form now</button>
           <!-- <button>Complete later</button> -->
@@ -295,12 +296,33 @@
     <section id="name-email-again">
       <div>
         <p>Does this all look correct? If not, please adjust them now.</p>
-        <div class="field text">
-          <label>Title</label>
-          <input type="text" name="TITLE" tabindex="1">
+        <div class="field select">
+          <label>Your title</label>
+          <div>
+            <select name="TITLE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Ms">Miss</option>
+              <option value="Dr">Dr</option>
+            </select>
+            <div>
+              <svg width="48px" height="26px" viewBox="0 0 48 26">
+                <title>arrow-right</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
+                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
+                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
         <div class="field text">
-          <label>Name</label>
+          <label>Full Name</label>
           <input type="text" name="NAME" tabindex="2">
         </div>
         <div class="field email">
@@ -364,6 +386,9 @@
           </div>
           <div class="field text">
             <input type="text" name="POSTCODE" tabindex="4" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="COUNTRY" tabindex="4" placeholder="Country" value="Australia">
           </div>
         </div>
         <div class="field text">
@@ -448,11 +473,11 @@
         </div>
         <div class="field text">
           <label>What date did you arrive in Australia with the intention to stay permanently? <small>(Or date of return for expats)</small><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
-          <input type="text" name="DATE_ARRIVAL" placeholder="DD/MM/YYYYY" tabindex="2">
+          <input type="text" name="DATE_ARRIVAL_AUSTRALIA_STAY" placeholder="DD/MM/YYYYY" tabindex="2">
         </div>
         <div class="field text">
           <label>What is the date of your last UK residency?</label>
-          <input type="text" name="DATE_UK_RESIDENCY" placeholder="DD/MM/YYYYY" tabindex="3">
+          <input type="text" name="DATE_LAST_UK_RESIDENCY" placeholder="DD/MM/YYYYY" tabindex="3">
         </div>
         <div class="buttons">
           <button class="back">Back</button>
@@ -486,7 +511,7 @@
             <button>No</button>
           </div>
         </div>
-        <div class="field multi contributions">
+        <!-- <div class="field multi contributions">
           <label>Thank you. Please list the amounts and the dates they were made:</label>
           <ul>
             <li>
@@ -508,7 +533,7 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div> -->
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -525,7 +550,7 @@
       </div>
     </section>
 
-    <section id="super-funds">
+    <!-- <section id="super-funds">
       <div>
         <p>Big table</p>
         <div class="buttons">
@@ -542,11 +567,26 @@
           </ul>
         </aside>
       </div>
-    </section>
+    </section> -->
 
     <section id="objectives">
       <div>
         <p>Objectives</p>
+        <div class="field checkboxes" name="OBJECTIVES">
+          <label>If you were to consider a transfer of your UK Pension to Australia please indicate which of the following issues are important to you:</label>
+          <div>
+            <button>Having your pension in the country you are living in</button>
+            <button>Avoiding currency risk on your pension benefits</button>
+            <button>Structuring your retirement benefits in a tax effective manner</button>
+            <button>Accessing the capital within your pension at retirement</button>
+            <button>Controlling or influencing the investments under your pension arrangements</button>
+            <button>Maximising your potential death benefits before and after your retirement</button>
+          </div>
+        </div>
+        <div class="field textarea">
+          <label>Would you like to add any comments?</label>
+          <textarea rows="5" name="COMMENTS"></textarea>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -576,7 +616,21 @@
 
     <section id="uk-address">
       <div>
-        <p>UK address</p>
+        <div class="address group">
+          <div class="field text">
+            <label>What was your last UK address?</label>
+            <input type="text" name="UK_STREET" tabindex="1" placeholder="Street">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_POSTCODE" tabindex="4" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
+          </div>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -594,6 +648,8 @@
     <section id="uk-pension">
       <div>
         <p>UK pension fund #1</p>
+        <p>UK pension fund #2</p>
+        <p>UK pension fund #3</p>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -613,27 +669,16 @@
         <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
         <p>Part 3. Complete!</p>
         <div class="buttons vertical">
-          <button class="next">Proceed to part sign off</button>
+          <button class="next">Proceed to sign off</button>
           <button class="back">Back</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="important">
-      <div>
-        <p><strong>Important</strong></p>
-        <p>For FinSec PTX to process your pension transfer you need to give your Pension funds / employers the authority to provide us with information.</p>
-        <p>To do so, please review the next letters we have prepared for you for each of your funds / employers.</p>
-        <div class="buttons">
-          <button class="back">Back</button>
-          <button class="next">Next</button>
         </div>
       </div>
     </section>
 
     <section id="review">
       <div>
-        <p>Please review and submit.</p>
+        <h1>Please review and submit.</h1>
+        <p>For FinSec PTX to process your pension transfer you need to give permission to your UK pension funds to provide us with information. We have prepared these letters for you. Please review whether correct.</p>
 
         <div class="letter-of-authority">
           <p>To: <strong>UK Pension Funds #1</strong><br />
@@ -651,50 +696,17 @@
           Email: transfers@finsecptx.com.au<br />
           www.finsecptx.com.au</p>
           <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: {$Name} (${MaidenName})<br />
-          Date of Birth: {$DateOfBirth}<br />
-          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
-          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
-          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
-          Policy / Reference number: {$Reference}<br />
-          National insurance number: {$NationalInsuranceID}</p>
+          <p>Name: <strong><span name="TITLE">-</span> <span name="NAME">-</span></strong> <!--<span class="maiden">(n&eacute;e <span name="MAIDEN"></span>)</span>--><br />
+          Date of Birth: <span name="DOB">-</span><br />
+          Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span><br />
+          Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span><br />
+          Period of fund scheme membership: <span name="FUND_1_START">-</span> - <span name="FUND_1_START">-</span></span><br />
+          Policy / Reference number: <span name="FUND_1_REFERENCE">-</span><br />
+          National insurance number: <span name="NATIONALINSURANCE_ID">-</span></p>
+          <p> </p>
           <p>Yours faithfully</p>
           <p> </p>
-          <p><strong>John Doe</strong></p>
-          <p>Signature:</p>
-          <p>Today's Date:</p>
-        </div>
-
-        <div class="letter-of-authority">
-          <p>To: <strong>UK Pension Employer Funds #2</strong><br />
-          80 Duke of York Square,<br />
-          London SW3 4LY, United Kingdom</p>
-          <p> </p>
-          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
-          <p> </p>
-          <p>To whom it may concern,</p>
-          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><strong>FinSec Partners</strong><br />
-          Tel: +61 8 8357 7840<br />
-          Fax: +61 8 8373 7600<br />
-          PO Box 1096 Unley SA 5061, Australia<br />
-          Email: transfers@finsecptx.com.au<br />
-          www.finsecptx.com.au</p>
-          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: <strong>{$Name}</strong><br />
-          Maiden name: ${MaidenName}<br />
-          Date of Birth: {$DateOfBirth}<br />
-          Current address: {$Street}, <span style="line-height: 20.8px;">{$Suburb}, {$State} {$Postcode}, Australia<br />
-          Last UK address: {$UKStreet}, {$UKSuburb}, {$UKState} {$UKPostcode}, United Kingdom<br />
-          Period of fund scheme membership: {$Date1} - {$Date2}</span><br />
-          Policy / Reference number: {$Reference}<br />
-          National insurance number: {$NationalInsuranceID}</p>
-          <p> </p>
-          <p>Yours Sincerely,</p>
-          <p> </p>
-          <p>X</p>
-          <p> </p>
-          <p><span class="name">{name}</span></p>
+          <p><strong><span name="NAME">John Doe</span></strong></p>
         </div>
 
         <div class="buttons vertical">
@@ -706,7 +718,7 @@
 
     <section id="thanks">
       <div>
-        <p>Thank you!</p>
+        <h1>Thank you!</h1>
         <p>Your form has been sent to FinSec PTX.</p>
         <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
         <div class="buttons vertical">

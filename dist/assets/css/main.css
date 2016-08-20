@@ -337,6 +337,10 @@ p {
   line-height: 150%;
 }
 
+strong {
+  font-weight: normal;
+}
+
 a {
   color: #FFF;
   text-decoration: none;
@@ -2551,7 +2555,6 @@ body.form aside ul li.done {
   background: #6b6b99;
 }
 body.form section {
-  display: none;
   text-align: center;
 }
 body.form section > div {
@@ -2674,7 +2677,8 @@ body.form .field label small {
   display: block;
   line-height: 20px;
 }
-body.form .field input {
+body.form .field input,
+body.form .field textarea {
   display: block;
   width: 100%;
   background: none;
@@ -2688,6 +2692,12 @@ body.form .field input {
   padding: 0 2px;
   font-size: 34px;
 }
+body.form .field textarea {
+  border: 3px solid #4c6f93;
+  padding: 20px 28px;
+  font-size: 20px;
+  font-family: "Rick-Medium", sans-serif;
+}
 body.form .field.email, body.form .field.text {
   position: relative;
 }
@@ -2695,20 +2705,25 @@ body.form .field.email.focus:after, body.form .field.text.focus:after {
   background: white;
 }
 body.form .field.email.focus:after, body.form .field.email.has-placeholder:after, body.form .field.email.has-value:after, body.form .field.text.focus:after, body.form .field.text.has-placeholder:after, body.form .field.text.has-value:after {
-  bottom: 0;
+  width: 100%;
+  opacity: 1;
 }
-body.form .field.email:after, body.form .field.text:after {
+body.form .field.email:after, body.form .field.email:before, body.form .field.text:after, body.form .field.text:before {
   content: ' ';
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
-  bottom: 10px;
   left: 0;
   background: #557ea0;
-  transition: 300ms all ease-out;
+  transition: 400ms all ease-out;
 }
-body.form .field.email input {
+body.form .field.email:after, body.form .field.text:after {
+  color: white;
+  width: 0;
+  opacity: 0;
+}
+body.form .field.email.small-font input {
   font-size: 24px;
   line-height: 51px;
 }
@@ -2769,6 +2784,40 @@ body.form .field.select > div > div svg {
 body.form .field.select > div > div svg #arrow-right {
   transition: 300ms stroke ease-out;
   stroke: #557ea0;
+}
+body.form .field.checkboxes label {
+  margin-bottom: 30px;
+}
+body.form .field.checkboxes button {
+  position: relative;
+  color: #557ea0;
+  border: 0;
+  text-transform: none;
+  font-size: 20px;
+  font-family: "Rick-Medium", sans-serif;
+  line-height: 150%;
+  padding-left: 60px;
+  transition: 300ms all ease-out;
+  text-align: left;
+  width: 100%;
+  padding: 5px 5px 5px 50px;
+}
+body.form .field.checkboxes button:after {
+  position: absolute;
+  content: ' ';
+  left: 5px;
+  top: 5px;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #557ea0;
+  transition: 300ms all ease-out;
+}
+body.form .field.checkboxes button.checked {
+  color: white;
+}
+body.form .field.checkboxes button.checked:after {
+  border-color: white;
+  background: RGBA(255, 255, 255, 0.9);
 }
 body.form .field.range {
   display: -webkit-flex;
@@ -2861,6 +2910,17 @@ body.form #not-yet-eligible > div {
 body.form #eligible .buttons {
   margin: 12px 0 0;
 }
+body.form #start-enquiry > div {
+  max-width: 500px;
+}
+body.form #start-enquiry > div small {
+  max-width: 380px;
+  display: inline-block;
+  margin: 0 auto;
+}
+body.form #start-enquiry > div button.next {
+  margin-bottom: 46px;
+}
 body.form #residency small {
   color: #4c6f93;
   margin: 20px 0;
@@ -2868,8 +2928,15 @@ body.form #residency small {
 body.form #taxable-income .option > div {
   margin-top: 30px;
 }
+body.form #objectives > div {
+  max-width: 600px;
+}
 body.form #review > div {
   max-width: 1080px;
+}
+body.form #review > div > p {
+  max-width: 600px;
+  margin: 0 auto 40px;
 }
 body.form #review p {
   max-width: none;
@@ -2897,7 +2964,7 @@ body.form #review .letter-of-authority p {
   max-width: none;
 }
 body.form #review .letter-of-authority p strong {
-  font-family: "Rick-Medium", sans-serif;
+  font-family: "Rick-Bold", sans-serif;
   color: #0f1d3c;
 }
 body.form ::-webkit-input-placeholder {
