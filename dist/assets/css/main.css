@@ -2555,6 +2555,7 @@ body.form aside ul li.done {
   background: #6b6b99;
 }
 body.form section {
+  display: none;
   text-align: center;
 }
 body.form section > div {
@@ -2697,6 +2698,8 @@ body.form .field textarea {
   padding: 20px 28px;
   font-size: 20px;
   font-family: "Rick-Medium", sans-serif;
+  max-width: 100%;
+  min-width: 100%;
 }
 body.form .field.email, body.form .field.text {
   position: relative;
@@ -2704,7 +2707,7 @@ body.form .field.email, body.form .field.text {
 body.form .field.email.focus:after, body.form .field.text.focus:after {
   background: white;
 }
-body.form .field.email.focus:after, body.form .field.email.has-placeholder:after, body.form .field.email.has-value:after, body.form .field.text.focus:after, body.form .field.text.has-placeholder:after, body.form .field.text.has-value:after {
+body.form .field.email.focus:after, body.form .field.email.has-value:after, body.form .field.text.focus:after, body.form .field.text.has-value:after {
   width: 100%;
   opacity: 1;
 }
@@ -2817,7 +2820,7 @@ body.form .field.checkboxes button.checked {
 }
 body.form .field.checkboxes button.checked:after {
   border-color: white;
-  background: RGBA(255, 255, 255, 0.9);
+  background: white;
 }
 body.form .field.range {
   display: -webkit-flex;
@@ -2867,11 +2870,24 @@ body.form .field.option > div button.inactive {
   text-decoration: line-through;
   opacity: 0.3;
 }
+body.form .group .field {
+  margin-bottom: 20px;
+}
 body.form .group.address {
   margin-bottom: 40px;
 }
-body.form .group.address .field {
-  margin-bottom: 20px;
+body.form .group.numbered input {
+  padding-left: 35px;
+}
+body.form .group.numbered span {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  font-size: 24px;
+  text-align: left;
+  line-height: 40px;
+  font-family: "Rick-Bold", sans-serif;
+  color: #4c6f93;
 }
 body.form .multi ul li {
   display: -webkit-flex;

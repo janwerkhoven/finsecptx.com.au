@@ -66,7 +66,7 @@ body.form {
     }
   }
   section {
-    // display: none;
+    display: none;
     text-align: center;
     > div {
       min-height: 100vh;
@@ -189,6 +189,8 @@ body.form {
       padding: 20px 28px;
       font-size: 20px;
       font-family: $medium;
+      max-width: 100%;
+      min-width: 100%;
     }
     &.email,
     &.text {
@@ -199,7 +201,6 @@ body.form {
         }
       }
       &.focus,
-      &.has-placeholder,
       &.has-value {
         &:after {
           width: 100%;
@@ -316,7 +317,7 @@ body.form {
           color: white;
           &:after {
             border-color: white;
-            background: RGBA(255,255,255,0.9);
+            background: white;
           }
         }
       }
@@ -359,10 +360,25 @@ body.form {
     }
   }
   .group {
+    .field {
+      margin-bottom: 20px;
+    }
     &.address {
       margin-bottom: 40px;
-      .field {
-        margin-bottom: 20px;
+    }
+    &.numbered {
+      input {
+        padding-left: 35px;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        font-size: 24px;
+        text-align: left;
+        line-height: 40px;
+        font-family: $bold;
+        color: $finsec-kashmir-blue;
       }
     }
   }

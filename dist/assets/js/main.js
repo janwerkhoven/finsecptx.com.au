@@ -212,7 +212,8 @@ function animateToHash() {
 function store(key, value) {
   answers[key] = value;
   sessionStorage.setItem(key, value);
-  console.log(answers);
+  // console.log(answers);
+  console.log(key, value);
   if (rules[key]) {
     rules[key]();
   }
@@ -274,6 +275,16 @@ var rules = {
   },
   'review': function() {
     submitEnquiry();
+  },
+  'uk-funds': function() {
+    var n = $('#uk-funds inputs').length;
+    for (var i = 1; i < n; i++) {
+      var hasValue = $('#uk-funds input[name="UK_FUND_' + i + '"]').val();
+      if (hasValue) {
+
+      }
+    }
+    $('#state-age .errors p').text('Please choose age').show(300);
   }
 };
 
@@ -362,9 +373,9 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    // animateToHash();
+    animateToHash();
 
-    goTo('hello');
+    // goTo('hello');
 
     // wisePanda();
 
@@ -390,7 +401,8 @@ $(document).ready(function() {
     });
 
     // Observe all text inputs and populate the answers object on the key matching the name attribute of the text input
-    $('input[type="text"], input[type="email"], input[type="range"], select, textarea').on('keyup blur change', function() {
+    // $('input[type="text"], input[type="email"], input[type="range"], select, textarea').on('keyup blur change', function() {
+    $(document).on('keyup blur change', 'input[type="text"], input[type="email"], input[type="range"], select, textarea', function() {
       var key = $(this).attr('name');
       var value = $(this).val();
       store(key.toLowerCase(), value);
@@ -443,7 +455,7 @@ $(document).ready(function() {
       }
     });
 
-    // Logic for aggregating checkboxes
+    // Logic for aggregating a list of checkboxes into a single value
     $('.checkboxes button').on('click', function() {
       $(this).toggleClass('checked').blur();
       var key = $(this).closest('.field').attr('name');
@@ -475,23 +487,47 @@ $(document).ready(function() {
       goTo('prev');
     });
 
-    $(document).on('focus', '.field.contributions input', function() {
-      var $items = $('.field.contributions li');
-      var nth = $items.index($(this).closest('li')) + 1;
-      var length = $items.length;
-      console.log('focus', nth, length);
-      if (nth === length) {
-        console.log('equal', nth);
-        nth++;
-        console.log('equal', nth);
-        $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
+    // Add input fields on focus of last field in #uk-funds
+    $(document).on('focus keyup blur change', '.group.numbered.funds input', function() {
+      var $group = $(this).closest('.group');
+      var $inputs = $group.find('input');
+      var i = $inputs.length + 1;
+      var $last = $inputs.last();
+      var isLast = $(this).attr('name') === $last.attr('name') ? true : false;
+      if (isLast) {
+        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="UK_FUND_' + i + '" tabindex="' + i + '"></div>');
+      }
+      var name = $(this).attr('name');
+      var id = name.toLowerCase().replace(/_/g, '-');
+      var hasValue = $(this).val() ? true : false;
+      var isNew = $('#' + id).length < 1 ? true : false;
+      if (hasValue && isNew) {
+        console.log('CREATING', name);
+        $('#end-part-three').before('<section id="' + id + '" style="display:block;">' + $('#uk-fund-1').html().replace(/UK_FUND_[0-9]/, name) + '</section>');
+      }
+      if (!hasValue && id !== 'uk-fund-1') {
+        console.log('REMOVING', name);
+        $('#' + id).remove();
       }
     });
 
-    // Maiden name is hidden until user selects gender
+    // $(document).on('focus', '.field.contributions input', function() {
+    //   var $items = $('.field.contributions li');
+    //   var nth = $items.index($(this).closest('li')) + 1;
+    //   var length = $items.length;
+    //   console.log('focus', nth, length);
+    //   if (nth === length) {
+    //     console.log('equal', nth);
+    //     nth++;
+    //     console.log('equal', nth);
+    //     $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
+    //   }
+    // });
+
+    // Hide maiden name until gender = female
     rules.gender();
 
-    // Spouse is hidden until user selects married
+    // Hide spouse until married = yes
     rules.married();
 
     // Hide contribution dates until user selects yes I contributed

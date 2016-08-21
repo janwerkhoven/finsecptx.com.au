@@ -513,7 +513,7 @@
             <input type="text" name="UK_SUBURB" tabindex="2" placeholder="Suburb">
           </div>
           <div class="field text">
-            <input type="text" name="UK_POSTCODE" tabindex="4" placeholder="Postcode">
+            <input type="text" name="UK_POSTCODE" tabindex="3" placeholder="Postcode">
           </div>
           <div class="field text">
             <input type="text" name="UK_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
@@ -521,11 +521,44 @@
         </div>
         <div class="buttons">
           <button class="back">Back</button>
-          <button class="next">Next</button>
+          <button class="next" tabindex="5">Next</button>
         </div>
         <aside>
-          <p>1/2</p>
+          <p>1/3</p>
           <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="uk-funds">
+      <div>
+        <div class="group numbered funds">
+          <div class="field text">
+            <label>Please name all your UK pension funds and/or employers</label>
+            <span>1.</span>
+            <input type="text" name="UK_FUND_1" tabindex="1">
+          </div>
+          <div class="field text">
+            <span>2.</span>
+            <input type="text" name="UK_FUND_2" tabindex="2">
+          </div>
+          <div class="field text">
+            <span>3.</span>
+            <input type="text" name="UK_FUND_3" tabindex="3">
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="100">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
             <li class="done"></li>
             <li></li>
           </ul>
@@ -533,18 +566,47 @@
       </div>
     </section>
 
-    <section id="uk-pension">
+    <section id="uk-fund-1">
       <div>
-        <p>UK pension fund #1</p>
-        <p>UK pension fund #2</p>
-        <p>UK pension fund #3</p>
+        <div class="field text">
+          <label>Fund / employer name</label>
+          <input type="text" name="UK_FUND_1" tabindex="1">
+        </div>
+        <div class="address group">
+          <div class="field text">
+            <label>Postal address?</label>
+            <input type="text" name="UK_FUND_1_STREET" tabindex="1" placeholder="Street">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_FUND_1_SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_FUND_1_POSTCODE" tabindex="3" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_FUND_1_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
+          </div>
+        </div>
+        <div class="field text">
+          <label>Period of fund or scheme membership</label>
+          <input type="text" name="UK_FUND_1_PERIOD" tabindex="5" placeholder="May 1984 - May 1996">
+        </div>
+        <div class="field text">
+          <label>Policy Reference Number</label>
+          <input type="text" name="UK_FUND_1_REFERENCE" tabindex="6" placeholder="000 000">
+        </div>
+        <div class="field text">
+          <label>National Insurance Number</label>
+          <input type="text" name="UK_FUND_1_INSURANCE" tabindex="7" placeholder="000 000">
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
         </div>
         <aside>
-          <p>2/2</p>
+          <p>3/3</p>
           <ul>
+            <li class="done"></li>
             <li class="done"></li>
             <li class="done"></li>
           </ul>
