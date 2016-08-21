@@ -192,6 +192,7 @@ function goTo(id) {
   id = id === 'prev' ? $active.prev().attr('id') : id;
   console.log('goTo', id);
   history.pushState(null, null, '#' + id);
+  window.scrollTo(0, 0);
   animateToHash();
 }
 
@@ -270,16 +271,16 @@ var rules = {
   'review': function() {
     submitEnquiry();
   },
-  'uk-funds': function() {
-    var n = $('#uk-funds inputs').length;
-    for (var i = 1; i < n; i++) {
-      var hasValue = $('#uk-funds input[name="UK_FUND_' + i + '"]').val();
-      if (hasValue) {
-
-      }
-    }
-    $('#state-age .errors p').text('Please choose age').show(300);
-  }
+  // 'uk-funds': function() {
+  //   var n = $('#uk-funds inputs').length;
+  //   for (var i = 1; i < n; i++) {
+  //     var hasValue = $('#uk-funds input[name="UK_FUND_' + i + '"]').val();
+  //     if (hasValue) {
+  //
+  //     }
+  //   }
+  //   $('#state-age .errors p').text('Please choose age').show(300);
+  // }
 };
 
 $(document).ready(function() {
@@ -367,13 +368,18 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    animateToHash();
+    goTo('hello');
 
-    // goTo('hello');
+    // animateToHash();
 
     // wisePanda();
 
-    $('section button.next').on('click', function() {
+    $(window).on('popstate', function(e) {
+      animateToHash();
+    });
+
+    $(document).on('click', 'section button.next', function() {
+      // $('section button.next').on('click', function() {
       var thisSection = $(this).closest('section');
       if (thisSection.isValid()) {
         var target = $(this).attr('for');
@@ -385,7 +391,8 @@ $(document).ready(function() {
       }
     });
 
-    $('section button.back').on('click', function() {
+    $(document).on('click', 'section button.back', function() {
+      // $('section button.back').on('click', function() {
       var target = $(this).attr('for');
       if (target) {
         goTo(target);
@@ -497,7 +504,7 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#end-part-three').before('<section id="' + id + '" style="display:block;">' + $('#uk-fund-1').html().replace(/UK_FUND_[0-9]/, name) + '</section>');
+        $('#end-part-three').before('<section id="' + id + '">' + $('#uk-fund-1').html().replace(/UK_FUND_[0-9]/g, name) + '</section>');
       }
       if (!hasValue && id !== 'uk-fund-1') {
         console.log('REMOVING', name);
