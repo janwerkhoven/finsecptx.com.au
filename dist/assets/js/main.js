@@ -276,17 +276,7 @@ var rules = {
   },
   'review': function() {
     submitEnquiry();
-  },
-  // 'uk-funds': function() {
-  //   var n = $('#uk-funds inputs').length;
-  //   for (var i = 1; i < n; i++) {
-  //     var hasValue = $('#uk-funds input[name="UK_FUND_' + i + '"]').val();
-  //     if (hasValue) {
-  //
-  //     }
-  //   }
-  //   $('#state-age .errors p').text('Please choose age').show(300);
-  // }
+  }
 };
 
 $(document).ready(function() {
@@ -374,9 +364,9 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    goTo('hello');
+    // goTo('hello');
 
-    // animateToHash();
+    animateToHash();
 
     // wisePanda();
 
@@ -496,15 +486,38 @@ $(document).ready(function() {
       goTo('prev');
     });
 
-    // Add input fields on focus of last field in #uk-funds
-    $(document).on('focus keyup blur change', '.group.numbered.funds input', function() {
+    // // Add input fields on focus of last field in #super-funds
+    $(document).on('focus keyup blur change', '.group.numbered.super-funds input', function() {
       var $group = $(this).closest('.group');
       var $inputs = $group.find('input');
       var i = $inputs.length + 1;
       var $last = $inputs.last();
       var isLast = $(this).attr('name') === $last.attr('name') ? true : false;
       if (isLast) {
-        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="UK_FUND_' + i + '" tabindex="' + i + '"></div>');
+        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="SUPER_FUND_' + i + '" tabindex="' + i + '"></div>');
+      }
+      var name = $(this).attr('name');
+      var id = name.toLowerCase().replace(/_/g, '-');
+      var hasValue = $(this).val() ? true : false;
+      var isNew = $('#' + id).length < 1 ? true : false;
+      if (hasValue && isNew) {
+        $('#end-part-three').before('<section id="' + id + '">' + $('#super-fund-1').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
+      }
+      if (!hasValue && id !== 'super-fund-1') {
+        console.log('REMOVING', name);
+        $('#' + id).remove();
+      }
+    });
+
+    // Add input fields on focus of last field in #pension-funds
+    $(document).on('focus keyup blur change', '.group.numbered.pension-funds input', function() {
+      var $group = $(this).closest('.group');
+      var $inputs = $group.find('input');
+      var i = $inputs.length + 1;
+      var $last = $inputs.last();
+      var isLast = $(this).attr('name') === $last.attr('name') ? true : false;
+      if (isLast) {
+        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="PENSION_FUND_' + i + '" tabindex="' + i + '"></div>');
       }
       var name = $(this).attr('name');
       var id = name.toLowerCase().replace(/_/g, '-');
@@ -512,9 +525,9 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#end-part-three').before('<section id="' + id + '">' + $('#uk-fund-1').html().replace(/UK_FUND_[0-9]/g, name) + '</section>');
+        $('#super-fund-details .buttons').before('<div class="field select"><label>Who is the owner and what is the balance of your <span name="SUPER_FUND_' + id + '">super fund</span>?</label><div><select name="SUPER_FUND_' + id + '_OWNER" tabindex="' + id + '"><option selected>Choose owner ...</option><option value="Me">Myself</option><option value="B">Option B</option><option value="C">Optin C</option></select><div>{{> chevron-down}}</div></div></div><div class="field text"><input type="text" name="SUPER_FUND_' + id + '_BALANCE" tabindex="' + id + '" placeholder="Balance $"></div>');
       }
-      if (!hasValue && id !== 'uk-fund-1') {
+      if (!hasValue && id !== 'pension-fund-1') {
         console.log('REMOVING', name);
         $('#' + id).remove();
       }
