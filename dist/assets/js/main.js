@@ -267,11 +267,11 @@ var rules = {
       $('.field.spouse').hide();
     }
   },
-  'non_concessional_contributions': function() {
-    if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
-      $('.field.contributions').show();
+  'made_nc_contributions': function() {
+    if (sessionStorage.getItem('made_nc_contributions') === 'Yes') {
+      $('.group.nc-contributions').show();
     } else {
-      $('.field.contributions').hide();
+      $('.group.nc-contributions').hide();
     }
   },
   'review': function() {
@@ -412,10 +412,12 @@ $(document).ready(function() {
     $(document).on('keyup blur change', 'input[type="text"], input[type="email"], input[type="range"], select, textarea', function() {
       var key = $(this).attr('name');
       var value = $(this).val();
-      store(key.toLowerCase(), value);
-      $('input[name="' + key + '"]').not($(this)).val(value).trigger('sync');
-      $('select[name="' + key + '"]').not($(this)).val(value).trigger('sync');
-      $('span[name="' + key + '"]').text(value);
+      if (key && value) {
+        store(key.toLowerCase(), value);
+        $('input[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+        $('select[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+        $('span[name="' + key + '"]').text(value);
+      }
       $(this).closest('section').find('.errors p').hide(300);
     });
 
@@ -518,18 +520,41 @@ $(document).ready(function() {
       }
     });
 
-    // $(document).on('focus', '.field.contributions input', function() {
-    //   var $items = $('.field.contributions li');
-    //   var nth = $items.index($(this).closest('li')) + 1;
-    //   var length = $items.length;
-    //   console.log('focus', nth, length);
-    //   if (nth === length) {
-    //     console.log('equal', nth);
-    //     nth++;
-    //     console.log('equal', nth);
-    //     $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
-    //   }
-    // });
+    // Agregate #nc-contributions inputs into one
+    $(document).on('focus keyup blur change', '.group.numbered.nc-contributions input', function() {
+      var key = $(this).closest('.group').attr('name');
+      var value = '';
+      $(this).closest('.group').find('.amount input').each(function(i, element) {
+        if ($(this).val()) {
+          if (i > 0) {
+            value += ' + ';
+          }
+          value += '$' + $(this).val() + ' (' + $(this).parent().next().find('input').val() + ')';
+        }
+      });
+      store(key.toLowerCase(), value);
+    });
+
+    // Add 2 fields to #nc-contributions on click button
+    $('.group.numbered button').on('click', function() {
+      var i = $(this).closest('.group').find('.amount').length + 1;
+      $(this).before('<div class="field text amount"><span>' + i + '.</span><input type="text" tabindex="' + i + '" placeholder="Amount $"></div><div class="field text"><input type="text" tabindex="' + i + '" placeholder="Date"></div>');
+    });
+
+    // Aggregate checkboxes values into one
+    $('.checkboxes button').on('click', function() {
+      $(this).toggleClass('checked').blur();
+      var key = $(this).closest('.field').attr('name');
+      var value = '';
+      $(this).closest('.field').find('button.checked').each(function(i, element) {
+        if (i > 0) {
+          value += ' + ';
+        }
+        value += $(this).html();
+      });
+      store(key.toLowerCase(), value);
+      $(this).closest('section').find('.errors p').hide(300);
+    });
 
     // Hide maiden name until gender = female
     rules.gender();
@@ -538,7 +563,7 @@ $(document).ready(function() {
     rules.married();
 
     // Hide contribution dates until user selects yes I contributed
-    rules.non_concessional_contributions();
+    rules.made_nc_contributions();
 
   }
 

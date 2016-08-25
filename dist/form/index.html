@@ -504,36 +504,31 @@
             <button>No</button>
           </div>
         </div>
-        <div class="field option" name="NON_CONCESSIONAL_CONTRIBUTIONS">
+        <div class="field option" name="MADE_NC_CONTRIBUTIONS">
           <label>Have you made any Non Concessional (after tax personal) contributions to an Australian superannuation fund since 1/7/2007?</label>
           <div>
             <button>Yes</button>
             <button>No</button>
           </div>
         </div>
-        <!-- <div class="field multi contributions">
-          <label>Thank you. Please list the amounts and the dates they were made:</label>
-          <ul>
-            <li>
-              <span>1. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION1" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-            <li>
-              <span>2. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION2" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-            <li>
-              <span>3. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION3" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-          </ul>
-        </div> -->
+        <div class="group numbered nc-contributions" name="NC_CONTRIBUTIONS">
+          <div class="field text amount">
+            <label>Thank you. Please list the amounts and the dates they were made:</label>
+            <span>1.</span>
+            <input type="text" tabindex="1" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="1" placeholder="Date">
+          </div>
+          <div class="field text amount">
+            <span>2.</span>
+            <input type="text" tabindex="2" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="2" placeholder="Date">
+          </div>
+          <button>Add</button>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>

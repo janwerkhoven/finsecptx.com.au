@@ -380,6 +380,14 @@ body.form {
         font-family: $bold;
         color: $finsec-kashmir-blue;
       }
+      &.nc-contributions {
+        .field {
+          &:after,
+          &:before {
+            margin-left: 30px;
+          }
+        }
+      }
     }
   }
   .multi {

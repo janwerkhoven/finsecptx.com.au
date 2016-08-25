@@ -2889,6 +2889,9 @@ body.form .group.numbered span {
   font-family: "Rick-Bold", sans-serif;
   color: #4c6f93;
 }
+body.form .group.numbered.nc-contributions .field:after, body.form .group.numbered.nc-contributions .field:before {
+  margin-left: 30px;
+}
 body.form .multi ul li {
   display: -webkit-flex;
   display: -ms-flexbox;
