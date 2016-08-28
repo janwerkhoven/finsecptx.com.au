@@ -2729,9 +2729,8 @@ body.form .field.email:after, body.form .field.text:after {
   width: 0;
   opacity: 0;
 }
-body.form .field.email.small-font input {
-  font-size: 24px;
-  line-height: 51px;
+body.form .field.email input {
+  font-size: 25px;
 }
 body.form .field.select {
   position: relative;

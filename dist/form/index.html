@@ -393,7 +393,7 @@
         </div>
         <div class="field text">
           <label>Date of birth?</label>
-          <input type="text" name="DOB" tabindex="5" placeholder="DD/MM/YYYY">
+          <input type="text" name="DATE_OF_BIRTH" tabindex="5" placeholder="DD/MM/YYYY">
         </div>
         <div class="field option" name="GENDER">
           <label>What is your gender?</label>
@@ -597,10 +597,11 @@
           <button class="next" tabindex="4">Next</button>
         </div>
         <aside>
-          <p>1/3</p>
+          <p>2/3</p>
           <ul>
             <li class="done"></li>
-            <li></li>
+            <li class="done"></li>
+            <li class="done"></li>
             <li></li>
           </ul>
         </aside>
@@ -780,32 +781,33 @@
         <p>For FinSec PTX to process your pension transfer you need to give permission to your UK pension funds to provide us with information. We have prepared these letters for you. Please review whether correct.</p>
 
         <div class="letter-of-authority">
-          <p>To: <strong>UK Pension Funds #1</strong><br />
-          80 Duke of York Square,<br />
-          London SW3 4LY, United Kingdom</p>
+          <p>To: <b><span name="PENSION_FUND_1">-</span></b><br />
+          <span name="PENSION_FUND_1_STREET">-</span>,<br />
+          <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
           <p> </p>
-          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
+          <p>Subject: <b>LETTER OF AUTHORITY</b></p>
           <p> </p>
           <p>To whom it may concern,</p>
           <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><strong>FinSec Partners</strong><br />
+          <p><b>FinSec Partners</b><br />
           Tel: +61 8 8357 7840<br />
           Fax: +61 8 8373 7600<br />
-          PO Box 1096 Unley SA 5061, Australia<br />
+          PO Box 1096, Unley, SA 5061, Australia<br />
           Email: transfers@finsecptx.com.au<br />
           www.finsecptx.com.au</p>
           <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: <strong><span name="TITLE">-</span> <span name="NAME">-</span></strong> <!--<span class="maiden">(n&eacute;e <span name="MAIDEN"></span>)</span>--><br />
-          Date of Birth: <span name="DOB">-</span><br />
+          <p>Name: <span name="NAME">-</span><br />
+          Date of Birth: <span name="DATE_OF_BIRTH">-</span><br />
           Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span><br />
           Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span><br />
-          Period of fund scheme membership: <span name="FUND_1_START">-</span> - <span name="FUND_1_START">-</span></span><br />
-          Policy / Reference number: <span name="FUND_1_REFERENCE">-</span><br />
-          National insurance number: <span name="NATIONALINSURANCE_ID">-</span></p>
-          <p> </p>
+          Period of fund scheme membership: <span name="PENSION_FUND_1_PERIOD">-</span><br />
+          Policy / Reference number: <span name="PENSION_FUND_1_REFERENCE">-</span><br />
+          National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
           <p>Yours faithfully</p>
           <p> </p>
-          <p><strong><span name="NAME">John Doe</span></strong></p>
+          <p><span name="NAME">-</span></p>
+          <p>Signature:</p>
+          <p>Today's Date:</p>
         </div>
 
         <div class="buttons vertical">

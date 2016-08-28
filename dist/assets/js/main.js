@@ -224,7 +224,6 @@ function animateToHash() {
 function store(key, value) {
   answers[key] = value;
   sessionStorage.setItem(key, value);
-  // console.log(answers);
   console.log(key, value);
   if (rules[key]) {
     rules[key]();
@@ -283,6 +282,21 @@ var rules = {
       $('.group.nc-contributions').show();
     } else {
       $('.group.nc-contributions').hide();
+    }
+  },
+  'super-funds': function() {
+    debugger;
+    if (answers.super_fund_1) {
+      return true;
+    } else {
+      goTo('objectives');
+    }
+  },
+  'pension-funds': function() {
+    if (answers.pension_fund_1) {
+      return true;
+    } else {
+      goTo('end-part-three');
     }
   },
   'review': function() {
@@ -375,9 +389,9 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    goTo('hello');
+    // goTo('hello');
 
-    // animateToHash();
+    animateToHash();
 
     // wisePanda();
 
@@ -386,7 +400,6 @@ $(document).ready(function() {
     });
 
     $(document).on('click', 'section button.next', function() {
-      // $('section button.next').on('click', function() {
       var thisSection = $(this).closest('section');
       if (thisSection.isValid()) {
         var target = $(this).attr('for');
@@ -399,7 +412,6 @@ $(document).ready(function() {
     });
 
     $(document).on('click', 'section button.back', function() {
-      // $('section button.back').on('click', function() {
       var target = $(this).attr('for');
       if (target) {
         goTo(target);
@@ -518,7 +530,9 @@ $(document).ready(function() {
       if (!hasValue && id !== 'super-fund-1') {
         console.log('REMOVING', name);
         $('#' + id).remove();
-        // TODO: remove keys values
+
+        // TODO: remove all assoicated keys and values
+
       }
     });
 
@@ -543,7 +557,9 @@ $(document).ready(function() {
       if (!hasValue && id !== 'pension-fund-1') {
         console.log('REMOVING', name);
         $('#' + id).remove();
-        // TODO: remove keys values
+
+        // TODO: remove all assoicated keys and values
+
       }
     });
 
