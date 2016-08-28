@@ -25,6 +25,7 @@ function formSpree(data) {
 function webMerge(data) {
   var deferred = $.Deferred();
   var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
+  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   if (isProduction) {
     url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   }
@@ -134,8 +135,8 @@ function submitEnquiry() {
   $btn.html('Sending...').prop('disabled', true);
   var dataWebMerge = answers;
   var dataFormSpree = answers;
-  dataFormSpree.message = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
-  dataFormSpree._subject = environmentLabel + 'Someone subscribed!';
+  dataFormSpree.message = 'Someone completed the pension transfer enquiry on www.finsecptx.com.au.';
+  dataFormSpree._subject = environmentLabel + 'Someone completed the pension transfer enquiry!';
   dataFormSpree._format = 'plain';
   console.log('Submitting enquiry to FormSpree ...', dataFormSpree);
   formSpree(dataFormSpree);
@@ -162,18 +163,28 @@ function lazyPanda() {
     maiden: 'Johannes',
     phone: '0424 787 652',
     email: 'testing@nabu.io',
+    date_of_birth: '16 Oct 1940',
     street: '82 Flinders',
     suburb: 'Melbourne',
     state: 'VIC',
     postcode: '3000',
-    UKstreet: '94 Christchurch Rd',
-    UKsuburb: 'Winchester',
-    UKpostcode: 'SO23 9TE',
-    fund1Name: 'UK Pension Fund #1',
-    fund1Street: '80 Duke of York Square',
-    fund1Suburb: 'London',
-    fund1Postcode: 'SW3 4LY',
-    dateOfBirth: '16 Oct 1940',
+    uk_street: '94 Christchurch Rd',
+    uk_suburb: 'Winchester',
+    uk_postcode: 'SO23 9TE',
+    pension_fund_1: 'UK Pension Fund #1',
+    pension_fund_1_street: '80 Duke of York Square',
+    pension_fund_1_suburb: 'London',
+    pension_fund_1_postcode: 'SW3 4LY',
+    pension_fund_1_period: 'January 1901 - December 1999',
+    pension_fund_1_reference: '12345 YTR',
+    pension_fund_1_insurance: '1234567 1234567',
+    pension_fund_2: 'UK Pension Fund #1',
+    pension_fund_2_street: '51 Strafford Street',
+    pension_fund_2_suburb: 'London',
+    pension_fund_2_postcode: 'E14',
+    pension_fund_2_period: 'February 2001 - August 2016',
+    pension_fund_2_reference: '12345 XRR',
+    pension_fund_2_insurance: '1234567 768999',
   };
   $.each(data, function(key, value) {
     sessionStorage.setItem(key, value);
