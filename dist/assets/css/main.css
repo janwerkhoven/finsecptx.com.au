@@ -2678,6 +2678,9 @@ body.form .field label small {
   display: block;
   line-height: 20px;
 }
+body.form .field label span {
+  font-family: "Rick-Black", sans-serif;
+}
 body.form .field input,
 body.form .field textarea {
   display: block;
@@ -2998,21 +3001,6 @@ body.form #review .letter-of-authority p {
 body.form #review .letter-of-authority p strong {
   font-family: "Rick-Bold", sans-serif;
   color: #0f1d3c;
-}
-body.form #super-fund-details label span {
-  font-family: "Rick-Black", sans-serif;
-}
-body.form #super-fund-details .field.text {
-  margin: 0 0 40px;
-}
-body.form #super-fund-details .field.option {
-  margin: 0;
-}
-body.form #super-fund-details hr {
-  margin: 60px 0;
-}
-body.form #super-fund-details .buttons {
-  margin-top: 60px;
 }
 body.form ::-webkit-input-placeholder {
   color: #557ea0;

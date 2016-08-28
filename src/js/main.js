@@ -419,7 +419,7 @@ $(document).ready(function() {
     // });
 
     // On click of option buttons, disable the other buttons, populate attribute to answers
-    $('.field.option button').on('click', function() {
+    $(document).on('click', '.field.option button', function() {
       $(this).removeClass('inactive').blur().siblings().addClass('inactive');
       var key = $(this).closest('.field').attr('name').toLowerCase();
       var value = $(this).text();
@@ -480,7 +480,7 @@ $(document).ready(function() {
       goTo('prev');
     });
 
-    // // Add input fields on focus of last field in #super-funds
+    // Add input fields on focus of last field in #uk-funds
     $(document).on('focus keyup blur change', '.group.numbered.super-funds input', function() {
       var $group = $(this).closest('.group');
       var $inputs = $group.find('input');
@@ -495,11 +495,13 @@ $(document).ready(function() {
       var hasValue = $(this).val() ? true : false;
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
-        $('#end-part-three').before('<section id="' + id + '">' + $('#super-fund-1').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
+        console.log('CREATING', name);
+        $('#objectives').before('<section id="' + id + '">' + $('#super-fund-1').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
       }
       if (!hasValue && id !== 'super-fund-1') {
         console.log('REMOVING', name);
         $('#' + id).remove();
+        // TODO: remove keys values
       }
     });
 
@@ -519,11 +521,12 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#super-fund-details .buttons').before('<div class="field select"><label>Who is the owner and what is the balance of your <span name="SUPER_FUND_' + id + '">super fund</span>?</label><div><select name="SUPER_FUND_' + id + '_OWNER" tabindex="' + id + '"><option selected>Choose owner ...</option><option value="Me">Myself</option><option value="B">Option B</option><option value="C">Optin C</option></select><div>{{> chevron-down}}</div></div></div><div class="field text"><input type="text" name="SUPER_FUND_' + id + '_BALANCE" tabindex="' + id + '" placeholder="Balance $"></div>');
+        $('#end-part-three').before('<section id="' + id + '">' + $('#pension-fund-1').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
       }
       if (!hasValue && id !== 'pension-fund-1') {
         console.log('REMOVING', name);
         $('#' + id).remove();
+        // TODO: remove keys values
       }
     });
 
@@ -546,21 +549,6 @@ $(document).ready(function() {
     $('.group.numbered button').on('click', function() {
       var i = $(this).closest('.group').find('.amount').length + 1;
       $(this).before('<div class="field text amount"><span>' + i + '.</span><input type="text" tabindex="' + i + '" placeholder="Amount $"></div><div class="field text"><input type="text" tabindex="' + i + '" placeholder="Date"></div>');
-    });
-
-    // Aggregate checkboxes values into one
-    $('.checkboxes button').on('click', function() {
-      $(this).toggleClass('checked').blur();
-      var key = $(this).closest('.field').attr('name');
-      var value = '';
-      $(this).closest('.field').find('button.checked').each(function(i, element) {
-        if (i > 0) {
-          value += ' + ';
-        }
-        value += $(this).html();
-      });
-      store(key.toLowerCase(), value);
-      $(this).closest('section').find('.errors p').hide(300);
     });
 
     // Hide maiden name until gender = female

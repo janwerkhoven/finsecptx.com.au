@@ -168,6 +168,9 @@ body.form {
         display: block;
         line-height: 20px;
       }
+      span {
+        font-family: $black;
+      }
     }
     input,
     textarea {
@@ -512,25 +515,6 @@ body.form {
           color: $finsec-royal-blue;
         }
       }
-    }
-  }
-  #super-fund-details {
-    label {
-      span {
-        font-family: $black;
-      }
-    }
-    .field.text {
-      margin: 0 0 40px;
-    }
-    .field.option {
-      margin: 0;
-    }
-    hr {
-      margin: 60px 0;
-    }
-    .buttons {
-      margin-top: 60px;
     }
   }
 
