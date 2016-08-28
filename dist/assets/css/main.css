@@ -2870,6 +2870,19 @@ body.form .field.option > div button.inactive {
   text-decoration: line-through;
   opacity: 0.3;
 }
+body.form .field.currency > span {
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  font-size: 34px;
+  text-align: left;
+  line-height: 40px;
+  font-family: "Rick-Bold", sans-serif;
+  color: #4c6f93;
+}
+body.form .field.currency input {
+  padding-left: 30px;
+}
 body.form .group .field {
   margin-bottom: 20px;
 }
@@ -2985,6 +2998,21 @@ body.form #review .letter-of-authority p {
 body.form #review .letter-of-authority p strong {
   font-family: "Rick-Bold", sans-serif;
   color: #0f1d3c;
+}
+body.form #super-fund-details label span {
+  font-family: "Rick-Black", sans-serif;
+}
+body.form #super-fund-details .field.text {
+  margin: 0 0 40px;
+}
+body.form #super-fund-details .field.option {
+  margin: 0;
+}
+body.form #super-fund-details hr {
+  margin: 60px 0;
+}
+body.form #super-fund-details .buttons {
+  margin-top: 60px;
 }
 body.form ::-webkit-input-placeholder {
   color: #557ea0;

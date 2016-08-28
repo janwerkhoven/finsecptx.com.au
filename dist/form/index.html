@@ -549,7 +549,7 @@
       <div>
         <div class="group numbered super-funds">
           <div class="field text">
-            <label>Please name all your Australian Super Funds</label>
+            <label>Please name all your Australian superannuation funds</label>
             <span>1.</span>
             <input type="text" name="SUPER_FUND_1" tabindex="1">
           </div>
@@ -580,57 +580,30 @@
 
     <section id="super-fund-details">
       <div>
-        <div class="field select">
-          <label>Who is the owner of <span name="SUPER_FUND_1">your super fund</span>? And what is the estimated balance?</label>
+        <div class="field text currency">
+          <label>What is the estimated balance at <span name="SUPER_FUND_1">Your Super Fund #1</span>?</label>
+          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="2">
+          <span>$</span>
+        </div>
+        <div class="field option" name="SUPER_FUND_1_OWNER">
+          <label>Who is the owner?</label>
           <div>
-            <select name="SUPER_FUND_1_OWNER" tabindex="1">
-              <option selected>Choose owner ...</option>
-              <option value="Me">Myself</option>
-              <option value="B">Option B</option>
-              <option value="C">Optin C</option>
-            </select>
-            <div>
-              <svg width="48px" height="26px" viewBox="0 0 48 26">
-                <title>arrow-right</title>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
+            <button>Myself</button>
+            <button>Spouse</button>
           </div>
         </div>
-        <div class="field text">
-          <input type="text" name="SUPER_FUND_2_BALANCE" tabindex="2" placeholder="Balance $">
+        <hr>
+        <div class="field text currency">
+          <label>What is the estimated balance at <span name="SUPER_FUND_2">Your Super Fund #2</span>?</label>
+          <input type="text" name="SUPER_FUND_2_BALANCE" tabindex="2">
+          <span>$</span>
         </div>
-        <div class="field select">
-          <label>Who is the owner of <span name="SUPER_FUND_2">your super fund</span>? And what is the estimated balance?</label>
+        <div class="field option" name="SUPER_FUND_2_OWNER">
+          <label>Who is the owner?</label>
           <div>
-            <select name="SUPER_FUND_2_OWNER" tabindex="1">
-              <option selected>Choose owner ...</option>
-              <option value="Me">Myself</option>
-              <option value="B">Option B</option>
-              <option value="C">Optin C</option>
-            </select>
-            <div>
-              <svg width="48px" height="26px" viewBox="0 0 48 26">
-                <title>arrow-right</title>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                  <g id="Artboard" transform="translate(-86.000000, -53.000000)" stroke-width="4" stroke="#FFFFFF">
-                    <g id="arrow-right" transform="translate(110.000000, 66.000000) scale(1, -1) rotate(-90.000000) translate(-110.000000, -66.000000) translate(100.000000, 45.000000)">
-                      <polyline id="Line" points="0.5 0.5 20 21 0.5 41.5"></polyline>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
+            <button>Myself</button>
+            <button>Spouse</button>
           </div>
-        </div>
-        <div class="field text">
-          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="2" placeholder="Balance $">
         </div>
         <div class="buttons">
           <button class="back">Back</button>
