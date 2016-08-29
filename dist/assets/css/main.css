@@ -1096,16 +1096,16 @@ i.icon.burger span {
   max-width: none;
 }
 
-.jargon-p {
+.tooltip {
   display: inline;
 }
-.jargon-p .jargon .definition {
+.tooltip .jargon .definition {
   display: none;
 }
-.jargon-p .jargon:hover .anagram {
+.tooltip .jargon:hover .anagram {
   display: none;
 }
-.jargon-p .jargon:hover .definition {
+.tooltip .jargon:hover .definition {
   display: inline-block;
 }
 
