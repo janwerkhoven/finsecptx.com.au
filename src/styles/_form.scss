@@ -168,6 +168,9 @@ body.form {
         display: block;
         line-height: 20px;
       }
+      span {
+        font-family: $black;
+      }
     }
     input,
     textarea {
@@ -225,11 +228,8 @@ body.form {
       }
     }
     &.email {
-      &.small-font {
-        input {
-          font-size: 24px;
-          line-height: 51px;
-        }
+      input {
+        font-size: 25px;
       }
     }
     &.select {
@@ -358,6 +358,21 @@ body.form {
         }
       }
     }
+    &.currency {
+      > span {
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+        font-size: 34px;
+        text-align: left;
+        line-height: 40px;
+        font-family: $bold;
+        color: $finsec-kashmir-blue;
+      }
+      input {
+        padding-left: 30px;
+      }
+    }
   }
   .group {
     .field {
@@ -379,6 +394,14 @@ body.form {
         line-height: 40px;
         font-family: $bold;
         color: $finsec-kashmir-blue;
+      }
+      &.nc-contributions {
+        .field {
+          &:after,
+          &:before {
+            margin-left: 30px;
+          }
+        }
       }
     }
   }
@@ -457,7 +480,7 @@ body.form {
     > div {
       max-width: 1080px;
       > p {
-        max-width: 600px;
+        max-width: 660px;
         margin: 0 auto 40px;
       }
     }
@@ -467,7 +490,7 @@ body.form {
     .buttons {
       margin-top: 60px;
     }
-    .letter-of-authority {
+    li {
       // A4 = 210 × 297
       // 1080 x 1527
       font-size: 16px;

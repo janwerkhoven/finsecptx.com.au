@@ -31,6 +31,7 @@ function formSpree(data) {
 function webMerge(data) {
   var deferred = $.Deferred();
   var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
+  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   if (isProduction) {
     url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   }
@@ -140,8 +141,8 @@ function submitEnquiry() {
   $btn.html('Sending...').prop('disabled', true);
   var dataWebMerge = answers;
   var dataFormSpree = answers;
-  dataFormSpree.message = 'Someone subscribed to your "Keep me informed" Mailchimp mailing list via www.finsecptx.com.au. Before this subscription appears in your Mailchimp account this person needs to click the big "Yes subscribed me" button in the email that has been sent to them.';
-  dataFormSpree._subject = environmentLabel + 'Someone subscribed!';
+  dataFormSpree.message = 'Someone completed the pension transfer enquiry on www.finsecptx.com.au.';
+  dataFormSpree._subject = environmentLabel + 'Someone completed the pension transfer enquiry!';
   dataFormSpree._format = 'plain';
   console.log('Submitting enquiry to FormSpree ...', dataFormSpree);
   formSpree(dataFormSpree);
@@ -168,18 +169,28 @@ function lazyPanda() {
     maiden: 'Johannes',
     phone: '0424 787 652',
     email: 'testing@nabu.io',
+    date_of_birth: '16 Oct 1940',
     street: '82 Flinders',
     suburb: 'Melbourne',
     state: 'VIC',
     postcode: '3000',
-    UKstreet: '94 Christchurch Rd',
-    UKsuburb: 'Winchester',
-    UKpostcode: 'SO23 9TE',
-    fund1Name: 'UK Pension Fund #1',
-    fund1Street: '80 Duke of York Square',
-    fund1Suburb: 'London',
-    fund1Postcode: 'SW3 4LY',
-    dateOfBirth: '16 Oct 1940',
+    uk_street: '94 Christchurch Rd',
+    uk_suburb: 'Winchester',
+    uk_postcode: 'SO23 9TE',
+    pension_fund_1: 'UK Pension Fund #1',
+    pension_fund_1_street: '80 Duke of York Square',
+    pension_fund_1_suburb: 'London',
+    pension_fund_1_postcode: 'SW3 4LY',
+    pension_fund_1_period: 'January 1901 - December 1999',
+    pension_fund_1_reference: '12345 YTR',
+    pension_fund_1_insurance: '1234567 1234567',
+    pension_fund_2: 'UK Pension Fund #1',
+    pension_fund_2_street: '51 Strafford Street',
+    pension_fund_2_suburb: 'London',
+    pension_fund_2_postcode: 'E14',
+    pension_fund_2_period: 'February 2001 - August 2016',
+    pension_fund_2_reference: '12345 XRR',
+    pension_fund_2_insurance: '1234567 768999',
   };
   $.each(data, function(key, value) {
     sessionStorage.setItem(key, value);
@@ -213,7 +224,6 @@ function animateToHash() {
 function store(key, value) {
   answers[key] = value;
   sessionStorage.setItem(key, value);
-  // console.log(answers);
   console.log(key, value);
   if (rules[key]) {
     rules[key]();
@@ -267,26 +277,23 @@ var rules = {
       $('.field.spouse').hide();
     }
   },
-  'non_concessional_contributions': function() {
-    if (sessionStorage.getItem('non_concessional_contributions') === 'Yes') {
-      $('.field.contributions').show();
+  'made_nc_contributions': function() {
+    if (sessionStorage.getItem('made_nc_contributions') === 'Yes') {
+      $('.group.nc-contributions').show();
     } else {
-      $('.field.contributions').hide();
+      $('.group.nc-contributions').hide();
+    }
+  },
+  'pension-funds': function() {
+    if (!answers.pension_fund_1 && !answers.pension_fund_2 && !answers.pension_fund_3) {
+      $('#pension-funds .errors p').text('Please name your pension fund').show(300);
+    } else {
+      return true;
     }
   },
   'review': function() {
     submitEnquiry();
-  },
-  // 'uk-funds': function() {
-  //   var n = $('#uk-funds inputs').length;
-  //   for (var i = 1; i < n; i++) {
-  //     var hasValue = $('#uk-funds input[name="UK_FUND_' + i + '"]').val();
-  //     if (hasValue) {
-  //
-  //     }
-  //   }
-  //   $('#state-age .errors p').text('Please choose age').show(300);
-  // }
+  }
 };
 
 $(document).ready(function() {
@@ -385,7 +392,6 @@ $(document).ready(function() {
     });
 
     $(document).on('click', 'section button.next', function() {
-      // $('section button.next').on('click', function() {
       var thisSection = $(this).closest('section');
       if (thisSection.isValid()) {
         var target = $(this).attr('for');
@@ -398,7 +404,6 @@ $(document).ready(function() {
     });
 
     $(document).on('click', 'section button.back', function() {
-      // $('section button.back').on('click', function() {
       var target = $(this).attr('for');
       if (target) {
         goTo(target);
@@ -412,10 +417,12 @@ $(document).ready(function() {
     $(document).on('keyup blur change', 'input[type="text"], input[type="email"], input[type="range"], select, textarea', function() {
       var key = $(this).attr('name');
       var value = $(this).val();
-      store(key.toLowerCase(), value);
-      $('input[name="' + key + '"]').not($(this)).val(value).trigger('sync');
-      $('select[name="' + key + '"]').not($(this)).val(value).trigger('sync');
-      $('span[name="' + key + '"]').text(value);
+      if (key && value) {
+        store(key.toLowerCase(), value);
+        $('input[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+        $('select[name="' + key + '"]').not($(this)).val(value).trigger('sync');
+        $('span[name="' + key + '"]').text(value);
+      }
       $(this).closest('section').find('.errors p').hide(300);
     });
 
@@ -433,7 +440,7 @@ $(document).ready(function() {
     // });
 
     // On click of option buttons, disable the other buttons, populate attribute to answers
-    $('.field.option button').on('click', function() {
+    $(document).on('click', '.field.option button', function() {
       $(this).removeClass('inactive').blur().siblings().addClass('inactive');
       var key = $(this).closest('.field').attr('name').toLowerCase();
       var value = $(this).text();
@@ -495,14 +502,14 @@ $(document).ready(function() {
     });
 
     // Add input fields on focus of last field in #uk-funds
-    $(document).on('focus keyup blur change', '.group.numbered.funds input', function() {
+    $(document).on('focus keyup blur change', '.group.numbered.super-funds input', function() {
       var $group = $(this).closest('.group');
       var $inputs = $group.find('input');
       var i = $inputs.length + 1;
       var $last = $inputs.last();
       var isLast = $(this).attr('name') === $last.attr('name') ? true : false;
       if (isLast) {
-        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="UK_FUND_' + i + '" tabindex="' + i + '"></div>');
+        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="SUPER_FUND_' + i + '" tabindex="' + i + '"></div>');
       }
       var name = $(this).attr('name');
       var id = name.toLowerCase().replace(/_/g, '-');
@@ -510,26 +517,66 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#end-part-three').before('<section id="' + id + '">' + $('#uk-fund-1').html().replace(/UK_FUND_[0-9]/g, name) + '</section>');
+        $('#objectives').before('<section id="' + id + '">' + $('#super-fund-x').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
       }
-      if (!hasValue && id !== 'uk-fund-1') {
+      if (!hasValue) {
         console.log('REMOVING', name);
         $('#' + id).remove();
+
+        // TODO: remove all assoicated keys and values
+
       }
     });
 
-    // $(document).on('focus', '.field.contributions input', function() {
-    //   var $items = $('.field.contributions li');
-    //   var nth = $items.index($(this).closest('li')) + 1;
-    //   var length = $items.length;
-    //   console.log('focus', nth, length);
-    //   if (nth === length) {
-    //     console.log('equal', nth);
-    //     nth++;
-    //     console.log('equal', nth);
-    //     $('.field.contributions ul').append('<li><span>' + nth + '. </span><div class="field text"><input type="text" name="CONTRIBUTION_' + nth + '" placeholder="DD/MM/YYYYY"></div></li>');
-    //   }
-    // });
+    // Add input fields on focus of last field in #pension-funds
+    $(document).on('focus keyup blur change', '.group.numbered.pension-funds input', function() {
+      var $group = $(this).closest('.group');
+      var $inputs = $group.find('input');
+      var i = $inputs.length + 1;
+      var $last = $inputs.last();
+      var isLast = $(this).attr('name') === $last.attr('name') ? true : false;
+      if (isLast) {
+        $last.parent().after('<div class="field text"><span>' + i + '.</span><input type="text" name="PENSION_FUND_' + i + '" tabindex="' + i + '"></div>');
+      }
+      var name = $(this).attr('name');
+      var id = name.toLowerCase().replace(/_/g, '-');
+      var hasValue = $(this).val() ? true : false;
+      var isNew = $('#' + id).length < 1 ? true : false;
+      if (hasValue && isNew) {
+        console.log('CREATING', name);
+        $('#end-part-three').before('<section id="' + id + '">' + $('#pension-fund-x').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
+        $('#review ul').append('<li id="' + id + '-letter">' + $('#letter-of-authority').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
+      }
+      if (!hasValue) {
+        console.log('REMOVING', name);
+        $('#' + id).remove();
+        $('#' + id + '-letter').remove();
+
+        // TODO: remove all assoicated keys and values
+
+      }
+    });
+
+    // Agregate #nc-contributions inputs into one
+    $(document).on('focus keyup blur change', '.group.numbered.nc-contributions input', function() {
+      var key = $(this).closest('.group').attr('name');
+      var value = '';
+      $(this).closest('.group').find('.amount input').each(function(i, element) {
+        if ($(this).val()) {
+          if (i > 0) {
+            value += ' + ';
+          }
+          value += '$' + $(this).val() + ' (' + $(this).parent().next().find('input').val() + ')';
+        }
+      });
+      store(key.toLowerCase(), value);
+    });
+
+    // Add 2 fields to #nc-contributions on click button
+    $('.group.numbered button').on('click', function() {
+      var i = $(this).closest('.group').find('.amount').length + 1;
+      $(this).before('<div class="field text amount"><span>' + i + '.</span><input type="text" tabindex="' + i + '" placeholder="Amount $"></div><div class="field text"><input type="text" tabindex="' + i + '" placeholder="Date"></div>');
+    });
 
     // Hide maiden name until gender = female
     rules.gender();
@@ -538,7 +585,7 @@ $(document).ready(function() {
     rules.married();
 
     // Hide contribution dates until user selects yes I contributed
-    rules.non_concessional_contributions();
+    rules.made_nc_contributions();
 
   }
 

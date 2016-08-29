@@ -290,7 +290,7 @@
         </div>
         <div class="field text">
           <label>Date of birth?</label>
-          <input type="text" name="DOB" tabindex="5" placeholder="DD/MM/YYYY">
+          <input type="text" name="DATE_OF_BIRTH" tabindex="5" placeholder="DD/MM/YYYY">
         </div>
         <div class="field option" name="GENDER">
           <label>What is your gender?</label>
@@ -392,36 +392,31 @@
             <button>No</button>
           </div>
         </div>
-        <div class="field option" name="NON_CONCESSIONAL_CONTRIBUTIONS">
+        <div class="field option" name="MADE_NC_CONTRIBUTIONS">
           <label>Have you made any Non Concessional (after tax personal) contributions to an Australian superannuation fund since 1/7/2007?</label>
           <div>
             <button>Yes</button>
             <button>No</button>
           </div>
         </div>
-        <!-- <div class="field multi contributions">
-          <label>Thank you. Please list the amounts and the dates they were made:</label>
-          <ul>
-            <li>
-              <span>1. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION1" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-            <li>
-              <span>2. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION2" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-            <li>
-              <span>3. </span>
-              <div class="field text">
-                <input type="text" name="CONTRIBUTION3" placeholder="DD/MM/YYYYY">
-              </div>
-            </li>
-          </ul>
-        </div> -->
+        <div class="group numbered nc-contributions" name="NC_CONTRIBUTIONS">
+          <div class="field text amount">
+            <label>Thank you. Please list the amounts and the dates they were made:</label>
+            <span>1.</span>
+            <input type="text" tabindex="1" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="1" placeholder="Date">
+          </div>
+          <div class="field text amount">
+            <span>2.</span>
+            <input type="text" tabindex="2" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="2" placeholder="Date">
+          </div>
+          <button>Add</button>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next">Next</button>
@@ -438,15 +433,29 @@
       </div>
     </section>
 
-    <!-- <section id="super-funds">
+    <section id="super-funds">
       <div>
-        <p>Big table</p>
+        <div class="group numbered super-funds">
+          <div class="field text">
+            <label>Please name all your Australian superannuation funds</label>
+            <span>1.</span>
+            <input type="text" name="SUPER_FUND_1" tabindex="1">
+          </div>
+          <div class="field text">
+            <span>2.</span>
+            <input type="text" name="SUPER_FUND_2" tabindex="2">
+          </div>
+          <div class="field text">
+            <span>3.</span>
+            <input type="text" name="SUPER_FUND_3" tabindex="3">
+          </div>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
-          <button class="next">Next</button>
+          <button class="next" tabindex="100">Next</button>
         </div>
         <aside>
-          <p>3/4</p>
+          <p>2/3</p>
           <ul>
             <li class="done"></li>
             <li class="done"></li>
@@ -455,11 +464,12 @@
           </ul>
         </aside>
       </div>
-    </section> -->
+    </section>
+
+    <!-- Insert #super-fund-1 here -->
 
     <section id="objectives">
       <div>
-        <p>Objectives</p>
         <div class="field checkboxes" name="OBJECTIVES">
           <label>If you were to consider a transfer of your UK Pension to Australia please indicate which of the following issues are important to you:</label>
           <div>
@@ -534,22 +544,25 @@
       </div>
     </section>
 
-    <section id="uk-funds">
+    <section id="pension-funds">
       <div>
-        <div class="group numbered funds">
+        <div class="group numbered pension-funds">
           <div class="field text">
             <label>Please name all your UK pension funds and/or employers</label>
             <span>1.</span>
-            <input type="text" name="UK_FUND_1" tabindex="1">
+            <input type="text" name="PENSION_FUND_1" tabindex="1">
           </div>
           <div class="field text">
             <span>2.</span>
-            <input type="text" name="UK_FUND_2" tabindex="2">
+            <input type="text" name="PENSION_FUND_2" tabindex="2">
           </div>
           <div class="field text">
             <span>3.</span>
-            <input type="text" name="UK_FUND_3" tabindex="3">
+            <input type="text" name="PENSION_FUND_3" tabindex="3">
           </div>
+        </div>
+        <div class="errors">
+          <p></p>
         </div>
         <div class="buttons">
           <button class="back">Back</button>
@@ -566,53 +579,7 @@
       </div>
     </section>
 
-    <section id="uk-fund-1">
-      <div>
-        <div class="field text">
-          <label>Fund / Employer name</label>
-          <input type="text" name="UK_FUND_1" tabindex="1">
-        </div>
-        <div class="address group">
-          <div class="field text">
-            <label>Postal address?</label>
-            <input type="text" name="UK_FUND_1_STREET" tabindex="1" placeholder="Street">
-          </div>
-          <div class="field text">
-            <input type="text" name="UK_FUND_1_SUBURB" tabindex="2" placeholder="Suburb">
-          </div>
-          <div class="field text">
-            <input type="text" name="UK_FUND_1_POSTCODE" tabindex="3" placeholder="Postcode">
-          </div>
-          <div class="field text">
-            <input type="text" name="UK_FUND_1_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
-          </div>
-        </div>
-        <div class="field text">
-          <label>Period of fund or scheme membership</label>
-          <input type="text" name="UK_FUND_1_PERIOD" tabindex="5" placeholder="May 1984 - May 1996">
-        </div>
-        <div class="field text">
-          <label>Policy Reference Number</label>
-          <input type="text" name="UK_FUND_1_REFERENCE" tabindex="6" placeholder="000 000">
-        </div>
-        <div class="field text">
-          <label>National Insurance Number</label>
-          <input type="text" name="UK_FUND_1_INSURANCE" tabindex="7" placeholder="000 000">
-        </div>
-        <div class="buttons">
-          <button class="back">Back</button>
-          <button class="next">Next</button>
-        </div>
-        <aside>
-          <p>3/3</p>
-          <ul>
-            <li class="done"></li>
-            <li class="done"></li>
-            <li class="done"></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+    <!-- Insert #pension-fund-1 here -->
 
     <section id="end-part-three">
       <div>
@@ -628,36 +595,11 @@
     <section id="review">
       <div>
         <h1>Please review and submit.</h1>
-        <p>For FinSec PTX to process your pension transfer you need to give permission to your UK pension funds to provide us with information. We have prepared these letters for you. Please review whether correct.</p>
+        <p>Please find below the Letters of Authority your UK pension scheme's. These will provide us with the information necessary for us to prepare an accurate pension transfer report for you.</p>
 
-        <div class="letter-of-authority">
-          <p>To: <strong>UK Pension Funds #1</strong><br />
-          80 Duke of York Square,<br />
-          London SW3 4LY, United Kingdom</p>
-          <p> </p>
-          <p>Subject: <strong>LETTER OF AUTHORITY</strong></p>
-          <p> </p>
-          <p>To whom it may concern,</p>
-          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><strong>FinSec Partners</strong><br />
-          Tel: +61 8 8357 7840<br />
-          Fax: +61 8 8373 7600<br />
-          PO Box 1096 Unley SA 5061, Australia<br />
-          Email: transfers@finsecptx.com.au<br />
-          www.finsecptx.com.au</p>
-          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: <strong><span name="TITLE">-</span> <span name="NAME">-</span></strong> <!--<span class="maiden">(n&eacute;e <span name="MAIDEN"></span>)</span>--><br />
-          Date of Birth: <span name="DOB">-</span><br />
-          Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span><br />
-          Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span><br />
-          Period of fund scheme membership: <span name="FUND_1_START">-</span> - <span name="FUND_1_START">-</span></span><br />
-          Policy / Reference number: <span name="FUND_1_REFERENCE">-</span><br />
-          National insurance number: <span name="NATIONALINSURANCE_ID">-</span></p>
-          <p> </p>
-          <p>Yours faithfully</p>
-          <p> </p>
-          <p><strong><span name="NAME">John Doe</span></strong></p>
-        </div>
+        <ul>
+          <!-- Insert #pension-fund-1-letter here -->
+        </ul>
 
         <div class="buttons vertical">
           <button class="next submit">Submit to FinSec Partners</button>
@@ -674,6 +616,120 @@
         <div class="buttons vertical">
           <a href="/" class="button">Return to site</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Sections below are to be copied with JS -->
+
+    <section id="pension-fund-x">
+      <div>
+        <div class="field text">
+          <label>Fund / Employer name</label>
+          <input type="text" name="PENSION_FUND_1" tabindex="1">
+        </div>
+        <div class="address group">
+          <div class="field text">
+            <label>Postal address?</label>
+            <input type="text" name="PENSION_FUND_1_STREET" tabindex="1" placeholder="Street">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_POSTCODE" tabindex="3" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
+          </div>
+        </div>
+        <div class="field text">
+          <label>Period of fund or scheme membership</label>
+          <input type="text" name="PENSION_FUND_1_PERIOD" tabindex="5" placeholder="May 1984 - May 1996">
+        </div>
+        <div class="field text">
+          <label>Policy Reference Number</label>
+          <input type="text" name="PENSION_FUND_1_REFERENCE" tabindex="6" placeholder="000 000">
+        </div>
+        <div class="field text">
+          <label>National Insurance Number</label>
+          <input type="text" name="PENSION_FUND_1_INSURANCE" tabindex="7" placeholder="000 000">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>3/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="super-fund-x">
+      <div>
+        <div class="field text currency">
+          <label>What is the estimated balance at <span name="SUPER_FUND_1">Your Super Fund #1</span>?</label>
+          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="1">
+          <span>$</span>
+        </div>
+        <div class="field option" name="SUPER_FUND_1_OWNER">
+          <label>Who is the owner?</label>
+          <div>
+            <button tabindex="2">Myself</button>
+            <button tabindex="3">Spouse</button>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="4">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <li id="letter-of-authority">
+          <p>To: <b><span name="PENSION_FUND_1">-</span></b><br />
+          <span name="PENSION_FUND_1_STREET">-</span>,<br />
+          <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
+          <p> </p>
+          <p>Subject: <b>LETTER OF AUTHORITY</b></p>
+          <p> </p>
+          <p>To whom it may concern,</p>
+          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
+          <p><b>FinSec Partners</b><br />
+          Tel: +61 8 8357 7840<br />
+          Fax: +61 8 8373 7600<br />
+          PO Box 1096, Unley, SA 5061, Australia<br />
+          Email: transfers@finsecptx.com.au<br />
+          www.finsecptx.com.au</p>
+          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
+          <p>Name: <span name="NAME">-</span><br />
+          Date of Birth: <span name="DATE_OF_BIRTH">-</span><br />
+          Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span><br />
+          Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span><br />
+          Period of fund scheme membership: <span name="PENSION_FUND_1_PERIOD">-</span><br />
+          Policy / Reference number: <span name="PENSION_FUND_1_REFERENCE">-</span><br />
+          National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
+          <p>Yours faithfully</p>
+          <p> </p>
+          <p><b><span name="NAME">-</span></b></p>
+          <p>Signature:</p>
+          <p>Today's Date:</p>
+        </li>
       </div>
     </section>
 

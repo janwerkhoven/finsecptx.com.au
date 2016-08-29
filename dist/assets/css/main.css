@@ -2706,6 +2706,9 @@ body.form .field label small {
   display: block;
   line-height: 20px;
 }
+body.form .field label span {
+  font-family: "Rick-Black", sans-serif;
+}
 body.form .field input,
 body.form .field textarea {
   display: block;
@@ -2754,9 +2757,8 @@ body.form .field.email:after, body.form .field.text:after {
   width: 0;
   opacity: 0;
 }
-body.form .field.email.small-font input {
-  font-size: 24px;
-  line-height: 51px;
+body.form .field.email input {
+  font-size: 25px;
 }
 body.form .field.select {
   position: relative;
@@ -2898,6 +2900,19 @@ body.form .field.option > div button.inactive {
   text-decoration: line-through;
   opacity: 0.3;
 }
+body.form .field.currency > span {
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  font-size: 34px;
+  text-align: left;
+  line-height: 40px;
+  font-family: "Rick-Bold", sans-serif;
+  color: #4c6f93;
+}
+body.form .field.currency input {
+  padding-left: 30px;
+}
 body.form .group .field {
   margin-bottom: 20px;
 }
@@ -2916,6 +2931,9 @@ body.form .group.numbered span {
   line-height: 40px;
   font-family: "Rick-Bold", sans-serif;
   color: #4c6f93;
+}
+body.form .group.numbered.nc-contributions .field:after, body.form .group.numbered.nc-contributions .field:before {
+  margin-left: 30px;
 }
 body.form .multi ul li {
   display: -webkit-flex;
@@ -2979,7 +2997,7 @@ body.form #review > div {
   max-width: 1080px;
 }
 body.form #review > div > p {
-  max-width: 600px;
+  max-width: 660px;
   margin: 0 auto 40px;
 }
 body.form #review p {
@@ -2988,7 +3006,7 @@ body.form #review p {
 body.form #review .buttons {
   margin-top: 60px;
 }
-body.form #review .letter-of-authority {
+body.form #review li {
   font-size: 16px;
   background: white;
   box-shadow: 0 10px 20px RGBA(0, 0, 0, 0.2);
@@ -2996,18 +3014,18 @@ body.form #review .letter-of-authority {
   padding: 120px 80px;
 }
 @media (min-width: 1080px) {
-  body.form #review .letter-of-authority {
+  body.form #review li {
     height: 1527px;
   }
 }
-body.form #review .letter-of-authority p {
+body.form #review li p {
   font-size: 18px;
   color: #0d0d13;
   text-align: left;
   font-family: "Rick-Book", sans-serif;
   max-width: none;
 }
-body.form #review .letter-of-authority p strong {
+body.form #review li p strong {
   font-family: "Rick-Bold", sans-serif;
   color: #0f1d3c;
 }
