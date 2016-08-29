@@ -454,3 +454,19 @@ i {
     max-width: none;
   }
 }
+.tooltip {
+  display: inline;
+  .jargon {
+    .definition {
+      display: none;
+    }
+  }
+  .jargon:hover {
+    .anagram {
+      display: none;
+    }
+    .definition {
+      display: inline-block;
+    }
+  }
+}
