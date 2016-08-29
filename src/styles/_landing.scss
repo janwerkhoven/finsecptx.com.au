@@ -242,6 +242,7 @@
       .img {
         width: 100%;
         left: 0;
+        z-index: -2;
         @media (min-width: 941px) {
           position: absolute;
           bottom: 0;

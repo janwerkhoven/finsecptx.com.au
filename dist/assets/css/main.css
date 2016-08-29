@@ -1096,6 +1096,19 @@ i.icon.burger span {
   max-width: none;
 }
 
+.jargon-p {
+  display: inline;
+}
+.jargon-p .jargon .definition {
+  display: none;
+}
+.jargon-p .jargon:hover .anagram {
+  display: none;
+}
+.jargon-p .jargon:hover .definition {
+  display: inline-block;
+}
+
 header {
   position: absolute;
   width: 100%;
@@ -1388,9 +1401,10 @@ footer #copyright p a:hover {
 }
 #article main section h4 {
   color: #cececd;
-  padding-left: 100px;
+  padding-left: 10px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  margin: auto 0;
 }
 #article main section h4 a {
   color: #cececd;
@@ -1413,6 +1427,19 @@ footer #copyright p a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
+}
+#article main section div div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px 0 0;
+}
+#article main section div div img {
+  width: 40px;
+  height: 40px;
 }
 #article main section div h2 {
   color: #0f1d3c;
@@ -1736,6 +1763,7 @@ footer #copyright p a:hover {
 #landing #get-in-touch .duo .img {
   width: 100%;
   left: 0;
+  z-index: -2;
 }
 @media (min-width: 941px) {
   #landing #get-in-touch .duo .img {
