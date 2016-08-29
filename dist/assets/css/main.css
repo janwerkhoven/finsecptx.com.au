@@ -2969,7 +2969,7 @@ body.form #review > div {
   max-width: 1080px;
 }
 body.form #review > div > p {
-  max-width: 600px;
+  max-width: 660px;
   margin: 0 auto 40px;
 }
 body.form #review p {
@@ -2978,7 +2978,7 @@ body.form #review p {
 body.form #review .buttons {
   margin-top: 60px;
 }
-body.form #review .letter-of-authority {
+body.form #review li {
   font-size: 16px;
   background: white;
   box-shadow: 0 10px 20px RGBA(0, 0, 0, 0.2);
@@ -2986,18 +2986,18 @@ body.form #review .letter-of-authority {
   padding: 120px 80px;
 }
 @media (min-width: 1080px) {
-  body.form #review .letter-of-authority {
+  body.form #review li {
     height: 1527px;
   }
 }
-body.form #review .letter-of-authority p {
+body.form #review li p {
   font-size: 18px;
   color: #0d0d13;
   text-align: left;
   font-family: "Rick-Book", sans-serif;
   max-width: none;
 }
-body.form #review .letter-of-authority p strong {
+body.form #review li p strong {
   font-family: "Rick-Bold", sans-serif;
   color: #0f1d3c;
 }

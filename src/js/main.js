@@ -278,19 +278,11 @@ var rules = {
       $('.group.nc-contributions').hide();
     }
   },
-  'super-funds': function() {
-    debugger;
-    if (answers.super_fund_1) {
-      return true;
-    } else {
-      goTo('objectives');
-    }
-  },
   'pension-funds': function() {
-    if (answers.pension_fund_1) {
-      return true;
+    if (!answers.pension_fund_1 && !answers.pension_fund_2 && !answers.pension_fund_3) {
+      $('#pension-funds .errors p').text('Please name your pension fund').show(300);
     } else {
-      goTo('end-part-three');
+      return true;
     }
   },
   'review': function() {
@@ -519,9 +511,9 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#objectives').before('<section id="' + id + '">' + $('#super-fund-1').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
+        $('#objectives').before('<section id="' + id + '">' + $('#super-fund-x').html().replace(/SUPER_FUND_[0-9]/g, name) + '</section>');
       }
-      if (!hasValue && id !== 'super-fund-1') {
+      if (!hasValue) {
         console.log('REMOVING', name);
         $('#' + id).remove();
 
@@ -546,11 +538,13 @@ $(document).ready(function() {
       var isNew = $('#' + id).length < 1 ? true : false;
       if (hasValue && isNew) {
         console.log('CREATING', name);
-        $('#end-part-three').before('<section id="' + id + '">' + $('#pension-fund-1').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
+        $('#end-part-three').before('<section id="' + id + '">' + $('#pension-fund-x').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
+        $('#review ul').append('<li id="' + id + '-letter">' + $('#letter-of-authority').html().replace(/PENSION_FUND_[0-9]/g, name) + '</section>');
       }
-      if (!hasValue && id !== 'pension-fund-1') {
+      if (!hasValue) {
         console.log('REMOVING', name);
         $('#' + id).remove();
+        $('#' + id + '-letter').remove();
 
         // TODO: remove all assoicated keys and values
 

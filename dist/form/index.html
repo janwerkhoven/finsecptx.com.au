@@ -578,35 +578,7 @@
       </div>
     </section>
 
-    <section id="super-fund-1">
-      <div>
-        <div class="field text currency">
-          <label>What is the estimated balance at <span name="SUPER_FUND_1">Your Super Fund #1</span>?</label>
-          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="1">
-          <span>$</span>
-        </div>
-        <div class="field option" name="SUPER_FUND_1_OWNER">
-          <label>Who is the owner?</label>
-          <div>
-            <button tabindex="2">Myself</button>
-            <button tabindex="3">Spouse</button>
-          </div>
-        </div>
-        <div class="buttons">
-          <button class="back">Back</button>
-          <button class="next" tabindex="4">Next</button>
-        </div>
-        <aside>
-          <p>2/3</p>
-          <ul>
-            <li class="done"></li>
-            <li class="done"></li>
-            <li class="done"></li>
-            <li></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+    <!-- Insert #super-fund-1 here -->
 
     <section id="objectives">
       <div>
@@ -701,6 +673,9 @@
             <input type="text" name="PENSION_FUND_3" tabindex="3">
           </div>
         </div>
+        <div class="errors">
+          <p></p>
+        </div>
         <div class="buttons">
           <button class="back">Back</button>
           <button class="next" tabindex="100">Next</button>
@@ -716,7 +691,49 @@
       </div>
     </section>
 
-    <section id="pension-fund-1">
+    <!-- Insert #pension-fund-1 here -->
+
+    <section id="end-part-three">
+      <div>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
+        <p>Part 3. Complete!</p>
+        <div class="buttons vertical">
+          <button class="next">Proceed to sign off</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="review">
+      <div>
+        <h1>Please review and submit.</h1>
+        <p>Please find below the Letters of Authority your UK pension scheme's. These will provide us with the information necessary for us to prepare an accurate pension transfer report for you.</p>
+
+        <ul>
+          <!-- Insert #pension-fund-1-letter here -->
+        </ul>
+
+        <div class="buttons vertical">
+          <button class="next submit">Submit to FinSec Partners</button>
+          <button class="back">Go back and edit</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="thanks">
+      <div>
+        <h1>Thank you!</h1>
+        <p>Your form has been sent to FinSec PTX.</p>
+        <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
+        <div class="buttons vertical">
+          <a href="/" class="button">Return to site</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sections below are to be copied with JS -->
+
+    <section id="pension-fund-x">
       <div>
         <div class="field text">
           <label>Fund / Employer name</label>
@@ -764,23 +781,39 @@
       </div>
     </section>
 
-    <section id="end-part-three">
+    <section id="super-fund-x">
       <div>
-        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
-        <p>Part 3. Complete!</p>
-        <div class="buttons vertical">
-          <button class="next">Proceed to sign off</button>
-          <button class="back">Back</button>
+        <div class="field text currency">
+          <label>What is the estimated balance at <span name="SUPER_FUND_1">Your Super Fund #1</span>?</label>
+          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="1">
+          <span>$</span>
         </div>
+        <div class="field option" name="SUPER_FUND_1_OWNER">
+          <label>Who is the owner?</label>
+          <div>
+            <button tabindex="2">Myself</button>
+            <button tabindex="3">Spouse</button>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="4">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section id="review">
+    <section>
       <div>
-        <h1>Please review and submit.</h1>
-        <p>For FinSec PTX to process your pension transfer you need to give permission to your UK pension funds to provide us with information. We have prepared these letters for you. Please review whether correct.</p>
-
-        <div class="letter-of-authority">
+        <li id="letter-of-authority">
           <p>To: <b><span name="PENSION_FUND_1">-</span></b><br />
           <span name="PENSION_FUND_1_STREET">-</span>,<br />
           <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
@@ -805,26 +838,10 @@
           National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
           <p>Yours faithfully</p>
           <p> </p>
-          <p><span name="NAME">-</span></p>
+          <p><b><span name="NAME">-</span></b></p>
           <p>Signature:</p>
           <p>Today's Date:</p>
-        </div>
-
-        <div class="buttons vertical">
-          <button class="next submit">Submit to FinSec Partners</button>
-          <button class="back">Go back and edit</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="thanks">
-      <div>
-        <h1>Thank you!</h1>
-        <p>Your form has been sent to FinSec PTX.</p>
-        <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
-        <div class="buttons vertical">
-          <a href="/" class="button">Return to site</a>
-        </div>
+        </li>
       </div>
     </section>
 
