@@ -1264,7 +1264,7 @@ footer #legal img:hover {
 footer #legal h3 {
   font-family: "Rick-Book", sans-serif;
   font-size: 20px;
-  color: #4c6f93;
+  color: white;
   line-height: 130%;
   margin-bottom: 16px;
 }
@@ -1387,6 +1387,13 @@ footer #copyright p a:hover {
 #article main p {
   margin-top: 20px;
 }
+#article main h2 a,
+#article main h3 a,
+#article main h4 a,
+#article main p a {
+  color: black;
+  text-decoration: underline;
+}
 #article main section {
   -webkit-align-items: left;
       -ms-flex-align: left;
@@ -1500,6 +1507,9 @@ footer #copyright p a:hover {
   line-height: 150%;
   font-family: 'Rick-Book';
   max-width: 800px;
+}
+#landing #intro p span {
+  display: block;
 }
 @media (max-width: 600px) {
   #landing #intro p {
@@ -1791,6 +1801,14 @@ footer #copyright p a:hover {
     background-attachment: scroll;
   }
 }
+#services main #below-45 > div,
+#services main #below-55 > div,
+#services main #over-55 > div {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+}
 @media (min-width: 901px) {
   #services main #below-45 > div,
   #services main #below-55 > div,
@@ -1819,7 +1837,7 @@ footer #copyright p a:hover {
   #services main #below-45 > div > div:first-child,
   #services main #below-55 > div > div:first-child,
   #services main #over-55 > div > div:first-child {
-    width: 50%;
+    width: 54%;
   }
 }
 @media (min-width: 901px) {
@@ -1845,7 +1863,7 @@ footer #copyright p a:hover {
   font-size: 32px;
   line-height: 130%;
   margin-right: auto;
-  max-width: 460px;
+  max-width: 492px;
   margin-bottom: 60px;
 }
 #services main #below-45 h2 span,
