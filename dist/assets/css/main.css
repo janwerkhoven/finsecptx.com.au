@@ -984,7 +984,7 @@ i.icon.burger span {
   font-size: 22px;
 }
 #articles ul li p {
-  margin: 20px 20px 60px;
+  margin: 20px;
   font-size: 20px;
   font-family: "Rick-Medium", sans-serif;
 }
@@ -1394,6 +1394,13 @@ footer #copyright p a:hover {
   color: black;
   text-decoration: underline;
 }
+#article main h2 strong,
+#article main h3 strong,
+#article main h4 strong,
+#article main p strong {
+  display: inline;
+  font-weight: bold;
+}
 #article main section {
   -webkit-align-items: left;
       -ms-flex-align: left;
@@ -1450,9 +1457,6 @@ footer #copyright p a:hover {
 }
 #article main section div h2 {
   color: #0f1d3c;
-}
-#article main section div strong {
-  display: block;
 }
 #article main section div ul {
   list-style: disc;

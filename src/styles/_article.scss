@@ -13,6 +13,10 @@
         color: black;
         text-decoration: underline;
       }
+      strong {
+        display: inline;
+        font-weight: bold;
+      }
     }
     section {
       align-items: left;
@@ -55,9 +59,6 @@
         }
         h2 {
           color: $finsec-royal-blue;
-        }
-        strong {
-          display: block;
         }
         ul {
           list-style: disc;
