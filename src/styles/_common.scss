@@ -332,6 +332,9 @@ i {
       flex-flow: row wrap;
     }
     li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: relative;
       width: 30%;
       background: #c6c5c5;
@@ -353,10 +356,21 @@ i {
         text-transform: uppercase;
         font-size: 22px;
       }
-      p {
-        margin: 20px;
-        font-size: 20px;
-        font-family: $medium;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        p {
+          margin: 20px;
+          font-size: 20px;
+          font-family: $medium;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          margin: 20px;
+        }
       }
       &:nth-last-child(2) {
         display: none;
@@ -364,17 +378,17 @@ i {
           display: block;
         }
       }
-      &:not(:last-child) {
-        a {
-          position: absolute;
-          right: 20px;
-          bottom: 20px;
-          img {
-            width: 40px;
-            height: 40px;
-          }
-        }
-      }
+      // &:not(:last-child) {
+      //   a {
+      //     position: absolute;
+      //     right: 20px;
+      //     bottom: 20px;
+      //     img {
+      //       width: 40px;
+      //       height: 40px;
+      //     }
+      //   }
+      // }
       &.ayem-special {
         background: $finsec-kashmir-blue;
         padding: 30px;
