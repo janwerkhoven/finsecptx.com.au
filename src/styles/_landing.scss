@@ -35,6 +35,9 @@
       line-height: 150%;
       font-family: 'Rick-Book';
       max-width: 800px;
+      span {
+        display: block;
+      }
       @media (max-width: 600px) {
         font-size: 19px;
       }
