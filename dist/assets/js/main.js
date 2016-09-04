@@ -35,7 +35,6 @@ function webMerge(data) {
   if (isProduction) {
     url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   }
-  debugger;
   $.ajax({
     type: 'POST',
     url: url,
@@ -178,7 +177,6 @@ function lazyPanda() {
     made_nc_contributions: "No",
     married: "No",
     message: "Someone completed the pension transfer enquiry on www.finsecptx.com.au.",
-    name: "Jan Testing",
     objectives: "Having your pension in the country you are living in + Avoiding currency risk on your pension benefits + Controlling or influencing the investments under your pension arrangements",
     occupation: "Web Developer",
     pension_fund_1: "UK Pension #1",
@@ -210,14 +208,10 @@ function lazyPanda() {
     super_fund_2_balance: "54.000",
     super_fund_2_owner: "Myself",
     taxable_income_gt_18200: "Yes",
-    title: "Mr",
-    uk_country: "United Kingdom",
     uk_postcode: "SO23 9TE",
     uk_street: "94 Christchurch Rd",
     uk_suburb: "Winchester",
-    country: "Australia",
-    uk_country: "United Kingdom",
-    pension_fund_1_country: "United Kingdom"
+    uk_country: "United Kingdom"
   };
   $.each(data, function(key, value) {
     sessionStorage.setItem(key, value);
