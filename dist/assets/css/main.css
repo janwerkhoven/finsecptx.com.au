@@ -1430,7 +1430,8 @@ footer #copyright p a:hover {
   max-width: 1260px;
 }
 #article main section img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 #article main section h4 {
   color: #cececd;
