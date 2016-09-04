@@ -1411,15 +1411,14 @@ footer #copyright p a:hover {
 #article main h3 a,
 #article main h4 a,
 #article main p a {
-  color: black;
+  color: #0d0d13;
   text-decoration: underline;
 }
 #article main h2 strong,
 #article main h3 strong,
 #article main h4 strong,
 #article main p strong {
-  display: inline;
-  font-weight: bold;
+  font-family: "Rick-Bold", sans-serif;
 }
 #article main section {
   -webkit-align-items: left;
