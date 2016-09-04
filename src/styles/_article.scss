@@ -9,13 +9,20 @@
     h4,
     p {
       margin-top: 20px;
+      a {
+        color: $finsec-black-pearl;
+        text-decoration: underline;
+      }
+      strong {
+        font-family: $bold;
+      }
     }
     section {
       align-items: left;
       margin-bottom: 40px;
       max-width: 1260px;
       img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
       }
       h4 {
@@ -51,9 +58,6 @@
         }
         h2 {
           color: $finsec-royal-blue;
-        }
-        strong {
-          display: block;
         }
         ul {
           list-style: disc;

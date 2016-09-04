@@ -957,6 +957,15 @@ i.icon.burger span {
   }
 }
 #articles ul li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   width: 30%;
   background: #c6c5c5;
@@ -983,10 +992,27 @@ i.icon.burger span {
   text-transform: uppercase;
   font-size: 22px;
 }
-#articles ul li p {
-  margin: 20px 20px 60px;
+#articles ul li div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: auto;
+}
+#articles ul li div p {
+  margin: 20px;
   font-size: 20px;
   font-family: "Rick-Medium", sans-serif;
+}
+#articles ul li div img {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
 }
 #articles ul li:nth-last-child(2) {
   display: none;
@@ -995,15 +1021,6 @@ i.icon.burger span {
   #articles ul li:nth-last-child(2) {
     display: block;
   }
-}
-#articles ul li:not(:last-child) a {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-}
-#articles ul li:not(:last-child) a img {
-  width: 40px;
-  height: 40px;
 }
 #articles ul li.ayem-special {
   background: #4c6f93;
@@ -1175,6 +1192,13 @@ header nav button:hover {
     display: none;
   }
 }
+header nav .menu {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  margin: auto 30px;
+}
 @media (max-width: 900px) {
   header nav .menu.fixed {
     position: fixed;
@@ -1209,10 +1233,6 @@ header nav .menu ul {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-top: 27px;
-  padding: 30px 30px 0 0;
-  margin-top: -10px;
-  margin-right: -12px;
 }
 header nav .menu ul a {
   display: block;
@@ -1264,7 +1284,7 @@ footer #legal img:hover {
 footer #legal h3 {
   font-family: "Rick-Book", sans-serif;
   font-size: 20px;
-  color: #4c6f93;
+  color: white;
   line-height: 130%;
   margin-bottom: 16px;
 }
@@ -1387,6 +1407,19 @@ footer #copyright p a:hover {
 #article main p {
   margin-top: 20px;
 }
+#article main h2 a,
+#article main h3 a,
+#article main h4 a,
+#article main p a {
+  color: #0d0d13;
+  text-decoration: underline;
+}
+#article main h2 strong,
+#article main h3 strong,
+#article main h4 strong,
+#article main p strong {
+  font-family: "Rick-Bold", sans-serif;
+}
 #article main section {
   -webkit-align-items: left;
       -ms-flex-align: left;
@@ -1396,7 +1429,7 @@ footer #copyright p a:hover {
   max-width: 1260px;
 }
 #article main section img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 #article main section h4 {
@@ -1443,9 +1476,6 @@ footer #copyright p a:hover {
 }
 #article main section div h2 {
   color: #0f1d3c;
-}
-#article main section div strong {
-  display: block;
 }
 #article main section div ul {
   list-style: disc;
@@ -1500,6 +1530,9 @@ footer #copyright p a:hover {
   line-height: 150%;
   font-family: 'Rick-Book';
   max-width: 800px;
+}
+#landing #intro p span {
+  display: block;
 }
 @media (max-width: 600px) {
   #landing #intro p {
@@ -1791,6 +1824,14 @@ footer #copyright p a:hover {
     background-attachment: scroll;
   }
 }
+#services main #below-45 > div,
+#services main #below-55 > div,
+#services main #over-55 > div {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+}
 @media (min-width: 901px) {
   #services main #below-45 > div,
   #services main #below-55 > div,
@@ -1819,7 +1860,7 @@ footer #copyright p a:hover {
   #services main #below-45 > div > div:first-child,
   #services main #below-55 > div > div:first-child,
   #services main #over-55 > div > div:first-child {
-    width: 50%;
+    width: 54%;
   }
 }
 @media (min-width: 901px) {
@@ -1845,7 +1886,7 @@ footer #copyright p a:hover {
   font-size: 32px;
   line-height: 130%;
   margin-right: auto;
-  max-width: 460px;
+  max-width: 492px;
   margin-bottom: 60px;
 }
 #services main #below-45 h2 span,
