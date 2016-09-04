@@ -10,6 +10,7 @@
     #below-55,
     #over-55 {
       > div {
+        align-items: center;
         @media (min-width: 901px) {
           display: flex;
           flex-flow: row nowrap;
@@ -23,7 +24,7 @@
         > div {
           &:first-child {
             @media (min-width: 901px) {
-              width: 50%;
+              width: 54%;
             }
           }
           &:last-child {
@@ -41,7 +42,7 @@
         font-size: 32px;
         line-height: 130%;
         margin-right: auto;
-        max-width: 460px;
+        max-width: 492px;
         margin-bottom: 60px;
         span {
           color: $finsec-kashmir-blue;

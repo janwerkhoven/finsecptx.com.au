@@ -87,7 +87,7 @@
     <section id="start">
       <div>
         <h1>Am I eligible?</h1>
-        <p>We’d like to ask a few quick questions to establish whether you’re eligible for transferring your UK Pension to Australian Superannuation.</p>
+        <p>We'd like to ask a few quick questions to establish whether you're eligible for transferring your UK Pension to Australian Superannuation.</p>
         <div class="buttons vertical">
           <button class="next">Start</button>
         </div>
@@ -143,7 +143,7 @@
     <section id="email-phone">
       <div>
         <div class="field email">
-          <label>What’s your email address?</label>
+          <label>What's your email address?</label>
           <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="1">
         </div>
         <div class="field text">
@@ -198,7 +198,7 @@
         </div>
         <div class="field range">
           <label>How old are you?</label>
-          <input type="text" placeholder="?" tabindex="2">
+          <input type="text" placeholder="?" tabindex="2" name="AGE">
           <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
         </div>
         <div class="errors">
@@ -221,9 +221,9 @@
 
     <section id="eligible">
       <div>
-        <h1>You’re the right age to make a Pension transfer!</h1>
-        <p>We’re glad you’re making a step in the right direction.</p>
-        <p>Whilst you’re eligible it’s important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
+        <h1>You're the right age to make a Pension transfer!</h1>
+        <p>We're glad you're making a step in the right direction.</p>
+        <p>Whilst you're eligible it's important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
         <div class="buttons vertical">
           <button class="next" tabindex="1" for="start-enquiry">Get Started</button>
         </div>
@@ -283,8 +283,8 @@
         <h1>You are about to begin your UK Pension Transfer Enquiry.</h1>
         <p>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</p>
         <p><em>Estimated Time: 10 minutes</em></p>
-        <p><small>If you don’t have all these details right now, simply skip those steps.</small></p>
-        <!-- <p><small>If you don’t have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p> -->
+        <p><small>If you don't have all these details right now, simply skip those steps.</small></p>
+        <!--<p><small>If you don't have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p> -->
         <div class="buttons vertical">
           <button class="next">Start form now</button>
           <!-- <button>Complete later</button> -->
@@ -351,7 +351,7 @@
       <div>
         <div class="address group">
           <div class="field text">
-            <label>What’s your address?</label>
+            <label>What's your address?</label>
             <input type="text" name="STREET" tabindex="1" placeholder="Street address">
           </div>
           <div class="field text">
@@ -414,7 +414,7 @@
           </div>
         </div>
         <div class="field text spouse">
-          <label>What is your Spouse’s name?</label>
+          <label>What is your Spouse's name?</label>
           <input type="text" name="SPOUSE" tabindex="8">
         </div>
         <div class="field text">
@@ -527,7 +527,7 @@
           <div class="field text">
             <input type="text" tabindex="2" placeholder="Date">
           </div>
-          <button>Add</button>
+          <button>More</button>
         </div>
         <div class="buttons">
           <button class="back">Back</button>
@@ -707,14 +707,14 @@
     <section id="review">
       <div>
         <h1>Please review and submit.</h1>
-        <p>Please find below the Letters of Authority your UK pension scheme's. These will provide us with the information necessary for us to prepare an accurate pension transfer report for you.</p>
+        <p>Please find below the Letters of Authority that will provide us with the information needed to prepare for you an accurate pension transfer report.</p>
 
         <ul>
           <!-- Insert #pension-fund-1-letter here -->
         </ul>
 
         <div class="buttons vertical">
-          <button class="next submit">Submit to FinSec Partners</button>
+          <button class="next submit">Submit to FinSec</button>
           <button class="back">Go back and edit</button>
         </div>
       </div>
@@ -814,29 +814,32 @@
     <section>
       <div>
         <li id="letter-of-authority">
-          <p>To: <b><span name="PENSION_FUND_1">-</span></b><br />
-          <span name="PENSION_FUND_1_STREET">-</span>,<br />
-          <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
+          <p>To: <b><span name="PENSION_FUND_1">-</span></b>
+            <br />
+            <span name="PENSION_FUND_1_STREET">-</span>,
+            <br />
+            <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
           <p> </p>
           <p>Subject: <b>LETTER OF AUTHORITY</b></p>
           <p> </p>
           <p>To whom it may concern,</p>
           <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
-          <p><b>FinSec Partners</b><br />
-          Tel: +61 8 8357 7840<br />
-          Fax: +61 8 8373 7600<br />
-          PO Box 1096, Unley, SA 5061, Australia<br />
-          Email: transfers@finsecptx.com.au<br />
-          www.finsecptx.com.au</p>
+          <p><b>FinSec Partners</b>
+            <br /> Tel: +61 8 8357 7840
+            <br /> Fax: +61 8 8373 7600
+            <br /> PO Box 1096, Unley, SA 5061, Australia
+            <br /> Email: transfers@finsecptx.com.au
+            <br /> www.finsecptx.com.au
+          </p>
           <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
-          <p>Name: <span name="NAME">-</span><br />
-          Date of Birth: <span name="DATE_OF_BIRTH">-</span><br />
-          Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span><br />
-          Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span><br />
-          Period of fund scheme membership: <span name="PENSION_FUND_1_PERIOD">-</span><br />
-          Policy / Reference number: <span name="PENSION_FUND_1_REFERENCE">-</span><br />
-          National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
-          <p>Yours faithfully</p>
+          <p>Name: <span name="NAME">-</span>
+            <br /> Date of Birth: <span name="DATE_OF_BIRTH">-</span>
+            <br /> Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span>
+            <br /> Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span>
+            <br /> Period of fund scheme membership: <span name="PENSION_FUND_1_PERIOD">-</span>
+            <br /> Policy / Reference number: <span name="PENSION_FUND_1_REFERENCE">-</span>
+            <br /> National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
+          <p>Yours sincerely</p>
           <p> </p>
           <p><b><span name="NAME">-</span></b></p>
           <p>Signature:</p>
@@ -852,17 +855,15 @@
       <section id="legal">
         <div>
           <div>
-            <a href="http://www.kaizenwealth.com.au/" target="_blank" title="Authorised AFSL Representative of FinSec Partners" class="logo kaizen">
-              <img src="/assets/img/footer/kaizen-wealth-logo@2x.png" alt="Kaizen Wealth Australia logo" />
-            </a>
             <a href="http://www.finsecpartners.com.au" target="_blank" title="Financial Planning Services, wealth creation and retirement planning, risk and insurance analysis" class="logo finsec">
-              <img src="/assets/img/footer/finsec-partners-logo.png" alt="Finsec Partners logo" />
+              <img src="/assets/img/footer/finsec-partners-footer-logo.png" alt="Finsec Partners logo" />
             </a>
+    
           </div>
     
-          <h3>FinSec PTX is a division of <a href="http://www.finsecpartners.com.au/" title="Professional Financial Planners in Adelaide" target="_blank">FinSec Partners Pty Ltd.</h3>
-          <p><a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=98135591829" target="_blank" title="ABN details of Finsect Partners Pty Ltd">FinSec Partners Pty Ltd (ABN 98 135 591 829)</a>, is a corporate authorised representative of <a href="http://abr.business.gov.au/SearchByAbn.aspx?abn=19608040062"
-                target="_blank" title="ABN details of Kaizen Wealth Pty Ltd">Kaizen Wealth Pty Ltd. ABN 19 608 040 062</a>
+          <h3>FinSec PTX is a specialist service of <a href="http://www.finsecpartners.com.au/" title="Professional Financial Planners in Adelaide" target="_blank">FinSec Partners Pty Ltd.</h3>
+          <p><a href="http://finsecpartners.com.au" target="_blank" title="ABN details of Finsect Partners Pty Ltd">FinSec Partners Pty Ltd (ABN 98 135 591 829)</a>, is a corporate authorised representative of <a href="http://kaizenwealth.com.au" target="_blank"
+                title="ABN details of Kaizen Wealth Pty Ltd">Kaizen Wealth Pty Ltd. ABN 19 608 040 062</a>
             <nobr>AFSL 480 797</nobr>
           </p>
         </div>
