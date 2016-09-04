@@ -2558,7 +2558,7 @@ footer #copyright p a:hover {
 }
 
 body.form {
-  background: #0f1d3c url("/assets/img/form/form-banner-2000px.jpg") 50% 100%/cover fixed;
+  background: #0f1d3c url("/assets/img/form/background-2000px.jpg") 50% 100%/cover fixed;
   /*hide the outline behind the border*/
 }
 body.form footer,
