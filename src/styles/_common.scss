@@ -311,6 +311,7 @@ i {
 }
 #articles {
   background: #FFF;
+  margin-bottom: 80px;
   h2 {
     color: $finsec-red;
     font-size: 50px;
@@ -322,11 +323,28 @@ i {
       font-size: 9vw;
     }
   }
+  > div > a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto 0;
+    color: $finsec-royal-blue;
+    border-color: $finsec-royal-blue;
+    font-size: 24px;
+    &:hover {
+      background-color: $finsec-royal-blue;
+      color: white;
+    }
+    @media (max-width: 380px) {
+      font-size: 6vw;
+      margin: 5px auto 0;
+    }
+  }
   ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-bottom: 80px;
     @media (max-width: 1040px) {
       flex-flow: row wrap;
     }
