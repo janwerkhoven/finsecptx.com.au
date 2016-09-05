@@ -923,6 +923,7 @@ i.icon.burger span {
 
 #articles {
   background: #FFF;
+  margin-bottom: 80px;
 }
 #articles h2 {
   color: #d2232a;
@@ -937,6 +938,30 @@ i.icon.burger span {
     font-size: 9vw;
   }
 }
+#articles > div > a {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  max-width: 340px;
+  margin: 20px auto 0;
+  color: #0f1d3c;
+  border-color: #0f1d3c;
+  font-size: 24px;
+}
+#articles > div > a:hover {
+  background-color: #0f1d3c;
+  color: white;
+}
+@media (max-width: 380px) {
+  #articles > div > a {
+    font-size: 6vw;
+    margin: 5px auto 0;
+  }
+}
 #articles ul {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -947,7 +972,6 @@ i.icon.burger span {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 80px;
 }
 @media (max-width: 1040px) {
   #articles ul {
