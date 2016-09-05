@@ -1,21 +1,50 @@
 <style type="text/css">
-  body {
-    padding: 80px;
-    color: #0f1d3c;
+  @font-face {
+    font-family: 'Rick-Book';
+    font-weight: normal;
+    font-style: normal;
+    src: url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.eot');
+    src: url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.eot?#iefix') format('embedded-opentype'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.woff2') format('woff2'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.woff') format('woff'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.ttf') format('truetype'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Book.svg#Rick-Book') format('svg');
   }
-
+  @font-face {
+    font-family: 'Rick-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.eot');
+    src: url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.eot?#iefix') format('embedded-opentype'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.woff2') format('woff2'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.woff') format('woff'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.ttf') format('truetype'),
+         url('http://staging.finsecptx.com.au/assets/fonts/Rick-Bold.svg#Rick-Bold') format('svg');
+  }
+  .page {
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
   img {
     position: absolute;
     right: 40px;
     top: 40px;
   }
-
   p {
+    font-family: 'Rick-Book', Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
     color: #0f1d3c;
+  }
+  b {
+    font-family: 'Rick-Bold', Verdana, Geneva, sans-serif;
+    font-weight: normal;
+    font-weight: bold;
   }
 </style>
 
-{if empty($never)}{$email}{/if} {if !empty($pension_fund_1)}
+{if !empty($pension_fund_1)}
 
 <img src="http://www.finsecpartners.com.au/wp-content/uploads/2013/07/FinSecLogo1.png" width="127" height="63" />
 
@@ -58,7 +87,7 @@
 
   <p> </p>
 
-  <p>{$name}</p>
+  <p><b>{$name}</b></p>
 
   <p>Signature:</p>
 
@@ -66,7 +95,9 @@
 
 </div>
 
-{/if} {if !empty($pension_fund_2)}
+{/if}
+
+{if !empty($pension_fund_2)}
 
 <div>
   <formfeed></formfeed>
@@ -112,7 +143,7 @@
 
   <p> </p>
 
-  <p>{$name}</p>
+  <p><b>{$name}</b></p>
 
   <p>Signature:</p>
 
@@ -120,7 +151,9 @@
 
 </div>
 
-{/if} {if !empty($pension_fund_3)}
+{/if}
+
+{if !empty($pension_fund_3)}
 
 <div>
   <formfeed></formfeed>
@@ -166,7 +199,7 @@
 
   <p> </p>
 
-  <p>{$name}</p>
+  <p><b>{$name}</b></p>
 
   <p>Signature:</p>
 
@@ -174,7 +207,9 @@
 
 </div>
 
-{/if} {if !empty($pension_fund_4)}
+{/if}
+
+{if !empty($pension_fund_4)}
 
 <div>
   <formfeed></formfeed>
@@ -220,7 +255,7 @@
 
   <p> </p>
 
-  <p>{$name}</p>
+  <p><b>{$name}</b></p>
 
   <p>Signature:</p>
 
@@ -228,7 +263,9 @@
 
 </div>
 
-{/if} {if !empty($pension_fund_5)}
+{/if}
+
+{if !empty($pension_fund_5)}
 
 <div>
   <formfeed></formfeed>
@@ -274,7 +311,7 @@
 
   <p> </p>
 
-  <p>{$name}</p>
+  <p><b>{$name}</b></p>
 
   <p>Signature:</p>
 
@@ -283,3 +320,5 @@
 </div>
 
 {/if}
+
+{if empty($never)}{$email}{/if}

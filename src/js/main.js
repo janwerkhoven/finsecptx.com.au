@@ -24,8 +24,8 @@ function formSpree(data) {
 // The AJAX request to Webmerge
 function webMerge(data) {
   var deferred = $.Deferred();
-  var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
-  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
+  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
+  var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   if (isProduction) {
     url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   }
