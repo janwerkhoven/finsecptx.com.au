@@ -30,8 +30,8 @@ function formSpree(data) {
 // The AJAX request to Webmerge
 function webMerge(data) {
   var deferred = $.Deferred();
-  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
-  var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
+  var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
+  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   if (isProduction) {
     url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
   }
@@ -194,7 +194,6 @@ function lazyPanda() {
     pension_fund_2_reference: "12345 XRR",
     pension_fund_2_street: "51 Strafford Street",
     pension_fund_2_suburb: "London",
-    pension_fund_3: "Employer pension #3",
     phone: "04247887652",
     postcode: "3000",
     residency: "Permanent",
