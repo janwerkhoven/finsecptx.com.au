@@ -1524,6 +1524,11 @@ footer #copyright p a:hover {
   top: 14vh;
   width: 60px;
   margin: 0 auto;
+  border-radius: 100%;
+}
+#landing #hero img:focus,
+#landing #hero img:hover {
+  background: RGBA(255, 255, 255, 0.5);
 }
 #landing #intro {
   background: #0f1d3c;
@@ -1551,7 +1556,7 @@ footer #copyright p a:hover {
   }
 }
 #landing #intro h2 span {
-  color: #4c6f93;
+  color: #598ab2;
   display: block;
 }
 #landing #intro p {
@@ -1630,7 +1635,7 @@ footer #copyright p a:hover {
   width: 2px;
 }
 #landing #intro ul li p {
-  color: #4c6f93;
+  color: #598ab2;
   margin: 0;
   font-size: 19px;
   margin: 0 auto;

@@ -9,6 +9,12 @@
       top: 14vh;
       width: 60px;
       margin: 0 auto;
+      border-radius: 100%;
+    }
+    img:focus,
+    img:hover {
+      background: RGBA(255, 255, 255, 0.5);
+      // transition: all 200ms ease-out;
     }
   }
   #intro {
@@ -31,7 +37,7 @@
         margin-bottom: 40px;
       }
       span {
-        color: $finsec-kashmir-blue;
+        color: $finsec-home-blue;
         display: block;
       }
     }
@@ -92,7 +98,7 @@
           }
         }
         p {
-          color: $finsec-kashmir-blue;
+          color: $finsec-home-blue;
           margin: 0;
           font-size: 19px;
           margin: 0 auto;
