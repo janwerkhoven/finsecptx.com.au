@@ -1602,7 +1602,7 @@ footer #copyright p a:hover {
   font-size: 28px;
   font-family: "Rick-Bold", sans-serif;
   text-transform: uppercase;
-  margin: 26px 0 0;
+  margin: 26px 0 20px;
 }
 @media (max-width: 700px) {
   #landing #intro ul li h3 {
