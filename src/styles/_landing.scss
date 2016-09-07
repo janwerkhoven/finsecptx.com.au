@@ -10,6 +10,18 @@
       width: 60px;
       margin: 0 auto;
       border-radius: 100%;
+      animation: pulse 5s infinite;
+      @keyframes pulse {
+        0% {
+          background-color: transparent;
+        }
+        50% {
+          background: RGBA(255, 255, 255, 0.5);
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
     }
     img:focus,
     img:hover {
