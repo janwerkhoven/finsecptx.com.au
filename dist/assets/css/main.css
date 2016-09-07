@@ -1519,6 +1519,12 @@ footer #copyright p a:hover {
     height: 180vw;
   }
 }
+#landing #hero img {
+  position: relative;
+  top: 14vh;
+  width: 60px;
+  margin: 0 auto;
+}
 #landing #intro {
   background: #0f1d3c;
 }
@@ -1869,7 +1875,7 @@ footer #copyright p a:hover {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 12vw 20px;
+    padding: 12vw 40px;
   }
 }
 @media (max-width: 900px) {
