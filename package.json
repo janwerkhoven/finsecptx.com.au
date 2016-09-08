@@ -21,6 +21,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-handlebars-layouts": "^0.2.7",
     "grunt-html-prettyprinter": "^1.5.0",
+    "grunt-inline-css": "^0.1.5",
     "grunt-postcss": "^0.7.2",
     "grunt-static-handlebars": "^0.9.0",
     "grunt-text-replace": "^0.4.0",

@@ -194,7 +194,6 @@ function lazyPanda() {
     pension_fund_2_reference: "12345 XRR",
     pension_fund_2_street: "51 Strafford Street",
     pension_fund_2_suburb: "London",
-    pension_fund_3: "Employer pension #3",
     phone: "04247887652",
     postcode: "3000",
     residency: "Permanent",
