@@ -4,6 +4,29 @@
     @media (max-width: 400px) {
       height: 180vw;
     }
+    img {
+      position: relative;
+      top: 14vh;
+      width: 60px;
+      margin: 0 auto;
+      border-radius: 100%;
+      animation: pulse 10s infinite;
+      @keyframes pulse {
+        0% {
+          background-color: transparent;
+        }
+        50% {
+          background: RGBA(255, 255, 255, 0.5);
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+      &:hover {
+        background: RGBA(255, 255, 255, 0.5) !important;
+        // transition: all 200ms ease-out;
+      }
+    }
   }
   #intro {
     background: $finsec-royal-blue;
@@ -25,7 +48,7 @@
         margin-bottom: 40px;
       }
       span {
-        color: $finsec-kashmir-blue;
+        color: $finsec-home-blue;
         display: block;
       }
     }
@@ -67,7 +90,7 @@
           font-size: 28px;
           font-family: $bold;
           text-transform: uppercase;
-          margin: 26px 0 0;
+          margin: 26px 0 20px;
           @media (max-width: 700px) {
             margin-bottom: 0;
           }
@@ -86,7 +109,7 @@
           }
         }
         p {
-          color: $finsec-kashmir-blue;
+          color: $finsec-home-blue;
           margin: 0;
           font-size: 19px;
           margin: 0 auto;

@@ -1519,6 +1519,40 @@ footer #copyright p a:hover {
     height: 180vw;
   }
 }
+#landing #hero img {
+  position: relative;
+  top: 14vh;
+  width: 60px;
+  margin: 0 auto;
+  border-radius: 100%;
+  -webkit-animation: pulse 10s infinite;
+          animation: pulse 10s infinite;
+}
+@-webkit-keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background: RGBA(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background: RGBA(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+#landing #hero img:hover {
+  background: RGBA(255, 255, 255, 0.5) !important;
+}
 #landing #intro {
   background: #0f1d3c;
 }
@@ -1545,7 +1579,7 @@ footer #copyright p a:hover {
   }
 }
 #landing #intro h2 span {
-  color: #4c6f93;
+  color: #598ab2;
   display: block;
 }
 #landing #intro p {
@@ -1602,7 +1636,7 @@ footer #copyright p a:hover {
   font-size: 28px;
   font-family: "Rick-Bold", sans-serif;
   text-transform: uppercase;
-  margin: 26px 0 0;
+  margin: 26px 0 20px;
 }
 @media (max-width: 700px) {
   #landing #intro ul li h3 {
@@ -1624,7 +1658,7 @@ footer #copyright p a:hover {
   width: 2px;
 }
 #landing #intro ul li p {
-  color: #4c6f93;
+  color: #598ab2;
   margin: 0;
   font-size: 19px;
   margin: 0 auto;
@@ -1869,7 +1903,7 @@ footer #copyright p a:hover {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 12vw 20px;
+    padding: 12vw 40px;
   }
 }
 @media (max-width: 900px) {
