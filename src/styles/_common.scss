@@ -72,6 +72,31 @@ a {
     text-decoration: none;
   }
 }
+#hero {
+  img {
+    position: relative;
+    top: 14vh;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 100%;
+    animation: pulse 10s infinite;
+    @keyframes pulse {
+      0% {
+        background-color: transparent;
+      }
+      50% {
+        background: RGBA(255, 255, 255, 0.5);
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      background: RGBA(255, 255, 255, 0.5);
+      // transition: all 200ms ease-out;
+    }
+  }
+}
 a.button,
 button {
   font-family: $medium;
