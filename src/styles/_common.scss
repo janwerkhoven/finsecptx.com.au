@@ -72,7 +72,31 @@ a {
     text-decoration: none;
   }
 }
-#hero {}
+#hero {
+  img {
+    position: relative;
+    top: 14vh;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 100%;
+    animation: pulse 10s infinite;
+    @keyframes pulse {
+      0% {
+        background-color: transparent;
+      }
+      50% {
+        background: RGBA(255, 255, 255, 0.5);
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      background: RGBA(255, 255, 255, 0.5);
+      // transition: all 200ms ease-out;
+    }
+  }
+}
 a.button,
 button {
   font-family: $medium;
@@ -257,7 +281,6 @@ i {
     text-transform: uppercase;
     max-width: 800px;
     margin: 0 auto;
-    height: 200px;
     text-shadow: 0 0 5px RGBA(0, 0, 0, 0.5);
     @media (max-width: 900px) {
       font-size: 6vw;
@@ -284,55 +307,32 @@ i {
       }
     }
   }
-  img {
-    position: relative;
-    top: 14vh;
-    width: 60px;
-    margin: 0 auto;
-    border-radius: 100%;
-    animation: pulse 10s infinite;
-    @keyframes pulse {
-      0% {
-        background-color: transparent;
+  a.button.arrow {
+    position: absolute;
+    bottom: 4vh;
+    @include viewport-unit(bottom, 4vh);
+    left: 50%;
+    margin-left: -35px;
+    min-width: 50px;
+    min-height: 50px;
+    border-width: 3px;
+    @media (max-height: 770px) {
+      width: 9vh;
+      @include viewport-unit(width, 9vh);
+      height: 9vh;
+      @include viewport-unit(height, 9vh);
+      margin-left: -4.5vh;
+      @include viewport-unit(margin-left, -4.5vh);
+      bottom: 3vh;
+      @include viewport-unit(bottom, 3vh);
+      &:after,
+      &:before {
+        height: 3.5vh;
+        @include viewport-unit(height, 3.5vh);
+        min-height: 20px;
       }
-      50% {
-        background: RGBA(255, 255, 255, 0.5);
-      }
-      100% {
-        background-color: transparent;
-      }
-    }
-    &:hover {
-      background: RGBA(255, 255, 255, 0.5);
-      // transition: all 200ms ease-out;
     }
   }
-  // a.button.arrow {
-  //   position: absolute;
-  //   bottom: 4vh;
-  //   @include viewport-unit(bottom, 4vh);
-  //   left: 50%;
-  //   margin-left: -35px;
-  //   min-width: 50px;
-  //   min-height: 50px;
-  //   border-width: 3px;
-  //   @media (max-height: 770px) {
-  //     width: 9vh;
-  //     @include viewport-unit(width, 9vh);
-  //     height: 9vh;
-  //     @include viewport-unit(height, 9vh);
-  //     margin-left: -4.5vh;
-  //     @include viewport-unit(margin-left, -4.5vh);
-  //     bottom: 3vh;
-  //     @include viewport-unit(bottom, 3vh);
-  //     &:after,
-  //     &:before {
-  //       height: 3.5vh;
-  //       @include viewport-unit(height, 3.5vh);
-  //       min-height: 20px;
-  //     }
-  //   }
-  // }
 }
 #articles {
   background: #FFF;
