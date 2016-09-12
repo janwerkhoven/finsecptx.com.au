@@ -839,7 +839,11 @@ i.icon.burger span {
     margin: 0 auto 20px;
   }
 }
-#articles ul li a > img {
+#articles ul li div {
+  width: 100%;
+  overflow: hidden;
+}
+#articles ul li div img {
   width: 100%;
   height: auto;
 }
@@ -1311,11 +1315,6 @@ footer #copyright p a:hover {
 }
 #article main section h4 a:hover {
   color: grey;
-}
-@media (max-width: 900px) {
-  #article main section h4 {
-    padding-left: 40px;
-  }
 }
 #article main section div {
   color: black;

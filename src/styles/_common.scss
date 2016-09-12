@@ -364,9 +364,13 @@ i {
         width: 100%;
         margin: 0 auto 20px;
       }
-      a > img {
+      div {
         width: 100%;
-        height: auto;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
       a > h3 {
         margin: 20px;
