@@ -1299,23 +1299,6 @@ footer #copyright p a:hover {
   margin-bottom: 40px;
   max-width: 1260px;
 }
-#article main section img {
-  width: 100%;
-  height: auto;
-}
-#article main section h4 {
-  color: #cececd;
-  padding-left: 10px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin: auto 0;
-}
-#article main section h4 a {
-  color: #cececd;
-}
-#article main section h4 a:hover {
-  color: grey;
-}
 #article main section div {
   color: black;
   max-width: 600px;
@@ -1325,20 +1308,42 @@ footer #copyright p a:hover {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
 }
 #article main section div div {
+  width: 105px;
+}
+#article main section div div a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 20px 0 0;
+  margin-top: 20px;
 }
-#article main section div div img {
+#article main section div div a img {
   width: 40px;
   height: 40px;
+}
+#article main section div div a .return {
+  display: none;
+}
+#article main section div div a h4 {
+  color: #cececd;
+  padding-left: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: auto 0;
+}
+#article main section div div a:hover img {
+  display: none;
+}
+#article main section div div a:hover .return {
+  display: block;
+}
+#article main section div div a:hover h4 {
+  color: #0f1d3c;
+}
+#article main section div img {
+  width: 100%;
+  height: auto;
 }
 #article main section div h2 {
   color: #0f1d3c;
