@@ -1,0 +1,92 @@
+{{#extend "layout"}}
+
+  {{#replace "meta"}}
+    <title>Get the latest news affecting your UK pension transfer - FinSec PTX</title>
+    <meta name="description" content="Get an overview of what FinSec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
+  {{/replace}}
+
+  {{#replace "body-id"}}subscribe{{/replace}}
+  {{#replace "body-class"}}form{{/replace}}
+
+  {{#replace "main"}}
+
+    <nav>
+      <a href="/" class="logo">
+        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
+      </a>
+      <a href="/" class="back">{{> arrow-right}}</a>
+    </nav>
+
+    <section id="start">
+      <div>
+        <h1>Keep me informed</h1>
+        <p>Get the latest news affecting your UK pension transfer</p>
+        <div class="field text">
+          <input type="text" name="NAME" placeholder="Your name">
+        </div>
+        <div class="field email">
+          <input type="email" placeholder="your@email.com" name="EMAIL">
+        </div>
+        <div class="buttons vertical">
+          <button class="next">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="phone-state-age">
+      <div>
+        <div class="field text">
+          <label>Phone number?</label>
+          <input type="text" placeholder="04** *** ***" name="PHONE">
+        </div>
+        <div class="field select">
+          <label>What state do you reside in?</label>
+          <div>
+            <select name="STATE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+              <option value="I live outside Australia">I live outside Australia</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field range">
+          <label>How old are you?<small>(if you don't mind me asking)</small></label>
+          <input type="text" placeholder="?" tabindex="2">
+          <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
+        </div>
+        <div class="errors">
+          <p></p>
+        </div>
+        <div class="buttons vertical">
+          <button class="next subscribe">Email me updates</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribed">
+      <div>
+        <p>Great!</p>
+        <p>To complete the subscription process, please click the link in the email we just sent you.</p>
+        <p class="email"><em>your@email.com</em></p>
+        <p>We will then keep you up to date with legislation changes that matter to you.</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <a class="button" href="/legislation-changes">Return to website</a>
+        </div>
+      </div>
+    </section>
+
+  {{/replace}}
+{{/extend}}

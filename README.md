@@ -16,7 +16,7 @@ The [website](http://finsecptx.com/) of an Adelaide based consultants specialise
 1. Install the [Grunt](http://gruntjs.com/getting-started), [NPM](https://nodejs.org/en/download/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) commands globally
 1. Create a directory and move to it: `mkdir -p ~/janwerkhoven/finsecptx && cd $_`
 2. Clone this repo: `git clone git@github.com:janwerkhoven/grunt-finsec-ptx.git .`
-3. Install packages: `npm install`
+3. Install packages: `npm install; bower install`
 4. Run Grunt (build dist, start server, start watchers): `grunt`
 5. Go to [http://localhost:9000/](http://localhost:9000/)
 6. Open code with whatever fancies your panties, I use [Atom](https://atom.io/): `atom .`

@@ -4,10 +4,11 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background: $finsec-ptx-navy;
+  background: $finsec-royal-blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   > div {
     display: flex;
     justify-content: center;
@@ -20,8 +21,12 @@
     font-size: 32px;
   }
   h2 {
-    color: $finsec-ptx-blue;
+    color: $finsec-kashmir-blue;
     margin: 0;
     line-height: 100%;
+  }
+  img {
+    display: inline-block;
+    margin: 0 auto;
   }
 }

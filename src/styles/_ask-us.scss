@@ -1,0 +1,27 @@
+#ask-us {
+  background-image: url('/assets/img/services/call-to-action-bg-2000.jpg');
+  background-size: cover;
+  background-position: 50% 0;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    max-height: 600px;
+    min-height: 400px;
+    h2 {
+      font-size: 50px;
+      font-family: $black;
+      line-height: 120%;
+      margin-bottom: 40px;
+      text-align: center;
+      @media (max-width: 600px) {
+        font-size: 40px;
+      }
+    }
+    a.button {
+      max-width: 320px;
+    }
+  }
+}

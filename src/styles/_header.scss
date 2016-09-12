@@ -1,27 +1,107 @@
 header {
-  height: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 1;
   > div {
-    padding-top: 30px;
+    max-width: none;
+    padding: 0;
   }
   nav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-  }
-  ul {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    a {
-      text-decoration: none;
+    a.logo {
+      position: relative;
+      z-index: 2;
+      &:hover {
+        opacity: 0.6;
+      }
+      img {
+        width: 240px;
+        height: auto;
+        padding: 30px;
+        @media (max-width: 500px) {
+          width: 48vw;
+          padding: 6vw;
+        }
+      }
+    }
+    button {
+      position: relative;
+      z-index: 2;
+      display: block;
       color: white;
       font-size: 20px;
-      font-weight: $bold;
-      line-height: 30px;
-      padding: 0 5px;
-      &:hover,
-      .active {
-        opacity: 0.6;
+      font-family: $bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0 30px;
+      background: none;
+      border: 0;
+      outline: 0;
+      &:hover {
+        background: RGBA(255,255,255,0.5);
+      }
+      @media (max-width: 560px) {
+        padding: 0 6vw;
+      }
+      @media (min-width: 901px) {
+        display: none;
+      }
+    }
+    .menu {
+      align-items: center;
+      margin: auto 30px;
+      &.fixed {
+        @media (max-width: 900px) {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba($finsec-royal-blue, 0.8);
+          display: block;
+          ul {
+            position: fixed;
+            right: 0;
+            top: 110px;
+            display: block;
+            text-align: right;
+            padding: 0 30px;
+          }
+        }
+      }
+      @media (max-width: 900px) {
+        display: none;
+      }
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        // margin-top: 27px;
+        // padding: 30px 30px 0 0;
+        // margin-top: -10px;
+        // margin-right: -12px;
+        a {
+          display: block;
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          font-family: $bold;
+          line-height: 40px;
+          padding: 0 15px;
+          white-space: nowrap;
+          text-shadow: 0 0 5px RGBA(0,0,0,0.5);
+          @media (max-width: 900px) {
+            line-height: 50px;
+            font-size: 22px;
+          }
+          &:hover,
+          .active {
+            opacity: 0.7;
+          }
+        }
       }
     }
   }

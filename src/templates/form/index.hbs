@@ -1,0 +1,740 @@
+{{#extend "layout"}}
+
+  {{#replace "meta"}}
+    <title>Am I eligible to transfer my UK Pension to Australian Super - FinSec PTX</title>
+    <meta name="description" content="Get an overview of what FinSec PTX can do for you. In short we specialise in transfering UK pensions to Australian superannuations.">
+  {{/replace}}
+
+  {{#replace "body-id"}}form{{/replace}}
+  {{#replace "body-class"}}form{{/replace}}
+
+  {{#replace "main"}}
+
+    <nav>
+      <a href="/" class="logo">
+        <img src="/assets/img/header/finsec-ptx-logo.svg" alt="logo FinSec PTX" width="281" height="46" />
+      </a>
+      <a href="/" class="back">{{> arrow-right}}</a>
+    </nav>
+
+    <section id="start">
+      <div>
+        <h1>Am I eligible?</h1>
+        <p>We'd like to ask a few quick questions to establish whether you're eligible for transferring your UK Pension to Australian Superannuation.</p>
+        <div class="buttons vertical">
+          <button class="next">Start</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="title-name">
+      <div>
+        <div class="field select">
+          <label>What is your title?</label>
+          <div>
+            <select name="TITLE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Ms">Miss</option>
+              <option value="Dr">Dr</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field text">
+          <label>And your full name?</label>
+          <input type="text" name="NAME" tabindex="2">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+        </div>
+        <aside>
+          <p>1/3</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="email-phone">
+      <div>
+        <div class="field email">
+          <label>What's your email address?</label>
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="1">
+        </div>
+        <div class="field text">
+          <label>Phone number?</label>
+          <input type="text" placeholder="04** *** ***" name="PHONE" tabindex="2">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="state-age">
+      <div>
+        <div class="field select">
+          <label>What state do you reside in?</label>
+          <div>
+            <select name="STATE" tabindex="1">
+              <option value="" selected>Choose...</option>
+              <option value="ACT">Australian Capital Territory</option>
+              <option value="NSW">New South Wales</option>
+              <option value="NT">Northern Territory</option>
+              <option value="QLD">Queensland</option>
+              <option value="SA">South Australia</option>
+              <option value="TAS">Tasmania</option>
+              <option value="VIC">Victoria</option>
+              <option value="WA">Western Australia</option>
+              <option value="Outside Australia">I live outside Australia</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field range">
+          <label>How old are you?</label>
+          <input type="text" placeholder="?" tabindex="2" name="AGE">
+          <input type="range" id="myRange" value="55" min="0" max="130" step="1" name="AGE">
+        </div>
+        <div class="errors">
+          <p></p>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="3">Next</button>
+        </div>
+        <aside>
+          <p>3/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="eligible">
+      <div>
+        <h1>You're the right age to make a Pension transfer!</h1>
+        <p>We're glad you're making a step in the right direction.</p>
+        <p>Whilst you're eligible it's important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
+        <div class="buttons vertical">
+          <button class="next" tabindex="1" for="start-enquiry">Get Started</button>
+        </div>
+        <hr>
+        <p>Not ready just yet?</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <button class="next" for="email-check">Keep me informed via email</button>
+          <button class="back" for="state-age">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="not-yet-eligible">
+      <div>
+        <h1>Thank you!</h1>
+        <p>You must be over 55 in order to be eligible to make a UK Pension transfer to an Australian Super Fund.</p>
+        <p>There is however a lot that can be done that can prepare you for this. What would you like to do?</p>
+        <div class="buttons vertical">
+          <button class="next" for="email-check">Keep me informed via email</button>
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <button class="back" for="state-age">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="email-check">
+      <div>
+        <div class="field email">
+          <label>Is this email correct?</label>
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="1">
+        </div>
+        <div class="buttons vertical">
+          <button class="next subscribe">Sure is!</button>
+          <button class="back" for="state-age">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribed">
+      <div>
+        <h1>Great!</h1>
+        <p>To complete the subscription process, please click the link in the email we just sent you.</p>
+        <p class="email"><em><span name="EMAIL">your@email.com</span></em></p>
+        <p>We will then keep you up to date with legislation changes that matter to you.</p>
+        <div class="buttons vertical">
+          <a class="button" href="/contact">Speak to a specialist</a>
+          <a class="button pdf" href="{{pathPensionTransferGuide}}" target="_blank">Download our Pension Transfer Guide (PDF)</a>
+          <a class="button" href="/">Return to website</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="start-enquiry">
+      <div>
+        <h1>You are about to begin your UK Pension Transfer Enquiry.</h1>
+        <p>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</p>
+        <p><em>Estimated Time: 10 minutes</em></p>
+        <p><small>If you don't have all these details right now, simply skip those steps.</small></p>
+        <!--<p><small>If you don't have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p> -->
+        <div class="buttons vertical">
+          <button class="next">Start form now</button>
+          <!-- <button>Complete later</button> -->
+          <button class="back" for="state-age">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="name-email-again">
+      <div>
+        <p>Does this all look correct? If not, please adjust them now.</p>
+        <div class="field select">
+          <label>Your title</label>
+          <div>
+            <select name="TITLE" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+              <option value="Ms">Miss</option>
+              <option value="Dr">Dr</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field text">
+          <label>Full Name</label>
+          <input type="text" name="NAME" tabindex="2">
+        </div>
+        <div class="field email">
+          <label>Email address</label>
+          <input type="email" placeholder="your@email.com" name="EMAIL" tabindex="3">
+        </div>
+        <div class="field text">
+          <label>Phone number</label>
+          <input type="text" placeholder="04** *** ***" name="PHONE" tabindex="4">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
+        <aside>
+          <p>1/2</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="address-dob-etc">
+      <div>
+        <div class="address group">
+          <div class="field text">
+            <label>What's your address?</label>
+            <input type="text" name="STREET" tabindex="1" placeholder="Street address">
+          </div>
+          <div class="field text">
+            <input type="text" name="SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field select">
+            <div>
+              <select name="STATE" tabindex="3">
+                <option selected>Choose...</option>
+                <option value="ACT">Australian Capital Territory</option>
+                <option value="NSW">New South Wales</option>
+                <option value="NT">Northern Territory</option>
+                <option value="QLD">Queensland</option>
+                <option value="SA">South Australia</option>
+                <option value="TAS">Tasmania</option>
+                <option value="VIC">Victoria</option>
+                <option value="WA">Western Australia</option>
+              </select>
+              <div>
+                {{> chevron-down}}
+              </div>
+            </div>
+          </div>
+          <div class="field text">
+            <input type="text" name="POSTCODE" tabindex="4" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="COUNTRY" tabindex="4" placeholder="Country" value="Australia">
+          </div>
+        </div>
+        <div class="field text">
+          <label>Date of birth?</label>
+          <input type="text" name="DATE_OF_BIRTH" tabindex="5" placeholder="DD/MM/YYYY">
+        </div>
+        <div class="field option" name="GENDER">
+          <label>What is your gender?</label>
+          <div>
+            <button>Male</button>
+            <button>Female</button>
+          </div>
+        </div>
+        <div class="field text maiden">
+          <label>Do you have a maiden name?</label>
+          <input type="text" name="MAIDEN" tabindex="7">
+        </div>
+        <div class="field option" name="MARRIED">
+          <label>Are you married?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        </div>
+        <div class="field text spouse">
+          <label>What is your Spouse's name?</label>
+          <input type="text" name="SPOUSE" tabindex="8">
+        </div>
+        <div class="field text">
+          <label>What is your Occupation?</label>
+          <input type="text" name="OCCUPATION" tabindex="9">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="10">Next</button>
+        </div>
+        <aside>
+          <p>2/2</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="end-part-one">
+      <div>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
+        <p>Part 1. Complete!</p>
+        <div class="buttons vertical">
+          <button class="next">Proceed to part 2 of 3</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="residency">
+      <div>
+        <div class="field select">
+          <label>What is your residency status?</label>
+          <div>
+            <select name="RESIDENCY" tabindex="1">
+              <option selected>Choose...</option>
+              <option value="Temporary">Temporary</option>
+              <option value="Permanent">Permanent</option>
+              <option value="Australian Citizen">Australian Citizen</option>
+            </select>
+            <div>
+              {{> chevron-down}}
+            </div>
+          </div>
+        </div>
+        <div class="field text">
+          <label>What date did you arrive in Australia with the intention to stay permanently? <small>(Or date of return for expats)</small><small>Note: This will be assumed to be your date of first Australian tax residency</small></label>
+          <input type="text" name="DATE_ARRIVAL_AUSTRALIA_STAY" placeholder="DD/MM/YYYYY" tabindex="2">
+        </div>
+        <div class="field text">
+          <label>What is the date of your last UK residency?</label>
+          <input type="text" name="DATE_LAST_UK_RESIDENCY" placeholder="DD/MM/YYYYY" tabindex="3">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="4">Next</button>
+        </div>
+        <aside>
+          <p>1/4</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="taxable-income">
+      <div>
+        <div class="field option" name="TAXABLE_INCOME_GT_18200">
+          <label>Is your total Australian annual taxable income from all sources greater than $18,200?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        </div>
+        <div class="field option" name="MADE_NC_CONTRIBUTIONS">
+          <label>Have you made any Non Concessional (after tax personal) contributions to an Australian superannuation fund since 1/7/2007?</label>
+          <div>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        </div>
+        <div class="group numbered nc-contributions" name="NC_CONTRIBUTIONS">
+          <div class="field text amount">
+            <label>Thank you. Please list the amounts and the dates they were made:</label>
+            <span>1.</span>
+            <input type="text" tabindex="1" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="1" placeholder="Date">
+          </div>
+          <div class="field text amount">
+            <span>2.</span>
+            <input type="text" tabindex="2" placeholder="Amount $">
+          </div>
+          <div class="field text">
+            <input type="text" tabindex="2" placeholder="Date">
+          </div>
+          <button>More</button>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>2/4</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="super-funds">
+      <div>
+        <div class="group numbered super-funds">
+          <div class="field text">
+            <label>Please name all your Australian superannuation funds</label>
+            <span>1.</span>
+            <input type="text" name="SUPER_FUND_1" tabindex="1">
+          </div>
+          <div class="field text">
+            <span>2.</span>
+            <input type="text" name="SUPER_FUND_2" tabindex="2">
+          </div>
+          <div class="field text">
+            <span>3.</span>
+            <input type="text" name="SUPER_FUND_3" tabindex="3">
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="100">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Insert #super-fund-1 here -->
+
+    <section id="objectives">
+      <div>
+        <div class="field checkboxes" name="OBJECTIVES">
+          <label>If you were to consider a transfer of your UK Pension to Australia please indicate which of the following issues are important to you:</label>
+          <div>
+            <button>Having your pension in the country you are living in</button>
+            <button>Avoiding currency risk on your pension benefits</button>
+            <button>Structuring your retirement benefits in a tax effective manner</button>
+            <button>Accessing the capital within your pension at retirement</button>
+            <button>Controlling or influencing the investments under your pension arrangements</button>
+            <button>Maximising your potential death benefits before and after your retirement</button>
+          </div>
+        </div>
+        <div class="field textarea">
+          <label>Would you like to add any comments?</label>
+          <textarea rows="5" name="COMMENTS"></textarea>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>4/4</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="end-part-two">
+      <div>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
+        <p>Part 2. Complete!</p>
+        <div class="buttons vertical">
+          <button class="next">Proceed to part 3 of 3</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="uk-address">
+      <div>
+        <div class="address group">
+          <div class="field text">
+            <label>What was your last UK address?</label>
+            <input type="text" name="UK_STREET" tabindex="1" placeholder="Street">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_POSTCODE" tabindex="3" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="UK_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="5">Next</button>
+        </div>
+        <aside>
+          <p>1/3</p>
+          <ul>
+            <li class="done"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pension-funds">
+      <div>
+        <div class="group numbered pension-funds">
+          <div class="field text">
+            <label>Please name all your UK pension funds and/or employers</label>
+            <span>1.</span>
+            <input type="text" name="PENSION_FUND_1" tabindex="1">
+          </div>
+          <div class="field text">
+            <span>2.</span>
+            <input type="text" name="PENSION_FUND_2" tabindex="2">
+          </div>
+          <div class="field text">
+            <span>3.</span>
+            <input type="text" name="PENSION_FUND_3" tabindex="3">
+          </div>
+        </div>
+        <div class="errors">
+          <p></p>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="100">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Insert #pension-fund-1 here -->
+
+    <section id="end-part-three">
+      <div>
+        <img src="/assets/img/form/form-tick-box.svg" width="90" class="check" />
+        <p>Part 3. Complete!</p>
+        <div class="buttons vertical">
+          <button class="next">Proceed to sign off</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="review">
+      <div>
+        <h1>Please review and submit.</h1>
+        <p>Please find below the Letters of Authority that will provide us with the information needed to prepare for you an accurate pension transfer report.</p>
+
+        <ul>
+          <!-- Insert #pension-fund-1-letter here -->
+        </ul>
+
+        <div class="buttons vertical">
+          <button class="next submit">Submit to FinSec</button>
+          <button class="back">Go back and edit</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="thanks">
+      <div>
+        <h1>Thank you!</h1>
+        <p>Your form has been sent to FinSec PTX.</p>
+        <p>One of our advisers will give you a call in the next few days if we have further questions.</p>
+        <div class="buttons vertical">
+          <a href="/" class="button">Return to site</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sections below are to be copied with JS -->
+
+    <section id="pension-fund-x">
+      <div>
+        <div class="field text">
+          <label>Fund / Employer name</label>
+          <input type="text" name="PENSION_FUND_1" tabindex="1">
+        </div>
+        <div class="address group">
+          <div class="field text">
+            <label>Postal address?</label>
+            <input type="text" name="PENSION_FUND_1_STREET" tabindex="1" placeholder="Street">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_SUBURB" tabindex="2" placeholder="Suburb">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_POSTCODE" tabindex="3" placeholder="Postcode">
+          </div>
+          <div class="field text">
+            <input type="text" name="PENSION_FUND_1_COUNTRY" tabindex="4" placeholder="Country" value="United Kingdom">
+          </div>
+        </div>
+        <div class="field text">
+          <label>Period of fund or scheme membership</label>
+          <input type="text" name="PENSION_FUND_1_PERIOD" tabindex="5" placeholder="May 1984 - May 1996">
+        </div>
+        <div class="field text">
+          <label>Policy Reference Number</label>
+          <input type="text" name="PENSION_FUND_1_REFERENCE" tabindex="6" placeholder="000 000">
+        </div>
+        <div class="field text">
+          <label>National Insurance Number</label>
+          <input type="text" name="PENSION_FUND_1_INSURANCE" tabindex="7" placeholder="000 000">
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+        <aside>
+          <p>3/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="super-fund-x">
+      <div>
+        <div class="field text currency">
+          <label>What is the estimated balance at <span name="SUPER_FUND_1">Your Super Fund #1</span>?</label>
+          <input type="text" name="SUPER_FUND_1_BALANCE" tabindex="1">
+          <span>$</span>
+        </div>
+        <div class="field option" name="SUPER_FUND_1_OWNER">
+          <label>Who is the owner?</label>
+          <div>
+            <button tabindex="2">Myself</button>
+            <button tabindex="3">Spouse</button>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back">Back</button>
+          <button class="next" tabindex="4">Next</button>
+        </div>
+        <aside>
+          <p>2/3</p>
+          <ul>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li class="done"></li>
+            <li></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <li id="letter-of-authority">
+          <p>To: <b><span name="PENSION_FUND_1">-</span></b>
+            <br />
+            <span name="PENSION_FUND_1_STREET">-</span>,
+            <br />
+            <span name="PENSION_FUND_1_SUBURB">-</span>, <span name="PENSION_FUND_1_POSTCODE">-</span>, United Kingdom</p>
+          <p> </p>
+          <p>Subject: <b>LETTER OF AUTHORITY</b></p>
+          <p> </p>
+          <p>To whom it may concern,</p>
+          <p>Please accept this letter as my authority for you to release information concerning my pension entitlement to:</p>
+          <p><b>FinSec Partners</b>
+            <br /> Tel: +61 8 8357 7840
+            <br /> Fax: +61 8 8373 7600
+            <br /> PO Box 1096, Unley, SA 5061, Australia
+            <br /> Email: transfers@finsecptx.com.au
+            <br /> www.finsecptx.com.au
+          </p>
+          <p>Please also accept this letter as my authority for you to update your records to reflect my correct address details as shown below:</p>
+          <p>Name: <span name="NAME">-</span>
+            <br /> Date of Birth: <span name="DATE_OF_BIRTH">-</span>
+            <br /> Current address: <span name="STREET">-</span>, <span name="SUBURB">-</span>, <span name="STATE">-</span> <span name="POSTCODE">-</span>, <span name="COUNTRY">-</span>
+            <br /> Last UK address: <span name="UK_STREET">-</span>, <span name="UK_SUBURB">-</span>, <span name="UK_POSTCODE">-</span>, <span name="UK_COUNTRY">-</span>
+            <br /> Period of fund scheme membership: <span name="PENSION_FUND_1_PERIOD">-</span>
+            <br /> Policy / Reference number: <span name="PENSION_FUND_1_REFERENCE">-</span>
+            <br /> National insurance number: <span name="PENSION_FUND_1_INSURANCE">-</span></p>
+          <p>Yours sincerely</p>
+          <p> </p>
+          <p><b><span name="NAME">-</span></b></p>
+          <p>Signature:</p>
+          <p>Today's Date:</p>
+        </li>
+      </div>
+    </section>
+
+  {{/replace}}
+{{/extend}}

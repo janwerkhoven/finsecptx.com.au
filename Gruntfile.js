@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     watch: {
       handlebars: {
         files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
-        tasks: ['handlebarslayouts', 'sitemap']
+        tasks: ['handlebarslayouts', 'inlinecss']
       },
       sass: {
         files: ['src/styles/**/*.scss'],
@@ -56,17 +56,33 @@ module.exports = function(grunt) {
         options: {
           partials: ['src/templates/partials/*.hbs', 'src/templates/layout.html'],
           basePath: 'src/templates/',
-          modules: ['src/templates/helpers/helpers-*.js']
+          modules: ['src/templates/helpers/helpers-*.js'],
+          context: {
+            // formLink: '/can-I-transfer-my-UK-pension-to-Australian-super',
+            formLink: '/form',
+            formTitle: 'Can I transfer my UK Pension to Australian Super?',
+            pathPensionTransferGuide: '/assets/PDF/Pension-Transfer-Guide-by-FinSec-PTX.pdf'
+          }
         }
       }
     },
 
     sass: {
-      dist: {
+      options: {
+        sourcemap: 'none',
+        noCache: true
+      },
+      raw: {
+        options: {
+          style: 'expanded',
+        },
+        files: {
+          'dist/assets/css/main.css': ['src/styles/main.scss']
+        }
+      },
+      minified: {
         options: {
           style: 'compressed',
-          sourcemap: 'none',
-          noCache: true
         },
         files: {
           'dist/assets/css/main.min.css': ['src/styles/main.scss']
@@ -79,11 +95,14 @@ module.exports = function(grunt) {
         map: false,
         processors: [
           require('autoprefixer')({
-            browsers: ['> 1% in AU']
-          }),
+            browsers: ['> 1% in AU', 'IE > 9']
+          })
         ]
       },
-      dist: {
+      raw: {
+        src: 'dist/assets/css/main.css'
+      },
+      minified: {
         src: 'dist/assets/css/main.min.css'
       }
     },
@@ -91,6 +110,7 @@ module.exports = function(grunt) {
     jshint: {
       files: ['src/js/main.js'],
       options: {
+        force: true,
         globals: {
           jQuery: true,
           console: true,
@@ -103,7 +123,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'temp/main.min.js': ['src/js/main.js']
+          'temp/js/main.min.js': ['src/js/main.js']
         }
       }
     },
@@ -112,11 +132,30 @@ module.exports = function(grunt) {
       options: {
         separator: ';\n\n',
       },
-      dist: {
+      raw: {
         files: {
-          'dist/assets/js/main.min.js': ['src/js/vendor/jquery.min.js', 'src/js/vendor/velocity.min.js', 'temp/main.min.js']
+          'dist/assets/js/main.js': [
+            'bower_components/jquery/dist/jquery.min.js',
+            'src/js/main.js'
+          ]
         },
       },
+      minified: {
+        files: {
+          'dist/assets/js/main.min.js': [
+            'bower_components/jquery/dist/jquery.min.js',
+            'temp/js/main.min.js'
+          ]
+        },
+      },
+      outdated_browser: {
+        files: {
+          'dist/assets/js/outdated-browser.js': [
+            'bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
+            'src/js/outdated-browser-init.js'
+          ]
+        },
+      }
     },
 
     clean: {
@@ -172,6 +211,21 @@ module.exports = function(grunt) {
           to: ''
         }]
       }
+    },
+
+    inlinecss: {
+      main: {
+        options: {
+          removeStyleTags: false
+        },
+        files: [{
+          src: 'dist/emails/letter-of-authority.html',
+          dest: 'dist/emails/letter-of-authority-inline.html'
+        }, {
+          src: 'dist/emails/confirmation-email.html',
+          dest: 'dist/emails/confirmation-email-inline.html'
+        }]
+      }
     }
 
   });
@@ -190,10 +244,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-xml-sitemap');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-inline-css');
 
   // Available commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'inlinecss', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
 

@@ -1,20 +1,26 @@
-/* Normalisation cross-browser */
-@import 'normalize';
-
-/* SASS re-usables */
+/* SASS */
 @import 'variables';
-// @import 'mixins';
-// @import 'animations';
-
-/* For all pages */
+@import 'mixins';
+@import 'animations';
+/* Cross-browser normalisation */
+@import 'normalize';
+/* Fonts */
+@import 'fonts';
+/* Common to many pages */
 @import 'common';
 @import 'header';
 @import 'footer';
-
-/* Page specifics */
+@import 'ask-us';
+@import 'article';
+/* Specific to one page */
 @import 'landing';
 @import 'services';
+@import 'about';
+@import 'legislation-changes';
 @import 'contact';
-
+@import 'legal';
+@import 'form';
 /* Temporary */
 @import 'coming-soon';
+/* Outdate Browsers*/
+@import '../../bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.scss';

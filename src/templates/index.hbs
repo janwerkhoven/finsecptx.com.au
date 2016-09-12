@@ -1,7 +1,7 @@
 {{#extend "layout"}}
 
   {{#replace "meta"}}
-    <title>Finsec PTX</title>
+    <title>FinSec PTX - Leaders in transfering UK pensions to Australian supers</title>
     <meta name="description" content="Experts in transfering UK pensions to Australian superannuations">
   {{/replace}}
 
@@ -11,60 +11,126 @@
 
     <section id="hero">
       <div>
-        <h1>Leaders in UK pension transfers to Australian super funds</h1>
+        <h1><span>Leaders in </span>UK pension transfers to Australian super funds</h1>
         <div>
-          <a class="button" href="/am-I-eligible-to-transfer-my-UK-pension-to-Australian-super-funds">Am I eligible to transfer?</a>
+          <a href="{{formLink}}" title="{{formTitle}}" class="button big">Am I eligible?</a>
         </div>
+        <a href="#intro" class="button arrow"></a>
       </div>
     </section>
 
-    <section id="features">
+    <section id="intro">
       <div>
         <h2>Moved or returned to Australia for a better life? <span>We are passionate about making sure this happens.</span></h2>
-        <p>Recently both the UK and Australian Governments changed the rules for those of us wanting to transfer our UK pensions. Theses changes do add complexity, yet a transfer still remains advantageous in most cases. We make it our business to simplify the complex, so you can sit back and enjoy the move and let our QROPS specialists do their job.</p>
+        <p>Recently both the UK and Australian Governments changed the rules for those of us wanting to transfer our UK pensions. These changes do add complexity, yet a transfer still remains advantageous in most cases. <span>We make it our business to simplify
+          the complex, so you can sit back and enjoy the move and let our QROPS specialists do their job.</span></p>
         <ul>
           <li>
-            <h3>Expertise</h3>
-            <p>Our experts have earnt the trust of thousands with over 15 years experience in the pension transfer process.</p>
+            <a href="/about/">
+              <img src="/assets/img/landing/expertise.svg" width="100" height="100" alt="expertise in UK Pension transfers" />
+              <h3>Expertise</h3>
+              <p>Our experts have earnt the trust of thousands with over 15 years experience in the pension transfer process.</p>
+            </a>
           </li>
           <li>
-            <h3>Unique Approach</h3>
-            <p>Our approach makes the complex simple.</p>
+            <a href="/services/">
+              <img src="/assets/img/landing/unique-approach.svg" width="100" height="100" alt="unique approach" />
+              <h3>Unique Approach</h3>
+              <p>Our approach makes the complex simple.</p>
+            </a>
           </li>
           <li>
-            <h3>Success Based</h3>
-            <p>Our fees are based on the success of your transfer.</p>
+            <a href="/services/">
+              <img src="/assets/img/landing/success-based.svg" width="100" height="100" alt="success based" />
+              <h3>Success Based</h3>
+              <p>Our fees are based on the success of your transfer.</p>
+            </a>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="keep-informed">
+    <section id="articles">
       <div>
         <h2>Keep Informed</h2>
         <ul>
           <li>
-            <h3>Legislative Issues</h3>
+            <img src="/assets/img/legislation-changes/keep-informed-article-brexit.jpg" width="300" height="320" alt="article Brexit 2016: A FinSec Comment" />
+            <h3>Brexit 2016: A FinSec Comment</h3>
+            <div>
+              <p>28th June 2016</p>
+              <a href="/legislation-changes/brexit-2016"><img src="/assets/img/landing/arrow-right.svg" width="40" height="40" /></a>
+            </div>
           </li>
+
           <li>
-            <h3>Broader Advice Issues</h3>
+            <img src="/assets/img/landing/post-example-one@2x.jpg" width="300" height="320" alt="article about federal budget 2016-17" />
+            <h3>How the 2016/17 federal budget will affect your superannuation</h3>
+            <div>
+              <p>26th May 2016</p>
+              <a href="/legislation-changes/how-the-federal-budget-2017-will-affect-your-superannuation"><img src="/assets/img/landing/arrow-right.svg" width="40" height="40" /></a>
+            </div>
           </li>
+
           <li>
-            <p>Keep up to date with all of the current issues affecting UK Pension Transfers</p>
-            <a href="/keep-me-informed">Keep me informed</a>
+            <img src="/assets/img/landing/post-example-two@2x.jpg" width="300" height="320" alt="article Her Majesty's Revenue and Customs changes" />
+            <h3>Her Majesty's Revenue and Customs changes</h3>
+            <div>
+              <p>April 2015</p>
+              <a href="/legislation-changes/her-majestys-revenue-and-customs"><img src="/assets/img/landing/arrow-right.svg" width="40" height="40" /></a>
+            </div>
           </li>
+
+          <li class="ayem-special">
+            <p>Keep up to date with all of the news affecting UK Pension Transfers</p>
+            <a href="/keep-me-informed" title="formTitle" class="button">Keep me informed</a>
+          </li>
+        </ul>
+        <a href="/legislation-changes/" class="button">View all articles</a>
+      </div>
+    </section>
+
+    <section id="links">
+      <div>
+        <h2>Discover if it's time to transfer</h2>
+        <ul>
+          <li><a href="/services" class="button">Find out here</a></li>
+          <li><a href="/contact" class="button">Talk to a QROPS specialist</a></li>
+          <li><a href="{{pathPensionTransferGuide}}" class="button" target="_blank">Download the pension transfer <nobr>guide (PDF)</nobr></a></li>
         </ul>
       </div>
     </section>
 
-    <section id="discover">
+    <section id="get-in-touch">
       <div>
-        <h2>Discover if it’s time to transfer</h2>
-        <ul>
-          <li><a href="#">Find out now</a></li>
-          <li><a href="#">Talk to a QROPS specialist</a></li>
-          <li><a href="#">Download our pension transfer guide (PDF)</a></li>
-        </ul>
+        <h2>Providing personalised advice Australia wide</h2>
+        <div class="address">
+          <p>Head Office,
+            <nobr>Level 1, 10 Greenhill Road,</nobr>
+            <nobr>Wayville, SA 5034</nobr>
+          </p>
+          <p>
+            <nobr>Phone: <a href="tel:1300907370" target="_blank">1300 907 370</a>,</nobr>
+            <nobr>Email: <a href="mailto: ptx@finsecpartners.com.au" target="_blank">ptx@finsecpartners.com.au</a></nobr>
+          </p>
+        </div>
+        <div class="duo">
+
+          <div class="call david">
+            <h3>David Ford</h3>
+            <p>Working in UK Pensions since 1980, David emigrated from the UK to Australia in 1996 and is a leading expert in Pension Transfers to Australia.</p>
+            <a href="tel:+61428041896" target="_blank" class="button"><span class="name">Call David</span><span class="phone">0428 041 896</span></a>
+          </div>
+          <div class="call scott">
+            <h3>Scott Noell</h3>
+            <p>Financial Adviser with 30 years experience, the last 15 as a UK pension transfer specialist</p>
+            <a href="tel:+61400544515" target="_blank" class="button"><span class="name">Call Scott</span><span class="phone">0400 544 515</span></a>
+          </div>
+          <div class="img">
+            <img src="/assets/img/landing/david-ford-scott-noell-finsec-ptx@2x.png" alt="David Ford Scott Noell FinSec PTX" width="463" height="435" />
+          </div>
+
+        </div>
       </div>
     </section>
 

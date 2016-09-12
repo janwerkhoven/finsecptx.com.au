@@ -1,0 +1,644 @@
+body.form {
+  background: $finsec-royal-blue url('/assets/img/form/background-2000px.jpg') 50% 100% / cover fixed;
+  footer,
+  header {
+    display: none;
+  }
+  main nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 28px 30px;
+    h1 {
+      font-family: $medium;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin: 20px 0;
+    }
+    .logo {
+      margin: 0 0 30px;
+      display: block;
+    }
+    img {
+      width: 240px;
+      height: auto;
+    }
+    a.back {
+      display: inline-block;
+      &:hover {
+        #arrow-right {
+          stroke: white;
+        }
+      }
+      svg {
+        transform: rotate(180deg);
+        #arrow-right {
+          transition: stroke 200ms ease-out;
+          stroke: $finsec-that-other-blue;
+        }
+      }
+    }
+  }
+  aside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 28px 30px;
+    p {
+      font-family: $medium;
+      font-size: 24px;
+      color: $finsec-that-other-blue;
+      margin: 0;
+      text-align: center;
+      line-height: 100%;
+    }
+    ul {
+      li {
+        background: #090921;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 20px;
+        &.done {
+          background: #6b6b99;
+        }
+      }
+    }
+  }
+  section {
+    display: none;
+    text-align: center;
+    > div {
+      min-height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      max-width: 440px;
+      padding: 220px 0;
+    }
+    h1 {
+      margin-bottom: 26px;
+    }
+    p {
+      font-size: 26px;
+      margin: 0 0 26px;
+      font-family: $bold;
+      small {
+        display: block;
+        font-size: 18px;
+        line-height: 150%;
+      }
+      em {
+        font-style: normal;
+        color: $finsec-kashmir-blue;
+      }
+    }
+    hr {
+      width: 100%;
+      border: 0;
+      border-top: 2px dashed #FFF;
+      margin: 40px 0 35px;
+    }
+    .errors {
+      position: relative;
+      p {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: -20px;
+        font-size: 20px;
+        background: #fff;
+        color: #212c48;
+        padding: 0 8px;
+        margin: 0;
+      }
+    }
+    .buttons {
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-top: 20px;
+      &.vertical {
+        flex-flow: column nowrap;
+        align-items: center;
+        a.button,
+        button {
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+      a.button,
+      button {
+        font-size: 22px;
+        font-family: $bold;
+        line-height: 150%;
+        &.back {
+          text-transform: none;
+          border-color: transparent;
+          padding: 0;
+          color: $finsec-kashmir-blue;
+          &:focus,
+          &:hover {
+            color: white;
+            background: none;
+          }
+        }
+        &.pdf {
+          width: 400px;
+        }
+        &[disabled] {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+  .field {
+    margin-bottom: 60px;
+    label {
+      width: 100%;
+      display: block;
+      font-family: $bold;
+      font-size: 25px;
+      line-height: 150%;
+      text-align: left;
+      small {
+        font-size: 18px;
+        display: block;
+        line-height: 20px;
+      }
+      span {
+        font-family: $black;
+      }
+    }
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      background: none;
+      border: 0;
+      font-size: 30px;
+      outline: none;
+      line-height: 150%;
+      box-sizing: border-box;
+      margin-top: 10px;
+      font-family: $bold;
+      padding: 0 2px;
+      font-size: 34px;
+    }
+    textarea {
+      border: 3px solid $finsec-kashmir-blue;
+      padding: 20px 28px;
+      font-size: 20px;
+      font-family: $medium;
+      max-width: 100%;
+      min-width: 100%;
+    }
+    &.email,
+    &.text {
+      position: relative;
+      &.focus {
+        &:after {
+          background: white;
+        }
+      }
+      &.focus,
+      &.has-value {
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+      &:after,
+      &:before {
+        content: ' ';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: $finsec-that-other-blue;
+        transition: 400ms all ease-out;
+      }
+      &:after {
+        color: white;
+        width: 0;
+        opacity: 0;
+      }
+    }
+    &.email {
+      input {
+        font-size: 25px;
+      }
+    }
+    &.select {
+      position: relative;
+      > div {
+        border: 2px solid $finsec-that-other-blue;
+        margin-top: 10px;
+        transition: 300ms border-color ease-out;
+        &:hover {
+          > div {
+            #arrow-right {
+              stroke: white;
+            }
+          }
+        }
+        select {
+          width: 100%;
+          height: 55px;
+          background: none;
+          border: 0;
+          outline: 0;
+          font-size: 34px;
+          line-height: 180%;
+          font-family: $bold;
+          appearance: none;
+          padding: 0 30px 0 16px;
+          cursor: pointer;
+          color: $finsec-that-other-blue;
+          padding-right: 70px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &.selected {
+            color: #FFF;
+          }
+        }
+        > div {
+          position: absolute;
+          z-index: -1;
+          right: 0;
+          bottom: 0;
+          height: 55px;
+          width: 55px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid $finsec-that-other-blue;
+          svg {
+            width: 60%;
+            #arrow-right {
+              transition: 300ms stroke ease-out;
+              stroke: $finsec-that-other-blue;
+            }
+          }
+        }
+      }
+    }
+    &.checkboxes {
+      label {
+        margin-bottom: 30px;
+      }
+      button {
+        position: relative;
+        color: $finsec-that-other-blue;
+        border: 0;
+        text-transform: none;
+        font-size: 20px;
+        font-family: $medium;
+        line-height: 150%;
+        padding-left: 60px;
+        transition: 300ms all ease-out;
+        text-align: left;
+        width: 100%;
+        padding: 5px 5px 5px 50px;
+        &:after {
+          position: absolute;
+          content: ' ';
+          left: 5px;
+          top: 5px;
+          width: 24px;
+          height: 24px;
+          border: 3px solid $finsec-that-other-blue;
+          transition: 300ms all ease-out;
+        }
+        &.checked {
+          color: white;
+          &:after {
+            border-color: white;
+            background: white;
+          }
+        }
+      }
+    }
+    &.range {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      label {
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        border: 2px solid $finsec-that-other-blue;
+        width: 70px;
+        text-align: center;
+        line-height: 46px;
+        padding-top: 5px;
+      }
+      input[type="range"] {
+        width: 360px;
+      }
+    }
+    &.option {
+      > div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        button {
+          width: 48%;
+          font-size: 20px;
+          font-family: $bold;
+          &.inactive {
+            text-decoration: line-through;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+    &.currency {
+      > span {
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+        font-size: 34px;
+        text-align: left;
+        line-height: 40px;
+        font-family: $bold;
+        color: $finsec-kashmir-blue;
+      }
+      input {
+        padding-left: 30px;
+      }
+    }
+  }
+  .group {
+    .field {
+      margin-bottom: 20px;
+    }
+    &.address {
+      margin-bottom: 40px;
+    }
+    &.numbered {
+      input {
+        padding-left: 35px;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        font-size: 24px;
+        text-align: left;
+        line-height: 40px;
+        font-family: $bold;
+        color: $finsec-kashmir-blue;
+      }
+      &.nc-contributions {
+        .field {
+          &:after,
+          &:before {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+  .multi {
+    ul {
+      li {
+        display: flex;
+        flex-flow: row nowrap;
+        span {
+          font-size: 20px;
+          width: 40px;
+          text-align: left;
+          line-height: 40px;
+          margin-top: 18px;
+          font-family: $bold;
+          color: $finsec-kashmir-blue;
+        }
+        .field {
+          margin: 0;
+        }
+      }
+    }
+  }
+  img.check {
+    width: 90px;
+    display: block;
+    margin: 0 auto 20px;
+    transform: translateX(12px);
+  }
+  #start {
+    display: block;
+  }
+  #eligible,
+  #not-yet-eligible {
+    > div {
+      max-width: 540px;
+    }
+  }
+  #eligible {
+    .buttons {
+      margin: 12px 0 0;
+    }
+  }
+  #start-enquiry {
+    > div {
+      max-width: 500px;
+      small {
+        max-width: 380px;
+        display: inline-block;
+        margin: 0 auto;
+      }
+      button.next {
+        margin-bottom: 46px;
+      }
+    }
+  }
+  #residency {
+    small {
+      color: $finsec-kashmir-blue;
+      margin: 20px 0;
+    }
+  }
+  #taxable-income {
+    .option {
+      > div {
+        margin-top: 30px;
+      }
+    }
+  }
+  #objectives {
+    > div {
+      max-width: 600px;
+    }
+  }
+  #review {
+    > div {
+      max-width: 1080px;
+      > p {
+        max-width: 660px;
+        margin: 0 auto 40px;
+      }
+    }
+    p {
+      max-width: none;
+    }
+    .buttons {
+      margin-top: 60px;
+    }
+    li {
+      // A4 = 210 × 297
+      // 1080 x 1527
+      font-size: 16px;
+      background: white;
+      box-shadow: 0 10px 20px RGBA(0,0,0,0.2);
+      margin: 20px;
+      padding: 120px 80px;
+      @media (min-width: 1080px) {
+        height: 1527px;
+      }
+      p {
+        font-size: 18px;
+        color: $finsec-black-pearl;
+        text-align: left;
+        font-family: $book;
+        max-width: none;
+        strong {
+          font-family: $bold;
+          color: $finsec-royal-blue;
+        }
+      }
+    }
+  }
+
+  // INPUT PLACEHOLDERS
+  ::-webkit-input-placeholder {
+    color: $finsec-that-other-blue;
+  }
+
+  :-moz-placeholder {
+    color: $finsec-that-other-blue;
+  }
+
+  ::-moz-placeholder {
+    color: $finsec-that-other-blue;
+  }
+
+  :-ms-input-placeholder {
+    color: $finsec-that-other-blue;
+  }
+
+  // INPUT RANGES
+  input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid $finsec-that-other-blue;
+    border-radius: 2px;
+    height: 4px;
+
+    /*required for proper track sizing in FF*/
+    width: 300px;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 4px;
+    background: $finsec-that-other-blue;
+    border: none;
+    border-radius: 2px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: $finsec-that-other-blue;
+    margin-top: -10px;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: $finsec-that-other-blue;
+  }
+
+  input[type=range]::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: $finsec-that-other-blue;
+    border: none;
+    border-radius: 3px;
+  }
+  input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: $finsec-that-other-blue;
+  }
+
+  /*hide the outline behind the border*/
+  input[type=range]:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  input[type=range]::-ms-track {
+    width: 300px;
+    height: 5px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: $finsec-that-other-blue;
+    border-radius: 10px;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: $finsec-that-other-blue;
+    border-radius: 10px;
+  }
+  input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: $finsec-that-other-blue;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: $finsec-that-other-blue;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: $finsec-that-other-blue;
+  }
+}
+#subscribe {
+  #start {
+    .field {
+      margin-bottom: 20px;
+    }
+    .buttons {
+      margin-top: 40px;
+    }
+  }
+  #phone-state-age {
+    .errors {
+      p {
+        position: relative;
+      }
+    }
+  }
+}
