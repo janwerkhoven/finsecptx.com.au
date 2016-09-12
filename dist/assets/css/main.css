@@ -716,7 +716,7 @@ i.icon.burger span {
     margin-top: 20px;
   }
 }
-#hero a > img {
+#hero a img {
   position: absolute;
   width: 60px;
   bottom: 40px;
@@ -749,13 +749,15 @@ i.icon.burger span {
     background-color: transparent;
   }
 }
-#hero a > img:hover {
-  background: RGBA(255, 255, 255, 0.5) !important;
-}
 @media (max-width: 400px) {
-  #hero a > img {
+  #hero a img {
     width: 8vh;
   }
+}
+#hero a > img:hover {
+  -webkit-animation: none;
+          animation: none;
+  background: RGBA(255, 255, 255, 0.5) !important;
 }
 
 #articles {
