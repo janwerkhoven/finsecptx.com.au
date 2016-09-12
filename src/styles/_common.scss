@@ -392,21 +392,10 @@ i {
           margin: 20px;
         }
       }
-      &:nth-last-child(2) {
-        display: none;
-        @media (max-width: 1040px) and (min-width: 701px) {
-          display: block;
-        }
-      }
-      // &:not(:last-child) {
-      //   a {
-      //     position: absolute;
-      //     right: 20px;
-      //     bottom: 20px;
-      //     img {
-      //       width: 40px;
-      //       height: 40px;
-      //     }
+      // &:nth-last-child(2) {
+      //   display: none;
+      //   @media (max-width: 1040px) and (min-width: 701px) {
+      //     display: block;
       //   }
       // }
       &.ayem-special {

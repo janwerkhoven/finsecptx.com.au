@@ -875,14 +875,6 @@ i.icon.burger span {
   height: 40px;
   margin: 20px;
 }
-#articles ul li:nth-last-child(2) {
-  display: none;
-}
-@media (max-width: 1040px) and (min-width: 701px) {
-  #articles ul li:nth-last-child(2) {
-    display: block;
-  }
-}
 #articles ul li.ayem-special {
   background: #4c6f93;
   padding: 30px;
