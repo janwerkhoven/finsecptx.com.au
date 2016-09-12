@@ -349,41 +349,6 @@ a:hover {
   text-decoration: none;
 }
 
-#hero img {
-  position: relative;
-  top: 14vh;
-  width: 60px;
-  margin: 0 auto;
-  border-radius: 100%;
-  -webkit-animation: pulse 10s infinite;
-          animation: pulse 10s infinite;
-}
-@-webkit-keyframes pulse {
-  0% {
-    background-color: transparent;
-  }
-  50% {
-    background: RGBA(255, 255, 255, 0.5);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-@keyframes pulse {
-  0% {
-    background-color: transparent;
-  }
-  50% {
-    background: RGBA(255, 255, 255, 0.5);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-#hero img:hover {
-  background: RGBA(255, 255, 255, 0.5);
-}
-
 a.button,
 button {
   font-family: "Rick-Medium", sans-serif;
@@ -1563,6 +1528,17 @@ footer #copyright p a:hover {
   -webkit-animation: pulse 10s infinite;
           animation: pulse 10s infinite;
 }
+@-webkit-keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background: RGBA(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
 @keyframes pulse {
   0% {
     background-color: transparent;
@@ -1575,7 +1551,7 @@ footer #copyright p a:hover {
   }
 }
 #landing #hero img:hover {
-  background: RGBA(255, 255, 255, 0.5);
+  background: RGBA(255, 255, 255, 0.5) !important;
 }
 #landing #intro {
   background: #0f1d3c;
