@@ -6,8 +6,32 @@ if(e&&1===a.nodeType)while(c=e[d++])a.removeAttribute(c)}}),hb={set:function(a,b
 
 isProduction = location.host === 'www.finsecptx.com.au' ? true : false;
 environmentLabel = isProduction ? '[LIVE WEBSITE]' : '[STAGING WEBSITE]' + ' ';
-
+environment = isProduction ? 'production' : 'staging';
 answers = {};
+
+// Google Analytics
+
+/* jshint ignore:start */
+
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+/* jshint ignore:end */
+
+if (!!ga) {
+  ga('create', 'UA-34474019-9', 'auto');
+  ga('set', { dimension1: environment });
+  ga('send', 'pageview');
+}
 
 // The AJAX request to Formspree
 function formSpree(data) {
@@ -30,10 +54,9 @@ function formSpree(data) {
 // The AJAX request to Webmerge
 function webMerge(data) {
   var deferred = $.Deferred();
-  var url = 'https://www.webmerge.me/merge/72409/2ygbxs?test=1'; // Testing
-  // var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
-  if (isProduction) {
-    url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
+  var url = 'https://www.webmerge.me/merge/72409/2ygbxs'; // Live
+  if (!isProduction) {
+    url = url + '?test=1'; // Testing
   }
   $.ajax({
     type: 'POST',
@@ -194,6 +217,7 @@ function lazyPanda() {
     pension_fund_2_reference: "12345 XRR",
     pension_fund_2_street: "51 Strafford Street",
     pension_fund_2_suburb: "London",
+    pension_fund_3: "Employer pension #3",
     phone: "04247887652",
     postcode: "3000",
     residency: "Permanent",
