@@ -356,13 +356,10 @@ i {
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      width: 30%;
+      width: 48%;
       background: #c6c5c5;
       max-width: 400px;
       margin: 1% 1% 20px;
-      @media (max-width: 1040px) {
-        width: 48%;
-      }
       @media (max-width: 700px) {
         width: 100%;
         margin: 0 auto 20px;
@@ -392,6 +389,7 @@ i {
           margin: 20px;
         }
       }
+      // USED FOR WHEN THERE ARE AN ODD NUMBER OF ARTICLES
       // &:nth-last-child(2) {
       //   display: none;
       //   @media (max-width: 1040px) and (min-width: 701px) {

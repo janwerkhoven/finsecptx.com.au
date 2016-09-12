@@ -828,15 +828,10 @@ i.icon.burger span {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  width: 30%;
+  width: 48%;
   background: #c6c5c5;
   max-width: 400px;
   margin: 1% 1% 20px;
-}
-@media (max-width: 1040px) {
-  #articles ul li {
-    width: 48%;
-  }
 }
 @media (max-width: 700px) {
   #articles ul li {
@@ -2133,6 +2128,11 @@ footer #copyright p a:hover {
 @media (max-width: 900px) {
   #legislation-changes main #hero {
     background-attachment: scroll;
+  }
+}
+@media (min-width: 1040px) {
+  #legislation-changes main #articles ul li {
+    width: 30%;
   }
 }
 
