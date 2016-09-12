@@ -651,6 +651,11 @@ i.icon.burger span {
   }
 }
 
+@media (max-width: 400px) {
+  #hero {
+    height: 100vh;
+  }
+}
 #hero > div {
   position: relative;
   height: 100%;
@@ -688,7 +693,7 @@ i.icon.burger span {
 }
 @media (max-width: 600px) {
   #hero h1 {
-    font-size: 34px;
+    font-size: 5vh;
   }
 }
 #hero h1 + div a.button {
@@ -705,219 +710,51 @@ i.icon.burger span {
 }
 @media (max-width: 650px) {
   #hero h1 + div a.button {
-    font-size: 18px;
+    font-size: 15px;
     padding: 9.75px 19.5px 7.8px;
     border-width: 3px;
     margin-top: 20px;
   }
 }
-#hero a.button.arrow {
+#hero a > img {
   position: absolute;
-  bottom: 4vh;
-  bottom: 4vh;
+  width: 60px;
+  bottom: 40px;
   left: 50%;
-  margin-left: -35px;
-  min-width: 50px;
-  min-height: 50px;
-  border-width: 3px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  border-radius: 100%;
+  -webkit-animation: pulse 3s infinite;
+          animation: pulse 3s infinite;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 40.96px;
+@-webkit-keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background: RGBA(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: transparent;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 30.72px;
+@keyframes pulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background: RGBA(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: transparent;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 19.2px;
-  }
+#hero a > img:hover {
+  background: RGBA(255, 255, 255, 0.5) !important;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 12.8px;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 22.72px;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 12.8px;
-  }
-}
-@media (max-height: 770px) {
-  #hero a.button.arrow {
-    width: 9vh;
-    width: 9vh;
-    height: 9vh;
-    height: 9vh;
-    margin-left: -4.5vh;
-    margin-left: -4.5vh;
-    bottom: 3vh;
-    bottom: 3vh;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    width: 92.16px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    width: 69.12px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    width: 43.2px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    width: 28.8px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    width: 51.12px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    width: 28.8px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    height: 92.16px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    height: 69.12px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    height: 43.2px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    height: 28.8px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    height: 51.12px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    height: 28.8px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    margin-left: -46.08px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    margin-left: -34.56px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    margin-left: -21.6px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    margin-left: -14.4px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    margin-left: -25.56px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    margin-left: -14.4px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 30.72px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 23.04px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 14.4px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 9.6px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow {
-    bottom: 17.04px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow {
-    bottom: 9.6px;
-  }
-}
-@media (max-height: 770px) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 3.5vh;
-    height: 3.5vh;
-    min-height: 20px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 35.84px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 26.88px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 16.8px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 11.2px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: portrait) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 19.88px;
-  }
-}
-@media only screen and (max-height: 770px) and (-webkit-min-device-pixel-ratio: 1) and (device-width: 320px) and (device-height: 568px) and (orientation: landscape) {
-  #hero a.button.arrow:after, #hero a.button.arrow:before {
-    height: 11.2px;
+@media (max-width: 400px) {
+  #hero a > img {
+    width: 8vh;
   }
 }
 
@@ -1232,6 +1069,7 @@ header nav .menu {
     left: 0;
     background: rgba(15, 29, 60, 0.8);
     display: block;
+    margin: 0;
   }
   header nav .menu.fixed ul {
     position: fixed;
@@ -1513,45 +1351,6 @@ footer #copyright p a:hover {
 /* Specific to one page */
 #landing #hero {
   background: #191925 url("/assets/img/landing/hero-bg-london-2000.jpg") 63% 50%/cover;
-}
-@media (max-width: 400px) {
-  #landing #hero {
-    height: 180vw;
-  }
-}
-#landing #hero img {
-  position: relative;
-  top: 14vh;
-  width: 60px;
-  margin: 0 auto;
-  border-radius: 100%;
-  -webkit-animation: pulse 10s infinite;
-          animation: pulse 10s infinite;
-}
-@-webkit-keyframes pulse {
-  0% {
-    background-color: transparent;
-  }
-  50% {
-    background: RGBA(255, 255, 255, 0.5);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-@keyframes pulse {
-  0% {
-    background-color: transparent;
-  }
-  50% {
-    background: RGBA(255, 255, 255, 0.5);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-#landing #hero img:hover {
-  background: RGBA(255, 255, 255, 0.5) !important;
 }
 #landing #intro {
   background: #0f1d3c;
