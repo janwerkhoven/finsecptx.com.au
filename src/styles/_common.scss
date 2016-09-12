@@ -364,65 +364,80 @@ i {
         width: 100%;
         margin: 0 auto 20px;
       }
-      img {
+      a > img {
         width: 100%;
         height: auto;
       }
-      h3 {
+      a > h3 {
         margin: 20px;
         text-transform: uppercase;
         font-size: 22px;
       }
-      div {
+      > div {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: auto;
+        padding-top: auto;
+        margin: 0;
         p {
-          margin: 20px;
+          padding: 20px;
           font-size: 20px;
           font-family: $medium;
+          margin: 0;
         }
         img {
+          border-radius: 100%;
           width: 40px;
           height: 40px;
           margin: 20px;
+          &:hover {
+            background: RGBA(255, 255, 255, 0.5);
+          }
         }
       }
-      // USED FOR WHEN THERE ARE AN ODD NUMBER OF ARTICLES
+      // USED FOR WHEN THERE ARE AN even NUMBER OF ARTICLES (may be outdated regarding additional a tag)
       // &:nth-last-child(2) {
       //   display: none;
       //   @media (max-width: 1040px) and (min-width: 701px) {
       //     display: block;
       //   }
       // }
-      &.ayem-special {
-        background: $finsec-kashmir-blue;
-        padding: 30px;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        @media (max-width: 500px) {
-          padding: 20px;
-        }
-        p {
-          font-size: 26px;
-          margin: 10px 0;
-          line-height: 150%;
-          font-family: $medium;
-        }
-        a.button {
-          position: relative;
-          font-size: 24px;
-          font-family: $medium;
-          text-align: center;
-          margin-top: 60px;
-          line-height: 150%;
-          padding: 9px 20px 8px;
-          @media (max-width: 380px) {
-            font-size: 6vw;
-          }
+    }
+    li:hover {
+      > a img {
+        transform: scale(1.05);
+        transition: all 0.5s ease;
+        z-index: -23;
+      }
+      overflow: hidden;
+    }
+    .ayem-special {
+      background: $finsec-kashmir-blue;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      @media (max-width: 500px) {
+        padding: 20px;
+      }
+      p {
+        font-size: 26px;
+        margin: 10px 0;
+        line-height: 150%;
+        font-family: $medium;
+      }
+      a.button {
+        position: relative;
+        font-size: 24px;
+        font-family: $medium;
+        text-align: center;
+        margin-top: 60px;
+        line-height: 150%;
+        padding: 9px 20px 8px;
+        @media (max-width: 380px) {
+          font-size: 6vw;
         }
       }
     }

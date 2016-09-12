@@ -839,38 +839,56 @@ i.icon.burger span {
     margin: 0 auto 20px;
   }
 }
-#articles ul li img {
+#articles ul li a > img {
   width: 100%;
   height: auto;
 }
-#articles ul li h3 {
+#articles ul li a > h3 {
   margin: 20px;
   text-transform: uppercase;
   font-size: 22px;
 }
-#articles ul li div {
+#articles ul li > div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: auto;
+  padding-top: auto;
+  margin: 0;
 }
-#articles ul li div p {
-  margin: 20px;
+#articles ul li > div p {
+  padding: 20px;
   font-size: 20px;
   font-family: "Rick-Medium", sans-serif;
+  margin: 0;
 }
-#articles ul li div img {
+#articles ul li > div img {
+  border-radius: 100%;
   width: 40px;
   height: 40px;
   margin: 20px;
 }
-#articles ul li.ayem-special {
+#articles ul li > div img:hover {
+  background: RGBA(255, 255, 255, 0.5);
+}
+#articles ul li:hover {
+  overflow: hidden;
+}
+#articles ul li:hover > a img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  transition: all 0.5s ease;
+  z-index: -23;
+}
+#articles ul .ayem-special {
   background: #4c6f93;
   padding: 30px;
   box-sizing: border-box;
@@ -885,17 +903,17 @@ i.icon.burger span {
           justify-content: space-between;
 }
 @media (max-width: 500px) {
-  #articles ul li.ayem-special {
+  #articles ul .ayem-special {
     padding: 20px;
   }
 }
-#articles ul li.ayem-special p {
+#articles ul .ayem-special p {
   font-size: 26px;
   margin: 10px 0;
   line-height: 150%;
   font-family: "Rick-Medium", sans-serif;
 }
-#articles ul li.ayem-special a.button {
+#articles ul .ayem-special a.button {
   position: relative;
   font-size: 24px;
   font-family: "Rick-Medium", sans-serif;
@@ -905,7 +923,7 @@ i.icon.burger span {
   padding: 9px 20px 8px;
 }
 @media (max-width: 380px) {
-  #articles ul li.ayem-special a.button {
+  #articles ul .ayem-special a.button {
     font-size: 6vw;
   }
 }
