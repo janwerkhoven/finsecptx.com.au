@@ -1,32 +1,6 @@
 #landing {
   #hero {
     background: #191925 url('/assets/img/landing/hero-bg-london-2000.jpg') 63% 50% / cover;
-    @media (max-width: 400px) {
-      height: 180vw;
-    }
-    img {
-      position: relative;
-      top: 14vh;
-      width: 60px;
-      margin: 0 auto;
-      border-radius: 100%;
-      animation: pulse 10s infinite;
-      @keyframes pulse {
-        0% {
-          background-color: transparent;
-        }
-        50% {
-          background: RGBA(255, 255, 255, 0.5);
-        }
-        100% {
-          background-color: transparent;
-        }
-      }
-      &:hover {
-        background: RGBA(255, 255, 255, 0.5) !important;
-        // transition: all 200ms ease-out;
-      }
-    }
   }
   #intro {
     background: $finsec-royal-blue;
