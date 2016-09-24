@@ -224,7 +224,6 @@ function addLoadEvent(func) {
     }
   }
 }
-
 //call plugin function after DOM ready
 addLoadEvent(function() {
   outdatedBrowser({

@@ -123,7 +123,9 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'temp/js/main.min.js': ['src/js/main.js']
+          'temp/js/main.min.js': ['src/js/main.js'],
+          'temp/js/localstorage_safari_private_shim.min.js': ['src/js/localstorage_safari_private_shim.js'],
+          'dist/js/outdated-browser.min.js': ['src/js/outdated-browser.js']
         }
       }
     },
@@ -136,25 +138,19 @@ module.exports = function(grunt) {
         files: {
           'dist/assets/js/main.js': [
             'bower_components/jquery/dist/jquery.min.js',
+            'src/js/localstorage_safari_private_shim.js',
             'src/js/main.js'
           ]
-        },
+        }
       },
       minified: {
         files: {
           'dist/assets/js/main.min.js': [
             'bower_components/jquery/dist/jquery.min.js',
+            'temp/js/localstorage_safari_private_shim.min.js',
             'temp/js/main.min.js'
           ]
-        },
-      },
-      outdated_browser: {
-        files: {
-          'dist/assets/js/outdated-browser.js': [
-            'bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
-            'src/js/outdated-browser-init.js'
-          ]
-        },
+        }
       }
     },
 
