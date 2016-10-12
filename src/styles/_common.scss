@@ -236,6 +236,9 @@ i {
     height: 160vw;
     @include viewport-unit(height, 160vw);
   }
+  @media (max-width: 400px) {
+    height: 100vh;
+  }
   > div {
     position: relative;
     height: 100%;
@@ -261,7 +264,7 @@ i {
       font-size: 6vw;
     }
     @media (max-width: 600px) {
-      font-size: 34px;
+      font-size: 5vh;
     }
     &+div {
       a.button {
@@ -274,7 +277,7 @@ i {
           padding: 1.5vw 3vw 1.2vw;
         }
         @media (max-width: 650px) {
-          font-size: 18px;
+          font-size: 15px;
           padding: 9.75px 19.5px 7.8px;
           border-width: 3px;
           margin-top: 20px;
@@ -282,31 +285,32 @@ i {
       }
     }
   }
-  a.button.arrow {
+  a img {
     position: absolute;
-    bottom: 4vh;
-    @include viewport-unit(bottom, 4vh);
+    width: 60px;
+    bottom: 40px;
     left: 50%;
-    margin-left: -35px;
-    min-width: 50px;
-    min-height: 50px;
-    border-width: 3px;
-    @media (max-height: 770px) {
-      width: 9vh;
-      @include viewport-unit(width, 9vh);
-      height: 9vh;
-      @include viewport-unit(height, 9vh);
-      margin-left: -4.5vh;
-      @include viewport-unit(margin-left, -4.5vh);
-      bottom: 3vh;
-      @include viewport-unit(bottom, 3vh);
-      &:after,
-      &:before {
-        height: 3.5vh;
-        @include viewport-unit(height, 3.5vh);
-        min-height: 20px;
+    transform: translate(-50%, 0);
+    border-radius: 100%;
+    animation: pulse 3s infinite;
+    @keyframes pulse {
+      0% {
+        background-color: transparent;
+      }
+      50% {
+        background: RGBA(255, 255, 255, 0.5);
+      }
+      100% {
+        background-color: transparent;
       }
     }
+    @media (max-width: 400px) {
+      width: 8vh;
+    }
+  }
+  a > img:hover {
+    animation: none;
+    background: RGBA(255, 255, 255, 0.5) !important;
   }
 }
 #articles {
@@ -353,86 +357,92 @@ i {
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      width: 30%;
+      width: 48%;
       background: #c6c5c5;
       max-width: 400px;
       margin: 1% 1% 20px;
-      @media (max-width: 1040px) {
-        width: 48%;
-      }
       @media (max-width: 700px) {
         width: 100%;
         margin: 0 auto 20px;
       }
-      img {
+      div {
         width: 100%;
-        height: auto;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
-      h3 {
+      a > h3 {
         margin: 20px;
         text-transform: uppercase;
         font-size: 22px;
       }
-      div {
+      > div {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: auto;
+        padding-top: auto;
+        margin: 0;
         p {
-          margin: 20px;
+          padding: 20px;
           font-size: 20px;
           font-family: $medium;
+          margin: 0;
         }
         img {
+          border-radius: 100%;
           width: 40px;
           height: 40px;
           margin: 20px;
+          &:hover {
+            background: RGBA(255, 255, 255, 0.5);
+          }
         }
       }
-      &:nth-last-child(2) {
-        display: none;
-        @media (max-width: 1040px) and (min-width: 701px) {
-          display: block;
-        }
-      }
-      // &:not(:last-child) {
-      //   a {
-      //     position: absolute;
-      //     right: 20px;
-      //     bottom: 20px;
-      //     img {
-      //       width: 40px;
-      //       height: 40px;
-      //     }
+      // USED FOR WHEN THERE ARE AN even NUMBER OF ARTICLES (may be outdated regarding additional a tag)
+      // &:nth-last-child(2) {
+      //   display: none;
+      //   @media (max-width: 1040px) and (min-width: 701px) {
+      //     display: block;
       //   }
       // }
-      &.ayem-special {
-        background: $finsec-kashmir-blue;
-        padding: 30px;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        @media (max-width: 500px) {
-          padding: 20px;
-        }
-        p {
-          font-size: 26px;
-          margin: 10px 0;
-          line-height: 150%;
-          font-family: $medium;
-        }
-        a.button {
-          position: relative;
-          font-size: 24px;
-          font-family: $medium;
-          text-align: center;
-          margin-top: 60px;
-          line-height: 150%;
-          padding: 9px 20px 8px;
-          @media (max-width: 380px) {
-            font-size: 6vw;
-          }
+    }
+    li:hover {
+      > a img {
+        transform: scale(1.05);
+        transition: all 0.5s ease;
+        z-index: -23;
+      }
+      overflow: hidden;
+    }
+    .ayem-special {
+      background: $finsec-kashmir-blue;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      @media (max-width: 500px) {
+        padding: 20px;
+      }
+      p {
+        font-size: 26px;
+        margin: 10px 0;
+        line-height: 150%;
+        font-family: $medium;
+      }
+      a.button {
+        position: relative;
+        font-size: 24px;
+        font-family: $medium;
+        text-align: center;
+        margin-top: 60px;
+        line-height: 150%;
+        padding: 9px 20px 8px;
+        @media (max-width: 380px) {
+          font-size: 6vw;
         }
       }
     }
