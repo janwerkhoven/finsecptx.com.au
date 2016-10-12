@@ -1,7 +1,7 @@
 # FinSecPTX website
 
 #### What
-The [website](http://finsecptx.com/) of an Adelaide based consultants specialised in transfering UK Pension to Australian supers.
+The [website](http://finsecptx.com/) of an Adelaide based consultants specialised in transferring UK Pension to Australian supers.
 
 #### Highlights
 * Built with Grunt, Handlebars, SASS, Atom & Git
