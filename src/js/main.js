@@ -395,14 +395,6 @@ $(document).ready(function() {
     }
   });
 
-  // Warn outdated browsers to update
-  outdatedBrowser({
-    bgColor: '#f25648',
-    color: '#ffffff',
-    lowerThan: 'transform',
-    languagePath: ''
-  });
-
   // FORM LOGIC -----------------------------------------------------------------------
 
   jQuery.fn.extend({

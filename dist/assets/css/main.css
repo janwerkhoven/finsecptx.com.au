@@ -2511,8 +2511,8 @@ body.form section > div {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 440px;
-  padding: 220px 0;
+  max-width: 480px;
+  padding: 220px 20px;
 }
 body.form section h1 {
   margin-bottom: 26px;
