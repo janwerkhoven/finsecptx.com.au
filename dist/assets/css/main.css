@@ -1695,15 +1695,30 @@ footer #copyright p a:hover {
 #services main #below-45 > div,
 #services main #below-55 > div,
 #services main #over-55 > div {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
           align-items: center;
 }
+#services main #below-45 > div > div,
+#services main #below-55 > div > div,
+#services main #over-55 > div > div {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
 @media (min-width: 901px) {
-  #services main #below-45 > div,
-  #services main #below-55 > div,
-  #services main #over-55 > div {
+  #services main #below-45 > div > div,
+  #services main #below-55 > div > div,
+  #services main #over-55 > div > div {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -1717,24 +1732,24 @@ footer #copyright p a:hover {
   }
 }
 @media (max-width: 900px) {
-  #services main #below-45 > div,
-  #services main #below-55 > div,
-  #services main #over-55 > div {
+  #services main #below-45 > div > div,
+  #services main #below-55 > div > div,
+  #services main #over-55 > div > div {
     padding: 20vw 20px;
     max-width: 500px;
   }
 }
 @media (min-width: 901px) {
-  #services main #below-45 > div > div:first-child,
-  #services main #below-55 > div > div:first-child,
-  #services main #over-55 > div > div:first-child {
+  #services main #below-45 > div > div > div:first-child,
+  #services main #below-55 > div > div > div:first-child,
+  #services main #over-55 > div > div > div:first-child {
     width: 54%;
   }
 }
 @media (min-width: 901px) {
-  #services main #below-45 > div > div:last-child,
-  #services main #below-55 > div > div:last-child,
-  #services main #over-55 > div > div:last-child {
+  #services main #below-45 > div > div > div:last-child,
+  #services main #below-55 > div > div > div:last-child,
+  #services main #over-55 > div > div > div:last-child {
     width: 40%;
     max-width: 400px;
     display: -webkit-flex;
@@ -1829,6 +1844,15 @@ footer #copyright p a:hover {
 }
 #services main #below-45 {
   background: #4c6f93;
+}
+#services main #below-45 > div > div {
+  padding-bottom: 6vw !important;
+}
+#services main #below-45 .disclaimer {
+  padding: 0 40px 6vw;
+  max-width: none;
+  font-style: italic;
+  font-size: 15px;
 }
 #services main #below-45 h2 span {
   color: #a3c7e4 !important;
@@ -1929,7 +1953,7 @@ footer #copyright p a:hover {
   background: #0f1d3c;
 }
 #about main #process > div {
-  padding: 150px 20px;
+  padding: 150px 20px 100px;
 }
 @media (max-width: 780px) {
   #about main #process > div {
@@ -1974,14 +1998,15 @@ footer #copyright p a:hover {
 }
 @media (max-width: 780px) {
   #about main #process > div > ul > li {
-    -webkit-filter: blur(3px);
-            filter: blur(3px);
     max-width: 500px;
     cursor: pointer;
   }
 }
 #about main #process > div > ul > li:last-child {
   height: auto;
+}
+#about main #process > div > ul > li:last-child .desc {
+  padding-bottom: 0;
 }
 #about main #process > div > ul > li.active {
   cursor: pointer;
@@ -2027,12 +2052,6 @@ footer #copyright p a:hover {
   line-height: 150%;
   padding: 34px 40px 33px 0;
   cursor: pointer;
-}
-@media (min-width: 781px) {
-  #about main #process > div > ul > li h3 {
-    -webkit-filter: blur(3px);
-            filter: blur(3px);
-  }
 }
 @media (max-width: 780px) {
   #about main #process > div > ul > li h3 {
@@ -2144,6 +2163,16 @@ footer #copyright p a:hover {
   list-style: disc;
   padding-left: 20px;
   margin-top: 20px;
+}
+#about main #process > div > ul > li .desc ul ul {
+  margin-top: none;
+}
+#about main #process .disclaimer {
+  text-align: center;
+  padding: 6vw 0 50px;
+  max-width: none;
+  font-style: italic;
+  font-size: 15px;
 }
 
 #legislation-changes main #hero {

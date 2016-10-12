@@ -10,30 +10,36 @@
     #below-55,
     #over-55 {
       > div {
+        flex-direction: column;
         align-items: center;
-        @media (min-width: 901px) {
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: space-between;
-          padding: 12vw 40px;
-        }
-        @media (max-width: 900px) {
-          padding: 20vw 20px;
-          max-width: 500px;
-        }
         > div {
-          &:first-child {
-            @media (min-width: 901px) {
-              width: 54%;
-            }
+          flex-direction: row;
+          align-items: center;
+          margin: 0 auto;
+          @media (min-width: 901px) {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 12vw 40px;
           }
-          &:last-child {
-            @media (min-width: 901px) {
-              width: 40%;
-              max-width: 400px;
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: space-between;
+          @media (max-width: 900px) {
+            padding: 20vw 20px;
+            max-width: 500px;
+          }
+          > div {
+            &:first-child {
+              @media (min-width: 901px) {
+                width: 54%;
+              }
+            }
+            &:last-child {
+              @media (min-width: 901px) {
+                width: 40%;
+                max-width: 400px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+              }
             }
           }
         }
@@ -102,6 +108,17 @@
     }
     #below-45 {
       background: $finsec-kashmir-blue;
+      > div {
+        > div {
+          padding-bottom: 6vw !important;
+        }
+      }
+      .disclaimer {
+        padding: 0 40px 6vw;
+        max-width: none;
+        font-style: italic;
+        font-size: 15px;
+      }
       h2 {
         span {
           color: $finsec-baby-blue !important;
