@@ -16,6 +16,9 @@
           flex-direction: row;
           align-items: center;
           margin: 0 auto;
+          &:nth-last-child(2) {
+            padding-bottom: 6vw;
+          }
           @media (min-width: 901px) {
             display: flex;
             flex-flow: row nowrap;
@@ -108,11 +111,11 @@
     }
     #below-45 {
       background: $finsec-kashmir-blue;
-      > div {
-        > div {
-          padding-bottom: 6vw !important;
-        }
-      }
+      // > div {
+      //   > div {
+      //     padding-bottom: 6vw !important;
+      //   }
+      // }
       .disclaimer {
         padding: 0 40px 6vw;
         max-width: none;

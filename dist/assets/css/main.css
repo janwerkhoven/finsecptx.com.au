@@ -1715,6 +1715,11 @@ footer #copyright p a:hover {
           align-items: center;
   margin: 0 auto;
 }
+#services main #below-45 > div > div:nth-last-child(2),
+#services main #below-55 > div > div:nth-last-child(2),
+#services main #over-55 > div > div:nth-last-child(2) {
+  padding-bottom: 6vw;
+}
 @media (min-width: 901px) {
   #services main #below-45 > div > div,
   #services main #below-55 > div > div,
@@ -1844,9 +1849,6 @@ footer #copyright p a:hover {
 }
 #services main #below-45 {
   background: #4c6f93;
-}
-#services main #below-45 > div > div {
-  padding-bottom: 6vw !important;
 }
 #services main #below-45 .disclaimer {
   padding: 0 40px 6vw;
