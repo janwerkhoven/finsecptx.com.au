@@ -178,7 +178,7 @@ module.exports = function(grunt) {
     xml_sitemap: {
       custom_options: {
         options: {
-          siteRoot: 'http://finsecptx.com/',
+          siteRoot: 'http://www.finsecptx.com.au/',
           changefreq: 'monthly',
           priority: '0.5',
           dest: 'dist/'
@@ -186,7 +186,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/',
-          src: ['**/*.html', '!**/google*.html'],
+          src: ['**/*.html', '!**/google*.html', '!**/emails/*.html'],
         }]
       }
     },
@@ -243,7 +243,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-inline-css');
 
   // Available commands
-  grunt.registerTask('default', ['build', 'serve']);
+  grunt.registerTask('default', ['build', 'sitemap', 'serve']);
   grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'inlinecss', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
