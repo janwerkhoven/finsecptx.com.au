@@ -2,6 +2,8 @@ module.exports = function(grunt) {
 
   'use strict';
 
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -21,15 +23,15 @@ module.exports = function(grunt) {
     watch: {
       handlebars: {
         files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
-        tasks: ['handlebarslayouts', 'inlinecss']
+        tasks: ['build-HTML']
       },
       sass: {
         files: ['src/styles/**/*.scss'],
-        tasks: ['sass', 'postcss']
+        tasks: ['build-CSS']
       },
       js: {
         files: ['src/js/**/*.js'],
-        tasks: ['jshint', 'uglify', 'concat', 'clean:temp']
+        tasks: ['build-JS']
       },
       assets: {
         files: ['src/public/**/*'],
@@ -227,24 +229,29 @@ module.exports = function(grunt) {
   });
 
   // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks("grunt-handlebars-layouts");
-  grunt.loadNpmTasks('grunt-html-prettyprinter');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-xml-sitemap');
-  grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  // grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-html-prettyprinter');
   grunt.loadNpmTasks('grunt-inline-css');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks("grunt-handlebars-layouts");
 
   // Available commands
   grunt.registerTask('default', ['build', 'sitemap', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'inlinecss', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  // grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'inlinecss', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  grunt.registerTask('build', ['clean', 'copy', 'build-HTML', 'build-CSS', 'build-JS']);
+  grunt.registerTask('build-HTML', ['handlebarslayouts', 'inlinecss']);
+  grunt.registerTask('build-CSS', ['sass', 'postcss']);
+  grunt.registerTask('build-JS', ['jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
