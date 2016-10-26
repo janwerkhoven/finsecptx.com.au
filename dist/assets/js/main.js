@@ -289,6 +289,20 @@ function store(key, value) {
 }
 
 var rules = {
+  'email-phone': function() {
+    if (answers.phone) {
+      var phone = answers.phone.replace(/[ ()+]/, '');
+      var validPhone = /\d{8,}/.test(phone);
+      if (validPhone) {
+        return true;
+      } else {
+        $('#email-phone .errors p').text('Please enter a valid phone number').show(300);
+      }
+    } else {
+      $('#email-phone .errors p').text('Please enter your phone number').show(300);
+    }
+
+  },
   'state-age': function() {
     if (answers.state) {
       var age = parseInt(answers.age);
