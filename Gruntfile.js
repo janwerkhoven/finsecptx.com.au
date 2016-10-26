@@ -234,20 +234,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  // grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html-prettyprinter');
   grunt.loadNpmTasks('grunt-inline-css');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-xml-sitemap');
   grunt.loadNpmTasks("grunt-handlebars-layouts");
 
   // Available commands
   grunt.registerTask('default', ['build', 'sitemap', 'serve']);
-  // grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'inlinecss', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
   grunt.registerTask('build', ['clean', 'copy', 'build-HTML', 'build-CSS', 'build-JS']);
   grunt.registerTask('build-HTML', ['handlebarslayouts', 'inlinecss']);
   grunt.registerTask('build-CSS', ['sass', 'postcss']);
