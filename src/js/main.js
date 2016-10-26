@@ -280,7 +280,6 @@ var rules = {
     } else {
       $('#email-phone .errors p').text('Please enter your phone number').show(300);
     }
-
   },
   'state-age': function() {
     if (answers.state) {
@@ -300,15 +299,25 @@ var rules = {
     }
   },
   'phone-state-age': function() {
-    if (answers.state) {
-      var age = parseInt(answers.age);
-      if (Number.isInteger(age)) {
-        submitSubscription();
+    if (answers.phone) {
+      var phone = answers.phone.replace(/[ ()+]/, '');
+      var validPhone = /\d{8,}/.test(phone);
+      if (validPhone) {
+        if (answers.state) {
+          var age = parseInt(answers.age);
+          if (Number.isInteger(age)) {
+            submitSubscription();
+          } else {
+            $('#phone-state-age .errors p').text('Please choose age').show(300);
+          }
+        } else {
+          $('#phone-state-age .errors p').text('Please choose state').show(300);
+        }
       } else {
-        $('#phone-state-age .errors p').text('Please choose age').show(300);
+        $('#phone-state-age .errors p').text('Please enter a valid phone number').show(300);
       }
     } else {
-      $('#phone-state-age .errors p').text('Please choose state').show(300);
+      $('#phone-state-age .errors p').text('Please enter your phone number').show(300);
     }
   },
   'email-check': function() {
