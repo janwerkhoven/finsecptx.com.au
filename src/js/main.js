@@ -433,9 +433,9 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    goTo('hello');
+    // goTo('hello');
 
-    // animateToHash();
+    animateToHash();
 
     // wisePanda();
 
