@@ -197,6 +197,7 @@ function lazyPanda() {
     objectives: "Having your pension in the country you are living in + Avoiding currency risk on your pension benefits + Controlling or influencing the investments under your pension arrangements",
     occupation: "Web Developer",
     national_insurance_number: '1234567 1234567',
+    pension_fund_types: "Company Pension + Personal Pension + British State Pension",
     pension_fund_1: "UK Pension #1",
     pension_fund_1_country: "United Kingdom",
     pension_fund_1_period: "January 1901 - December 1999",
