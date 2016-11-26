@@ -245,8 +245,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-handlebars-layouts");
 
   // Available commands
-  grunt.registerTask('default', ['build', 'sitemap', 'serve']);
-  grunt.registerTask('build', ['clean', 'copy', 'build-HTML', 'build-CSS', 'build-JS']);
+  grunt.registerTask('default', ['build', 'serve']);
+  grunt.registerTask('build', ['clean', 'copy', 'build-HTML', 'build-CSS', 'build-JS', 'sitemap']);
   grunt.registerTask('build-HTML', ['handlebarslayouts', 'inlinecss']);
   grunt.registerTask('build-CSS', ['sass', 'postcss']);
   grunt.registerTask('build-JS', ['jshint', 'uglify', 'concat', 'clean:temp']);
