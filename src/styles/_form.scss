@@ -453,8 +453,22 @@ body.form {
         display: inline-block;
         margin: 0 auto;
       }
-      button.next {
-        margin-bottom: 46px;
+    }
+  }
+  #address-dob-etc {
+    .checkboxes {
+      p {
+        text-align: left;
+        font-size: 16px;
+        color: $finsec-red;
+        margin-top: 30px;
+        a {
+          color: $finsec-red;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
     }
   }

@@ -141,7 +141,7 @@
       <div>
         <h1>You're the right age to make a Pension transfer!</h1>
         <p>We're glad you're making a step in the right direction.</p>
-        <p>Whilst you're eligible it's important to understand if a transfer is appropriate for you. Our complimentary report will provide the answer.</p>
+        <p>Whilst you're eligible, we need to ensure your fund is too. Our complimentary report will provide this answer along with important information outlining if a transfer is appropriate for you.</p>
         <div class="buttons vertical">
           <button class="next" tabindex="1" for="start-enquiry">Get Started</button>
         </div>
@@ -202,10 +202,10 @@
         <p>By answering the following questions, you will be providing us with valuable information required for us to begin this process.</p>
         <p><em>Estimated Time: 10 minutes</em></p>
         <p><small>If you don't have all these details right now, simply skip those steps.</small></p>
-        <!--<p><small>If you don't have all these details right now, simply skip those steps. Alternatively, we can send you a copy of the form so you can complete it later.</small></p> -->
         <div class="buttons vertical">
-          <button class="next">Start form now</button>
-          <!-- <button>Complete later</button> -->
+          <button class="next">Start online form now</button>
+          <p><small>- OR -</small></p>
+          <a href="/assets/PDF/FinSec-Partners-pension-transfer-enquiry.pdf" class="button" target="_blank">Complete form offline (PDF)</a>
           <button class="back" for="state-age">Back</button>
         </div>
       </div>
@@ -320,6 +320,15 @@
         <div class="field text">
           <label>What is your Occupation?</label>
           <input type="text" name="OCCUPATION" tabindex="9">
+        </div>
+        <div class="field checkboxes" name="PENSION_FUND_TYPES">
+          <label>Please indicate your pension fund types</label>
+          <div>
+            <button>Company Pension</button>
+            <button>Personal Pension</button>
+            <button>British State Pension</button>
+          </div>
+          <p>Please note: British State Pensions can not be transferred to Australia as a lump sum. For information on accessing these funds in retirement please <a href="https://www.gov.uk/state-pension-if-you-retire-abroad" target="_blank">click here</a>.</p>
         </div>
         <div class="buttons">
           <button class="back">Back</button>
