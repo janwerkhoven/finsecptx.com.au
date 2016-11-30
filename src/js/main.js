@@ -284,16 +284,20 @@ var rules = {
   },
   'state-age': function() {
     if (answers.state) {
-      var age = parseInt(answers.age);
-      if (Number.isInteger(age)) {
-        submitEligbility();
-        if (age >= 55) {
-          goTo('eligible');
+      if (answers.pension_fund_types) {
+        var age = parseInt(answers.age);
+        if (Number.isInteger(age)) {
+          submitEligbility();
+          if (age >= 55) {
+            goTo('eligible');
+          } else {
+            goTo('not-yet-eligible');
+          }
         } else {
-          goTo('not-yet-eligible');
+          $('#state-age .errors p').text('Please choose age').show(300);
         }
       } else {
-        $('#state-age .errors p').text('Please choose age').show(300);
+        $('#state-age .errors p').text('Please select at least one pension type').show(300);
       }
     } else {
       $('#state-age .errors p').text('Please choose state').show(300);
@@ -434,9 +438,9 @@ $(document).ready(function() {
 
   if (PAGE === 'subscribe' || PAGE === 'form') {
 
-    goTo('hello');
+    // goTo('hello');
 
-    // animateToHash();
+    animateToHash();
 
     // wisePanda();
 

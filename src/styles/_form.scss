@@ -455,15 +455,19 @@ body.form {
       }
     }
   }
-  #address-dob-etc {
+  #state-age {
     .checkboxes {
       p {
         text-align: left;
         font-size: 16px;
         color: $finsec-red;
         margin-top: 30px;
+        color: $finsec-kashmir-blue;
+        strong {
+          font-family: $black;
+        }
         a {
-          color: $finsec-red;
+          color: $finsec-baby-blue;
           text-decoration: underline;
           &:hover {
             text-decoration: none;
