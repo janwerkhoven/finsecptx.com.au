@@ -463,11 +463,13 @@ body.form {
         color: $finsec-red;
         margin-top: 30px;
         color: $finsec-kashmir-blue;
+        color: white;
         strong {
           font-family: $black;
         }
         a {
           color: $finsec-baby-blue;
+          color: white;
           text-decoration: underline;
           &:hover {
             text-decoration: none;
