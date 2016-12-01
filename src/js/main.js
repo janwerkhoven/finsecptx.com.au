@@ -119,7 +119,7 @@ function submitEligbility() {
     _subject: environmentLabel + 'Someone completed the eligibility form',
     _format: 'plain'
   };
-  var keys = ['title', 'name', 'email', 'phone', 'state', 'age'];
+  var keys = ['title', 'name', 'email', 'phone', 'state', 'age', 'pension_fund_types'];
   $.each(keys, function(i, key) {
     data[key] = sessionStorage.getItem(key) || '-';
   });
