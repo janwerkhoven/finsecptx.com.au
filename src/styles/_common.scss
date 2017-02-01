@@ -419,7 +419,7 @@ i {
       }
       overflow: hidden;
     }
-    .twitter-feed {
+    #twitter-post {
       padding-bottom: 30px;
       iframe {
         background-color: white;
@@ -435,6 +435,7 @@ i {
           align-items: center;
           justify-content: center;
           margin-top: 20px;
+          padding-bottom: 12px;
           &.button {
             img {
               height: 36px;
