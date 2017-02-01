@@ -420,6 +420,7 @@ i {
       overflow: hidden;
     }
     .twitter-feed {
+      padding-bottom: 30px;
       iframe {
         background-color: white;
       }
@@ -433,9 +434,14 @@ i {
           display: flex;
           align-items: center;
           justify-content: center;
+          margin-top: 20px;
           &.button {
             img {
+              height: 36px;
               margin: 0 0 0 20px;
+              &:hover {
+                background-color: transparent;
+              }
             }
           }
         }
