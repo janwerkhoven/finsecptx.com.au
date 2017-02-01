@@ -419,6 +419,35 @@ i {
       }
       overflow: hidden;
     }
+    #twitter-post {
+      padding-bottom: 30px;
+      iframe {
+        background-color: white;
+      }
+      background: $finsec-kashmir-blue;
+      > div {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 20px;
+          padding-bottom: 12px;
+          &.button {
+            img {
+              height: 36px;
+              margin: 0 0 0 20px;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
     .ayem-special {
       background: $finsec-kashmir-blue;
       padding: 30px;
