@@ -420,28 +420,32 @@ i {
       overflow: hidden;
     }
     #twitter-post {
-      padding-bottom: 30px;
-      iframe {
-        background-color: white;
-      }
       background: $finsec-kashmir-blue;
       > div {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-
-        a {
+        &:first-child {
+          min-height: 318px;
+          border: 1px solid #e4e4e4;
+          box-sizing: border-box;
+          background: #fff;
+          display: block;
+        }
+        &:last-child {
           display: flex;
-          align-items: center;
           justify-content: center;
-          margin-top: 20px;
-          padding-bottom: 12px;
-          &.button {
-            img {
-              height: 36px;
-              margin: 0 0 0 20px;
-              &:hover {
-                background-color: transparent;
+          margin: auto;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            &.button {
+              margin: 32px 0;
+              img {
+                height: 36px;
+                margin: 0 0 0 20px;
+                &:hover {
+                  background-color: transparent;
+                }
               }
             }
           }
