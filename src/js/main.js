@@ -23,7 +23,9 @@ answers = {};
 
 if (!!ga) {
   ga('create', 'UA-34474019-9', 'auto');
-  ga('set', { dimension1: environment });
+  ga('set', {
+    dimension1: environment
+  });
   ga('send', 'pageview');
 }
 
