@@ -17,6 +17,10 @@
         font-family: $bold;
       }
     }
+    strong {
+      font-family: $bold;
+      line-height: 150%;
+    }
     section {
       align-items: left;
       margin-bottom: 40px;
@@ -71,6 +75,15 @@
           li {
             margin: 10px 0;
             line-height: 125%;
+          }
+        }
+        ol {
+          padding-left: 20px;
+          li {
+            margin-top: 5px;
+            ul {
+              padding-left: 30px;
+            }
           }
         }
       }
